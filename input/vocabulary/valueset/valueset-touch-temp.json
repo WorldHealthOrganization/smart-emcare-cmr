@@ -1,0 +1,47 @@
+{
+    "resourceType": "ValueSet",
+    "id": "touch-temp",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/touch-temp",
+    "name": "valueset-touch-temp",
+    "title": "Temperature on touch",
+    "status": "draft",
+    "experimental": false,
+    "description": "Codes representing possible values for the Provide an estimated age or estimated date of birth element",
+    "immutable": true,
+    "compose": {
+        "include": [
+            {
+                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                "concept": [
+                    {
+                        "code": "EmCare.B6.DE05B",
+                        "display": "Normal on touch",
+                        "designation": [
+                            {
+                                "value": "The client's temperature is normal on touch"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B6.DE05C",
+                        "display": "Hot",
+                        "designation": [
+                            {
+                                "value": "The client's temperature is hot on touch"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B6.DE05D",
+                        "display": "Cold",
+                        "designation": [
+                            {
+                                "value": "The client's temperature is cold on touch"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

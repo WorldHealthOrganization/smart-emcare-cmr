@@ -1,0 +1,56 @@
+{
+    "resourceType": "ValueSet",
+    "id": "reason-no-weight",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/reason-no-weight",
+    "name": "valueset-reason-no-weight",
+    "title": "Reason for not measuring weight",
+    "status": "draft",
+    "experimental": false,
+    "description": "Codes representing possible values for the Provide an estimated age or estimated date of birth element",
+    "immutable": true,
+    "compose": {
+        "include": [
+            {
+                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                "concept": [
+                    {
+                        "code": "EmCare.B6.DE24",
+                        "display": "Weight scale broken or not available",
+                        "designation": [
+                            {
+                                "value": "The weight scale is broken or unavailable"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B6.DE25",
+                        "display": "No time",
+                        "designation": [
+                            {
+                                "value": "No time was available for weight measurement"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B6.DE26",
+                        "display": "Child not cooperating",
+                        "designation": [
+                            {
+                                "value": "The child was not co-operating"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B6.DE27",
+                        "display": "Other",
+                        "designation": [
+                            {
+                                "value": "Other reasons than above"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

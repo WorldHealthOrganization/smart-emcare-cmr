@@ -1,0 +1,38 @@
+{
+    "resourceType": "ValueSet",
+    "id": "10d-or-less",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/10d-or-less",
+    "name": "valueset-10d-or-less",
+    "title": "EmCare.B17S1.DE02",
+    "status": "draft",
+    "experimental": false,
+    "description": "Duration of Mumps",
+    "immutable": true,
+    "compose": {
+        "include": [
+            {
+                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                "concept": [
+                    {
+                        "code": "EmCare.B17S1.DE03",
+                        "display": "Less than 10 days",
+                        "designation": [
+                            {
+                                "value": "The duration of mumps observed is less than 10 days"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17S1.DE04",
+                        "display": "10 days or more",
+                        "designation": [
+                            {
+                                "value": "The duration of mumps observed is for 10 or more days"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

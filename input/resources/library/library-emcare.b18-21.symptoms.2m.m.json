@@ -1,0 +1,70 @@
+{
+    "resourceType": "Library",
+    "id": "emcareb1821symptoms2mm",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb1821symptoms2mm",
+    "identifier": [
+        {
+            "use": "official",
+            "value": "emcare.b18-21.symptoms.2m.m"
+        }
+    ],
+    "version": "0.0.1.build.29",
+    "name": "emcareb1821symptoms2mm",
+    "title": "EmCare.B18-21.Symptoms.2m.m",
+    "status": "active",
+    "type": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/ValueSet/library-type",
+                "code": "logic-library"
+            }
+        ]
+    },
+    "relatedArtifact": [
+        {
+            "type": "depends-on",
+            "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarebase"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareobservation"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarevalueset"
+        }
+    ],
+    "parameter": [
+        {
+            "name": "AgeInDays",
+            "use": "out",
+            "type": "integer"
+        },
+        {
+            "name": "EmCare.B6.DE04",
+            "use": "out",
+            "type": "code"
+        },
+        {
+            "name": "Thermometer not available",
+            "use": "out",
+            "type": "code"
+        },
+        {
+            "name": "Convulsing Now",
+            "use": "out",
+            "type": "boolean"
+        }
+    ],
+    "content": [
+        {
+            "id": "ig-loader-emcareb1821symptoms2mm.cql",
+            "contentType": "text/cql",
+            "data": "LyoKQGF1dGhvcjogUGF0cmljayBEZWxjcm9peApAZGVzY3JpcHRpb246IFRoaXMgbGlicmFyeSBpcyBwYXJ0IG9mIHRoZSBwcm9qZWN0IEVtQ2FyZQoqLwpsaWJyYXJ5IGVtY2FyZWIxODIxc3ltcHRvbXMybW0gdmVyc2lvbiAnMC4wLjEuYnVpbGQuMjknCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnIGNhbGxlZCBGSElSSGVscGVycyAKaW5jbHVkZSBlbWNhcmViYXNlIHZlcnNpb24gJzAuMC4xLmJ1aWxkLjI5JyBjYWxsZWQgQmFzZQppbmNsdWRlIGVtY2FyZW9ic2VydmF0aW9uIHZlcnNpb24gJzAuMC4xLmJ1aWxkLjI5JyBjYWxsZWQgb2JzCmluY2x1ZGUgZW1jYXJldmFsdWVzZXQgdmVyc2lvbiAnMC4wLjEuYnVpbGQuMjknIGNhbGxlZCB2YWwKCgoKCmNvbnRleHQgUGF0aWVudAoKCi8qIApPQlNkZWZpbmUuRW1DYXJlLkI2LkRFMDQgOiBUaGVybW9tZXRlciBub3QgYXZhaWxhYmxlCgoqLwpkZWZpbmUgIk9CU2RlZmluZS5FbUNhcmUuQjYuREUwNCI6CiAgICBCYXNlLkdldE9ic1ZhbHVlKCdFbUNhcmUuQjYuREUwNCcpCgovKiAKT0JTZGVmaW5lLkVtQ2FyZS5CNy5ERTAyIDogQ29udnVsc2luZyBOb3cKCiovCmRlZmluZSAiT0JTZGVmaW5lLkVtQ2FyZS5CNy5ERTAyIjoKICAgIEJhc2UuR2V0T2JzVmFsdWUoJ0VtQ2FyZS5CNy5ERTAyJykKCi8qIApBZ2VJbkRheXMgOiAKQWdlSW5EYXlzKCkKKi8KZGVmaW5lICJBZ2VJbkRheXMiOgogICAgQWdlSW5EYXlzKCkKCi8qIApFbUNhcmUuQjYuREUwNCA6IApvIlRoZXJtb21ldGVyIG5vdCBhdmFpbGFibGUiCiovCmRlZmluZSAiRW1DYXJlLkI2LkRFMDQiOgogICAgIk9CU2RlZmluZS5FbUNhcmUuQjYuREUwNCIKCi8qIApUaGVybW9tZXRlciBub3QgYXZhaWxhYmxlIDogRW1DYXJlLkI2LkRFMDQKQWxpYXMKKi8KZGVmaW5lICJUaGVybW9tZXRlciBub3QgYXZhaWxhYmxlIjoKICAgICJFbUNhcmUuQjYuREUwNCIKCi8qIApDb252dWxzaW5nIE5vdyA6IApvIkNvbnZ1bHNpbmcgTm93IgoqLwpkZWZpbmUgIkNvbnZ1bHNpbmcgTm93IjoKICAgICJPQlNkZWZpbmUuRW1DYXJlLkI3LkRFMDIiCg=="
+        }
+    ]
+}

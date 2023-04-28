@@ -1,0 +1,56 @@
+{
+    "resourceType": "ValueSet",
+    "id": "reason-no-muac",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/reason-no-muac",
+    "name": "valueset-reason-no-muac",
+    "title": "Reason for not measuring MUAC",
+    "status": "draft",
+    "experimental": false,
+    "description": "Codes representing possible values for the Provide an estimated age or estimated date of birth element",
+    "immutable": true,
+    "compose": {
+        "include": [
+            {
+                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                "concept": [
+                    {
+                        "code": "EmCare.B6.DE29",
+                        "display": "MUAC band not available",
+                        "designation": [
+                            {
+                                "value": "MUAC band not available"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B6.DE30",
+                        "display": "No time",
+                        "designation": [
+                            {
+                                "value": "No time was available for weight measurement"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B6.DE31",
+                        "display": "Child not cooperating",
+                        "designation": [
+                            {
+                                "value": "The child was not co-operating"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B6.DE32",
+                        "display": "Other",
+                        "designation": [
+                            {
+                                "value": "Other reasons than above"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

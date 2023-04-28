@@ -1,0 +1,46 @@
+{
+    "resourceType": "ValueSet",
+    "id": "7d-to-14d",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/7d-to-14d",
+    "name": "valueset-7d-to-14d",
+    "status": "draft",
+    "experimental": false,
+    "description": "Codes representing possible values for the Provide an estimated age or estimated date of birth element",
+    "immutable": true,
+    "compose": {
+        "include": [
+            {
+                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                "concept": [
+                    {
+                        "code": "EmCare.B12S1.DE04",
+                        "display": "Less than 7 days",
+                        "designation": [
+                            {
+                                "value": "Symptom less than 7 days"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B11S1.DE03A",
+                        "display": "7 to 14 days",
+                        "designation": [
+                            {
+                                "value": "Symptom for 7 to 14 days"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B10S1.DE08",
+                        "display": "14 days or more",
+                        "designation": [
+                            {
+                                "value": "Symptom for 14 days or more"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

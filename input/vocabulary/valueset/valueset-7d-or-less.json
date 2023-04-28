@@ -1,0 +1,38 @@
+{
+    "resourceType": "ValueSet",
+    "id": "7d-or-less",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/7d-or-less",
+    "name": "valueset-7d-or-less",
+    "title": "EmCare.B10S2.DE05A",
+    "status": "draft",
+    "experimental": false,
+    "description": "Duration of wheezing",
+    "immutable": true,
+    "compose": {
+        "include": [
+            {
+                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                "concept": [
+                    {
+                        "code": "EmCare.B12S1.DE04",
+                        "display": "Less than 7 days",
+                        "designation": [
+                            {
+                                "value": "The child has wheezing for less than 7 days"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B10S2.DE05C",
+                        "display": "7 days or more",
+                        "designation": [
+                            {
+                                "value": "The child has wheezing for 7 or more days"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

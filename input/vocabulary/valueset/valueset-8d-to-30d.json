@@ -1,0 +1,46 @@
+{
+    "resourceType": "ValueSet",
+    "id": "8d-to-30d",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/8d-to-30d",
+    "name": "valueset-8d-to-30d",
+    "status": "draft",
+    "experimental": false,
+    "description": "Codes representing possible values for the Provide an estimated age or estimated date of birth element",
+    "immutable": true,
+    "compose": {
+        "include": [
+            {
+                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                "concept": [
+                    {
+                        "code": "EmCare.B12S1.DE04",
+                        "display": "7 days or less",
+                        "designation": [
+                            {
+                                "value": "Symptom for 7 days or less"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B12S1.DE04A",
+                        "display": "8 to 30 days",
+                        "designation": [
+                            {
+                                "value": "Symptom for 8 to 30 days"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B12S1.DE05",
+                        "display": "More than 30 days",
+                        "designation": [
+                            {
+                                "value": "Symptom for more than 30 days"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

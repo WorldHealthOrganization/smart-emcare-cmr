@@ -1,0 +1,60 @@
+{
+    "resourceType": "Library",
+    "id": "emcareb7ltidangersigns",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb7ltidangersigns",
+    "identifier": [
+        {
+            "use": "official",
+            "value": "emcare.b7.lti-dangersigns"
+        }
+    ],
+    "version": "0.0.1.build.29",
+    "name": "emcareb7ltidangersigns",
+    "title": "EmCare.B7.LTI-DangerSigns",
+    "status": "active",
+    "type": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/ValueSet/library-type",
+                "code": "logic-library"
+            }
+        ]
+    },
+    "relatedArtifact": [
+        {
+            "type": "depends-on",
+            "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarebase"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareobservation"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarevalueset"
+        }
+    ],
+    "parameter": [
+        {
+            "name": "AgeInMonth.cql",
+            "use": "out",
+            "type": "integer"
+        },
+        {
+            "name": "Age auto-calculated (presented as number of years, months, days) of the client based on date of birth or estimated age or based on auto-calculation from estimaged date of birth",
+            "use": "out",
+            "type": "integer"
+        }
+    ],
+    "content": [
+        {
+            "id": "ig-loader-emcareb7ltidangersigns.cql",
+            "contentType": "text/cql",
+            "data": "LyoKQGF1dGhvcjogUGF0cmljayBEZWxjcm9peApAZGVzY3JpcHRpb246IFRoaXMgbGlicmFyeSBpcyBwYXJ0IG9mIHRoZSBwcm9qZWN0IEVtQ2FyZQoqLwpsaWJyYXJ5IGVtY2FyZWI3bHRpZGFuZ2Vyc2lnbnMgdmVyc2lvbiAnMC4wLjEuYnVpbGQuMjknCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnIGNhbGxlZCBGSElSSGVscGVycyAKaW5jbHVkZSBlbWNhcmViYXNlIHZlcnNpb24gJzAuMC4xLmJ1aWxkLjI5JyBjYWxsZWQgQmFzZQppbmNsdWRlIGVtY2FyZW9ic2VydmF0aW9uIHZlcnNpb24gJzAuMC4xLmJ1aWxkLjI5JyBjYWxsZWQgb2JzCmluY2x1ZGUgZW1jYXJldmFsdWVzZXQgdmVyc2lvbiAnMC4wLjEuYnVpbGQuMjknIGNhbGxlZCB2YWwKCgoKCmNvbnRleHQgUGF0aWVudAoKCi8qIApBZ2VJbk1vbnRoLmNxbCA6IApBZ2VJbk1vbnRocygpCiovCmRlZmluZSAiQWdlSW5Nb250aC5jcWwiOgogICAgQWdlSW5Nb250aHMoKQo="
+        }
+    ]
+}

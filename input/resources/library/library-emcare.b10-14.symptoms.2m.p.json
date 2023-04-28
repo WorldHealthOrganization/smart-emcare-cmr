@@ -1,0 +1,94 @@
+{
+    "resourceType": "Library",
+    "id": "emcareb1014symptoms2mp",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb1014symptoms2mp",
+    "identifier": [
+        {
+            "use": "official",
+            "value": "emcare.b10-14.symptoms.2m.p"
+        }
+    ],
+    "version": "0.0.1.build.29",
+    "name": "emcareb1014symptoms2mp",
+    "title": "EmCare.B10-14.Symptoms.2m.p",
+    "status": "active",
+    "type": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/ValueSet/library-type",
+                "code": "logic-library"
+            }
+        ]
+    },
+    "relatedArtifact": [
+        {
+            "type": "depends-on",
+            "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarebase"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareobservation"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarevalueset"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarecombineddataelements"
+        }
+    ],
+    "parameter": [
+        {
+            "name": "Danger Signs",
+            "use": "out",
+            "type": "boolean"
+        },
+        {
+            "name": "Fever",
+            "use": "out",
+            "type": "boolean"
+        },
+        {
+            "name": "Severe Acute Malnutrition",
+            "use": "out",
+            "type": "boolean"
+        },
+        {
+            "name": "Vomiting",
+            "use": "out",
+            "type": "code"
+        },
+        {
+            "name": "EmCare.B6.DE01",
+            "use": "out",
+            "type": "Quantity"
+        },
+        {
+            "name": "Axillary Temperature (degrees Celcius)",
+            "use": "out",
+            "type": "Quantity"
+        },
+        {
+            "name": "EmCare.B6.DE05",
+            "use": "out",
+            "type": "boolean"
+        },
+        {
+            "name": "Hot to Touch",
+            "use": "out",
+            "type": "boolean"
+        }
+    ],
+    "content": [
+        {
+            "id": "ig-loader-emcareb1014symptoms2mp.cql",
+            "contentType": "text/cql",
+            "data": "LyoKQGF1dGhvcjogUGF0cmljayBEZWxjcm9peApAZGVzY3JpcHRpb246IFRoaXMgbGlicmFyeSBpcyBwYXJ0IG9mIHRoZSBwcm9qZWN0IEVtQ2FyZQoqLwpsaWJyYXJ5IGVtY2FyZWIxMDE0c3ltcHRvbXMybXAgdmVyc2lvbiAnMC4wLjEuYnVpbGQuMjknCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnIGNhbGxlZCBGSElSSGVscGVycyAKaW5jbHVkZSBlbWNhcmViYXNlIHZlcnNpb24gJzAuMC4xLmJ1aWxkLjI5JyBjYWxsZWQgQmFzZQppbmNsdWRlIGVtY2FyZW9ic2VydmF0aW9uIHZlcnNpb24gJzAuMC4xLmJ1aWxkLjI5JyBjYWxsZWQgb2JzCmluY2x1ZGUgZW1jYXJldmFsdWVzZXQgdmVyc2lvbiAnMC4wLjEuYnVpbGQuMjknIGNhbGxlZCB2YWwKaW5jbHVkZSBlbWNhcmVjb21iaW5lZGRhdGFlbGVtZW50cyB2ZXJzaW9uICcwLjAuMS5idWlsZC4yOScgY2FsbGVkIGMKCgoKCmNvbnRleHQgUGF0aWVudAoKCi8qIApPQlNkZWZpbmUuRW1DYXJlLkI2LkRFMDEgOiBBeGlsbGFyeSBUZW1wZXJhdHVyZSAoZGVncmVlcyBDZWxjaXVzKQoKKi8KZGVmaW5lICJPQlNkZWZpbmUuRW1DYXJlLkI2LkRFMDEiOgogICAgQmFzZS5HZXRPYnNWYWx1ZSgnRW1DYXJlLkI2LkRFMDEnKQoKLyogCk9CU2RlZmluZS5FbUNhcmUuQjYuREUwNSA6IEhvdCB0byBUb3VjaAoKKi8KZGVmaW5lICJPQlNkZWZpbmUuRW1DYXJlLkI2LkRFMDUiOgogICAgQmFzZS5HZXRPYnNWYWx1ZSgnRW1DYXJlLkI2LkRFMDUnKQoKLyogCkRhbmdlciBTaWducyA6IApjLiJlbWNhcmUuYi5nLmRlMDEiCiovCmRlZmluZSAiRGFuZ2VyIFNpZ25zIjoKICAgIGMuImVtY2FyZS5iLmcuZGUwMSIKCi8qIApGZXZlciA6IApjLiJmZXZlciIKKi8KZGVmaW5lICJGZXZlciI6CiAgICBjLiJmZXZlciIKCi8qIApTZXZlcmUgQWN1dGUgTWFsbnV0cml0aW9uIDogCmMuIlNldmVyZSBBY3V0ZSBNYWxudXRyaXRpb24iCiovCmRlZmluZSAiU2V2ZXJlIEFjdXRlIE1hbG51dHJpdGlvbiI6CiAgICBjLiJTZXZlcmUgQWN1dGUgTWFsbnV0cml0aW9uIgoKLyogClZvbWl0aW5nIDogCmMuIlZvbWl0aW5nIgoqLwpkZWZpbmUgIlZvbWl0aW5nIjoKICAgIGMuIlZvbWl0aW5nIgoKLyogCkVtQ2FyZS5CNi5ERTAxIDogCm8iQXhpbGxhcnkgVGVtcGVyYXR1cmUgKGRlZ3JlZXMgQ2VsY2l1cykiCiovCmRlZmluZSAiRW1DYXJlLkI2LkRFMDEiOgogICAgIk9CU2RlZmluZS5FbUNhcmUuQjYuREUwMSIKCi8qIApBeGlsbGFyeSBUZW1wZXJhdHVyZSAoZGVncmVlcyBDZWxjaXVzKSA6IEVtQ2FyZS5CNi5ERTAxCkFsaWFzCiovCmRlZmluZSAiQXhpbGxhcnkgVGVtcGVyYXR1cmUgKGRlZ3JlZXMgQ2VsY2l1cykiOgogICAgIkVtQ2FyZS5CNi5ERTAxIgoKLyogCkVtQ2FyZS5CNi5ERTA1IDogCm8iSG90IHRvIFRvdWNoIgoqLwpkZWZpbmUgIkVtQ2FyZS5CNi5ERTA1IjoKICAgICJPQlNkZWZpbmUuRW1DYXJlLkI2LkRFMDUiCgovKiAKSG90IHRvIFRvdWNoIDogRW1DYXJlLkI2LkRFMDUKQWxpYXMKKi8KZGVmaW5lICJIb3QgdG8gVG91Y2giOgogICAgIkVtQ2FyZS5CNi5ERTA1Igo="
+        }
+    ]
+}
