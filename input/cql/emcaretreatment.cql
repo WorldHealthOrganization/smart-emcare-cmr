@@ -2,13 +2,13 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcaretreatment version '0.0.1.build.29'
+library emcaretreatment version '0.0.1.build.68'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.29' called Base
-include emcareobservation version '0.0.1.build.29' called obs
-include emcarevalueset version '0.0.1.build.29' called val
-include emcarecondition version '0.0.1.build.29' called cond
+include emcarebase version '0.0.1.build.68' called Base
+include emcareobservation version '0.0.1.build.68' called obs
+include emcarevalueset version '0.0.1.build.68' called val
+include emcarecondition version '0.0.1.build.68' called cond
 
 
 
@@ -60,10 +60,10 @@ define "load-EmCare.C10.IT.DE05":
 
 /* 
 load-EmCare.C10.IT.DE06 : 
-HasCond(cond."some dehydration")  and AgeInMonths()>=2
+HasCond(cond."Some Dehydration")  and AgeInMonths()>=2
 */
 define "load-EmCare.C10.IT.DE06":
-    Base.HasCond(cond."some dehydration")  and AgeInMonths()>=2
+    Base.HasCond(cond."Some Dehydration")  and AgeInMonths()>=2
 
 /* 
 load-EmCare.C10.IT.DE07 : 
@@ -410,10 +410,10 @@ define "load-EmCare.C10.IT.DE55":
 
 /* 
 load-EmCare.C10.IT.DE56 : 
-HasCond(cond."some dehydration") and AgeInMonths()<2
+HasCond(cond."Some Dehydration") and AgeInMonths()<2
 */
 define "load-EmCare.C10.IT.DE56":
-    Base.HasCond(cond."some dehydration") and AgeInMonths()<2
+    Base.HasCond(cond."Some Dehydration") and AgeInMonths()<2
 
 /* 
 load-EmCare.C10.IT.DE57 : 
@@ -442,3 +442,10 @@ HasCond(cond."feeding problem and / or low weight for age") and AgeInMonths()<2
 */
 define "load-EmCare.C10.IT.DE60":
     Base.HasCond(cond."feeding problem and / or low weight for age") and AgeInMonths()<2
+
+/* 
+BackReference : 
+back reference to resource
+*/
+define "BackReference":
+    Reference {reference: string { value: 'Questionnaire/EmCare.Treatment'}}

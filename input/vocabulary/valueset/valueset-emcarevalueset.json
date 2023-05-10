@@ -382,6 +382,24 @@
                         ]
                     },
                     {
+                        "code": "EmCare.B17S1.DE03",
+                        "display": "Less than 10 days",
+                        "designation": [
+                            {
+                                "value": "The duration of mumps observed is less than 10 days"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17S1.DE04",
+                        "display": "10 days or more",
+                        "designation": [
+                            {
+                                "value": "The duration of mumps observed is for 10 or more days"
+                            }
+                        ]
+                    },
+                    {
                         "code": "EmCare.B10S2.DE09",
                         "display": "Oxygen saturation not measured",
                         "designation": [
@@ -434,7 +452,7 @@
                         "display": "Skin Pinch goes back very slowly (More than 2 seconds)",
                         "designation": [
                             {
-                                "value": "The client's skin goes back very slowly after Skin pinch of Abdomen (More than 2 seconds)"
+                                "value": "The client's skin goes back very slowly after Skin Pinch of Abdomen (More than 2 seconds)"
                             }
                         ]
                     },
@@ -443,7 +461,7 @@
                         "display": "Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)",
                         "designation": [
                             {
-                                "value": "The client's skin goes back slowly after Skin pinch of Abdomen (2 seconds or fewer, but not immediately)"
+                                "value": "The client's skin goes back slowly after Skin Pinch of Abdomen (2 seconds or fewer, but not immediately)"
                             }
                         ]
                     },
@@ -452,7 +470,7 @@
                         "display": "Skin Pinch goes back Normally (immediately)",
                         "designation": [
                             {
-                                "value": "The client's skin goes back normally after Skin pinch of Abdomen (immediately)"
+                                "value": "The client's skin goes back normally after Skin Pinch of Abdomen (immediately)"
                             }
                         ]
                     },
@@ -1281,42 +1299,6 @@
                         "designation": [
                             {
                                 "value": "The client's Microscopy species result is no species reported"
-                            }
-                        ]
-                    },
-                    {
-                        "code": "EmCare.B17S1.DE03",
-                        "display": "Red (congested) throat",
-                        "designation": [
-                            {
-                                "value": "The client has a Red (congested) throat"
-                            }
-                        ]
-                    },
-                    {
-                        "code": "EmCare.B17S1.DE04",
-                        "display": "Exudate on Throat",
-                        "designation": [
-                            {
-                                "value": "The client has Exudate on Throat"
-                            }
-                        ]
-                    },
-                    {
-                        "code": "EmCare.B17S1.DE05",
-                        "display": "Membrane on throat",
-                        "designation": [
-                            {
-                                "value": "The client has Membrane on throat"
-                            }
-                        ]
-                    },
-                    {
-                        "code": "none",
-                        "display": "None of the listed throat problems observed",
-                        "designation": [
-                            {
-                                "value": "The client has None of the listed throat problems observed"
                             }
                         ]
                     },

@@ -1085,7 +1085,7 @@
                 }
             ],
             "linkId": "EmCare.B11S2.DE02",
-            "text": "Skin pinch of Abdomen",
+            "text": "Skin Pinch of Abdomen",
             "type": "choice",
             "required": true,
             "repeats": false,

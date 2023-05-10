@@ -2,13 +2,13 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareb22fluidtest version '0.0.1.build.29'
+library emcareb22fluidtest version '0.0.1.build.68'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.29' called Base
-include emcareobservation version '0.0.1.build.29' called obs
-include emcarevalueset version '0.0.1.build.29' called val
-include emcarecombineddataelements version '0.0.1.build.29' called c
+include emcarebase version '0.0.1.build.68' called Base
+include emcareobservation version '0.0.1.build.68' called obs
+include emcarevalueset version '0.0.1.build.68' called val
+include emcarecombineddataelements version '0.0.1.build.68' called c
 
 
 
@@ -46,10 +46,10 @@ define "Unable to Perform Oral Fluid Test Profile":
 
 /* 
 DS : 
-Coalesce(c."danger signs",false)
+Coalesce(c."Danger Signs",false)
 */
 define "DS":
-    Coalesce(c."danger signs",false)
+    Coalesce(c."Danger Signs",false)
 
 /* 
 Danger Signs : DS
@@ -85,3 +85,10 @@ Alias
 */
 define "Vomiting Everything":
     "EmCare.B7.DE10"
+
+/* 
+BackReference : 
+back reference to resource
+*/
+define "BackReference":
+    Reference {reference: string { value: 'Questionnaire/EmCare.B22.FluidTest'}}

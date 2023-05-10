@@ -51,7 +51,11 @@
                     {
                         "code": "CodeableConcept"
                     }
-                ]
+                ],
+                "binding": {
+                    "strength": "required",
+                    "valueSet": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/postcoordination"
+                }
             }
         ]
     }

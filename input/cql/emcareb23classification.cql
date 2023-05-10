@@ -2,14 +2,14 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareb23classification version '0.0.1.build.29'
+library emcareb23classification version '0.0.1.build.68'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.29' called Base
-include emcareobservation version '0.0.1.build.29' called obs
-include emcarevalueset version '0.0.1.build.29' called val
-include emcarezscore version '0.0.1.build.29' called Z
-include emcarecombineddataelements version '0.0.1.build.29' called C
+include emcarebase version '0.0.1.build.68' called Base
+include emcareobservation version '0.0.1.build.68' called obs
+include emcarevalueset version '0.0.1.build.68' called val
+include emcarezscore version '0.0.1.build.68' called Z
+include emcarecombineddataelements version '0.0.1.build.68' called C
 
 
 
@@ -130,6 +130,13 @@ define "OBSdefine.EmCare.B14S2.DE11":
     Base.GetObsValue('EmCare.B14S2.DE11')
 
 /* 
+OBSdefine.EmCare.B22.DE07 : Fast Breathing
+
+*/
+define "OBSdefine.EmCare.B22.DE07":
+    Base.GetObsValue('EmCare.B22.DE07')
+
+/* 
 OBSdefine.EmCare.B22.DE22 : Inhaled Bronchodilator Trial Not Feasible or Available
 
 */
@@ -177,13 +184,6 @@ OBSdefine.EmCare.B6.DE01 : Axillary Temperature (degrees Celcius)
 */
 define "OBSdefine.EmCare.B6.DE01":
     Base.GetObsValue('EmCare.B6.DE01')
-
-/* 
-OBSdefine.EmCare.B7.DE09 : Not able to drink or breastfeed
-
-*/
-define "OBSdefine.EmCare.B7.DE09":
-    Base.GetObsValue('EmCare.B7.DE09')
 
 /* 
 OBSdefine.EmCare.B13S2.DE01 : Tender swelling behind the ear
@@ -584,10 +584,10 @@ define "Estimated Weight":
 
 /* 
 DL-G-CL1-07 : 
-C."age >= 2 months to <60 months" and ("Cough" = true  or  "Difficulty Breathing" = true) and (C."danger signs" = true or  "Stridor in a calm child" = true or Coalesce("Oxygen Saturation", 95 '%') < 90  '%')
+C."age >= 2 months to <60 months" and ("Cough" = true  or  "Difficulty Breathing" = true) and (C."Danger Signs" = true or  "Stridor in a calm child" = true or Coalesce("Oxygen Saturation", 95 '%') < 90  '%')
 */
 define "DL-G-CL1-07":
-    C."age >= 2 months to <60 months" and ("OBSdefine.EmCare.B10S1.DE05" = true  or  "OBSdefine.EmCare.B10S1.DE01" = true) and (C."danger signs" = true or  "OBSdefine.EmCare.B10S2.DE04" = true or Coalesce("OBSdefine.EmCare.B10S2.DE07", 95 '%') < 90  '%')
+    C."age >= 2 months to <60 months" and ("OBSdefine.EmCare.B10S1.DE05" = true  or  "OBSdefine.EmCare.B10S1.DE01" = true) and (C."Danger Signs" = true or  "OBSdefine.EmCare.B10S2.DE04" = true or Coalesce("OBSdefine.EmCare.B10S2.DE07", 95 '%') < 90  '%')
 
 /* 
 Severe Pneumonia or Very Severe Disease : DL-G-CL1-07
@@ -626,12 +626,12 @@ define "Measles in last 3 months":
 
 /* 
 DL-G-CL1-14 : 
-    (C."age >= 2 months to <60 months" and ("Cough"= true  or  o"Difficulty Breathing" = true) and (o"Fast breathing" = true or  o"Chest indrawing" = true) and ("Severe Pneumonia or Very Severe Disease" !=true ))
+    (C."age >= 2 months to <60 months" and ("Cough"= true  or  o"Difficulty Breathing" = true) and (o"Fast Breathing" = true or  o"Chest indrawing" = true) and ("Severe Pneumonia or Very Severe Disease" !=true ))
      and ((    o"Wheezing" = false)
      or (    ( o"Wheezing" = true)  and  (o"Inhaled Bronchodilator Trial Not Feasible or Available"=true or o"Chest Indrawing (post inhaled bronchodilator trial)"=true or   o"Fast Breathing (post inhaled bronchodilator trial)"=true)))
 */
 define "DL-G-CL1-14":
-        (C."age >= 2 months to <60 months" and ("OBSdefine.EmCare.B10S1.DE05"= true  or  "OBSdefine.EmCare.B10S1.DE01" = true) and (o"Fast breathing" = true or  o"Chest indrawing" = true) and (Coalesce("Severe Pneumonia or Very Severe Disease",false)!=true ))
+        (C."age >= 2 months to <60 months" and ("OBSdefine.EmCare.B10S1.DE05"= true  or  "OBSdefine.EmCare.B10S1.DE01" = true) and ("OBSdefine.EmCare.B22.DE07" = true or  o"Chest indrawing" = true) and (Coalesce("Severe Pneumonia or Very Severe Disease",false)!=true ))
          and ((    "OBSdefine.EmCare.B10S2.DE05" = false)
          or (    ( "OBSdefine.EmCare.B10S2.DE05" = true)  and  ("OBSdefine.EmCare.B22.DE22"=true or "OBSdefine.EmCare.B22.DE18"=true or   "OBSdefine.EmCare.B22.DE20"=true)))
 
@@ -672,10 +672,10 @@ define "Severe Dehydration":
 
 /* 
 DL-G-CL1-24-32 : 
-C."some dehydration"
+C."Some Dehydration"
 */
 define "DL-G-CL1-24-32":
-    C."some dehydration"
+    C."Some Dehydration"
 
 /* 
 Some Dehydration : DL-G-CL1-24-32
@@ -755,62 +755,6 @@ define "Possible Shigella":
     "DL-I-CL1-01"
 
 /* 
-DL-I-CL1-05 : 
-C."age >= 2 months to <60 months"  and C."fever" = true and o"Throat problem" = true and ("Not able to drink or breastfeed" = true or "Ability to swallow" = "Unable to swallow" or "Specify Throat problem" = "Membrane on throat")
-*/
-define "DL-I-CL1-05":
-    C."age >= 2 months to <60 months"  and C."fever" = true and o"Throat problem" = true and ("OBSdefine.EmCare.B7.DE09" = true or "Ability to swallow" = val."Unable to swallow" or "Specify Throat problem" = val."Membrane on throat")
-
-/* 
-Throat Abscess or Possible Diptheria : DL-I-CL1-05
-Alias
-*/
-define "Throat Abscess or Possible Diptheria":
-    "DL-I-CL1-05"
-
-/* 
-DL-I-CL1-06 : 
-C."age >= 2 months to <60 months"  and (C."fever" = true or "Ability to swallow" = "Difficulty in swallowing" ) and "Throat problem" = true and ("Not able to drink or breastfeed" = true or "Ability to swallow" = "Unable to swallow" or "Specify Throat problem" = "Membrane on throat") and (ToInteger("Enlarged lymph nodes on front of neck" = true )+ToInteger("Specify Throat problem" = "Red (congested) throat")+ToInteger("Specify Throat problem" = "Exudate on Throat"))>1 and "Throat Abscess or Possible Diptheria"!=true
-*/
-define "DL-I-CL1-06":
-    C."age >= 2 months to <60 months"  and (C."fever" = true or "Ability to swallow" = val."Difficulty in swallowing" ) and "Throat problem" = true and ("OBSdefine.EmCare.B7.DE09" = true or "Ability to swallow" = val."Unable to swallow" or "Specify Throat problem" = val."Membrane on throat") and (ToInteger("Enlarged lymph nodes on front of neck" = true )+ToInteger("Specify Throat problem" = val."Red (congested) throat")+ToInteger("Specify Throat problem" = val."Exudate on Throat"))>1 and Coalesce("Throat Abscess or Possible Diptheria",false)!=true
-
-/* 
-Streptococcal Sore Throat : DL-I-CL1-06
-Alias
-*/
-define "Streptococcal Sore Throat":
-    "DL-I-CL1-06"
-
-/* 
-DL-I-CL1-07 : 
-C."age >= 2 months to <60 months"  and ("Ability to swallow" = "Difficulty in swallowing" or "Enlarged lymph nodes on front of neck" = true or "Specify Throat problem" = "Red (congested) throat" or "Specify Throat problem" = "Exudate on Throat" ) and "Throat problem" = true and  "Throat Abscess or Possible Diptheria"!=true and "Streptococcal Sore Throat"!=true
-*/
-define "DL-I-CL1-07":
-    C."age >= 2 months to <60 months"  and ("Ability to swallow" = val."Difficulty in swallowing" or "Enlarged lymph nodes on front of neck" = true or "Specify Throat problem" = val."Red (congested) throat" or "Specify Throat problem" = val."Exudate on Throat" ) and "Throat problem" = true and  Coalesce("Throat Abscess or Possible Diptheria",false)!=true and Coalesce("Streptococcal Sore Throat",false)!=true
-
-/* 
-Non-Streptococcal Sore Throat : DL-I-CL1-07
-Alias
-*/
-define "Non-Streptococcal Sore Throat":
-    "DL-I-CL1-07"
-
-/* 
-DL-I-CL1-09 : 
-C."age >= 2 months to <60 months" and "Throat problem" = true and  "Throat Abscess or Possible Diptheria"!=true and "Streptococcal Sore Throat"!=true and "Non-Streptococcal Sore Throat"!=true
-*/
-define "DL-I-CL1-09":
-    C."age >= 2 months to <60 months" and "Throat problem" = true and  Coalesce("Throat Abscess or Possible Diptheria",false)!=true and Coalesce("Streptococcal Sore Throat",false)!=true and Coalesce("Non-Streptococcal Sore Throat",false)!=true
-
-/* 
-No Throat Problem : DL-I-CL1-09
-Alias
-*/
-define "No Throat Problem":
-    "DL-I-CL1-09"
-
-/* 
 DL-G-CL1-73 : 
 C."age >= 2 months to <60 months" and "Ear Problem" = true and   "Tender swelling behind the ear" = true
 */
@@ -864,10 +808,10 @@ define "Chronic Ear Infection":
 
 /* 
 EmCare.B23.DE32a : 
-"Ear Pain" = true or C."fever" = true
+"Ear Pain" = true or C."Fever" = true
 */
 define "EmCare.B23.DE32a":
-    "Ear Pain" = true or C."fever" = true
+    "Ear Pain" = true or C."Fever" = true
 
 /* 
 DL-G-CL1-79 : 
@@ -885,10 +829,10 @@ define "No Ear Infection":
 
 /* 
 DL-G-CL1-34 : 
-C."age >= 2 months to <60 months" and C."fever" = true and (C."danger signs" = true or  "Stiff Neck" = true)
+C."age >= 2 months to <60 months" and C."Fever" = true and (C."Danger Signs" = true or  "Stiff Neck" = true)
 */
 define "DL-G-CL1-34":
-    C."age >= 2 months to <60 months" and C."fever" = true and (C."danger signs" = true or  "Stiff Neck" = true)
+    C."age >= 2 months to <60 months" and C."Fever" = true and (C."Danger Signs" = true or  "Stiff Neck" = true)
 
 /* 
 Very Severe Febrile Disease : DL-G-CL1-34
@@ -899,10 +843,10 @@ define "Very Severe Febrile Disease":
 
 /* 
 DL-I-CL1-03 : 
-C."age >= 2 months to <60 months" and C."fever" = true and ( "Streptococcal Sore Throat"!=true  or "Pneumonia"!=true or "Acute Ear Infection"!=true  or  "Chronic Ear Infection"!=true or  "Dysentery"!=true) and "Possible Shigella"!=true and  "Throat Abscess or Possible Diptheria"!=true and "Severe Complicated Measles"!=true and "Measles with Eye or Mouth Complication"!=true and "Possible Measles"!=true and  "Mastoiditis"!=true and "Very Severe Febrile Disease"!=true and  "Severe Pneumonia or Very Severe Disease"!=true
+C."age >= 2 months to <60 months" and C."Fever" = true and ( "Streptococcal Sore Throat"!=true  or "Pneumonia"!=true or "Acute Ear Infection"!=true  or  "Chronic Ear Infection"!=true or  "Dysentery"!=true) and "Possible Shigella"!=true and  "Throat Abscess or Possible Diptheria"!=true and "Severe Complicated Measles"!=true and "Measles with Eye or Mouth Complication"!=true and "Possible Measles"!=true and  "Mastoiditis"!=true and "Very Severe Febrile Disease"!=true and  "Severe Pneumonia or Very Severe Disease"!=true
 */
 define "DL-I-CL1-03":
-    C."age >= 2 months to <60 months" and C."fever" = true and ( Coalesce("Streptococcal Sore Throat",false)!=true  or Coalesce("Pneumonia",false)!=true or Coalesce("Acute Ear Infection",false)!=true  or  Coalesce("Chronic Ear Infection",false)!=true or  Coalesce("Dysentery",false)!=true) and Coalesce("Possible Shigella",false)!=true and  Coalesce("Throat Abscess or Possible Diptheria",false)!=true and Coalesce("Severe Complicated Measles",false)!=true and Coalesce("Measles with Eye or Mouth Complication",false)!=true and Coalesce("Possible Measles",false)!=true and  Coalesce("Mastoiditis",false)!=true and Coalesce("Very Severe Febrile Disease",false)!=true and  Coalesce("Severe Pneumonia or Very Severe Disease",false)!=true
+    C."age >= 2 months to <60 months" and C."Fever" = true and ( Coalesce("Streptococcal Sore Throat",false)!=true  or Coalesce("Pneumonia",false)!=true or Coalesce("Acute Ear Infection",false)!=true  or  Coalesce("Chronic Ear Infection",false)!=true or  Coalesce("Dysentery",false)!=true) and Coalesce("Possible Shigella",false)!=true and  Coalesce("Throat Abscess or Possible Diptheria",false)!=true and Coalesce("Severe Complicated Measles",false)!=true and Coalesce("Measles with Eye or Mouth Complication",false)!=true and Coalesce("Possible Measles",false)!=true and  Coalesce("Mastoiditis",false)!=true and Coalesce("Very Severe Febrile Disease",false)!=true and  Coalesce("Severe Pneumonia or Very Severe Disease",false)!=true
 
 /* 
 Fever: possible bacterial infection : DL-I-CL1-03
@@ -927,10 +871,10 @@ define "Fever present every day for 7 Days or more":
 
 /* 
 DL-I-CL1-26 : 
-C."age >= 2 months to <60 months" and C."fever" = true and "Possible Shigella"!=true and "Fever: possible bacterial infection"!=true and "Throat Abscess or Possible Diptheria"!=true and "Severe Complicated Measles"!=true and "Measles with Eye or Mouth Complication"!=true and "Possible Measles"!=true and "Mastoiditis"!=true and "Very Severe Febrile Disease"!=true
+C."age >= 2 months to <60 months" and C."Fever" = true and "Possible Shigella"!=true and "Fever: possible bacterial infection"!=true and "Throat Abscess or Possible Diptheria"!=true and "Severe Complicated Measles"!=true and "Measles with Eye or Mouth Complication"!=true and "Possible Measles"!=true and "Mastoiditis"!=true and "Very Severe Febrile Disease"!=true
 */
 define "DL-I-CL1-26":
-    C."age >= 2 months to <60 months" and C."fever" = true and Coalesce("Possible Shigella",false)!=true and Coalesce("Fever: possible bacterial infection",false)!=true and Coalesce("Throat Abscess or Possible Diptheria",false)!=true and Coalesce("Severe Complicated Measles",false)!=true and Coalesce("Measles with Eye or Mouth Complication",false)!=true and Coalesce("Possible Measles",false)!=true and Coalesce("Mastoiditis",false)!=true and Coalesce("Very Severe Febrile Disease",false)!=true
+    C."age >= 2 months to <60 months" and C."Fever" = true and Coalesce("Possible Shigella",false)!=true and Coalesce("Fever: possible bacterial infection",false)!=true and Coalesce("Throat Abscess or Possible Diptheria",false)!=true and Coalesce("Severe Complicated Measles",false)!=true and Coalesce("Measles with Eye or Mouth Complication",false)!=true and Coalesce("Possible Measles",false)!=true and Coalesce("Mastoiditis",false)!=true and Coalesce("Very Severe Febrile Disease",false)!=true
 
 /* 
 Fever: bacterial infection unlikely : DL-I-CL1-26
@@ -941,22 +885,22 @@ define "Fever: bacterial infection unlikely":
 
 /* 
 DL-I-CL1-16-66 : 
-    (C."age >= 2 months to <60 months" and C."fever" = true)
+    (C."age >= 2 months to <60 months" and C."Fever" = true)
      and ((    (("Cough" = true  or  "Runny nose" = true or "Red eyes" = true))
-         and ((    "Generalised or Localised Skin Problem"  != "Generalised Skin Problem"  and "Measles in last 3 months" = true and (C."danger signs" = true or  o"Clouding of the Cornea" = true  or o"Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Deep and Extensive" ))
+         and ((    "Generalised or Localised Skin Problem"  != "Generalised Skin Problem"  and "Measles in last 3 months" = true and (C."Danger Signs" = true or  o"Clouding of the Cornea" = true  or o"Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Deep and Extensive" ))
          or (    ("Generalised or Localised Skin Problem" = "Generalised Skin Problem")
-             and ((    "Measles Rash" = false and "Measles in last 3 months" = true and (C."danger signs" = true or  o"Clouding of the Cornea" = true  or o"Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Deep and Extensive" ))
-             or (    (C."danger signs" = true or  o"Clouding of the Cornea" = true  or o"Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Deep and Extensive" or  "Pneumonia"=true  or o"Diarrhoea" = true) and "Measles Rash" = true)))))
-     or (    "Cough" = false  and  "Runny nose" = false and "Red eyes" = false and "Measles in last 3 months" = true and  (C."danger signs" = true or  o"Clouding of the Cornea" = true  or o"Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Deep and Extensive" )))
+             and ((    "Measles Rash" = false and "Measles in last 3 months" = true and (C."Danger Signs" = true or  o"Clouding of the Cornea" = true  or o"Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Deep and Extensive" ))
+             or (    (C."Danger Signs" = true or  o"Clouding of the Cornea" = true  or o"Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Deep and Extensive" or  "Pneumonia"=true  or o"Diarrhoea" = true) and "Measles Rash" = true)))))
+     or (    "Cough" = false  and  "Runny nose" = false and "Red eyes" = false and "Measles in last 3 months" = true and  (C."Danger Signs" = true or  o"Clouding of the Cornea" = true  or o"Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Deep and Extensive" )))
 */
 define "DL-I-CL1-16-66":
-        (C."age >= 2 months to <60 months" and C."fever" = true)
+        (C."age >= 2 months to <60 months" and C."Fever" = true)
          and ((    (("OBSdefine.EmCare.B10S1.DE05" = true  or  "OBSdefine.EmCare.B12S2.DE05" = true or "OBSdefine.EmCare.B14S2.DE01" = true))
-             and ((    "OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE07" = false  and "Measles in last 3 months" = true and (C."danger signs" = true or  "OBSdefine.EmCare.B14S2.DE03" = true  or "OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Deep and Extensive" ))
+             and ((    "OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE07" = false  and "Measles in last 3 months" = true and (C."Danger Signs" = true or  "OBSdefine.EmCare.B14S2.DE03" = true  or "OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Deep and Extensive" ))
              or (    ("OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE07" = true)
-                 and ((    "OBSdefine.EmCare.B14S2.DE10" = false and "Measles in last 3 months" = true and (C."danger signs" = true or  "OBSdefine.EmCare.B14S2.DE03" = true  or "OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Deep and Extensive" ))
-                 or (    (C."danger signs" = true or  "OBSdefine.EmCare.B14S2.DE03" = true  or "OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Deep and Extensive" or  "Pneumonia"=true  or "OBSdefine.EmCare.B20S1.DE01" = true) and "OBSdefine.EmCare.B14S2.DE10" = true)))))
-         or (    "OBSdefine.EmCare.B10S1.DE05" = false  and  "OBSdefine.EmCare.B12S2.DE05" = false and "OBSdefine.EmCare.B14S2.DE01" = false and "Measles in last 3 months" = true and  (C."danger signs" = true or  "OBSdefine.EmCare.B14S2.DE03" = true  or "OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Deep and Extensive" )))
+                 and ((    "OBSdefine.EmCare.B14S2.DE10" = false and "Measles in last 3 months" = true and (C."Danger Signs" = true or  "OBSdefine.EmCare.B14S2.DE03" = true  or "OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Deep and Extensive" ))
+                 or (    (C."Danger Signs" = true or  "OBSdefine.EmCare.B14S2.DE03" = true  or "OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Deep and Extensive" or  "Pneumonia"=true  or "OBSdefine.EmCare.B20S1.DE01" = true) and "OBSdefine.EmCare.B14S2.DE10" = true)))))
+         or (    "OBSdefine.EmCare.B10S1.DE05" = false  and  "OBSdefine.EmCare.B12S2.DE05" = false and "OBSdefine.EmCare.B14S2.DE01" = false and "Measles in last 3 months" = true and  (C."Danger Signs" = true or  "OBSdefine.EmCare.B14S2.DE03" = true  or "OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Deep and Extensive" )))
 
 /* 
 Severe Complicated Measles : DL-I-CL1-16-66
@@ -967,14 +911,14 @@ define "Severe Complicated Measles":
 
 /* 
 DL-G-CL1-69-70 : 
-    (C."age >= 2 months to <60 months" and C."fever" = true   and "Severe Complicated Measles"!=true and  ("Pus Draining from Eye" = true  or "Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Not Deep and Extensive" ))
+    (C."age >= 2 months to <60 months" and C."Fever" = true   and "Severe Complicated Measles"!=true and  ("Pus Draining from Eye" = true  or "Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Not Deep and Extensive" ))
      and ((    "Cough" = false  and "Runny nose" = false and "Red eyes" = false and "Measles in last 3 months" =true and ("Pus Draining from Eye" = true  or "Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Not Deep and Extensive" ))
      or (    (("Cough" = true  or  "Runny nose" = true or "Red eyes" = true))
          and ((    ("Generalised or Localised Skin Problem" = "Generalised Skin Problem") and ("Measles Rash" = true or  ("Measles Rash" =false and "Measles in last 3 months" = true)))
          or (    ("Generalised or Localised Skin Problem" != "Generalised Skin Problem") and "Measles in last 3 months" = true))))
 */
 define "DL-G-CL1-69-70":
-        (C."age >= 2 months to <60 months" and C."fever" = true   and Coalesce("Severe Complicated Measles",false)!=true and  ("OBSdefine.EmCare.B14S2.DE02" = true  or "OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Not Deep and Extensive" ))
+        (C."age >= 2 months to <60 months" and C."Fever" = true   and Coalesce("Severe Complicated Measles",false)!=true and  ("OBSdefine.EmCare.B14S2.DE02" = true  or "OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Not Deep and Extensive" ))
          and ((    "OBSdefine.EmCare.B10S1.DE05" = false  and "OBSdefine.EmCare.B12S2.DE05" = false and "OBSdefine.EmCare.B14S2.DE01" = false and "Measles in last 3 months" =true and ("OBSdefine.EmCare.B14S2.DE02" = true  or "OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Not Deep and Extensive" ))
          or (    (("OBSdefine.EmCare.B10S1.DE05" = true  or  "OBSdefine.EmCare.B12S2.DE05" = true or "OBSdefine.EmCare.B14S2.DE01" = true))
              and ((    ("OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE07" = true) and ("OBSdefine.EmCare.B14S2.DE10" = true or  ("OBSdefine.EmCare.B14S2.DE10" =false and "Measles in last 3 months" = true)))
@@ -989,10 +933,10 @@ define "Measles with Eye or Mouth Complication":
 
 /* 
 DL-G-CL1-71 : 
-C."age >= 2 months to <60 months" and C."fever" = true  and ("Cough" = true  or  "Runny nose" = true or "Red eyes" = true)  and "Severe Complicated Measles"!=true and "Measles with Eye or Mouth Complication"!=true and "Measles Rash" = true  and "Generalised or Localised Skin Problem" = "Generalised Skin Problem"
+C."age >= 2 months to <60 months" and C."Fever" = true  and ("Cough" = true  or  "Runny nose" = true or "Red eyes" = true)  and "Severe Complicated Measles"!=true and "Measles with Eye or Mouth Complication"!=true and "Measles Rash" = true  and "Generalised or Localised Skin Problem" = "Generalised Skin Problem"
 */
 define "DL-G-CL1-71":
-    C."age >= 2 months to <60 months" and C."fever" = true  and ("OBSdefine.EmCare.B10S1.DE05" = true  or  "OBSdefine.EmCare.B12S2.DE05" = true or "OBSdefine.EmCare.B14S2.DE01" = true)  and Coalesce("Severe Complicated Measles",false)!=true and Coalesce("Measles with Eye or Mouth Complication",false)!=true and "OBSdefine.EmCare.B14S2.DE10" = true  and "OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE07" = true
+    C."age >= 2 months to <60 months" and C."Fever" = true  and ("OBSdefine.EmCare.B10S1.DE05" = true  or  "OBSdefine.EmCare.B12S2.DE05" = true or "OBSdefine.EmCare.B14S2.DE01" = true)  and Coalesce("Severe Complicated Measles",false)!=true and Coalesce("Measles with Eye or Mouth Complication",false)!=true and "OBSdefine.EmCare.B14S2.DE10" = true  and "OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE07" = true
 
 /* 
 Possible Measles : DL-G-CL1-71
@@ -1341,10 +1285,10 @@ define "Steven Johnson Syndrome (SJS)":
 
 /* 
 DL-G-CL1-106 : 
-C."age >= 2 months to <60 months" and C."fever" = true and ("Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Not Deep and Extensive" or "Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Deep and Extensive" )
+C."age >= 2 months to <60 months" and C."Fever" = true and ("Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Not Deep and Extensive" or "Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Deep and Extensive" )
 */
 define "DL-G-CL1-106":
-    C."age >= 2 months to <60 months" and C."fever" = true and ("OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Not Deep and Extensive" or "OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Deep and Extensive" )
+    C."age >= 2 months to <60 months" and C."Fever" = true and ("OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Not Deep and Extensive" or "OBSdefine.EmCare.B14S2.DE45" = val."Mouth Sores or Mouth Ulcers - Deep and Extensive" )
 
 /* 
 Mouth Sores or Ulcer : DL-G-CL1-106
@@ -1362,10 +1306,10 @@ define "EmCare.B23.DE60":
 
 /* 
 DL-G-CL1-108 : 
-C."age >= 2 months to <60 months" and C."fever" = true and "Oral Sores or Mouth Ulcers"= v"Oral Thrush"
+C."age >= 2 months to <60 months" and C."Fever" = true and "Oral Sores or Mouth Ulcers"= v"Oral Thrush"
 */
 define "DL-G-CL1-108":
-    C."age >= 2 months to <60 months" and C."fever" = true and "OBSdefine.EmCare.B14S2.DE45"= val."Oral Thrush"
+    C."age >= 2 months to <60 months" and C."Fever" = true and "OBSdefine.EmCare.B14S2.DE45"= val."Oral Thrush"
 
 /* 
 Oral Thrush : DL-G-CL1-108
@@ -1415,3 +1359,10 @@ Alias
 */
 define "Low MUAC or visual report of wasting":
     "DL-I-CL1-34"
+
+/* 
+BackReference : 
+back reference to resource
+*/
+define "BackReference":
+    Reference {reference: string { value: 'Questionnaire/EmCare.B23.Classification'}}

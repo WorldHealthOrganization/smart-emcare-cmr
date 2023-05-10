@@ -2,12 +2,12 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareb22secondtemperature version '0.0.1.build.29'
+library emcareb22secondtemperature version '0.0.1.build.68'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.29' called Base
-include emcareobservation version '0.0.1.build.29' called obs
-include emcarevalueset version '0.0.1.build.29' called val
+include emcarebase version '0.0.1.build.68' called Base
+include emcareobservation version '0.0.1.build.68' called obs
+include emcarevalueset version '0.0.1.build.68' called val
 
 
 
@@ -28,3 +28,10 @@ Alias
 */
 define "Age":
     "AgeInMonths"
+
+/* 
+BackReference : 
+back reference to resource
+*/
+define "BackReference":
+    Reference {reference: string { value: 'Questionnaire/EmCare.B22.SecondTemperature'}}

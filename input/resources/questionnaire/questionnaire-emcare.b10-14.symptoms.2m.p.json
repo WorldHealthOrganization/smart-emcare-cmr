@@ -550,7 +550,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='Fever').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B12S1.DE03').answer.first().value in {'EmCare.B12S1.DE05', 'EmCare.B12S1.DE04A'}"
+                        "expression": "%resource.repeat(item).where(linkId='Fever').answer.first().value = true and (%resource.repeat(item).where(linkId='EmCare.B12S1.DE03').answer.first().value.code  = 'EmCare.B12S1.DE05' or %resource.repeat(item).where(linkId='EmCare.B12S1.DE03').answer.first().value.code  = 'EmCare.B12S1.DE05')"
                     }
                 }
             ],
@@ -778,7 +778,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "( %resource.repeat(item).where(linkId='Danger Signs').answer.empty()  or %resource.repeat(item).where(linkId='Danger Signs').answer.first().value=false )OR%resource.repeat(item).where(linkId='EmCare.B12S1.DE08').answer.first().value.code != 'EmCare.B14S2.DE44'"
+                        "expression": "( %resource.repeat(item).where(linkId='Danger Signs').answer.empty()  or %resource.repeat(item).where(linkId='Danger Signs').answer.first().value=false )or%resource.repeat(item).where(linkId='EmCare.B12S1.DE08').answer.first().value.code != 'EmCare.B14S2.DE44'"
                     }
                 }
             ],
@@ -798,7 +798,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "( %resource.repeat(item).where(linkId='Danger Signs').answer.empty()  or %resource.repeat(item).where(linkId='Danger Signs').answer.first().value=false )OR%resource.repeat(item).where(linkId='EmCare.B12S1.DE08').answer.first().value.code != 'EmCare.B14S2.DE44'"
+                        "expression": "( %resource.repeat(item).where(linkId='Danger Signs').answer.empty()  or %resource.repeat(item).where(linkId='Danger Signs').answer.first().value=false )or%resource.repeat(item).where(linkId='EmCare.B12S1.DE08').answer.first().value.code != 'EmCare.B14S2.DE44'"
                     }
                 }
             ],

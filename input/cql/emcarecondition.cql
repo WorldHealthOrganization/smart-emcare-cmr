@@ -2,7 +2,7 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcarecondition version '0.0.1.build.29'
+library emcarecondition version '0.0.1.build.68'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
 
@@ -54,14 +54,6 @@ code "Dysentery": 'EmCare.B23.DE18' from "EmCare" display 'Dysentery'
 code "dysentery": 'EmCare.B23.DE18' from "EmCare" display 'dysentery'
 code "Possible Shigella": 'EmCare.B23.DE18.a' from "EmCare" display 'Possible Shigella'
 code "possible shigella": 'EmCare.B23.DE18.a' from "EmCare" display 'possible shigella'
-code "Throat Abscess or Possible Diptheria": 'EmCare.B23.DE100' from "EmCare" display 'Throat Abscess or Possible Diptheria'
-code "throat abscess or possible diptheria": 'EmCare.B23.DE100' from "EmCare" display 'throat abscess or possible diptheria'
-code "Streptococcal Sore Throat": 'EmCare.B23.DE6101' from "EmCare" display 'Streptococcal Sore Throat'
-code "streptococcal sore throat": 'EmCare.B23.DE6101' from "EmCare" display 'streptococcal sore throat'
-code "Non-Streptococcal Sore Throat": 'EmCare.B23.DE6102' from "EmCare" display 'Non-Streptococcal Sore Throat'
-code "non-streptococcal sore throat": 'EmCare.B23.DE6102' from "EmCare" display 'non-streptococcal sore throat'
-code "No Throat Problem": 'EmCare.B23.DE6103' from "EmCare" display 'No Throat Problem'
-code "no throat problem": 'EmCare.B23.DE6103' from "EmCare" display 'no throat problem'
 code "Mastoiditis": 'EmCare.B23.DE30' from "EmCare" display 'Mastoiditis'
 code "mastoiditis": 'EmCare.B23.DE30' from "EmCare" display 'mastoiditis'
 code "Acute Ear Infection": 'EmCare.B23.DE31' from "EmCare" display 'Acute Ear Infection'

@@ -2,14 +2,14 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareb23classificationm version '0.0.1.build.29'
+library emcareb23classificationm version '0.0.1.build.68'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.29' called Base
-include emcareobservation version '0.0.1.build.29' called obs
-include emcarevalueset version '0.0.1.build.29' called val
-include emcarezscore version '0.0.1.build.29' called Z
-include emcarecombineddataelements version '0.0.1.build.29' called C
+include emcarebase version '0.0.1.build.68' called Base
+include emcareobservation version '0.0.1.build.68' called obs
+include emcarevalueset version '0.0.1.build.68' called val
+include emcarezscore version '0.0.1.build.68' called Z
+include emcarecombineddataelements version '0.0.1.build.68' called C
 
 
 
@@ -188,14 +188,14 @@ define "Measured Temperature (second measurement)":
 /* 
 DL-G-CL2-04-08 : 
     (    ("ageinmonths"<2)
-         and ((    "convulsion(s) in this illness"  or "severe chest indrawing"  or "movements" = "movement only when stimulated but then stops" or "movements" = "no movement at all"  or "difficulty with feeding" = "not able to feed at all" or "difficulty with feeding" = "not feeding well")
+         and ((    "convulsion(s) in this illness"  or "severe chest indrawing"  or "movements" = "movement only when stimulated but then stops" or "movements" = "no movement at all"  or "difficulty with feeding" = "Not Able to Feed At All" or "difficulty with feeding" = "not feeding well")
          or (    ("Measured Temperature" = "High" or  "Measured Temperature" ="Very High" or "Measured Temperature" = "Low") and  ( "Second Temperature Measurement Not Feasible" = true or "Measured Temperature (second measurement)" != "Normal" ))
          or (    "Measured Temperature" = "Low" and( "Second Temperature Measurement Not Feasible" = true or "Measured Temperature (second measurement)" != "Normal" ))))
      or (    "ageindays"<7 and "Fast Breathing")
 */
 define "DL-G-CL2-04-08":
         (    ("ageinmonths"<2)
-             and ((    "convulsion(s) in this illness"  or "severe chest indrawing"  or "movements" = "movement only when stimulated but then stops" or "movements" = "no movement at all"  or "difficulty with feeding" = "not able to feed at all" or "difficulty with feeding" = "not feeding well")
+             and ((    "convulsion(s) in this illness"  or "severe chest indrawing"  or "movements" = "movement only when stimulated but then stops" or "movements" = "no movement at all"  or "difficulty with feeding" = val."Not Able to Feed At All" or "difficulty with feeding" = "not feeding well")
              or (    ("OBSdefine.EmCare.B6.DE01A" = val."High" or  "OBSdefine.EmCare.B6.DE01A" =val."Very High" or "OBSdefine.EmCare.B6.DE01A" = val."Low") and  ( "OBSdefine.EmCare.B22.DE46" = true or "Measured Temperature (second measurement)" != val."Normal" ))
              or (    "OBSdefine.EmCare.B6.DE01A" = val."Low" and( "OBSdefine.EmCare.B22.DE46" = true or "Measured Temperature (second measurement)" != val."Normal" ))))
          or (    "ageindays"<7 and "OBSdefine.EmCare.B22.DE07")
@@ -294,10 +294,10 @@ define "DL-G-CL2-17":
 
 /* 
 DL-G-CL2-18 : 
-C."severe dehydration"
+C."Severe Dehydration"
 */
 define "DL-G-CL2-18":
-    C."severe dehydration"
+    C."Severe Dehydration"
 
 /* 
 Severe Dehydration : DL-G-CL2-18
@@ -308,10 +308,10 @@ define "Severe Dehydration":
 
 /* 
 DL-G-CL2-19 : 
-C."some dehydration"
+C."Some Dehydration"
 */
 define "DL-G-CL2-19":
-    C."some dehydration"
+    C."Some Dehydration"
 
 /* 
 Some Dehydration : DL-G-CL2-19
@@ -401,3 +401,10 @@ DL-G-CL2-50 :
 */
 define "DL-G-CL2-50":
     "OBSdefine.EmCare.B21S2.DE01" = val."Normal Weight for Age"  and  Coalesce("Feeding Problem and / or Low Weight for Age",false)!=true
+
+/* 
+BackReference : 
+back reference to resource
+*/
+define "BackReference":
+    Reference {reference: string { value: 'Questionnaire/EmCare.B23.Classification.m'}}

@@ -2,14 +2,14 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareb1821signs2mm version '0.0.1.build.29'
+library emcareb1821signs2mm version '0.0.1.build.68'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.29' called Base
-include emcareobservation version '0.0.1.build.29' called obs
-include emcarevalueset version '0.0.1.build.29' called val
-include emcarezscore version '0.0.1.build.29' called Z
-include emcarecombineddataelements version '0.0.1.build.29' called c
+include emcarebase version '0.0.1.build.68' called Base
+include emcareobservation version '0.0.1.build.68' called obs
+include emcarevalueset version '0.0.1.build.68' called val
+include emcarezscore version '0.0.1.build.68' called Z
+include emcarecombineddataelements version '0.0.1.build.68' called c
 
 
 
@@ -82,10 +82,10 @@ define "OBSdefine.EmCare.B10S1.DE01":
 
 /* 
 Fever : 
-c."fever"
+c."Fever"
 */
 define "Fever":
-    c."fever"
+    c."Fever"
 
 /* 
 zscore : 
@@ -275,3 +275,10 @@ Alias
 */
 define "Age in years":
     "AgeInYears"
+
+/* 
+BackReference : 
+back reference to resource
+*/
+define "BackReference":
+    Reference {reference: string { value: 'Questionnaire/EmCare.B18-21.Signs.2m.m'}}

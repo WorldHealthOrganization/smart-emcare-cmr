@@ -2,13 +2,13 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareb22assessmentstests version '0.0.1.build.29'
+library emcareb22assessmentstests version '0.0.1.build.68'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.29' called Base
-include emcareobservation version '0.0.1.build.29' called obs
-include emcarevalueset version '0.0.1.build.29' called val
-include emcarecombineddataelements version '0.0.1.build.29' called c
+include emcarebase version '0.0.1.build.68' called Base
+include emcareobservation version '0.0.1.build.68' called obs
+include emcarevalueset version '0.0.1.build.68' called val
+include emcarecombineddataelements version '0.0.1.build.68' called c
 
 
 
@@ -158,11 +158,11 @@ define "AgeInDays":
 
 /* 
 a-BreastFeedingTest : 
-    (    AgeInMonths()>=2 and AgeInMonths()<6 and  c."severe classification up to assessments and tests excluding severe dehydration" !=true)
+    (    AgeInMonths()>=2 and AgeInMonths()<6 and  c."Severe Classification up to assessments and tests excluding Severe Dehydration" !=true)
      or (    AgeInMonths()<2 and   "Breastfed" = true and c."yi severe classification other than severe dehydration" !=true)
 */
 define "a-BreastFeedingTest":
-        (    AgeInMonths()>=2 and AgeInMonths()<6 and  Coalesce(c."severe classification up to assessments and tests excluding severe dehydration",false)!=true)
+        (    AgeInMonths()>=2 and AgeInMonths()<6 and  Coalesce(c."Severe Classification up to assessments and tests excluding Severe Dehydration",false)!=true)
          or (    AgeInMonths()<2 and   "OBSdefine.EmCare.B21S1.DE06" = true and Coalesce(c."yi severe classification other than severe dehydration",false)!=true)
 
 /* 
@@ -202,10 +202,10 @@ define "applicability-RespiratoryRate":
 
 /* 
 a-BronchodilatorTest : 
-("Cough" = true or "Difficulty Breathing" = true) and "Wheezing" = true and (o"Fast Breathing" = true or "Chest Indrawing" = true) and  c."danger signs" != true and "Stridor in a calm child"= false and "Oxygen Saturation" >= 90 '%'
+("Cough" = true or "Difficulty Breathing" = true) and "Wheezing" = true and (o"Fast Breathing" = true or "Chest Indrawing" = true) and  c."Danger Signs" != true and "Stridor in a calm child"= false and "Oxygen Saturation" >= 90 '%'
 */
 define "a-BronchodilatorTest":
-    ("Cough" = true or "Difficulty Breathing" = true) and "OBSdefine.EmCare.B10S2.DE05" = true and ("OBSdefine.EmCare.B22.DE07" = true or "OBSdefine.EmCare.B10S2.DE03" = true) and  Coalesce(c."danger signs",false)!=true and "OBSdefine.EmCare.B10S2.DE04"= false and "OBSdefine.EmCare.B10S2.DE07" >= 90 '%'
+    ("Cough" = true or "Difficulty Breathing" = true) and "OBSdefine.EmCare.B10S2.DE05" = true and ("OBSdefine.EmCare.B22.DE07" = true or "OBSdefine.EmCare.B10S2.DE03" = true) and  Coalesce(c."Danger Signs",false)!=true and "OBSdefine.EmCare.B10S2.DE04"= false and "OBSdefine.EmCare.B10S2.DE07" >= 90 '%'
 
 /* 
 applicability-BronchodilatorTest : a-BronchodilatorTest
@@ -230,10 +230,10 @@ define "applicability-Hemoglobin":
 
 /* 
 a-SecondTemperature : 
-c."psbi other than temperature" != true and AgeInMonths()<2 and "Axillary Temperature (degrees Celcius)" > 38.5 'Cel'
+c."PSBI other than temperature" != true and AgeInMonths()<2 and "Axillary Temperature (degrees Celcius)" > 38.5 'Cel'
 */
 define "a-SecondTemperature":
-    Coalesce(c."psbi other than temperature",false)!=true and AgeInMonths()<2 and "OBSdefine.EmCare.B6.DE01" > 38.5 'Cel'
+    Coalesce(c."PSBI other than temperature",false)!=true and AgeInMonths()<2 and "OBSdefine.EmCare.B6.DE01" > 38.5 'Cel'
 
 /* 
 applicability-SecondTemperature : a-SecondTemperature
@@ -321,10 +321,10 @@ define "Unable to Perform Oral Fluid Test Profile":
 
 /* 
 DS : 
-Coalesce(c."danger signs",false)
+Coalesce(c."Danger Signs",false)
 */
 define "DS":
-    Coalesce(c."danger signs",false)
+    Coalesce(c."Danger Signs",false)
 
 /* 
 Danger Signs : DS
@@ -346,3 +346,10 @@ Alias
 */
 define "Not able to drink or breastfeed":
     "EmCare.B7.DE09"
+
+/* 
+BackReference : 
+back reference to resource
+*/
+define "BackReference":
+    Reference {reference: string { value: 'Questionnaire/EmCare.B22.AssessmentsTests'}}

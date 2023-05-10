@@ -2,13 +2,13 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareb1014symptoms2mp version '0.0.1.build.29'
+library emcareb1014symptoms2mp version '0.0.1.build.68'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.29' called Base
-include emcareobservation version '0.0.1.build.29' called obs
-include emcarevalueset version '0.0.1.build.29' called val
-include emcarecombineddataelements version '0.0.1.build.29' called c
+include emcarebase version '0.0.1.build.68' called Base
+include emcareobservation version '0.0.1.build.68' called obs
+include emcarevalueset version '0.0.1.build.68' called val
+include emcarecombineddataelements version '0.0.1.build.68' called c
 
 
 
@@ -39,10 +39,10 @@ define "Danger Signs":
 
 /* 
 Fever : 
-c."fever"
+c."Fever"
 */
 define "Fever":
-    c."fever"
+    c."Fever"
 
 /* 
 Severe Acute Malnutrition : 
@@ -85,3 +85,10 @@ Alias
 */
 define "Hot to Touch":
     "EmCare.B6.DE05"
+
+/* 
+BackReference : 
+back reference to resource
+*/
+define "BackReference":
+    Reference {reference: string { value: 'Questionnaire/EmCare.B10-14.Symptoms.2m.p'}}

@@ -22,13 +22,14 @@ required for the execution
 | Observation | EmCare.B10S2.DE04 | boolean/quantity | Stridor in a calm child |
 | Observation | EmCare.B10S2.DE07 | boolean/quantity | Oxygen Saturation |
 | Observation | EmCare.B12S2.DE01 | boolean/quantity | Stiff neck |
-| Observation | EmCare.B20S2.DE02 | boolean/quantity | Skin pinch of Abdomen |
+| Observation | EmCare.B20S2.DE02 | boolean/quantity | Skin Pinch of Abdomen |
 | Observation | EmCare.B11S2.DE06 | boolean/quantity | Restless and Irritable |
 | Observation | EmCare.B7.DE08b | boolean/quantity | Unconscious or Lethargic |
 | Observation | EmCare.B20S2.DE01 | boolean/quantity | Sunken Eyes |
 | Observation | EmCare.B18S2.DE08 | boolean/quantity | Movements |
 | Observation | EmCare.B18S1.DE02 | boolean/quantity | Difficulty with Feeding |
 | Observation | EmCare.B18S2.DE07 | boolean/quantity | Severe Chest Indrawing |
+| Observation | EmCare.B22.DE07 | boolean/quantity | Fast Breathing |
 | Observation | EmCare.B6.DE04 | boolean/quantity | Thermometer not available |
 | Observation | EmCare.B6.DE05 | boolean/quantity | Hot to Touch |
 | Observation | EmCare.B6.DE01A | boolean/quantity | Measured Temperature |
@@ -41,5 +42,4 @@ required for the execution
 | Observation | EmCare.B12S1.DE02 | boolean/quantity | Fever Reported |
 | Observation | EmCare.B6.DE17 | boolean/quantity | MUAC (Mid Upper Arm Circumference) |
 | Observation | EmCare.B6.DE16 | boolean/quantity | Weight for Age (WFA) Z Scores |
-| Observation | EmCare.B7.DE10 | boolean/quantity | Vomiting |
 

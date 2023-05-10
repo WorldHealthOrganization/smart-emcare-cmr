@@ -20,6 +20,7 @@ required for the execution
 | Observation | EmCare.B10S1.DE02 | boolean/quantity | Difficulty breathing for how long? |
 | Observation | EmCare.B10S2.DE06 | boolean/quantity | Recurrent Wheeze |
 | Observation | EmCare.B14S2.DE11 | boolean/quantity | Measles within the last 3 months |
+| Observation | EmCare.B22.DE07 | boolean/quantity | Fast Breathing |
 | Observation | EmCare.B22.DE22 | boolean/quantity | Inhaled Bronchodilator Trial Not Feasible or Available |
 | Observation | EmCare.B22.DE18 | boolean/quantity | Chest Indrawing (post inhaled bronchodilator trial) |
 | Observation | EmCare.B22.DE20 | boolean/quantity | Fast Breathing (post inhaled bronchodilator trial) |
@@ -27,7 +28,6 @@ required for the execution
 | Observation | EmCare.B11S1.DE02 | boolean/quantity | Diarrhoea for how long? |
 | Observation | EmCare.B11S1.DE05 | boolean/quantity | Blood in the stool in this Illness |
 | Observation | EmCare.B6.DE01 | boolean/quantity | Axillary Temperature (degrees Celcius) |
-| Observation | EmCare.B7.DE09 | boolean/quantity | Not able to drink or breastfeed |
 | Observation | EmCare.B13S2.DE01 | boolean/quantity | Tender swelling behind the ear |
 | Observation | EmCare.B13S2.DE02 | boolean/quantity | Pus Seen Draining from the Ear |
 | Observation | EmCare.B13S2.DE03 | boolean/quantity | Pus Seen Draining from the Ear for how long? |

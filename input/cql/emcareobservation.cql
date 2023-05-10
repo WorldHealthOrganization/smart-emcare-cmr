@@ -2,7 +2,7 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareobservation version '0.0.1.build.29'
+library emcareobservation version '0.0.1.build.68'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
 
@@ -65,7 +65,7 @@ code "Yellow Palms or Yellow Soles": 'EmCare.B19S2.DE02' from "EmCare" display '
 code "When did the Jaundice first appear?": 'EmCare.B19S2.DE04' from "EmCare" display 'When did the Jaundice first appear?'
 code "Yellow eyes": 'EmCare.B19S2.DE08' from "EmCare" display 'Yellow eyes'
 code "Sunken Eyes": 'EmCare.B20S2.DE01' from "EmCare" display 'Sunken Eyes'
-code "Skin pinch of Abdomen": 'EmCare.B20S2.DE02' from "EmCare" display 'Skin pinch of Abdomen'
+code "Skin Pinch of Abdomen": 'EmCare.B20S2.DE02' from "EmCare" display 'Skin Pinch of Abdomen'
 code "Restless and Irritable": 'EmCare.B11S2.DE06' from "EmCare" display 'Restless and Irritable'
 code "Weight Status": 'EmCare.B21S2.DE01' from "EmCare" display 'Weight Status'
 code "Breastfed how many times in 24 hours?": 'EmCare.B21S2.DE05' from "EmCare" display 'Breastfed how many times in 24 hours?'

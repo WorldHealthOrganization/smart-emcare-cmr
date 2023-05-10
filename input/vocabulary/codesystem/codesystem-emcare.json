@@ -89,6 +89,12 @@
             "definition": "Client's Caregiver's mobile telephone number"
         },
         {
+            "code": "rppatientid"
+        },
+        {
+            "code": "relatedpersonid"
+        },
+        {
             "code": "EmCare.A.DE24",
             "display": "Caregiver's Relationship to Client",
             "definition": "The relationship of the Caregiver to the client"
@@ -400,7 +406,7 @@
         },
         {
             "code": "EmCare.B20S2.DE02",
-            "display": "Skin pinch of Abdomen",
+            "display": "Skin Pinch of Abdomen",
             "definition": "The healthcare worker pinches the skin of the client's abdomen for 1 second and then observes how long the skin takes to return to normal once released"
         },
         {
@@ -654,7 +660,7 @@
         },
         {
             "code": "EmCare.B11S2.DE02",
-            "display": "Skin pinch of Abdomen",
+            "display": "Skin Pinch of Abdomen",
             "definition": "The healthcare worker pinches the skin of the client's abdomen for 1 second and then observes how long the skin takes to return to normal once released"
         },
         {
@@ -1136,22 +1142,6 @@
             "definition": "The client has Possible Shigella"
         },
         {
-            "code": "EmCare.B23.DE100",
-            "display": "Throat Abscess or Possible Diptheria"
-        },
-        {
-            "code": "EmCare.B23.DE6101",
-            "display": "Streptococcal Sore Throat"
-        },
-        {
-            "code": "EmCare.B23.DE6102",
-            "display": "Non-Streptococcal Sore Throat"
-        },
-        {
-            "code": "EmCare.B23.DE6103",
-            "display": "No Throat Problem"
-        },
-        {
             "code": "EmCare.B23.DE30",
             "display": "Mastoiditis"
         },
@@ -1553,6 +1543,16 @@
             "definition": "The child has wheezing for 7 or more days"
         },
         {
+            "code": "EmCare.B17S1.DE03",
+            "display": "Less than 10 days",
+            "definition": "The duration of mumps observed is less than 10 days"
+        },
+        {
+            "code": "EmCare.B17S1.DE04",
+            "display": "10 days or more",
+            "definition": "The duration of mumps observed is for 10 or more days"
+        },
+        {
             "code": "EmCare.B10S2.DE09",
             "display": "Oxygen saturation not measured",
             "definition": "The clients oxygen saturation was not measured"
@@ -1587,17 +1587,17 @@
         {
             "code": "EmCare.B20S2.DE03",
             "display": "Skin Pinch goes back very slowly (More than 2 seconds)",
-            "definition": "The client's skin goes back very slowly after Skin pinch of Abdomen (More than 2 seconds)"
+            "definition": "The client's skin goes back very slowly after Skin Pinch of Abdomen (More than 2 seconds)"
         },
         {
             "code": "EmCare.B20S2.DE04",
             "display": "Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)",
-            "definition": "The client's skin goes back slowly after Skin pinch of Abdomen (2 seconds or fewer, but not immediately)"
+            "definition": "The client's skin goes back slowly after Skin Pinch of Abdomen (2 seconds or fewer, but not immediately)"
         },
         {
             "code": "EmCare.B20S2.DE05",
             "display": "Skin Pinch goes back Normally (immediately)",
-            "definition": "The client's skin goes back normally after Skin pinch of Abdomen (immediately)"
+            "definition": "The client's skin goes back normally after Skin Pinch of Abdomen (immediately)"
         },
         {
             "code": "EmCare.B14S2.DE41",
@@ -2058,26 +2058,6 @@
             "code": "EmCare.B22.DE75",
             "display": "No Species Reported",
             "definition": "The client's Microscopy species result is no species reported"
-        },
-        {
-            "code": "EmCare.B17S1.DE03",
-            "display": "Red (congested) throat",
-            "definition": "The client has a Red (congested) throat"
-        },
-        {
-            "code": "EmCare.B17S1.DE04",
-            "display": "Exudate on Throat",
-            "definition": "The client has Exudate on Throat"
-        },
-        {
-            "code": "EmCare.B17S1.DE05",
-            "display": "Membrane on throat",
-            "definition": "The client has Membrane on throat"
-        },
-        {
-            "code": "none",
-            "display": "None of the listed throat problems observed",
-            "definition": "The client has None of the listed throat problems observed"
         },
         {
             "code": "EmCare.B17S1.DE08",

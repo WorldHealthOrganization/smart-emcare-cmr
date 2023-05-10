@@ -2,7 +2,7 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcarevalueset version '0.0.1.build.29'
+library emcarevalueset version '0.0.1.build.68'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
 
@@ -53,6 +53,8 @@ code "Low Malaria Risk": 'EmCare.B12S1.DE17' from "EmCare" display 'Low Malaria 
 code "No Malaria Risk": 'EmCare.B12S1.DE18' from "EmCare" display 'No Malaria Risk'
 code "Less than 7 days": 'EmCare.B12S1.DE04' from "EmCare" display 'Less than 7 days'
 code "7 days or more": 'EmCare.B10S2.DE05C' from "EmCare" display '7 days or more'
+code "Less than 10 days": 'EmCare.B17S1.DE03' from "EmCare" display 'Less than 10 days'
+code "10 days or more": 'EmCare.B17S1.DE04' from "EmCare" display '10 days or more'
 code "Oxygen saturation not measured": 'EmCare.B10S2.DE09' from "EmCare" display 'Oxygen saturation not measured'
 code "Two or more convulsions": 'EmCare.B7.DE06' from "EmCare" display 'Two or more convulsions'
 code "One Convulsion": 'EmCare.B7.DE05' from "EmCare" display 'One Convulsion'
@@ -149,10 +151,6 @@ code "Good Attachment": 'EmCare.B22.DE38' from "EmCare" display 'Good Attachment
 code "Not Sucking Effectively": 'EmCare.B22.DE39' from "EmCare" display 'Not Sucking Effectively'
 code "Sucking Effectively": 'EmCare.B22.DE40' from "EmCare" display 'Sucking Effectively'
 code "No Species Reported": 'EmCare.B22.DE75' from "EmCare" display 'No Species Reported'
-code "Red (congested) throat": 'EmCare.B17S1.DE03' from "EmCare" display 'Red (congested) throat'
-code "Exudate on Throat": 'EmCare.B17S1.DE04' from "EmCare" display 'Exudate on Throat'
-code "Membrane on throat": 'EmCare.B17S1.DE05' from "EmCare" display 'Membrane on throat'
-code "None of the listed throat problems observed": 'none' from "EmCare" display 'None of the listed throat problems observed'
 code "Yes, without difficulty": 'EmCare.B17S1.DE08' from "EmCare" display 'Yes, without difficulty'
 code "Difficulty in swallowing": 'EmCare.B17S1.DE09' from "EmCare" display 'Difficulty in swallowing'
 code "Unable to swallow": 'EmCare.B17S1.DE10' from "EmCare" display 'Unable to swallow'
