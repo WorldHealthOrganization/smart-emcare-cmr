@@ -1,0 +1,116 @@
+{
+    "resourceType": "Questionnaire",
+    "id": "emcare.b24.malariatest",
+    "meta": {
+        "profile": [
+            "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire"
+        ]
+    },
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+            "valueCode": "shareable"
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+            "valueCode": "computable"
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+            "valueCode": "publishable"
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+            "valueCode": "structured"
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-targetStructureMap",
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureMap/emcare.b24.malariatest"
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb24malariatest|0.0.1.build.174"
+        }
+    ],
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b24.malariatest",
+    "name": "EmCare.B24.MalariaTest",
+    "title": "EmCare.B24.MalariaTest",
+    "status": "active",
+    "experimental": false,
+    "subjectType": [
+        "Patient"
+    ],
+    "item": [
+        {
+            "linkId": "EmCare.B24.DE07",
+            "text": "Malaria test",
+            "type": "choice",
+            "required": true,
+            "repeats": false,
+            "answerOption": [
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B24.G.DE45",
+                        "display": "Malaria Positive"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B24.G.DE46",
+                        "display": "Malaria Negative"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B24.G.DE47",
+                        "display": "Malaria Status Unknown / Unavailable / Invalid / Not Feasible"
+                    }
+                }
+            ]
+        },
+        {
+            "linkId": "EmCare.B.H.DE24",
+            "text": "Microscopists expected to evaluate parasite density",
+            "type": "choice",
+            "required": true,
+            "repeats": false,
+            "answerOption": [
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "h",
+                        "display": "High Density"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "l",
+                        "display": "Low Density"
+                    }
+                }
+            ]
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                    "valueExpression": {
+                        "language": "fhirpath",
+                        "expression": "now()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                }
+            ],
+            "linkId": "timestamp",
+            "type": "dateTime",
+            "required": false
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+map 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureMap/emcare.b24.appetitetest' = 'emcare.b24.appetitetest'
+uses 'http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse' alias 'questionnaireResponse' as source
+uses 'http://hl7.org/fhir/StructureDefinition/Bundle' alias 'Bundle' as target
+uses 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/observation' alias 'Observation' as target
+uses 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation' alias 'EmCare Observation' as produced
+group bundletrans(source src : questionnaireResponse,target bundle : Bundle){
+    src -> bundle.id = uuid() 'id';
+    src -> bundle.type = 'batch' 'type';
+    src.item first as item  where linkId = 'EmCare.B24.G.DE23' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb24gde23(src, tgt) '988a8598';
+            } 'd6856358';
+        } '7805f8b5';
+    } '4d57b071';
+}
+

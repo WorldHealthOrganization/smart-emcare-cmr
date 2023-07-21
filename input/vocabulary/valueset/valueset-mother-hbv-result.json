@@ -1,0 +1,56 @@
+{
+    "resourceType": "ValueSet",
+    "id": "mother-hbv-result",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/mother-hbv-result",
+    "name": "valueset-mother-hbv-result",
+    "title": "EmCare.B17.DE62",
+    "status": "draft",
+    "experimental": false,
+    "description": "Mother viral hepatitis B test result",
+    "immutable": true,
+    "compose": {
+        "include": [
+            {
+                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                "concept": [
+                    {
+                        "code": "EmCare.B17.DE63",
+                        "display": "Not tested",
+                        "designation": [
+                            {
+                                "value": "The child's mother's is not tested for viral hepatitis B"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17.DE64",
+                        "display": "Results unknown",
+                        "designation": [
+                            {
+                                "value": "The child's mother's viral hepatitis B test result is unknown"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17.DE65",
+                        "display": "Presence of viral hepatitis B",
+                        "designation": [
+                            {
+                                "value": "The child's mother has presence of viral hepatitis B"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17.DE66",
+                        "display": "Abscence of viral hepatitis B",
+                        "designation": [
+                            {
+                                "value": "The child's mother has abscence of viral hepatitis B"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

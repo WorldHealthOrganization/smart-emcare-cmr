@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb22bronchodilatortest"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb22bronchodilatortest|0.0.1.build.174"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b22.bronchodilatortest",
@@ -168,7 +168,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "text/fhirpath",
+                        "language": "fhirpath",
                         "expression": "now()"
                     }
                 },

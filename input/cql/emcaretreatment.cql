@@ -2,13 +2,12 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcaretreatment version '0.0.1.build.68'
+library emcaretreatment version '0.0.1.build.174'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.68' called Base
-include emcareobservation version '0.0.1.build.68' called obs
-include emcarevalueset version '0.0.1.build.68' called val
-include emcarecondition version '0.0.1.build.68' called cond
+include emcarebase version '0.0.1.build.174' called Base
+include emcarevalueset version '0.0.1.build.174' called val
+include emcarecondition version '0.0.1.build.174' called cond
 
 
 
@@ -53,10 +52,10 @@ define "load-EmCare.C10.IT.DE04":
 
 /* 
 load-EmCare.C10.IT.DE05 : 
-HasCond(cond."severe dehydration") and AgeInMonths()>=2
+HasCond(cond."Severe Dehydration") and AgeInMonths()>=2
 */
 define "load-EmCare.C10.IT.DE05":
-    Base.HasCond(cond."severe dehydration") and AgeInMonths()>=2
+    Base.HasCond(cond."Severe Dehydration") and AgeInMonths()>=2
 
 /* 
 load-EmCare.C10.IT.DE06 : 
@@ -88,10 +87,10 @@ define "load-EmCare.C10.IT.DE09":
 
 /* 
 load-EmCare.C10.IT.DE10 : 
-HasCond(cond."possible shigella")
+false
 */
 define "load-EmCare.C10.IT.DE10":
-    Base.HasCond(cond."possible shigella")
+    false
 
 /* 
 load-EmCare.C10.IT.DE11 : 
@@ -99,34 +98,6 @@ HasCond(cond."dysentery")
 */
 define "load-EmCare.C10.IT.DE11":
     Base.HasCond(cond."dysentery")
-
-/* 
-load-EmCare.C10.IT.DE12 : 
-HasCond(cond."throat abscess or possible diptheria")
-*/
-define "load-EmCare.C10.IT.DE12":
-    Base.HasCond(cond."throat abscess or possible diptheria")
-
-/* 
-load-EmCare.C10.IT.DE13 : 
-HasCond(cond."streptococcal sore throat")
-*/
-define "load-EmCare.C10.IT.DE13":
-    Base.HasCond(cond."streptococcal sore throat")
-
-/* 
-load-EmCare.C10.IT.DE14 : 
-HasCond(cond."non-streptococcal sore throat")
-*/
-define "load-EmCare.C10.IT.DE14":
-    Base.HasCond(cond."non-streptococcal sore throat")
-
-/* 
-load-EmCare.C10.IT.DE15 : 
-HasCond(cond."no throat problem")
-*/
-define "load-EmCare.C10.IT.DE15":
-    Base.HasCond(cond."no throat problem")
 
 /* 
 load-EmCare.C10.IT.DE16 : 
@@ -165,17 +136,17 @@ define "load-EmCare.C10.IT.DE20":
 
 /* 
 load-EmCare.C10.IT.DE21 : 
-HasCond(cond."fever: possible bacterial infection")
+false
 */
 define "load-EmCare.C10.IT.DE21":
-    Base.HasCond(cond."fever: possible bacterial infection")
+    false
 
 /* 
 load-EmCare.C10.IT.DE22 : 
-HasCond(cond."fever: bacterial infection unlikely")
+false
 */
 define "load-EmCare.C10.IT.DE22":
-    Base.HasCond(cond."fever: bacterial infection unlikely")
+    false
 
 /* 
 load-EmCare.C10.IT.DE23 : 
@@ -193,10 +164,10 @@ define "load-EmCare.C10.IT.DE24":
 
 /* 
 load-EmCare.C10.IT.DE25 : 
-HasCond(cond."possible measles")
+false
 */
 define "load-EmCare.C10.IT.DE25":
-    Base.HasCond(cond."possible measles")
+    false
 
 /* 
 load-EmCare.C10.IT.DE42 : 
@@ -235,10 +206,10 @@ define "load-EmCare.C10.IT.DE27":
 
 /* 
 load-EmCare.C10.IT.DE28 : 
-HasCond(cond."papular urticaria or papular pruritic eruptions")
+false
 */
 define "load-EmCare.C10.IT.DE28":
-    Base.HasCond(cond."papular urticaria or papular pruritic eruptions")
+    false
 
 /* 
 load-EmCare.C10.IT.DE29 : 
@@ -270,10 +241,10 @@ define "load-EmCare.C10.IT.DE32":
 
 /* 
 load-EmCare.C10.IT.DE33 : 
-HasCond(cond."impetigo")
+false
 */
 define "load-EmCare.C10.IT.DE33":
-    Base.HasCond(cond."impetigo")
+    false
 
 /* 
 load-EmCare.C10.IT.DE34 : 
@@ -291,10 +262,10 @@ define "load-EmCare.C10.IT.DE35":
 
 /* 
 load-EmCare.C10.IT.DE36 : 
-HasCond(cond."seborrhoeic dermatitis")
+false
 */
 define "load-EmCare.C10.IT.DE36":
-    Base.HasCond(cond."seborrhoeic dermatitis")
+    false
 
 /* 
 load-EmCare.C10.IT.DE37 : 
@@ -340,17 +311,17 @@ define "load-EmCare.C10.IT.DE45":
 
 /* 
 load-EmCare.C10.IT.DE46 : 
-HasCond(cond."low weight for age")  and AgeInMonths()>=2
+false
 */
 define "load-EmCare.C10.IT.DE46":
-    Base.HasCond(cond."low weight for age")  and AgeInMonths()>=2
+    false
 
 /* 
 load-EmCare.C10.IT.DE47 : 
-HasCond(cond."low muac or visual report of wasting")
+false
 */
 define "load-EmCare.C10.IT.DE47":
-    Base.HasCond(cond."low muac or visual report of wasting")
+    false
 
 /* 
 load-EmCare.C10.IT.DE48 : 
@@ -403,10 +374,10 @@ define "load-EmCare.C10.IT.DE54":
 
 /* 
 load-EmCare.C10.IT.DE55 : 
-HasCond(cond."severe dehydration") and AgeInMonths()<2
+HasCond(cond."Severe Dehydration") and AgeInMonths()<2
 */
 define "load-EmCare.C10.IT.DE55":
-    Base.HasCond(cond."severe dehydration") and AgeInMonths()<2
+    Base.HasCond(cond."Severe Dehydration") and AgeInMonths()<2
 
 /* 
 load-EmCare.C10.IT.DE56 : 
@@ -448,4 +419,4 @@ BackReference :
 back reference to resource
 */
 define "BackReference":
-    Reference {reference: string { value: 'Questionnaire/EmCare.Treatment'}}
+    Reference {reference: string { value: 'Questionnaire/emcare.treatment'}}

@@ -1,0 +1,47 @@
+{
+    "resourceType": "ValueSet",
+    "id": "malaria-test",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/malaria-test",
+    "name": "valueset-malaria-test",
+    "title": "EmCare.B24.DE07",
+    "status": "draft",
+    "experimental": false,
+    "description": "Malaria test",
+    "immutable": true,
+    "compose": {
+        "include": [
+            {
+                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                "concept": [
+                    {
+                        "code": "EmCare.B24.G.DE45",
+                        "display": "Malaria Positive",
+                        "designation": [
+                            {
+                                "value": "The clients Malaria Test result is positive"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B24.G.DE46",
+                        "display": "Malaria Negative",
+                        "designation": [
+                            {
+                                "value": "The clients Malaria Test result is negative"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B24.G.DE47",
+                        "display": "Malaria Status Unknown / Unavailable / Invalid / Not Feasible",
+                        "designation": [
+                            {
+                                "value": "The clients Malaria Test result is unknown, invalid or not feasable"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

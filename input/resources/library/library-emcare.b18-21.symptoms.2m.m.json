@@ -8,7 +8,7 @@
             "value": "emcare.b18-21.symptoms.2m.m"
         }
     ],
-    "version": "0.0.1.build.68",
+    "version": "0.0.1.build.174",
     "name": "emcareb1821symptoms2mm",
     "title": "EmCare.B18-21.Symptoms.2m.m",
     "status": "active",
@@ -31,11 +31,11 @@
         },
         {
             "type": "depends-on",
-            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareobservation"
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarevalueset"
         },
         {
             "type": "depends-on",
-            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarevalueset"
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareobservation"
         }
     ],
     "parameter": [
@@ -64,7 +64,7 @@
         {
             "id": "ig-loader-emcareb1821symptoms2mm.cql",
             "contentType": "text/cql",
-            "data": "LyoKQGF1dGhvcjogUGF0cmljayBEZWxjcm9peApAZGVzY3JpcHRpb246IFRoaXMgbGlicmFyeSBpcyBwYXJ0IG9mIHRoZSBwcm9qZWN0IEVtQ2FyZQoqLwpsaWJyYXJ5IGVtY2FyZWIxODIxc3ltcHRvbXMybW0gdmVyc2lvbiAnMC4wLjEuYnVpbGQuNjgnCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnIGNhbGxlZCBGSElSSGVscGVycyAKaW5jbHVkZSBlbWNhcmViYXNlIHZlcnNpb24gJzAuMC4xLmJ1aWxkLjY4JyBjYWxsZWQgQmFzZQppbmNsdWRlIGVtY2FyZW9ic2VydmF0aW9uIHZlcnNpb24gJzAuMC4xLmJ1aWxkLjY4JyBjYWxsZWQgb2JzCmluY2x1ZGUgZW1jYXJldmFsdWVzZXQgdmVyc2lvbiAnMC4wLjEuYnVpbGQuNjgnIGNhbGxlZCB2YWwKCgoKCmNvbnRleHQgUGF0aWVudAoKCi8qIApPQlNkZWZpbmUuRW1DYXJlLkI2LkRFMDQgOiBUaGVybW9tZXRlciBub3QgYXZhaWxhYmxlCgoqLwpkZWZpbmUgIk9CU2RlZmluZS5FbUNhcmUuQjYuREUwNCI6CiAgICBCYXNlLkdldE9ic1ZhbHVlKCdFbUNhcmUuQjYuREUwNCcpCgovKiAKT0JTZGVmaW5lLkVtQ2FyZS5CNy5ERTAyIDogQ29udnVsc2luZyBOb3cKCiovCmRlZmluZSAiT0JTZGVmaW5lLkVtQ2FyZS5CNy5ERTAyIjoKICAgIEJhc2UuR2V0T2JzVmFsdWUoJ0VtQ2FyZS5CNy5ERTAyJykKCi8qIApBZ2VJbkRheXMgOiAKQWdlSW5EYXlzKCkKKi8KZGVmaW5lICJBZ2VJbkRheXMiOgogICAgQWdlSW5EYXlzKCkKCi8qIApFbUNhcmUuQjYuREUwNCA6IApvIlRoZXJtb21ldGVyIG5vdCBhdmFpbGFibGUiCiovCmRlZmluZSAiRW1DYXJlLkI2LkRFMDQiOgogICAgIk9CU2RlZmluZS5FbUNhcmUuQjYuREUwNCIKCi8qIApUaGVybW9tZXRlciBub3QgYXZhaWxhYmxlIDogRW1DYXJlLkI2LkRFMDQKQWxpYXMKKi8KZGVmaW5lICJUaGVybW9tZXRlciBub3QgYXZhaWxhYmxlIjoKICAgICJFbUNhcmUuQjYuREUwNCIKCi8qIApDb252dWxzaW5nIE5vdyA6IApvIkNvbnZ1bHNpbmcgTm93IgoqLwpkZWZpbmUgIkNvbnZ1bHNpbmcgTm93IjoKICAgICJPQlNkZWZpbmUuRW1DYXJlLkI3LkRFMDIiCgovKiAKQmFja1JlZmVyZW5jZSA6IApiYWNrIHJlZmVyZW5jZSB0byByZXNvdXJjZQoqLwpkZWZpbmUgIkJhY2tSZWZlcmVuY2UiOgogICAgUmVmZXJlbmNlIHtyZWZlcmVuY2U6IHN0cmluZyB7IHZhbHVlOiAnUXVlc3Rpb25uYWlyZS9FbUNhcmUuQjE4LTIxLlN5bXB0b21zLjJtLm0nfX0K"
+            "data": "LyoKQGF1dGhvcjogUGF0cmljayBEZWxjcm9peApAZGVzY3JpcHRpb246IFRoaXMgbGlicmFyeSBpcyBwYXJ0IG9mIHRoZSBwcm9qZWN0IEVtQ2FyZQoqLwpsaWJyYXJ5IGVtY2FyZWIxODIxc3ltcHRvbXMybW0gdmVyc2lvbiAnMC4wLjEuYnVpbGQuMTc0Jwp1c2luZyBGSElSIHZlcnNpb24gJzQuMC4xJwppbmNsdWRlIEZISVJIZWxwZXJzIHZlcnNpb24gJzQuMC4xJyBjYWxsZWQgRkhJUkhlbHBlcnMgCmluY2x1ZGUgZW1jYXJlYmFzZSB2ZXJzaW9uICcwLjAuMS5idWlsZC4xNzQnIGNhbGxlZCBCYXNlCmluY2x1ZGUgZW1jYXJldmFsdWVzZXQgdmVyc2lvbiAnMC4wLjEuYnVpbGQuMTc0JyBjYWxsZWQgdmFsCmluY2x1ZGUgZW1jYXJlb2JzZXJ2YXRpb24gdmVyc2lvbiAnMC4wLjEuYnVpbGQuMTc0JyBjYWxsZWQgb2JzCgoKCgpjb250ZXh0IFBhdGllbnQKCgovKiAKT0JTZGVmaW5lLkVtQ2FyZS5CNi5ERTA0IDogVGhlcm1vbWV0ZXIgbm90IGF2YWlsYWJsZQoKKi8KZGVmaW5lICJPQlNkZWZpbmUuRW1DYXJlLkI2LkRFMDQiOgogICAgQmFzZS5HZXRPYnNWYWx1ZSgnRW1DYXJlLkI2LkRFMDQnKQoKLyogCk9CU2RlZmluZS5FbUNhcmUuQjcuREUwMiA6IENvbnZ1bHNpbmcgTm93CgoqLwpkZWZpbmUgIk9CU2RlZmluZS5FbUNhcmUuQjcuREUwMiI6CiAgICBCYXNlLkdldE9ic1ZhbHVlKCdFbUNhcmUuQjcuREUwMicpCgovKiAKQWdlSW5EYXlzIDogCkFnZUluRGF5cygpCiovCmRlZmluZSAiQWdlSW5EYXlzIjoKICAgIEFnZUluRGF5cygpCgovKiAKRW1DYXJlLkI2LkRFMDQgOiAKbyJUaGVybW9tZXRlciBub3QgYXZhaWxhYmxlIgoqLwpkZWZpbmUgIkVtQ2FyZS5CNi5ERTA0IjoKICAgICJPQlNkZWZpbmUuRW1DYXJlLkI2LkRFMDQiCgovKiAKVGhlcm1vbWV0ZXIgbm90IGF2YWlsYWJsZSA6IEVtQ2FyZS5CNi5ERTA0CkFsaWFzCiovCmRlZmluZSAiVGhlcm1vbWV0ZXIgbm90IGF2YWlsYWJsZSI6CiAgICAiRW1DYXJlLkI2LkRFMDQiCgovKiAKQ29udnVsc2luZyBOb3cgOiAKbyJDb252dWxzaW5nIE5vdyIKKi8KZGVmaW5lICJDb252dWxzaW5nIE5vdyI6CiAgICAiT0JTZGVmaW5lLkVtQ2FyZS5CNy5ERTAyIgoKLyogCkJhY2tSZWZlcmVuY2UgOiAKYmFjayByZWZlcmVuY2UgdG8gcmVzb3VyY2UKKi8KZGVmaW5lICJCYWNrUmVmZXJlbmNlIjoKICAgIFJlZmVyZW5jZSB7cmVmZXJlbmNlOiBzdHJpbmcgeyB2YWx1ZTogJ1F1ZXN0aW9ubmFpcmUvZW1jYXJlLmIxOC0yMS5zeW1wdG9tcy4ybS5tJ319Cg=="
         }
     ]
 }

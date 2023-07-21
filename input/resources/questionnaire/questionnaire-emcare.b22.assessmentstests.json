@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb22assessmentstests"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb22assessmentstests|0.0.1.build.174"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b22.assessmentstests",
@@ -61,6 +61,63 @@
             ],
             "linkId": "force-collection",
             "type": "boolean",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "zscore_wfh"
+                    }
+                }
+            ],
+            "linkId": "zscore_wfh",
+            "type": "decimal",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "zscore_wfl"
+                    }
+                }
+            ],
+            "linkId": "zscore_wfl",
+            "type": "decimal",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "zscore_wfa"
+                    }
+                }
+            ],
+            "linkId": "zscore_wfa",
+            "type": "decimal",
             "required": false,
             "repeats": false
         },
@@ -129,6 +186,48 @@
         {
             "extension": [
                 {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "Palmar Pallor"
+                    }
+                }
+            ],
+            "linkId": "Palmar Pallor",
+            "type": "choice",
+            "required": false,
+            "repeats": false,
+            "answerOption": [
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B15S2.DE02",
+                        "display": "Severe Palmar Pallor"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B15S2.DE03",
+                        "display": "Some Palmar Pallor"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B15S2.DE04",
+                        "display": "No Palmar Pallor"
+                    }
+                }
+            ]
+        },
+        {
+            "extension": [
+                {
                     "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
                     "valueCode": "horizontal"
                 },
@@ -140,12 +239,80 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                     "valueExpression": {
                         "language": "text/cql-identifier",
-                        "expression": "EmCare.B7.DE10"
+                        "expression": "Obvious cause of fever"
                     }
                 }
             ],
-            "linkId": "EmCare.B7.DE10",
-            "text": "Vomiting Everything",
+            "linkId": "Obvious cause of fever",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "Fever"
+                    }
+                }
+            ],
+            "linkId": "Fever",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "Severe Classification up to assessments and tests excluding Severe Dehydration"
+                    }
+                }
+            ],
+            "linkId": "Severe Classification up to assessments and tests excluding Severe Dehydration",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "vomiting everything"
+                    }
+                }
+            ],
+            "linkId": "vomiting everything",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -212,30 +379,6 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                     "valueExpression": {
                         "language": "text/cql-identifier",
-                        "expression": "a-Hemoglobin"
-                    }
-                }
-            ],
-            "linkId": "a-Hemoglobin",
-            "text": "applicability-Hemoglobin",
-            "type": "boolean",
-            "required": false,
-            "repeats": false
-        },
-        {
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                },
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                    "valueBoolean": true
-                },
-                {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                    "valueExpression": {
-                        "language": "text/cql-identifier",
                         "expression": "a-SecondTemperature"
                     }
                 }
@@ -266,6 +409,50 @@
             ],
             "linkId": "a-FluidTest",
             "text": "applicability-FluidTest",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "a-AppetiteTest"
+                    }
+                }
+            ],
+            "linkId": "a-AppetiteTest",
+            "text": "applicability-AppetiteTest",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "a-MalariaTest"
+                    }
+                }
+            ],
+            "linkId": "a-MalariaTest",
+            "text": "applicability-MalariaTest",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -308,7 +495,7 @@
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                             "valueExpression": {
-                                "language": "text/fhirpath",
+                                "language": "fhirpath",
                                 "expression": "iif(%resource.repeat(item).where(linkId='Respiratory Rate profile').answer.first().exists(), %resource.repeat(item).where(linkId='Respiratory Rate profile').answer.first().value,{})"
                             }
                         }
@@ -334,7 +521,7 @@
                                 }
                             ],
                             "linkId": "EmCare.B22.DE01-help",
-                            "text": "<b>Count the number of breaths the child takes per minute</b> to determine if fast breathing is present.<br />\nIt is <b>very important that the child is calm</b> and still. If the child is moving or crying, you will not be able to get an accurate count of breaths. <br />\n<b>To count the breaths per minute,</b> use a watch with a second hand or a digital watch. Look for the breathing movement anywhere on the child\u2019s chest or abdomen. <br />\nThe number of breaths for <b>\u2018fast breathing\u2019 depends on the child\u2019s age.</b></p>\n\n\t<ul>\n\t\t<li>Under 2 months: More than 60 breaths per minute*</li>\n\t\t<li>2 to 11 months: More than 50 breaths per minute</li>\n\t\t<li>12 to 59 months: More than 40 breaths per minute</li>\n\t</ul>\n\n\t<p>*In young infants, a second measurement should be taken to confirm, unless there is already another sign of possible serious bacterial infection",
+                            "text": "<p><b>Count the number of breaths the child takes per minute</b> to determine if fast breathing is present.<br />\nIt is <b>very important that the child is calm</b> and still. If the child is moving or crying, you will not be able to get an accurate count of breaths. <br />\n<b>To count the breaths per minute,</b> use a watch with a second hand or a digital watch. Look for the breathing movement anywhere on the child\u2019s chest or abdomen. <br />\nThe number of breaths for <b>\u2018fast breathing\u2019 depends on the child\u2019s age.</b></p>\n\n\t<ul>\n\t\t<li>Under 2 months: More than 60 breaths per minute*</li>\n\t\t<li>2 to 11 months: More than 50 breaths per minute</li>\n\t\t<li>12 to 59 months: More than 40 breaths per minute</li>\n\t</ul>\n\n\t<p>*In young infants, a second measurement should be taken to confirm, unless there is already another sign of possible serious bacterial infection</p>",
                             "type": "display"
                         }
                     ]
@@ -428,7 +615,7 @@
                                         }
                                     ],
                                     "linkId": "EmCare.B22.DE04-help",
-                                    "text": "<b>Count the number of breaths the child takes per minute</b> to determine if fast breathing is present.<br />\nIt is <b>very important that the child is calm</b> and still. If the child is moving or crying, you will not be able to get an accurate count of breaths. <br />\n<b>To count the breaths per minute,</b> use a watch with a second hand or a digital watch. Look for the breathing movement anywhere on the child\u2019s chest or abdomen. <br />\nThe number of breaths for <b>\u2018fast breathing\u2019 depends on the child\u2019s age.</b></p>\n\n\t<ul>\n\t\t<li>Under 2 months: More than 60 breaths per minute*</li>\n\t\t<li>2 to 11 months: More than 50 breaths per minute</li>\n\t\t<li>12 to 59 months: More than 40 breaths per minute</li>\n\t</ul>\n\n\t<p>*In young infants, a second measurement should be taken to confirm, unless there is already another sign of possible serious bacterial infection",
+                                    "text": "<p><b>Count the number of breaths the child takes per minute</b> to determine if fast breathing is present.<br />\nIt is <b>very important that the child is calm</b> and still. If the child is moving or crying, you will not be able to get an accurate count of breaths. <br />\n<b>To count the breaths per minute,</b> use a watch with a second hand or a digital watch. Look for the breathing movement anywhere on the child\u2019s chest or abdomen. <br />\nThe number of breaths for <b>\u2018fast breathing\u2019 depends on the child\u2019s age.</b></p>\n\n\t<ul>\n\t\t<li>Under 2 months: More than 60 breaths per minute*</li>\n\t\t<li>2 to 11 months: More than 50 breaths per minute</li>\n\t\t<li>12 to 59 months: More than 40 breaths per minute</li>\n\t</ul>\n\n\t<p>*In young infants, a second measurement should be taken to confirm, unless there is already another sign of possible serious bacterial infection</p>",
                                     "type": "display"
                                 }
                             ]
@@ -487,8 +674,8 @@
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                             "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "iif(%resource.repeat(item).where(linkId='Fast Breathing profile').answer.first().empty() and (%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2 or %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE04').answer.first().exists() or (%resource.repeat(item).where(linkId='force-collection').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE05').answer.first().exists())),iif(%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value<2 and (%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE04').answer.first().value >= 60 '{Breaths}/min' or (%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE05').answer.first().exists()  and ( %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().value  >= 60 '{Breaths}/min'  or %resource.repeat(item).where(linkId='Respiratory Rate profile').answer.first().value  >= 60 '{Breaths}/min' ) ) ) or %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().value >= 50 '{Breaths}/min' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 12 or %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().value >= 40 '{Breaths}/min' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value>=12 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 60, true, false),{})"
+                                "language": "fhirpath",
+                                "expression": "iif(%resource.repeat(item).where(linkId='Fast Breathing profile').answer.first().empty() and (%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2 or %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE04').answer.first().exists() or %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().value < 60 '{Breaths}/min' or ( %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE05').answer.first().exists() and  ( %resource.repeat(item).where(linkId='Respiratory Rate profile').answer.first().value  >= 60 '{Breaths}/min'  ) and %resource.repeat(item).where(linkId='force-collection').answer.first().value=true )),iif((%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value<2 and (%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE04').answer.first().value >= 60 '{Breaths}/min' or (%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE05').answer.first().exists()  and ( %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().value  >= 60 '{Breaths}/min'  or %resource.repeat(item).where(linkId='Respiratory Rate profile').answer.first().value  >= 60 '{Breaths}/min' ) ) ) )or (%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().value >= 50 '{Breaths}/min' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 12 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2)or (%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().value >= 40 '{Breaths}/min' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value>=12 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 60) , true, false),{})"
                             }
                         }
                     ],
@@ -515,6 +702,78 @@
                             ],
                             "linkId": "EmCare.B22.DE07-help",
                             "text": "The number of breaths for <b>\u2018fast breathing\u2019 depends on the child\u2019s age.</b>   * Under 2 months: More than 60 breaths per minute* * 2 to 11 months: More than 50 breaths per minute * 12 to 59 months: More than 40 breaths per minute  *In young infants, a second measurement should be taken to confirm, unless there is already another sign of possible serious bacterial infection",
+                            "type": "display"
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=true"
+                            }
+                        }
+                    ],
+                    "linkId": "fastbreathing-True",
+                    "text": "Fast Breathing",
+                    "type": "display",
+                    "required": false,
+                    "repeats": false,
+                    "item": [
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                                    "valueCodeableConcept": {
+                                        "coding": [
+                                            {
+                                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                                "code": "help"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "linkId": "fastbreathing-True-help",
+                            "text": "<p>The number of breaths for <b>\u2018fast breathing\u2019 depends on the child\u2019s age.</b>   </p>\n\n\t<ul>\n\t\t<li>Under 2 months: More than 60 breaths per minute(*)</li>\n\t\t<li>2 to 11 months: More than 50 breaths per minute</li>\n\t\t<li>12 to 59 months: More than 40 breaths per minute</li>\n\t</ul>\n\n\t<p>*In young infants, a second measurement should be taken to confirm, unless there is already another sign of possible serious bacterial infection</p>",
+                            "type": "display"
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=false"
+                            }
+                        }
+                    ],
+                    "linkId": "fastbreathing-False",
+                    "text": "No Fast Breathing",
+                    "type": "display",
+                    "required": false,
+                    "repeats": false,
+                    "item": [
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                                    "valueCodeableConcept": {
+                                        "coding": [
+                                            {
+                                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                                "code": "help"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "linkId": "fastbreathing-False-help",
+                            "text": "<p>The number of breaths for <b>\u2018fast breathing\u2019 depends on the child\u2019s age.</b>   </p>\n\n\t<ul>\n\t\t<li>Under 2 months: More than 60 breaths per minute(*)</li>\n\t\t<li>2 to 11 months: More than 50 breaths per minute</li>\n\t\t<li>12 to 59 months: More than 40 breaths per minute</li>\n\t</ul>\n\n\t<p>*In young infants, a second measurement should be taken to confirm, unless there is already another sign of possible serious bacterial infection</p>",
                             "type": "display"
                         }
                     ]
@@ -608,7 +867,7 @@
                                 }
                             ],
                             "linkId": "EmCare.B22.DE08-help",
-                            "text": "If a child is unconscious do not try to carry out an oral fluid test (Exact wording <span class=\"caps\">TBC</span>) &#8211; Pop Up</p>\n\n\t<p>If a breastfeeding assessment and an Oral Fluid test is recommended for a child that is only breastfed then a pop up is required to ensure that the health care worker observes the signs for both and provides results for both tests. </p>\n\n\t<p>Oral Fluid Test<br />\nIf it is not possible to perform an oral fluid test, the health care worker should assume that the child is vomiting everything<br />\nFor a child under 6 months the health care worker can offer for the mother to breastfeed instead of receiving fluids</p>\n\n\t<p>Caution: Do not force fluids into an unconscious child , it can be dangerous. The fluid can cause them to choke or the fluid can go into their lungs. </p>\n\n\t<p>Pop up box to be made available with instructions on how to carry out an oral fluid test.<br />\nAdditional information <span class=\"caps\">TBC</span>",
+                            "text": "<p>If a child is unconscious do not try to carry out an oral fluid test (Exact wording <span class=\"caps\">TBC</span>) &#8211; Pop Up</p>\n\n\t<p>If a breastfeeding assessment and an Oral Fluid test is recommended for a child that is only breastfed then a pop up is required to ensure that the health care worker observes the signs for both and provides results for both tests. </p>\n\n\t<p>Oral Fluid Test<br />\nIf it is not possible to perform an oral fluid test, the health care worker should assume that the child is vomiting everything<br />\nFor a child under 6 months the health care worker can offer for the mother to breastfeed instead of receiving fluids</p>\n\n\t<p>Caution: Do not force fluids into an unconscious child , it can be dangerous. The fluid can cause them to choke or the fluid can go into their lungs. </p>\n\n\t<p>Pop up box to be made available with instructions on how to carry out an oral fluid test.<br />\nAdditional information <span class=\"caps\">TBC</span></p>",
                             "type": "display"
                         }
                     ]
@@ -663,13 +922,13 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B7.DE09').answer.first().value = true or %resource.repeat(item).where(linkId='EmCare.B7.DE10').answer.first().value =  true"
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B7.DE09').answer.first().value = true or %resource.repeat(item).where(linkId='vomiting everything').answer.first().value =  true"
                             }
                         },
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                             "valueExpression": {
-                                "language": "text/fhirpath",
+                                "language": "fhirpath",
                                 "expression": "%resource.repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE14').answer.first().exists() and (%resource.repeat(item).where(linkId='DS').answer.first().value = true  or %resource.repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE08').answer.where(value.code='EmCare.B22.DE09').exists() or %resource.repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE08').answer.where(value.code='EmCare.B22.DE10').exists() )"
                             }
                         }
@@ -690,7 +949,7 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE14').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B7.DE09').answer.first().value= false and %resource.repeat(item).where(linkId='EmCare.B7.DE10').answer.first().value = false"
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE14').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B7.DE09').answer.first().value= false and %resource.repeat(item).where(linkId='vomiting everything').answer.first().value = false"
                             }
                         }
                     ],
@@ -1142,7 +1401,7 @@
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                             "valueExpression": {
-                                "language": "text/fhirpath",
+                                "language": "fhirpath",
                                 "expression": "iif(%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE37').answer.first().value=true,'Not well Attached to Breast',iif(  %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE38').answer.first().value=true , 'Good Attachment',iif(  %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE39').answer.first().value=true,'Not Sucking Effectively',iif( %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE40').answer.first().value=true, 'Sucking Effectively',{}))))"
                             }
                         }
@@ -1167,7 +1426,7 @@
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                             "valueExpression": {
-                                "language": "text/fhirpath",
+                                "language": "fhirpath",
                                 "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE31').answer.first().value = false or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE32').answer.first().value = false or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE33').answer.first().value = false or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE34').answer.first().value = false"
                             }
                         }
@@ -1191,7 +1450,7 @@
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                             "valueExpression": {
-                                "language": "text/fhirpath",
+                                "language": "fhirpath",
                                 "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE31').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE32').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE33').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE34').answer.first().value = true"
                             }
                         }
@@ -1215,7 +1474,7 @@
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                             "valueExpression": {
-                                "language": "text/fhirpath",
+                                "language": "fhirpath",
                                 "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE35').answer.first().value = false"
                             }
                         }
@@ -1239,7 +1498,7 @@
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                             "valueExpression": {
-                                "language": "text/fhirpath",
+                                "language": "fhirpath",
                                 "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE35').answer.first().value = true"
                             }
                         }
@@ -1291,79 +1550,6 @@
                     "required": false,
                     "repeats": false,
                     "readOnly": true
-                }
-            ]
-        },
-        {
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire",
-                    "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b22.hemoglobin"
-                },
-                {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                    "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='a-Hemoglobin').answer.first().value = true"
-                    }
-                }
-            ],
-            "linkId": "EmCare.B22.Hemoglobin",
-            "type": "group",
-            "required": false,
-            "repeats": false,
-            "item": [
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.Hemoglobin').repeat(item).where(linkId='EmCare.B22.DE82').answer.first().empty()"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.B22.DE81",
-                    "text": "Hemoglobin (Hb) g/dL",
-                    "type": "quantity",
-                    "required": true,
-                    "repeats": false
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                            "valueCodeableConcept": {
-                                "coding": [
-                                    {
-                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                        "code": "check-box",
-                                        "display": "Check-box"
-                                    }
-                                ],
-                                "text": "Check-box"
-                            }
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.Hemoglobin').repeat(item).where(linkId='EmCare.B22.DE81').answer.first().empty()"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.B22.DE82",
-                    "type": "choice",
-                    "required": true,
-                    "repeats": true,
-                    "answerOption": [
-                        {
-                            "valueCoding": {
-                                "code": "EmCare.B22.DE82",
-                                "display": "Hemoglobin Test Not Available"
-                            }
-                        }
-                    ]
                 }
             ]
         },
@@ -1432,6 +1618,42 @@
                 {
                     "extension": [
                         {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                            "valueCode": "horizontal"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().empty() and ( %resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE46').answer.empty()  or %resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE46').answer.first().value=false )"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B24.G.DE40",
+                    "text": "Prefer to take Rectal Temperature (second measurement)",
+                    "type": "boolean",
+                    "required": false,
+                    "repeats": false
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                            "valueCoding": {
+                                "system": "http://unitsofmeasure.org",
+                                "code": "Cel"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B24.G.DE41",
+                    "text": "Rectal Temperature (second measurement)",
+                    "type": "quantity",
+                    "required": false,
+                    "repeats": false
+                },
+                {
+                    "extension": [
+                        {
                             "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                             "valueCodeableConcept": {
                                 "coding": [
@@ -1477,7 +1699,7 @@
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                             "valueExpression": {
-                                "language": "text/fhirpath",
+                                "language": "fhirpath",
                                 "expression": "iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 38.5 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2, '2',iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 38 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value< 2 or %resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 37.5 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2, 'High',iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value < 35.5 'Cel' , 'Low',iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value.exists(), 'Normal',{}))))"
                             }
                         }
@@ -1488,6 +1710,151 @@
                     "required": false,
                     "repeats": false,
                     "readOnly": true
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                            "valueCode": "horizontal"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='Malaria Test Unknown').answer.first().value.code = 'EmCare.B24.G.DE47'"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B22.DE52A",
+                    "text": "Obvious cause of fever",
+                    "type": "boolean",
+                    "required": false,
+                    "repeats": false
+                }
+            ]
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire",
+                    "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b24.appetitetest"
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='a-AppetiteTest').answer.first().value = true"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B24.AppetiteTest",
+            "type": "group",
+            "required": false,
+            "repeats": false,
+            "item": [
+                {
+                    "linkId": "EmCare.B24.G.DE23",
+                    "text": "Appetite Test (using <span class=\"caps\">RUTF</span>) Results",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B22.DE24",
+                                "display": "Able to finish RUTF"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B22.DE25",
+                                "display": "Unable to finish RUTF"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B22.DE26",
+                                "display": "RUTF Not Available"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire",
+                    "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b24.malariatest"
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='a-MalariaTest').answer.first().value = true"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B24.MalariaTest",
+            "type": "group",
+            "required": false,
+            "repeats": false,
+            "item": [
+                {
+                    "linkId": "EmCare.B24.DE07",
+                    "text": "Malaria test",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B24.G.DE45",
+                                "display": "Malaria Positive"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B24.G.DE46",
+                                "display": "Malaria Negative"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B24.G.DE47",
+                                "display": "Malaria Status Unknown / Unavailable / Invalid / Not Feasible"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "linkId": "EmCare.B.H.DE24",
+                    "text": "Microscopists expected to evaluate parasite density",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "h",
+                                "display": "High Density"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "l",
+                                "display": "Low Density"
+                            }
+                        }
+                    ]
                 }
             ]
         },
@@ -1497,7 +1864,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "(( %resource.repeat(item).where(linkId='a-RespiratoryRate').answer.empty()  or %resource.repeat(item).where(linkId='a-RespiratoryRate').answer.first().value=false ) ) and( ( %resource.repeat(item).where(linkId='a-FluidTest').answer.empty()  or %resource.repeat(item).where(linkId='a-FluidTest').answer.first().value=false ) ) and ( ( %resource.repeat(item).where(linkId='a-BronchodilatorTest').answer.empty()  or %resource.repeat(item).where(linkId='a-BronchodilatorTest').answer.first().value=false ) ) and (( %resource.repeat(item).where(linkId='a-BreastFeedingTest').answer.empty()  or %resource.repeat(item).where(linkId='a-BreastFeedingTest').answer.first().value=false ) ) and ( ( %resource.repeat(item).where(linkId='a-Hemoglobin').answer.empty()  or %resource.repeat(item).where(linkId='a-Hemoglobin').answer.first().value=false ) ) and (( %resource.repeat(item).where(linkId='a-SecondTemperature').answer.empty()  or %resource.repeat(item).where(linkId='a-SecondTemperature').answer.first().value=false ) )"
+                        "expression": "(( %resource.repeat(item).where(linkId='a-RespiratoryRate').answer.empty()  or %resource.repeat(item).where(linkId='a-RespiratoryRate').answer.first().value=false ) ) and( ( %resource.repeat(item).where(linkId='a-FluidTest').answer.empty()  or %resource.repeat(item).where(linkId='a-FluidTest').answer.first().value=false ) ) and ( ( %resource.repeat(item).where(linkId='a-BronchodilatorTest').answer.empty()  or %resource.repeat(item).where(linkId='a-BronchodilatorTest').answer.first().value=false ) ) and (( %resource.repeat(item).where(linkId='a-BreastFeedingTest').answer.empty()  or %resource.repeat(item).where(linkId='a-BreastFeedingTest').answer.first().value=false ) ) and (( %resource.repeat(item).where(linkId='a-SecondTemperature').answer.empty()  or %resource.repeat(item).where(linkId='a-SecondTemperature').answer.first().value=false ) )"
                     }
                 }
             ],
@@ -1685,9 +2052,32 @@
         {
             "extension": [
                 {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "Malaria Test Unknown"
+                    }
+                }
+            ],
+            "linkId": "Malaria Test Unknown",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "text/fhirpath",
+                        "language": "fhirpath",
                         "expression": "now()"
                     }
                 },

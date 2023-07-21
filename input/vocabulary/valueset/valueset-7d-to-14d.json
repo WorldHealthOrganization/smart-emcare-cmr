@@ -17,7 +17,7 @@
                         "display": "Less than 7 days",
                         "designation": [
                             {
-                                "value": "Symptom less than 7 days"
+                                "value": "Symptom Less than 7 days"
                             }
                         ]
                     },
@@ -32,10 +32,10 @@
                     },
                     {
                         "code": "EmCare.B10S1.DE08",
-                        "display": "14 days or more",
+                        "display": "More than 14 days",
                         "designation": [
                             {
-                                "value": "Symptom for 14 days or more"
+                                "value": "Symptom for More than 14 days"
                             }
                         ]
                     }

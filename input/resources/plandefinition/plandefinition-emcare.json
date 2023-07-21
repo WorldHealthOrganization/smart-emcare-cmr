@@ -8,7 +8,7 @@
             "value": "emcaredt01"
         }
     ],
-    "version": "0.0.1.build.68",
+    "version": "0.0.1.build.174",
     "name": "emcaredt01",
     "title": "emcaredt01",
     "type": {
@@ -21,9 +21,9 @@
     },
     "status": "active",
     "experimental": false,
-    "date": "2023-05-10T14:59:11+00:00",
+    "date": "2023-07-21T10:39:33+00:00",
     "library": [
-        "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcaredt01|0.0.1.build.68"
+        "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcaredt01|0.0.1.build.174"
     ],
     "action": [
         {
@@ -156,7 +156,7 @@
                 {
                     "kind": "applicability",
                     "expression": {
-                        "description": "clas.\"age >= 2 months to <60 months\"",
+                        "description": "clas.\"Age >= 2 months to <60 months\"",
                         "language": "text/cql-identifier",
                         "expression": "EmCareDT06"
                     }
@@ -214,7 +214,7 @@
                 {
                     "kind": "applicability",
                     "expression": {
-                        "description": "clas.\"age >= 2 months to <60 months\"",
+                        "description": "clas.\"Age >= 2 months to <60 months\"",
                         "language": "text/cql-identifier",
                         "expression": "EmCareDT08"
                     }
@@ -238,12 +238,12 @@
         },
         {
             "id": "emcaredt09",
-            "description": "Propose classification",
+            "description": "Suggestions for health prevention",
             "condition": [
                 {
                     "kind": "applicability",
                     "expression": {
-                        "description": "clas.\"age >= 2 months to <60 months\"",
+                        "description": "AgeInYears() < 5",
                         "language": "text/cql-identifier",
                         "expression": "EmCareDT09"
                     }
@@ -251,7 +251,32 @@
             ],
             "relatedAction": [
                 {
-                    "actionId": "EmCareDT10",
+                    "actionId": "EmCareDT07",
+                    "relationship": "after"
+                },
+                {
+                    "actionId": "EmCareDT08",
+                    "relationship": "after"
+                }
+            ],
+            "definitionCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ActivityDefinition/emcare.b17.healthprevention"
+        },
+        {
+            "id": "emcaredt10",
+            "description": "Propose classification",
+            "condition": [
+                {
+                    "kind": "applicability",
+                    "expression": {
+                        "description": "clas.\"Age >= 2 months to <60 months\"",
+                        "language": "text/cql-identifier",
+                        "expression": "EmCareDT10"
+                    }
+                }
+            ],
+            "relatedAction": [
+                {
+                    "actionId": "EmCareDT11",
                     "relationship": "after"
                 }
             ],
@@ -266,33 +291,8 @@
             "definitionCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ActivityDefinition/emcare.b23.classification"
         },
         {
-            "id": "emcaredt10",
-            "description": "Do Test",
-            "condition": [
-                {
-                    "kind": "applicability",
-                    "expression": {
-                        "description": "AgeInYears() < 5",
-                        "language": "text/cql-identifier",
-                        "expression": "EmCareDT10"
-                    }
-                }
-            ],
-            "relatedAction": [
-                {
-                    "actionId": "EmCareDT07",
-                    "relationship": "after"
-                },
-                {
-                    "actionId": "EmCareDT08",
-                    "relationship": "after"
-                }
-            ],
-            "definitionCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ActivityDefinition/emcare.b22.assessmentstests"
-        },
-        {
             "id": "emcaredt11",
-            "description": "Provide treatment",
+            "description": "Do Test",
             "condition": [
                 {
                     "kind": "applicability",
@@ -305,11 +305,32 @@
             ],
             "relatedAction": [
                 {
-                    "actionId": "EmCareDT12",
+                    "actionId": "EmCareDT09",
+                    "relationship": "after"
+                }
+            ],
+            "definitionCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ActivityDefinition/emcare.b22.assessmentstests"
+        },
+        {
+            "id": "emcaredt12",
+            "description": "Provide treatment",
+            "condition": [
+                {
+                    "kind": "applicability",
+                    "expression": {
+                        "description": "AgeInYears() < 5",
+                        "language": "text/cql-identifier",
+                        "expression": "EmCareDT12"
+                    }
+                }
+            ],
+            "relatedAction": [
+                {
+                    "actionId": "EmCareDT13",
                     "relationship": "after"
                 },
                 {
-                    "actionId": "EmCareDT09",
+                    "actionId": "EmCareDT10",
                     "relationship": "after"
                 }
             ],
@@ -324,7 +345,7 @@
             "definitionCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ActivityDefinition/emcare.treatment"
         },
         {
-            "id": "emcaredt12",
+            "id": "emcaredt13",
             "description": "Propose classification 2m",
             "condition": [
                 {
@@ -332,7 +353,7 @@
                     "expression": {
                         "description": "AgeInMonths() < 2",
                         "language": "text/cql-identifier",
-                        "expression": "EmCareDT12"
+                        "expression": "EmCareDT13"
                     }
                 }
             ],

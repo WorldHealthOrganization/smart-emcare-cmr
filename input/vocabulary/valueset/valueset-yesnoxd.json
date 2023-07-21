@@ -1,0 +1,56 @@
+{
+    "resourceType": "ValueSet",
+    "id": "yesnoxd",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/yesnoxd",
+    "name": "valueset-yesnoxd",
+    "title": "EmCare.B17.DE44A",
+    "status": "draft",
+    "experimental": false,
+    "description": "Child followed up at PMTCT for HIV investigation or management",
+    "immutable": true,
+    "compose": {
+        "include": [
+            {
+                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                "concept": [
+                    {
+                        "code": "EmCare.B17.DE42",
+                        "display": "Yes",
+                        "designation": [
+                            {
+                                "value": "The child is followed up at PMTCT for HIV investigation or management"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17.DE43",
+                        "display": "No",
+                        "designation": [
+                            {
+                                "value": "The child is not followed up at PMTCT for HIV investigation or management"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17.DE44B",
+                        "display": "Don't know",
+                        "designation": [
+                            {
+                                "value": "It is unknown if the child was followed up at PMTCT for HIV investigation or management"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17.DE44C",
+                        "display": "Declines to answer",
+                        "designation": [
+                            {
+                                "value": "The caregiver declines declines to answer whether the child is followed up at a PMTCT center or not"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

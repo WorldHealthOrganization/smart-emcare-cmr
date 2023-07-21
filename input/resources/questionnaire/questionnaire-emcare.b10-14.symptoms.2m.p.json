@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb1014symptoms2mp"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb1014symptoms2mp|0.0.1.build.174"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b10-14.symptoms.2m.p",
@@ -113,6 +113,10 @@
         {
             "extension": [
                 {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
                     "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
                     "valueBoolean": true
                 },
@@ -120,37 +124,14 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                     "valueExpression": {
                         "language": "text/cql-identifier",
-                        "expression": "Vomiting"
+                        "expression": "vomiting"
                     }
                 }
             ],
-            "linkId": "Vomiting",
-            "type": "choice",
+            "linkId": "vomiting",
+            "type": "boolean",
             "required": false,
-            "repeats": false,
-            "answerOption": [
-                {
-                    "valueCoding": {
-                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
-                        "code": "EmCare.B7.DE11",
-                        "display": "Vomiting Everything"
-                    }
-                },
-                {
-                    "valueCoding": {
-                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
-                        "code": "EmCare.B7.DE12",
-                        "display": "Vomiting but Not Everything"
-                    }
-                },
-                {
-                    "valueCoding": {
-                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
-                        "code": "EmCare.B7.DE13",
-                        "display": "No Vomiting"
-                    }
-                }
-            ]
+            "repeats": false
         },
         {
             "extension": [
@@ -177,6 +158,13 @@
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
                     "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "AgeInMonths"
+                    }
                 }
             ],
             "linkId": "AgeInMonths",
@@ -242,14 +230,14 @@
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B10S1.DE08",
-                        "display": "14 days or more"
+                        "display": "More than 14 days"
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B10S1.DE07",
-                        "display": "Less than 14 days"
+                        "display": "14 days or less"
                     }
                 }
             ]
@@ -307,14 +295,14 @@
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B10S1.DE08",
-                        "display": "14 days or more"
+                        "display": "More than 14 days"
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B10S1.DE07",
-                        "display": "Less than 14 days"
+                        "display": "14 days or less"
                     }
                 }
             ]
@@ -385,14 +373,14 @@
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B10S1.DE08",
-                        "display": "14 days or more"
+                        "display": "More than 14 days"
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B10S1.DE07",
-                        "display": "Less than 14 days"
+                        "display": "14 days or less"
                     }
                 }
             ]
@@ -447,7 +435,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='Severe Acute Malnutrition').answer.first().value.code= 'yes' and (%resource.repeat(item).where(linkId='EmCare.B11S1.DE01').answer.first().value .code= 'yes' or %resource.repeat(item).where(linkId='Vomiting').answer.first().value .code= 'yes')"
+                        "expression": "%resource.repeat(item).where(linkId='Severe Acute Malnutrition').answer.first().value= true and (%resource.repeat(item).where(linkId='EmCare.B11S1.DE01').answer.first().value = true or %resource.repeat(item).where(linkId='vomiting').answer.first().value = true)"
                     }
                 }
             ],
@@ -467,7 +455,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='Severe Acute Malnutrition').answer.first().value.code= 'yes' and (%resource.repeat(item).where(linkId='EmCare.B11S1.DE01').answer.first().value .code= 'yes' or %resource.repeat(item).where(linkId='Vomiting').answer.first().value .code= 'yes')"
+                        "expression": "%resource.repeat(item).where(linkId='Severe Acute Malnutrition').answer.first().value= true and (%resource.repeat(item).where(linkId='EmCare.B11S1.DE01').answer.first().value = true or %resource.repeat(item).where(linkId='vomiting').answer.first().value = true)"
                     }
                 }
             ],
@@ -495,13 +483,6 @@
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
                     "valueCode": "horizontal"
-                },
-                {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                    "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "(%resource.repeat(item).where(linkId='EmCare.B6.DE01').answer.first().value >= 37.5 'C' or %resource.repeat(item).where(linkId='EmCare.B6.DE05').answer.first().value = true)"
-                    }
                 }
             ],
             "linkId": "EmCare.B12S1.DE02",
@@ -511,10 +492,19 @@
             "repeats": false
         },
         {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B12S1.DE02').answer.first().value = true"
+                    }
+                }
+            ],
             "linkId": "EmCare.B12S1.DE03",
             "text": "Fever for how long?",
             "type": "choice",
-            "required": false,
+            "required": true,
             "repeats": false,
             "answerOption": [
                 {
@@ -550,7 +540,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='Fever').answer.first().value = true and (%resource.repeat(item).where(linkId='EmCare.B12S1.DE03').answer.first().value.code  = 'EmCare.B12S1.DE05' or %resource.repeat(item).where(linkId='EmCare.B12S1.DE03').answer.first().value.code  = 'EmCare.B12S1.DE05')"
+                        "expression": "%resource.repeat(item).where(linkId='Fever').answer.first().value = true and (%resource.repeat(item).where(linkId='EmCare.B12S1.DE03').answer.first().value.code  = 'EmCare.B12S1.DE05' or %resource.repeat(item).where(linkId='EmCare.B12S1.DE03').answer.first().value.code  = 'EmCare.B12S1.DE04A')"
                     }
                 }
             ],
@@ -592,7 +582,7 @@
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B12S1.DE12",
-                        "display": "Skin problem"
+                        "display": "Skin Pain"
                     }
                 },
                 {
@@ -614,51 +604,12 @@
         {
             "extension": [
                 {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                    "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='Fever').answer.first().value= true"
-                    }
-                }
-            ],
-            "linkId": "EmCare.B12S1.DE15",
-            "text": "Malaria Risk",
-            "type": "choice",
-            "required": true,
-            "repeats": false,
-            "answerOption": [
-                {
-                    "valueCoding": {
-                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
-                        "code": "EmCare.B12S1.DE16",
-                        "display": "High Malaria Risk"
-                    }
-                },
-                {
-                    "valueCoding": {
-                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
-                        "code": "EmCare.B12S1.DE17",
-                        "display": "Low Malaria Risk"
-                    }
-                },
-                {
-                    "valueCoding": {
-                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
-                        "code": "EmCare.B12S1.DE18",
-                        "display": "No Malaria Risk"
-                    }
-                }
-            ]
-        },
-        {
-            "extension": [
-                {
                     "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
                     "valueCode": "horizontal"
                 }
             ],
             "linkId": "EmCare.B13S1.DE01",
-            "text": "Ear problem",
+            "text": "Ear Problem",
             "type": "boolean",
             "required": true,
             "repeats": false
@@ -678,7 +629,7 @@
                 }
             ],
             "linkId": "EmCare.B13S1.DE02",
-            "text": "Ear pain",
+            "text": "Ear Pain",
             "type": "boolean",
             "required": true,
             "repeats": false,
@@ -718,7 +669,7 @@
                 }
             ],
             "linkId": "EmCare.B13S1.DE03",
-            "text": "Ear discharge",
+            "text": "Ear Discharge",
             "type": "boolean",
             "required": true,
             "repeats": false
@@ -734,7 +685,7 @@
                 }
             ],
             "linkId": "EmCare.B13S1.DE04",
-            "text": "Ear discharge for how long?",
+            "text": "Ear Discharge for how long?",
             "type": "choice",
             "required": true,
             "repeats": false,
@@ -743,14 +694,14 @@
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B10S1.DE08",
-                        "display": "14 days or more"
+                        "display": "More than 14 days"
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B10S1.DE07",
-                        "display": "Less than 14 days"
+                        "display": "14 days or less"
                     }
                 }
             ]
@@ -778,7 +729,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "( %resource.repeat(item).where(linkId='Danger Signs').answer.empty()  or %resource.repeat(item).where(linkId='Danger Signs').answer.first().value=false )or%resource.repeat(item).where(linkId='EmCare.B12S1.DE08').answer.first().value.code != 'EmCare.B14S2.DE44'"
+                        "expression": "( %resource.repeat(item).where(linkId='Danger Signs').answer.empty()  or %resource.repeat(item).where(linkId='Danger Signs').answer.first().value=false ) or %resource.repeat(item).where(linkId='EmCare.B12S1.DE08').answer.first().value.code != 'EmCare.B12S1.DE12'"
                     }
                 }
             ],
@@ -798,7 +749,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "( %resource.repeat(item).where(linkId='Danger Signs').answer.empty()  or %resource.repeat(item).where(linkId='Danger Signs').answer.first().value=false )or%resource.repeat(item).where(linkId='EmCare.B12S1.DE08').answer.first().value.code != 'EmCare.B14S2.DE44'"
+                        "expression": "( %resource.repeat(item).where(linkId='Danger Signs').answer.empty()  or %resource.repeat(item).where(linkId='Danger Signs').answer.first().value=false ) or %resource.repeat(item).where(linkId='EmCare.B12S1.DE08').answer.first().value.code != 'EmCare.B12S1.DE12'"
                     }
                 }
             ],
@@ -843,7 +794,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "text/fhirpath",
+                        "language": "fhirpath",
                         "expression": "now()"
                     }
                 },

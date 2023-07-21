@@ -1,0 +1,38 @@
+{
+    "resourceType": "ValueSet",
+    "id": "deworming-record",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/deworming-record",
+    "name": "valueset-deworming-record",
+    "title": "EmCare.B17.DE16",
+    "status": "draft",
+    "experimental": false,
+    "description": "Can record of Deworming treatment be obtained at a future visit?",
+    "immutable": true,
+    "compose": {
+        "include": [
+            {
+                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                "concept": [
+                    {
+                        "code": "EmCare.B17.DE17",
+                        "display": "Yes, Date documented, but not here",
+                        "designation": [
+                            {
+                                "value": "The caregiver is able to provide the deworming treatment date, but not today"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17.DE18",
+                        "display": "No, Do not know when last dose was given",
+                        "designation": [
+                            {
+                                "value": "The caregiver is not able to tell the healthcare worker when the last dose was given"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

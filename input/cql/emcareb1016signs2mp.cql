@@ -2,13 +2,13 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareb1016signs2mp version '0.0.1.build.68'
+library emcareb1016signs2mp version '0.0.1.build.174'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.68' called Base
-include emcareobservation version '0.0.1.build.68' called obs
-include emcarevalueset version '0.0.1.build.68' called val
-include emcarecombineddataelements version '0.0.1.build.68' called clas
+include emcarebase version '0.0.1.build.174' called Base
+include emcarevalueset version '0.0.1.build.174' called val
+include emcarecombineddataelements version '0.0.1.build.174' called clas
+include emcareobservation version '0.0.1.build.174' called obs
 
 
 
@@ -59,6 +59,13 @@ define "OBSdefine.EmCare.B7.DE09":
     Base.GetObsValue('EmCare.B7.DE09')
 
 /* 
+OBSdefine.EmCare.B13S1.DE01 : Ear Problem
+
+*/
+define "OBSdefine.EmCare.B13S1.DE01":
+    Base.GetObsValue('EmCare.B13S1.DE01')
+
+/* 
 OBSdefine.EmCare.B14S1.DE01 : Eye Problem
 
 */
@@ -73,14 +80,14 @@ define "OBSdefine.EmCare.B14S1.DE02":
     Base.GetObsValue('EmCare.B14S1.DE02')
 
 /* 
-OBSdefine.EmCare.B13S1.DE03 : Ear discharge
+OBSdefine.EmCare.B13S1.DE03 : Ear Discharge
 
 */
 define "OBSdefine.EmCare.B13S1.DE03":
     Base.GetObsValue('EmCare.B13S1.DE03')
 
 /* 
-OBSdefine.EmCare.B13S1.DE04 : Ear discharge for how long?
+OBSdefine.EmCare.B13S1.DE04 : Ear Discharge for how long?
 
 */
 define "OBSdefine.EmCare.B13S1.DE04":
@@ -116,10 +123,10 @@ define "OBSdefine.EmCare.B22.DE07":
 
 /* 
 Danger Signs : 
-Coalesce(clas."emcare.b.g.de01", false)
+Coalesce(clas."Danger Signs", false)
 */
 define "Danger Signs":
-    Coalesce(clas."emcare.b.g.de01", false)
+    Coalesce(clas."Danger Signs", false)
 
 /* 
 AgeInMonths : 
@@ -196,7 +203,7 @@ Ear Problem :
 o"Ear Problem"
 */
 define "Ear Problem":
-    o"Ear Problem"
+    "OBSdefine.EmCare.B13S1.DE01"
 
 /* 
 Eye Problem : 
@@ -213,17 +220,17 @@ define "Skin Problem":
     "OBSdefine.EmCare.B14S1.DE02"
 
 /* 
-Ear discharge : 
-o"Ear discharge"
+Ear Discharge : 
+o"Ear Discharge"
 */
-define "Ear discharge":
+define "Ear Discharge":
     "OBSdefine.EmCare.B13S1.DE03"
 
 /* 
-Ear discharge for how long? : 
-o"Ear discharge for how long?"
+Ear Discharge for how long? : 
+o"Ear Discharge for how long?"
 */
-define "Ear discharge for how long?":
+define "Ear Discharge for how long?":
     "OBSdefine.EmCare.B13S1.DE04"
 
 /* 
@@ -280,4 +287,4 @@ BackReference :
 back reference to resource
 */
 define "BackReference":
-    Reference {reference: string { value: 'Questionnaire/EmCare.B10-16.Signs.2m.p'}}
+    Reference {reference: string { value: 'Questionnaire/emcare.b10-16.signs.2m.p'}}

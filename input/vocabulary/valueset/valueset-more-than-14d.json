@@ -14,19 +14,19 @@
                 "concept": [
                     {
                         "code": "EmCare.B10S1.DE08",
-                        "display": "14 days or more",
+                        "display": "More than 14 days",
                         "designation": [
                             {
-                                "value": "The client has had ear discharge for 14 days or more"
+                                "value": "The client has had ear discharge for more than 14 days"
                             }
                         ]
                     },
                     {
                         "code": "EmCare.B10S1.DE07",
-                        "display": "Less than 14 days",
+                        "display": "14 days or less",
                         "designation": [
                             {
-                                "value": "The client has had ear discharge for less than 14 days"
+                                "value": "The client has had ear discharge for 14 days or less"
                             }
                         ]
                     }

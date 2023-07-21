@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb1016signs2mp"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb1016signs2mp|0.0.1.build.174"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b10-16.signs.2m.p",
@@ -135,6 +135,10 @@
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
                     "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
                 },
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
@@ -347,11 +351,11 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                     "valueExpression": {
                         "language": "text/cql-identifier",
-                        "expression": "Ear discharge"
+                        "expression": "Ear Discharge"
                     }
                 }
             ],
-            "linkId": "Ear discharge",
+            "linkId": "Ear Discharge",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -366,11 +370,11 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                     "valueExpression": {
                         "language": "text/cql-identifier",
-                        "expression": "Ear discharge for how long?"
+                        "expression": "Ear Discharge for how long?"
                     }
                 }
             ],
-            "linkId": "Ear discharge for how long?",
+            "linkId": "Ear Discharge for how long?",
             "type": "choice",
             "required": false,
             "repeats": false
@@ -436,7 +440,7 @@
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                             "valueExpression": {
-                                "language": "text/fhirpath",
+                                "language": "fhirpath",
                                 "expression": "iif(%resource.repeat(item).where(linkId='Respiratory Rate profile').answer.first().exists(), %resource.repeat(item).where(linkId='Respiratory Rate profile').answer.first().value,{})"
                             }
                         }
@@ -462,7 +466,7 @@
                                 }
                             ],
                             "linkId": "EmCare.B22.DE01-help",
-                            "text": "<b>Count the number of breaths the child takes per minute</b> to determine if fast breathing is present.<br />\nIt is <b>very important that the child is calm</b> and still. If the child is moving or crying, you will not be able to get an accurate count of breaths. <br />\n<b>To count the breaths per minute,</b> use a watch with a second hand or a digital watch. Look for the breathing movement anywhere on the child\u2019s chest or abdomen. <br />\nThe number of breaths for <b>\u2018fast breathing\u2019 depends on the child\u2019s age.</b></p>\n\n\t<ul>\n\t\t<li>Under 2 months: More than 60 breaths per minute*</li>\n\t\t<li>2 to 11 months: More than 50 breaths per minute</li>\n\t\t<li>12 to 59 months: More than 40 breaths per minute</li>\n\t</ul>\n\n\t<p>*In young infants, a second measurement should be taken to confirm, unless there is already another sign of possible serious bacterial infection",
+                            "text": "<p><b>Count the number of breaths the child takes per minute</b> to determine if fast breathing is present.<br />\nIt is <b>very important that the child is calm</b> and still. If the child is moving or crying, you will not be able to get an accurate count of breaths. <br />\n<b>To count the breaths per minute,</b> use a watch with a second hand or a digital watch. Look for the breathing movement anywhere on the child\u2019s chest or abdomen. <br />\nThe number of breaths for <b>\u2018fast breathing\u2019 depends on the child\u2019s age.</b></p>\n\n\t<ul>\n\t\t<li>Under 2 months: More than 60 breaths per minute*</li>\n\t\t<li>2 to 11 months: More than 50 breaths per minute</li>\n\t\t<li>12 to 59 months: More than 40 breaths per minute</li>\n\t</ul>\n\n\t<p>*In young infants, a second measurement should be taken to confirm, unless there is already another sign of possible serious bacterial infection</p>",
                             "type": "display"
                         }
                     ]
@@ -556,7 +560,7 @@
                                         }
                                     ],
                                     "linkId": "EmCare.B22.DE04-help",
-                                    "text": "<b>Count the number of breaths the child takes per minute</b> to determine if fast breathing is present.<br />\nIt is <b>very important that the child is calm</b> and still. If the child is moving or crying, you will not be able to get an accurate count of breaths. <br />\n<b>To count the breaths per minute,</b> use a watch with a second hand or a digital watch. Look for the breathing movement anywhere on the child\u2019s chest or abdomen. <br />\nThe number of breaths for <b>\u2018fast breathing\u2019 depends on the child\u2019s age.</b></p>\n\n\t<ul>\n\t\t<li>Under 2 months: More than 60 breaths per minute*</li>\n\t\t<li>2 to 11 months: More than 50 breaths per minute</li>\n\t\t<li>12 to 59 months: More than 40 breaths per minute</li>\n\t</ul>\n\n\t<p>*In young infants, a second measurement should be taken to confirm, unless there is already another sign of possible serious bacterial infection",
+                                    "text": "<p><b>Count the number of breaths the child takes per minute</b> to determine if fast breathing is present.<br />\nIt is <b>very important that the child is calm</b> and still. If the child is moving or crying, you will not be able to get an accurate count of breaths. <br />\n<b>To count the breaths per minute,</b> use a watch with a second hand or a digital watch. Look for the breathing movement anywhere on the child\u2019s chest or abdomen. <br />\nThe number of breaths for <b>\u2018fast breathing\u2019 depends on the child\u2019s age.</b></p>\n\n\t<ul>\n\t\t<li>Under 2 months: More than 60 breaths per minute*</li>\n\t\t<li>2 to 11 months: More than 50 breaths per minute</li>\n\t\t<li>12 to 59 months: More than 40 breaths per minute</li>\n\t</ul>\n\n\t<p>*In young infants, a second measurement should be taken to confirm, unless there is already another sign of possible serious bacterial infection</p>",
                                     "type": "display"
                                 }
                             ]
@@ -615,8 +619,8 @@
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                             "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "iif(%resource.repeat(item).where(linkId='Fast Breathing profile').answer.first().empty() and (%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2 or %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE04').answer.first().exists() or (%resource.repeat(item).where(linkId='force-collection').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE05').answer.first().exists())),iif(%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value<2 and (%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE04').answer.first().value >= 60 '{Breaths}/min' or (%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE05').answer.first().exists()  and ( %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().value  >= 60 '{Breaths}/min'  or %resource.repeat(item).where(linkId='Respiratory Rate profile').answer.first().value  >= 60 '{Breaths}/min' ) ) ) or %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().value >= 50 '{Breaths}/min' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 12 or %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().value >= 40 '{Breaths}/min' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value>=12 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 60, true, false),{})"
+                                "language": "fhirpath",
+                                "expression": "iif(%resource.repeat(item).where(linkId='Fast Breathing profile').answer.first().empty() and (%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2 or %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE04').answer.first().exists() or %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().value < 60 '{Breaths}/min' or ( %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE05').answer.first().exists() and  ( %resource.repeat(item).where(linkId='Respiratory Rate profile').answer.first().value  >= 60 '{Breaths}/min'  ) and %resource.repeat(item).where(linkId='force-collection').answer.first().value=true )),iif((%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value<2 and (%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE04').answer.first().value >= 60 '{Breaths}/min' or (%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE05').answer.first().exists()  and ( %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().value  >= 60 '{Breaths}/min'  or %resource.repeat(item).where(linkId='Respiratory Rate profile').answer.first().value  >= 60 '{Breaths}/min' ) ) ) )or (%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().value >= 50 '{Breaths}/min' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 12 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2)or (%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().value >= 40 '{Breaths}/min' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value>=12 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 60) , true, false),{})"
                             }
                         }
                     ],
@@ -643,6 +647,78 @@
                             ],
                             "linkId": "EmCare.B22.DE07-help",
                             "text": "The number of breaths for <b>\u2018fast breathing\u2019 depends on the child\u2019s age.</b>   * Under 2 months: More than 60 breaths per minute* * 2 to 11 months: More than 50 breaths per minute * 12 to 59 months: More than 40 breaths per minute  *In young infants, a second measurement should be taken to confirm, unless there is already another sign of possible serious bacterial infection",
+                            "type": "display"
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=true"
+                            }
+                        }
+                    ],
+                    "linkId": "fastbreathing-True",
+                    "text": "Fast Breathing",
+                    "type": "display",
+                    "required": false,
+                    "repeats": false,
+                    "item": [
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                                    "valueCodeableConcept": {
+                                        "coding": [
+                                            {
+                                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                                "code": "help"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "linkId": "fastbreathing-True-help",
+                            "text": "<p>The number of breaths for <b>\u2018fast breathing\u2019 depends on the child\u2019s age.</b>   </p>\n\n\t<ul>\n\t\t<li>Under 2 months: More than 60 breaths per minute(*)</li>\n\t\t<li>2 to 11 months: More than 50 breaths per minute</li>\n\t\t<li>12 to 59 months: More than 40 breaths per minute</li>\n\t</ul>\n\n\t<p>*In young infants, a second measurement should be taken to confirm, unless there is already another sign of possible serious bacterial infection</p>",
+                            "type": "display"
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=false"
+                            }
+                        }
+                    ],
+                    "linkId": "fastbreathing-False",
+                    "text": "No Fast Breathing",
+                    "type": "display",
+                    "required": false,
+                    "repeats": false,
+                    "item": [
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                                    "valueCodeableConcept": {
+                                        "coding": [
+                                            {
+                                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                                "code": "help"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "linkId": "fastbreathing-False-help",
+                            "text": "<p>The number of breaths for <b>\u2018fast breathing\u2019 depends on the child\u2019s age.</b>   </p>\n\n\t<ul>\n\t\t<li>Under 2 months: More than 60 breaths per minute(*)</li>\n\t\t<li>2 to 11 months: More than 50 breaths per minute</li>\n\t\t<li>12 to 59 months: More than 40 breaths per minute</li>\n\t</ul>\n\n\t<p>*In young infants, a second measurement should be taken to confirm, unless there is already another sign of possible serious bacterial infection</p>",
                             "type": "display"
                         }
                     ]
@@ -684,7 +760,7 @@
                         }
                     ],
                     "linkId": "EmCare.B10S2.DE03-help",
-                    "text": "<b><span class=\"caps\">NORMAL</span>:</b> When child breaths <b>IN,</b> chest wall moves <b><span class=\"caps\">OUT</span></b><br />\n<b><span class=\"caps\">CHEST</span> <span class=\"caps\">INDRAWING</span>:</b> When child breaths <b>IN,</b> chest wall moves <b>IN</b></p>\n\n\t<p>Chest indrawing occurs when the child needs to make a greater effort than normal to breathe in. <b>You will look for chest indrawing when the child breathes IN.</b></p>\n\n\t<p>In normal breathing, the whole chest wall (upper and lower) and the abdomen move <span class=\"caps\">OUT</span> when the child breathes IN. <b>The child has chest indrawing if the lower chest wall (lower ribs) goes IN when the child breathes IN.</b>",
+                    "text": "<p><b><span class=\"caps\">NORMAL</span>:</b> When child breaths <b>IN,</b> chest wall moves <b><span class=\"caps\">OUT</span></b><br />\n<b><span class=\"caps\">CHEST</span> <span class=\"caps\">INDRAWING</span>:</b> When child breaths <b>IN,</b> chest wall moves <b>IN</b></p>\n\n\t<p>Chest indrawing occurs when the child needs to make a greater effort than normal to breathe in. <b>You will look for chest indrawing when the child breathes IN.</b></p>\n\n\t<p>In normal breathing, the whole chest wall (upper and lower) and the abdomen move <span class=\"caps\">OUT</span> when the child breathes IN. <b>The child has chest indrawing if the lower chest wall (lower ribs) goes IN when the child breathes IN.</b></p>",
                     "type": "display"
                 }
             ]
@@ -724,7 +800,7 @@
                         }
                     ],
                     "linkId": "EmCare.B10S2.DE04-help",
-                    "text": "<b>Stridor is a harsh noise made when a child breathes IN.</b><br />\nPut your ear near the child\u2019s mouth because stridor can be difficult to hear. Sometimes you will hear a wet noise if the child\u2019s nose is blocked. Clear the nose, and listen again.</p>\n\n\t<p><b>Be sure to look and listen for stridor when the child is calm.</b><br />\nA child who is not very ill may have stridor only when he is crying or upset. However, a child who is calm and also has stridor has a dangerous situation.",
+                    "text": "<p><b>Stridor is a harsh noise made when a child breathes IN.</b><br />\nPut your ear near the child\u2019s mouth because stridor can be difficult to hear. Sometimes you will hear a wet noise if the child\u2019s nose is blocked. Clear the nose, and listen again.</p>\n\n\t<p><b>Be sure to look and listen for stridor when the child is calm.</b><br />\nA child who is not very ill may have stridor only when he is crying or upset. However, a child who is calm and also has stridor has a dangerous situation.</p>",
                     "type": "display"
                 }
             ]
@@ -860,46 +936,6 @@
             "type": "boolean",
             "required": true,
             "repeats": false
-        },
-        {
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                },
-                {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                    "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='EmCare.B10S2.DE05').answer.first().value = true"
-                    }
-                }
-            ],
-            "linkId": "EmCare.B10S2.DE06",
-            "text": "Recurrent Wheeze",
-            "type": "boolean",
-            "required": false,
-            "repeats": false,
-            "item": [
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                            "valueCodeableConcept": {
-                                "coding": [
-                                    {
-                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                        "code": "help"
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.B10S2.DE06-help",
-                    "text": "Recurrent wheezing can be a sign of asthma, tuberculosis or other important health problems which require further assessment",
-                    "type": "display"
-                }
-            ]
         },
         {
             "extension": [
@@ -1128,7 +1164,7 @@
                         }
                     ],
                     "linkId": "EmCare.B11S2.DE02-help",
-                    "text": "To assess dehydration using the skin pinch<br />\n1. <b><span class=\"caps\">ASK</span></b> the mother to place the child on the examining table so that the child is flat on his back with his arms at his sides (not over his head) and his legs straight. Or, ask the mother to hold the child so he is lying flat on her lap.<br />\n2. <b><span class=\"caps\">USE</span> <span class=\"caps\">YOUR</span> <span class=\"caps\">THUMB</span> <span class=\"caps\">AND</span> <span class=\"caps\">FIRST</span> <span class=\"caps\">FINGER</span></b> to locate the area on the child\u2019s abdomen halfway between the umbilicus and the side of the abdomen. Do not use your fingertips because this will cause pain. The fold of the skin should be in a line up and down the child\u2019s body.<br />\n3. <b><span class=\"caps\">PICK</span> UP</b> all the layers of skin and the tissue underneath them.<br />\n4. <b><span class=\"caps\">HOLD</span></b> the pinch for one second. Then release it.<br />\n5.. <b><span class=\"caps\">LOOK</span></b> to see if the skin pinch goes back <b>very slowly</b> (more than 2 seconds), <b>slowly,</b> (less than 2 seconds, but not immediately), or <b>immediately.</b> If the skin stays up for even a brief time after you release it, decide that the skin pinch goes back slowly.",
+                    "text": "To assess dehydration using the skin pinch<br />\n1. <b><span class=\"caps\">ASK</span></b> the mother to place the child on the examining table so that the child is flat on his back with his arms at his sides (not over his head) and his legs straight. Or, ask the mother to hold the child so he is lying flat on her lap.<br />\n2. <b><span class=\"caps\">USE</span> <span class=\"caps\">YOUR</span> <span class=\"caps\">THUMB</span> and <span class=\"caps\">FIRST</span> <span class=\"caps\">FINGER</span></b> to locate the area on the child\u2019s abdomen halfway between the umbilicus and the side of the abdomen. Do not use your fingertips because this will cause pain. The fold of the skin should be in a line up and down the child\u2019s body.<br />\n3. <b><span class=\"caps\">PICK</span> UP</b> all the layers of skin and the tissue underneath them.<br />\n4. <b><span class=\"caps\">HOLD</span></b> the pinch for one second. Then release it.<br />\n5.. <b><span class=\"caps\">LOOK</span></b> to see if the skin pinch goes back <b>very slowly</b> (more than 2 seconds), <b>slowly,</b> (less than 2 seconds, but not immediately), or <b>immediately.</b> If the skin stays up for even a brief time after you release it, decide that the skin pinch goes back slowly.",
                     "type": "display"
                 }
             ]
@@ -1319,7 +1355,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='Ear discharge').answer.first().value = false   and %resource.repeat(item).where(linkId='EmCare.B13S2.DE02').answer.first().value = true"
+                        "expression": "%resource.repeat(item).where(linkId='Ear Discharge').answer.first().value = false   and %resource.repeat(item).where(linkId='EmCare.B13S2.DE02').answer.first().value = true"
                     }
                 }
             ],
@@ -1333,14 +1369,14 @@
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B10S1.DE08",
-                        "display": "14 days or more"
+                        "display": "More than 14 days"
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B10S1.DE07",
-                        "display": "Less than 14 days"
+                        "display": "14 days or less"
                     }
                 }
             ]
@@ -1380,10 +1416,50 @@
                         }
                     ],
                     "linkId": "EmCare.B12S2.DE01-help",
-                    "text": "<b>A stiff neck may be a sign of meningitis, cerebral malaria or another very severe febrile disease. It requires urgent treatment with injectable antibiotics and referral to a hospital.</b><br />\n<b><span class=\"caps\">WATCH</span> <span class=\"caps\">THE</span> <span class=\"caps\">CHILD</span>:</b> While you talk with the caregiver during the assessment, look to see if the child moves and bends his or her neck easily when looking around. If the child is moving and bending his or her neck, the child does not have a stiff neck.<br />\n<b><span class=\"caps\">TEST</span> <span class=\"caps\">THE</span> <span class=\"caps\">CHILD</span>:</b> If you did not see any movement, or if you are not sure, draw the child\u2019s attention to his or her umbilicus or toes. For example, you can shine a flashlight on the toes or umbilicus or tickle the toes to encourage the child to look down. Look to see if the child can bend his or her neck when looking down at his or her umbilicus or toe<br />\n<b><span class=\"caps\">FEEL</span> <span class=\"caps\">FOR</span> <span class=\"caps\">STIFF</span> <span class=\"caps\">NECK</span>:</b> If you still have not seen the child bend his or her neck himself, ask the caregiver to help you lay the child on his or her back. Lean over the child, gently support the child\u2019s back and shoulders with one hand. With the other hand, hold the child\u2019s head. Then carefully bend the head forward towards the child\u2019s chest. If the neck bends easily, the child does not have stiff neck. If the neck feels stiff and there is resistance to bending, the child has a stiff neck. Often a child with a stiff neck will cry when you try to bend the neck.",
+                    "text": "<b>A Stiff neck may be a sign of meningitis, cerebral malaria or another very severe febrile disease. It requires urgent treatment with injectable antibiotics and referral to a hospital.</b><br />\n<b><span class=\"caps\">WATCH</span> <span class=\"caps\">THE</span> <span class=\"caps\">CHILD</span>:</b> While you talk with the caregiver during the assessment, look to see if the child moves and bends his or her neck easily when looking around. If the child is moving and bending his or her neck, the child does not have a Stiff neck.<br />\n<b><span class=\"caps\">TEST</span> <span class=\"caps\">THE</span> <span class=\"caps\">CHILD</span>:</b> If you did not see any movement, or if you are not sure, draw the child\u2019s attention to his or her umbilicus or toes. For example, you can shine a flashlight on the toes or umbilicus or tickle the toes to encourage the child to look down. Look to see if the child can bend his or her neck when looking down at his or her umbilicus or toe<br />\n<b><span class=\"caps\">FEEL</span> <span class=\"caps\">FOR</span> Stiff neck:</b> If you still have not seen the child bend his or her neck himself, ask the caregiver to help you lay the child on his or her back. Lean over the child, gently support the child\u2019s back and shoulders with one hand. With the other hand, hold the child\u2019s head. Then carefully bend the head forward towards the child\u2019s chest. If the neck bends easily, the child does not have Stiff neck. If the neck feels stiff and there is resistance to bending, the child has a Stiff neck. Often a child with a Stiff neck will cry when you try to bend the neck.",
                     "type": "display"
                 }
             ]
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='Fever').answer.first().value = true"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B12S2.DE02",
+            "text": "Refusal to use a limb",
+            "type": "boolean",
+            "required": true,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='Fever').answer.first().value = true"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B12S2.DE03",
+            "text": "Warm Tender or Swollen Joint or Bone",
+            "type": "boolean",
+            "required": true,
+            "repeats": false
         },
         {
             "extension": [
@@ -1588,7 +1664,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='EmCare.B14S2.DE03').answer.first().value = true or %resource.repeat(item).where(linkId='EmCare.B14S2.DE04').answer.first().value = false"
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B14S2.DE03').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B14S2.DE04').answer.first().value = false"
                     }
                 }
             ],
@@ -1685,7 +1761,7 @@
                         }
                     ],
                     "linkId": "EmCare.B14S2.DE10-help",
-                    "text": "In measles, <b>a rash begins behind the ears and on the neck. It spreads to the face.</b> During the next day, the rash spreads to the rest of the body, arms and legs. After 4 to 5 days, the rash starts to fade and the skin may peel.</p>\n\n\t<p>Some children with severe infection may have more rash spread over more of the body. The rash becomes more discoloured (dark brown or blackish), and there is more peeling of the skin. A measles rash does not have vesicles (blisters) or pustules. The rash does not itch.</p>\n\n\t<p>Do not confuse measles with other common childhood rashes such as chicken pox, scabies, or heat rash. Chicken pox rash is a generalized rash with vesicles. Scabies occurs on the hands, feet, ankles, elbows, buttocks and axilla (underarm). It also itches. Heat rash can be a generalized rash with small bumps and vesicles, which itch. A child with heat rash is not sick.",
+                    "text": "<p>In measles, <b>a rash begins behind the ears and on the neck. It spreads to the face.</b> During the next day, the rash spreads to the rest of the body, arms and legs. After 4 to 5 days, the rash starts to fade and the skin may peel.</p>\n\n\t<p>Some children with severe infection may have more rash spread over more of the body. The rash becomes more discoloured (dark brown or blackish), and there is more peeling of the skin. A measles rash does not have vesicles (blisters) or pustules. The rash does not itch.</p>\n\n\t<p>Do not confuse measles with other common childhood rashes such as chicken pox, scabies, or heat rash. Chicken pox rash is a generalized rash with vesicles. Scabies occurs on the hands, feet, ankles, elbows, buttocks and axilla (underarm). It also itches. Heat rash can be a generalized rash with small bumps and vesicles, which itch. A child with heat rash is not sick.</p>",
                     "type": "display"
                 }
             ]
@@ -1782,84 +1858,105 @@
             "linkId": "EmCare.B14S2.DE13",
             "text": "Type of Skin Problem",
             "type": "choice",
-            "required": false,
+            "required": true,
             "repeats": true,
             "answerOption": [
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B14S2.DE14",
+                        "display": "Abscess - Hot Tender Swelling"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B14S2.DE15",
+                        "display": "Deep or extends to muscle"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B14S2.DE16",
+                        "display": "Cellulitis - Red Tender Skin"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B14S2.DE18",
-                        "display": "Papular Urticaria or Papular Pruritic Eruptions"
+                        "display": "Papular Itching Rash (Prurigo) - Itching rash with small papules and scratch marks. Dark spots with pale centre"
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B14S2.DE19",
-                        "display": "Ringworm (Tinea)"
+                        "display": "Ringworm (Tinea) - An itchy circular lesion with a raised edge and fine scaly area in the centre with loss of hair.  May also be found on body or web on feet"
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B14S2.DE21",
-                        "display": "Scabies"
+                        "display": "Scabies - Rash and excoriations on torso; burrows in web space and wrists, face spared"
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B14S2.DE22",
-                        "display": "Chickenpox"
+                        "display": "Chickenpox - Vesicles over body.  Vesicles appear progressively over days and form scabs after they rupture"
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B14S2.DE23",
-                        "display": "Herpes Zoster"
+                        "display": "Herpes Zoster -  Vesicles in one area on one side of body with intense pain or scars plus shooting pain.  \nUncommon in children except where they are immuno-compromised (e.g. if infected with HIV)"
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B14S2.DE25",
-                        "display": "Impetigo"
+                        "display": "Impetigo or Folliculitis - Red, Tender, Warm Crusts or Small lesions"
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B14S2.DE31",
-                        "display": "Molluscum Contagiosum"
+                        "display": "Molluscum Contagiosum - Skin coloured pearly white papules with central umbilication. Most commonly seen on face and trunk in children."
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B14S2.DE32",
-                        "display": "Warts"
+                        "display": "Warts - Papules or nodules with a rough (Verrucous) surface"
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B14S2.DE33",
-                        "display": "Seborrhoeic Dermatitis"
+                        "display": "Seborrhoea - Greasy scales and redness on central face and body folds"
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B14S2.DE35",
-                        "display": "Fixed Drug Reaction"
+                        "display": "Fixed Drug Reactions - Generalised red, wide spread with small bumps or blisters; or one or more dark skin areas"
                     }
                 },
                 {
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B14S2.DE36",
-                        "display": "Eczema"
+                        "display": "Eczema - Wet oozing sores or excoriated, thick patches"
                     }
                 },
                 {
@@ -1877,6 +1974,26 @@
                     }
                 }
             ]
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B14S2.DE13').answer.first().value.code = 'EmCare.B14S2.DE16'"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B14S2.DE17",
+            "text": "Rapidly spreading, extensive, or not responding to oral antibiotics",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
         },
         {
             "extension": [
@@ -2021,22 +2138,55 @@
         {
             "extension": [
                 {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                },
-                {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='EmCare.B14S2.DE13').answer.where(value.code='EmCare.B14S2.DE25').exists()"
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B14S2.DE13').answer.first().value.code='EmCare.B14S2.DE25'"
                     }
                 }
             ],
-            "linkId": "EmCare.B14S2.DE30",
-            "text": "Skin Infection extends to Muscle",
-            "type": "boolean",
+            "linkId": "EmCare.B14S2.DE26",
+            "text": "Signs of Severe Impetigo / Folliculitis",
+            "type": "choice",
             "required": false,
-            "repeats": false
+            "repeats": true,
+            "answerOption": [
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B14S2.DE27",
+                        "display": "Skin Lesions \u2265 4 cm"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B14S2.DE28",
+                        "display": "Red Skin Streaks"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B14S2.DE29",
+                        "display": "Tender Nodes (Nodules) under the skin"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B14S2.DE30",
+                        "display": "Skin Infection extends to muscle"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B14S2.DE30a",
+                        "display": "No signs of severe Impetigo / Folliculitis"
+                    }
+                }
+            ]
         },
         {
             "extension": [
@@ -2427,34 +2577,17 @@
             ]
         },
         {
-            "linkId": "EmCare.B15S2.DE09",
-            "text": "Mucous membrane pallor",
-            "type": "choice",
-            "required": true,
-            "repeats": false,
-            "answerOption": [
+            "extension": [
                 {
-                    "valueCoding": {
-                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
-                        "code": "EmCare.B15S2.DE10",
-                        "display": "Severe mucous membrane pallor"
-                    }
-                },
-                {
-                    "valueCoding": {
-                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
-                        "code": "EmCare.B15S2.DE11",
-                        "display": "Some mucous membrane pallor"
-                    }
-                },
-                {
-                    "valueCoding": {
-                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
-                        "code": "EmCare.B15S2.DE12",
-                        "display": "No mucous membrane pallor"
-                    }
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
                 }
-            ]
+            ],
+            "linkId": "EmCare.B16S2.DE01",
+            "text": "Oedema of both feet",
+            "type": "boolean",
+            "required": true,
+            "repeats": false
         },
         {
             "extension": [
@@ -2503,6 +2636,15 @@
             "repeats": false
         },
         {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B17S1.DE01').answer.first().value = true"
+                    }
+                }
+            ],
             "linkId": "EmCare.B17S1.DE02",
             "text": "Duration of Mumps",
             "type": "choice",
@@ -2634,7 +2776,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "text/fhirpath",
+                        "language": "fhirpath",
                         "expression": "now()"
                     }
                 },

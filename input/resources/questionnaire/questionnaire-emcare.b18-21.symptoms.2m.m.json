@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb1821symptoms2mm"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb1821symptoms2mm|0.0.1.build.174"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b18-21.symptoms.2m.m",
@@ -158,7 +158,7 @@
                         }
                     ],
                     "linkId": "EmCare.B18S1.DE01-help",
-                    "text": "Use words the caregiver understands. For example, the caregiver may know<br />\nconvulsions as \u201cfits\u201d or \u201cspasms\u201d.<br />\nDuring a convulsion, the young infant\u2019s arms and legs may become stiff. The infant<br />\nmay stop breathing and become blue. Many times there may only be rhythmic<br />\nmovements of a part of the body, such as rhythmic twitching of the mouth or<br />\nblinking of eyes. The young infant may lose consciousness",
+                    "text": "Use words the caregiver understands. For example, the caregiver may know<br />\nconvulsions as \u201cfits\u201d or \u201cspasms\u201d.<br />\nDuring a convulsion, the young infant\u2019s arms and legs may become stiff. The infant<br />\nmay stop breathing and become blue. Many times there may only be rhythmic<br />\nInfant&#8217;s Movements of a part of the body, such as rhythmic twitching of the mouth or<br />\nblinking of eyes. The young infant may lose consciousness",
                     "type": "display"
                 }
             ]
@@ -214,7 +214,7 @@
                         }
                     ],
                     "linkId": "EmCare.B18S1.DE02-help",
-                    "text": "Any difficulty mentioned by the mother is important. A newborn that has not been able to feed since birth may be premature or may have<br />\ncomplications such as birth asphyxia. These infants who are either not able to<br />\nfeed or are not feeding well should be referred urgently to hospital.</p>\n\n\t<p>The caregiver may also mention difficulties such as: her infant feeds too frequently<br />\n(or not frequently enough), she does not have enough milk, her nipples are sore,<br />\nor she has flat or inverted nipples. You will assess these difficulties later during<br />\nbreastfeeding assessment. These problems do not mean the infant is not feeding well or not feeding at all.",
+                    "text": "<p>Any difficulty mentioned by the mother is important. A newborn that has not been able to feed since birth may be premature or may have<br />\ncomplications such as birth asphyxia. These infants who are either not able to<br />\nfeed or are Not Feeding Well should be referred urgently to hospital.</p>\n\n\t<p>The caregiver may also mention difficulties such as: her infant feeds too frequently<br />\n(or not frequently enough), she does not have enough milk, her nipples are sore,<br />\nor she has flat or inverted nipples. You will assess these difficulties later during<br />\nbreastfeeding assessment. These problems do not mean the infant is Not Feeding Well or not feeding at all.</p>",
                     "type": "display"
                 }
             ]
@@ -255,31 +255,15 @@
         {
             "extension": [
                 {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                    "valueCodeableConcept": {
-                        "coding": [
-                            {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "check-box",
-                                "display": "Check-box"
-                            }
-                        ],
-                        "text": "Check-box"
-                    }
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
                 }
             ],
             "linkId": "EmCare.B20S1.DE02",
-            "type": "choice",
+            "text": "Blood in stool",
+            "type": "boolean",
             "required": true,
-            "repeats": true,
-            "answerOption": [
-                {
-                    "valueCoding": {
-                        "code": "EmCare.B20S1.DE02",
-                        "display": "Blood in stool"
-                    }
-                }
-            ]
+            "repeats": false
         },
         {
             "extension": [
@@ -492,7 +476,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "text/fhirpath",
+                        "language": "fhirpath",
                         "expression": "now()"
                     }
                 },

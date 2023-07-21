@@ -2,13 +2,12 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcaredt01 version '0.0.1.build.68'
+library emcaredt01 version '0.0.1.build.174'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.68' called Base
-include emcareobservation version '0.0.1.build.68' called obs
-include emcarevalueset version '0.0.1.build.68' called val
-include emcarecombineddataelements version '0.0.1.build.68' called clas
+include emcarebase version '0.0.1.build.174' called Base
+include emcarevalueset version '0.0.1.build.174' called val
+include emcarecombineddataelements version '0.0.1.build.174' called clas
 
 
 
@@ -74,10 +73,10 @@ define "Assess sick child for Symptoms 2 m":
 
 /* 
 EmCareDT06 : 
-clas."age >= 2 months to <60 months"
+clas."Age >= 2 months to <60 months"
 */
 define "EmCareDT06":
-    clas."age >= 2 months to <60 months"
+    clas."Age >= 2 months to <60 months"
 
 /* 
 Assess sick child for Symptoms 2p : EmCareDT06
@@ -102,10 +101,10 @@ define "Assess sick child for Signs 2 m":
 
 /* 
 EmCareDT08 : 
-clas."age >= 2 months to <60 months"
+clas."Age >= 2 months to <60 months"
 */
 define "EmCareDT08":
-    clas."age >= 2 months to <60 months"
+    clas."Age >= 2 months to <60 months"
 
 /* 
 Assess sick child for Signs 2p : EmCareDT08
@@ -116,30 +115,30 @@ define "Assess sick child for Signs 2p":
 
 /* 
 EmCareDT09 : 
-clas."age >= 2 months to <60 months"
+AgeInYears() < 5
 */
 define "EmCareDT09":
-    clas."age >= 2 months to <60 months"
+    AgeInYears() < 5
 
 /* 
-Propose classification : EmCareDT09
+Suggestions for health prevention : EmCareDT09
 Alias
 */
-define "Propose classification":
+define "Suggestions for health prevention":
     "EmCareDT09"
 
 /* 
 EmCareDT10 : 
-AgeInYears() < 5
+clas."Age >= 2 months to <60 months"
 */
 define "EmCareDT10":
-    AgeInYears() < 5
+    clas."Age >= 2 months to <60 months"
 
 /* 
-Do Test : EmCareDT10
+Propose classification : EmCareDT10
 Alias
 */
-define "Do Test":
+define "Propose classification":
     "EmCareDT10"
 
 /* 
@@ -150,22 +149,36 @@ define "EmCareDT11":
     AgeInYears() < 5
 
 /* 
-Provide treatment : EmCareDT11
+Do Test : EmCareDT11
 Alias
 */
-define "Provide treatment":
+define "Do Test":
     "EmCareDT11"
 
 /* 
 EmCareDT12 : 
-AgeInMonths() < 2
+AgeInYears() < 5
 */
 define "EmCareDT12":
+    AgeInYears() < 5
+
+/* 
+Provide treatment : EmCareDT12
+Alias
+*/
+define "Provide treatment":
+    "EmCareDT12"
+
+/* 
+EmCareDT13 : 
+AgeInMonths() < 2
+*/
+define "EmCareDT13":
     AgeInMonths() < 2
 
 /* 
-Propose classification 2m : EmCareDT12
+Propose classification 2m : EmCareDT13
 Alias
 */
 define "Propose classification 2m":
-    "EmCareDT12"
+    "EmCareDT13"

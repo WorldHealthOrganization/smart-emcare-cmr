@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb22secondtemperature"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb22secondtemperature|0.0.1.build.174"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b22.secondtemperature",
@@ -56,8 +56,31 @@
                 }
             ],
             "linkId": "AgeInMonths",
-            "text": "Age",
+            "text": "Malaria test",
             "type": "integer",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "Malaria Test Unknown"
+                    }
+                }
+            ],
+            "linkId": "Malaria Test Unknown",
+            "type": "boolean",
             "required": false,
             "repeats": false
         },
@@ -107,6 +130,42 @@
         {
             "extension": [
                 {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().empty() and ( %resource.repeat(item).where(linkId='EmCare.B22.DE46').answer.empty()  or %resource.repeat(item).where(linkId='EmCare.B22.DE46').answer.first().value=false )"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B24.G.DE40",
+            "text": "Prefer to take Rectal Temperature (second measurement)",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                    "valueCoding": {
+                        "system": "http://unitsofmeasure.org",
+                        "code": "Cel"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B24.G.DE41",
+            "text": "Rectal Temperature (second measurement)",
+            "type": "quantity",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
                     "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                     "valueCodeableConcept": {
                         "coding": [
@@ -152,7 +211,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "text/fhirpath",
+                        "language": "fhirpath",
                         "expression": "iif(%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 38.5 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2, '2',iif(%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 38 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value< 2 or %resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 37.5 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2, 'High',iif(%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value < 35.5 'Cel' , 'Low',iif(%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value.exists(), 'Normal',{}))))"
                     }
                 }
@@ -167,9 +226,29 @@
         {
             "extension": [
                 {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='Malaria Test Unknown').answer.first().value.code = 'EmCare.B24.G.DE47'"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B22.DE52A",
+            "text": "Obvious cause of fever",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                    "valueExpression": {
+                        "language": "fhirpath",
                         "expression": "now()"
                     }
                 },

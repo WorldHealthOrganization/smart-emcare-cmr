@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcaretreatment"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcaretreatment|0.0.1.build.174"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.treatment",
@@ -150,7 +150,7 @@
                         }
                     ],
                     "linkId": "EmCare.C10.IT.DE05",
-                    "text": "<h1>Severe Dehydration</h1>\n\n\t<p>\u27a2 If child has no other severe classification:* Give fluid for severe dehydration (plan C) OR</p>\n\n\t<p>\u27a2 <b>If child also has another severe classification:</b></p>\n\n    ** <b>Refer <span class=\"caps\">URGENTLY</span> to hospital with mother giving frequent sips of <span class=\"caps\">ORS</span> on the way.</b>\n    ** <b>Advise the mother to continue breastfeeding.</b>\n\n\t<p>\u27a2If child is 2 years or older and there is cholera in your area, give oral co-trimoxazole twice daily for 3 days or oral erythromycin 4 times a day for 3 days for cholera.</p>",
+                    "text": "<h1>Severe Dehydration</h1>\n\n\t<p>\u27a2 If child has no other severe classification:* Give fluid for Severe Dehydration (plan C) OR</p>\n\n\t<p>\u27a2 <b>If child also has another severe classification:</b></p>\n\n    ** <b>Refer <span class=\"caps\">URGENTLY</span> to hospital with mother giving frequent sips of <span class=\"caps\">ORS</span> on the way.</b>\n    ** <b>Advise the mother to continue breastfeeding.</b>\n\n\t<p>\u27a2If child is 2 years or older and there is cholera in your area, give oral co-trimoxazole twice daily for 3 days or oral erythromycin 4 times a day for 3 days for cholera.</p>",
                     "type": "display",
                     "required": false,
                     "repeats": false
@@ -247,70 +247,6 @@
                     ],
                     "linkId": "EmCare.C10.IT.DE11",
                     "text": "<h1>Dysentery</h1>\n\n\t<p>\u27a2Give Oral Metronidazole three times daily for 10 days.</p>\n\n\t<p>\u27a2Treat dehydration if present.</p>\n\n\t<p>\u27a2Follow-up in 3 days.</p>",
-                    "type": "display",
-                    "required": false,
-                    "repeats": false
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='load-EmCare.C10.IT.DE12').answer.first().value=true"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.C10.IT.DE12",
-                    "text": "<h1>Throat Abscess or Possible Diptheria</h1>\n\n\t<p>\u27a2 <b>Give first dose of intramuscular Procaine Penicillin pre-referral; if unavailable or allergic to penicillin give first dose of oral Erythromycin pre-referral.</b></p>\n\n\t<p>\u27a2 <b>Give one dose of oral Paracetamol for pain or high fever (38.5\u00b0C or above).</b></p>\n\n\t<p>\u27a2 <b><span class=\"caps\">REFER</span> <span class=\"caps\">URGENTLY</span> to hospital.</b></p>",
-                    "type": "display",
-                    "required": false,
-                    "repeats": false
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='load-EmCare.C10.IT.DE13').answer.first().value=true"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.C10.IT.DE13",
-                    "text": "<h1>Streptococcal Sore Throat</h1>\n\n\t<p>\u27a2 <b>Give single dose of intramuscular benzathine penicillin, or if unavailable give oral amoxicillin twice daily for 10 days; if allergic to penicillin give oral erythromycin 4 times daily for 10 days</b></p>\n\n\t<p>\u27a2 **Give oral paracetamol for pain or high fever (38.5\u00b0C or above), continue to give every 6 hours (4 times / day) until pain and/or high fever gone. **</p>\n\n\t<p>\u27a2 Soothe the throat with a safe remedy.</p>\n\n\t<p>\u27a2 Follow-up in 5 days if not improving.</p>\n\n\t<p>\u27a2 Advise the mother when to return immediately</p>",
-                    "type": "display",
-                    "required": false,
-                    "repeats": false
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='load-EmCare.C10.IT.DE14').answer.first().value=true"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.C10.IT.DE14",
-                    "text": "h1.Non-Streptococcal Sore Throat</p>\n\n\t<p>\u27a2 <b>Give oral paracetamol for pain or high fever (38.5\u00b0C or above), continue to give every 6 hours (4 times / day) until pain/high fever gone.</b></p>\n\n\t<p>\u27a2 Soothe the throat with a safe remedy.</p>\n\n\t<p>\u27a2 Follow-up in 5 days if not improving.</p>\n\n\t<p>\u27a2 Advise the mother when to return immediately",
-                    "type": "display",
-                    "required": false,
-                    "repeats": false
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='load-EmCare.C10.IT.DE15').answer.first().value=true"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.C10.IT.DE15",
-                    "text": "<h1>No Throat Problem</h1>\n\n\t<p>\u27a2 <b>Give oral paracetamol for pain or high fever (38.5\u00b0C or above), continue to give every 6 hours (4 times / day) until pain /high fever gone.</b></p>\n\n\t<p>\u27a2 Advise the mother when to return immediately</p>",
                     "type": "display",
                     "required": false,
                     "repeats": false
@@ -758,7 +694,7 @@
                         }
                     ],
                     "linkId": "EmCare.C10.IT.DE40",
-                    "text": "h1.Mouth Sores or Ulcer</p>\n\n\t<p>\u27a2 Treat mouth ulcers twice daily with gentian violet until 48 hrs after the ulcers have been cured</p>\n\n\t<p>\u27a2 Give oral Paracetamol every 6 hours (4 times / day) for pain until pain is gone</p>\n\n\t<p>\u27a2 Refer if mouth ulcers deep or extensive",
+                    "text": "<p>h1.Mouth Sores or Ulcer</p>\n\n\t<p>\u27a2 Treat mouth ulcers twice daily with gentian violet until 48 hrs after the ulcers have been cured</p>\n\n\t<p>\u27a2 Give oral Paracetamol every 6 hours (4 times / day) for pain until pain is gone</p>\n\n\t<p>\u27a2 Refer if mouth ulcers deep or extensive</p>",
                     "type": "display",
                     "required": false,
                     "repeats": false
@@ -855,7 +791,7 @@
                         }
                     ],
                     "linkId": "EmCare.C10.IT.DE48",
-                    "text": "<h1>Possible Serious Bacterial Infection or Very Severe Disease</h1>\n\n\t<p>\u27a2 <b>Give first dose of intramuscuar (IM) antibiotics</b></p>\n\n\t<ul>\n\t\t<li><b>Give a first dose of intramuscular gentamicin</b></li>\n\t</ul>\n\n    <span class=\"caps\">AND</span> \n\n\t<ul>\n\t\t<li><b>Give a first dose of intramuscular ampicillin. OR, if IM ampicillin is not avaialble, give a first dose of oral amoxicillin, at the dose indicated for Pneumonia</b></li>\n\t</ul>\n\n\t<p>\u27a2 <b>Treat to prevent low blood sugar</b></p>\n\n\t<p>\u27a2 <b>Advise the mother on how to keep infant warm on the way to hospital</b></p>\n\n\t<p>\u27a2 <b>Refer <span class=\"caps\">URGENTLY</span> to hospital</b> </p>\n\n\t<p>OR</p>\n\n\t<p>\u27a2 <b>If referral <span class=\"caps\">REFUSED</span> or <span class=\"caps\">NOT</span> <span class=\"caps\">FEASIBLE</span> treat in the clinic untill referral is feasible\u00a0 (see charts on pages 12-13, and 19-20 and Treat Possible Serious Bacterial Infection or Very Severe Disease if referral is refused or is not feasible)</b></p>",
+                    "text": "<h1>Possible Serious Bacterial Infection or Very Severe Disease</h1>\n\n\t<p>\u27a2 <b>Give first dose of intramuscuar (IM) antibiotics</b></p>\n\n\t<ul>\n\t\t<li><b>Give a first dose of intramuscular gentamicin</b></li>\n\t</ul>\n\n    and \n\n\t<ul>\n\t\t<li><b>Give a first dose of intramuscular ampicillin. OR, if IM ampicillin is not avaialble, give a first dose of oral amoxicillin, at the dose indicated for Pneumonia</b></li>\n\t</ul>\n\n\t<p>\u27a2 <b>Treat to prevent low blood sugar</b></p>\n\n\t<p>\u27a2 <b>Advise the mother on how to keep infant warm on the way to hospital</b></p>\n\n\t<p>\u27a2 <b>Refer <span class=\"caps\">URGENTLY</span> to hospital</b> </p>\n\n\t<p>OR</p>\n\n\t<p>\u27a2 <b>If referral <span class=\"caps\">REFUSED</span> or <span class=\"caps\">NOT</span> <span class=\"caps\">FEASIBLE</span> treat in the clinic untill referral is feasible\u00a0 (see charts on pages 12-13, and 19-20 and Treat Possible Serious Bacterial Infection or Very Severe Disease if referral is refused or is not feasible)</b></p>",
                     "type": "display",
                     "required": false,
                     "repeats": false
@@ -919,7 +855,7 @@
                         }
                     ],
                     "linkId": "EmCare.C10.IT.DE52",
-                    "text": "Severe Jaundice</p>\n\n\t<p>\u27a2 <b>Treat to prevent low blood sugar</b></p>\n\n\t<p>\u27a2 <b>Advise the mother how to keep the infant warm on the way to the hospital</b></p>\n\n\t<p>\u27a2 <b>Refer <span class=\"caps\">URGENTLY</span> to hospital</b>",
+                    "text": "<p>Severe Jaundice</p>\n\n\t<p>\u27a2 <b>Treat to prevent low blood sugar</b></p>\n\n\t<p>\u27a2 <b>Advise the mother how to keep the infant warm on the way to the hospital</b></p>\n\n\t<p>\u27a2 <b>Refer <span class=\"caps\">URGENTLY</span> to hospital</b></p>",
                     "type": "display",
                     "required": false,
                     "repeats": false
@@ -1303,98 +1239,6 @@
                 }
             ],
             "linkId": "load-EmCare.C10.IT.DE11",
-            "type": "boolean",
-            "required": false,
-            "repeats": false
-        },
-        {
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                },
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                    "valueBoolean": true
-                },
-                {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                    "valueExpression": {
-                        "language": "text/cql-identifier",
-                        "expression": "load-EmCare.C10.IT.DE12"
-                    }
-                }
-            ],
-            "linkId": "load-EmCare.C10.IT.DE12",
-            "type": "boolean",
-            "required": false,
-            "repeats": false
-        },
-        {
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                },
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                    "valueBoolean": true
-                },
-                {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                    "valueExpression": {
-                        "language": "text/cql-identifier",
-                        "expression": "load-EmCare.C10.IT.DE13"
-                    }
-                }
-            ],
-            "linkId": "load-EmCare.C10.IT.DE13",
-            "type": "boolean",
-            "required": false,
-            "repeats": false
-        },
-        {
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                },
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                    "valueBoolean": true
-                },
-                {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                    "valueExpression": {
-                        "language": "text/cql-identifier",
-                        "expression": "load-EmCare.C10.IT.DE14"
-                    }
-                }
-            ],
-            "linkId": "load-EmCare.C10.IT.DE14",
-            "type": "boolean",
-            "required": false,
-            "repeats": false
-        },
-        {
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                },
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                    "valueBoolean": true
-                },
-                {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                    "valueExpression": {
-                        "language": "text/cql-identifier",
-                        "expression": "load-EmCare.C10.IT.DE15"
-                    }
-                }
-            ],
-            "linkId": "load-EmCare.C10.IT.DE15",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -2439,7 +2283,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "text/fhirpath",
+                        "language": "fhirpath",
                         "expression": "now()"
                     }
                 },

@@ -1,0 +1,93 @@
+{
+    "resourceType": "Questionnaire",
+    "id": "emcare.b24.appetitetest",
+    "meta": {
+        "profile": [
+            "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire"
+        ]
+    },
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+            "valueCode": "shareable"
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+            "valueCode": "computable"
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+            "valueCode": "publishable"
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+            "valueCode": "structured"
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-targetStructureMap",
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureMap/emcare.b24.appetitetest"
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb24appetitetest|0.0.1.build.174"
+        }
+    ],
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b24.appetitetest",
+    "name": "EmCare.B24.AppetiteTest",
+    "title": "EmCare.B24.AppetiteTest",
+    "status": "active",
+    "experimental": false,
+    "subjectType": [
+        "Patient"
+    ],
+    "item": [
+        {
+            "linkId": "EmCare.B24.G.DE23",
+            "text": "Appetite Test (using <span class=\"caps\">RUTF</span>) Results",
+            "type": "choice",
+            "required": true,
+            "repeats": false,
+            "answerOption": [
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B22.DE24",
+                        "display": "Able to finish RUTF"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B22.DE25",
+                        "display": "Unable to finish RUTF"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "EmCare.B22.DE26",
+                        "display": "RUTF Not Available"
+                    }
+                }
+            ]
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                    "valueExpression": {
+                        "language": "fhirpath",
+                        "expression": "now()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                }
+            ],
+            "linkId": "timestamp",
+            "type": "dateTime",
+            "required": false
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+{
+    "resourceType": "Library",
+    "id": "emcareb24malariatest",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb24malariatest",
+    "identifier": [
+        {
+            "use": "official",
+            "value": "emcare.b24.malariatest"
+        }
+    ],
+    "version": "0.0.1.build.174",
+    "name": "emcareb24malariatest",
+    "title": "EmCare.B24.MalariaTest",
+    "status": "active",
+    "type": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/ValueSet/library-type",
+                "code": "logic-library"
+            }
+        ]
+    },
+    "relatedArtifact": [
+        {
+            "type": "depends-on",
+            "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarebase"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarevalueset"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarecombineddataelements"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarezscore"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/weightforage"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/anthrobase"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/weightforlength"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/weightforheight"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareobservation"
+        }
+    ],
+    "content": [
+        {
+            "id": "ig-loader-emcareb24malariatest.cql",
+            "contentType": "text/cql",
+            "data": "LyoKQGF1dGhvcjogUGF0cmljayBEZWxjcm9peApAZGVzY3JpcHRpb246IFRoaXMgbGlicmFyeSBpcyBwYXJ0IG9mIHRoZSBwcm9qZWN0IEVtQ2FyZQoqLwpsaWJyYXJ5IGVtY2FyZWIyNG1hbGFyaWF0ZXN0IHZlcnNpb24gJzAuMC4xLmJ1aWxkLjE3NCcKdXNpbmcgRkhJUiB2ZXJzaW9uICc0LjAuMScKaW5jbHVkZSBGSElSSGVscGVycyB2ZXJzaW9uICc0LjAuMScgY2FsbGVkIEZISVJIZWxwZXJzIAppbmNsdWRlIGVtY2FyZWJhc2UgdmVyc2lvbiAnMC4wLjEuYnVpbGQuMTc0JyBjYWxsZWQgQmFzZQppbmNsdWRlIGVtY2FyZXZhbHVlc2V0IHZlcnNpb24gJzAuMC4xLmJ1aWxkLjE3NCcgY2FsbGVkIHZhbAppbmNsdWRlIGVtY2FyZWNvbWJpbmVkZGF0YWVsZW1lbnRzIHZlcnNpb24gJzAuMC4xLmJ1aWxkLjE3NCcgY2FsbGVkIEMKCgoKCmNvbnRleHQgUGF0aWVudAoKCi8qIApCYWNrUmVmZXJlbmNlIDogCmJhY2sgcmVmZXJlbmNlIHRvIHJlc291cmNlCiovCmRlZmluZSAiQmFja1JlZmVyZW5jZSI6CiAgICBSZWZlcmVuY2Uge3JlZmVyZW5jZTogc3RyaW5nIHsgdmFsdWU6ICdRdWVzdGlvbm5haXJlL2VtY2FyZS5iMjQubWFsYXJpYXRlc3QnfX0K"
+        }
+    ]
+}

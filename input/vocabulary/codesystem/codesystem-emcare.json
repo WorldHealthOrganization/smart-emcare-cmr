@@ -245,6 +245,11 @@
             "definition": "The client's length cannot be measured"
         },
         {
+            "code": "EmCare.B6.DE14",
+            "display": "Weight for Height (WFH) Z Scores",
+            "definition": "This score is automatically calculated, to compare the weight-for-height (WFH) of the child with standard scores. A low z-score indicates that the child has low weight for their height."
+        },
+        {
             "code": "EmCare.B6.DE16",
             "display": "Weight for Age (WFA) Z Scores",
             "definition": "The client's weight for age z score"
@@ -275,6 +280,11 @@
             "definition": "The health care worker visually assesses for whether underweight (for drug dosing calculations)"
         },
         {
+            "code": "EmCare.B6.DE24",
+            "display": "Growth curve break in weight",
+            "definition": "If child has Growth curve break in weight"
+        },
+        {
             "code": "EmCare.B18S1.DE01",
             "display": "Convulsion(s) in this Illness",
             "definition": "The client is reported to have had one or more convulsions"
@@ -282,7 +292,7 @@
         {
             "code": "EmCare.B18S1.DE02",
             "display": "Difficulty with Feeding",
-            "definition": "The client is reported to have difficulty with Feeding"
+            "definition": "The client is reported to have Difficulty with Feeding"
         },
         {
             "code": "EmCare.B20S1.DE01",
@@ -341,7 +351,7 @@
         },
         {
             "code": "EmCare.B18S2.DE08",
-            "display": "Movements",
+            "display": "Infant's Movements",
             "definition": "The health care worker's assessments of the client's movements"
         },
         {
@@ -555,29 +565,24 @@
             "definition": "The child is reported to have, or appears to be in pain. It is important to assess for pain which could be a sign of a source of infection when the child has reported or measured fever."
         },
         {
-            "code": "EmCare.B12S1.DE15",
-            "display": "Malaria Risk",
-            "definition": "The area is a high / low / no malaria risk area"
-        },
-        {
             "code": "EmCare.B13S1.DE01",
-            "display": "Ear problem",
-            "definition": "To determine if a child has an ear problem, you should ask, look, and feel.Ear problems are common. Though ear infections rarely cause death, they are the main cause of deafness and can cause learning problems at school. It is very important to assess, classify, and treat ear problems to prevent pain in the short term, and more serious consequences in the long-term. \""
+            "display": "Ear Problem",
+            "definition": "To determine if a child has an ear problem, you should ask, look, and feel.Ear Problems are common. Though ear infections rarely cause death, they are the main cause of deafness and can cause learning problems at school. It is very important to assess, classify, and treat ear problems to prevent pain in the short term, and more serious consequences in the long-term. \""
         },
         {
             "code": "EmCare.B13S1.DE02",
-            "display": "Ear pain",
-            "definition": "Ear pain can mean that the child has an ear infection. If the caregiver is not sure that the child has ear pain, ask if the child has been irritable and rubbing his ear."
+            "display": "Ear Pain",
+            "definition": "Ear Pain can mean that the child has an ear infection. If the caregiver is not sure that the child has ear pain, ask if the child has been irritable and rubbing his ear."
         },
         {
             "code": "EmCare.B13S1.DE03",
-            "display": "Ear discharge",
+            "display": "Ear Discharge",
             "definition": "The child is reported or appears to have pus discharging from the ear. Use words the caregiver understands."
         },
         {
             "code": "EmCare.B13S1.DE04",
-            "display": "Ear discharge for how long?",
-            "definition": "How long the child has had the discharge from the ear. \n- Less than 14 days (Less than 2 weeks)\n- 14 days or more (2 weeks or more)"
+            "display": "Ear Discharge for how long?",
+            "definition": "How long the child has had the discharge from the ear. \n- Less than 14 days (Less than 2 weeks)\n- More than 14 days (2 weeks or more)"
         },
         {
             "code": "EmCare.B14S1.DE01",
@@ -621,7 +626,7 @@
         {
             "code": "EmCare.B10S2.DE05A",
             "display": "Duration of wheezing",
-            "definition": "The duration of wheezing if less than 7 days or more than 7 days"
+            "definition": "The duration of wheezing if Less than 7 days or more than 7 days"
         },
         {
             "code": "EmCare.B10S2.DE05D",
@@ -637,11 +642,6 @@
             "code": "EmCare.B10S2.DE05F",
             "display": "Child known to have asthma",
             "definition": "If child is known to have asthma"
-        },
-        {
-            "code": "EmCare.B10S2.DE06",
-            "display": "Recurrent Wheeze",
-            "definition": "The client has experienced recurrent wheeze"
         },
         {
             "code": "EmCare.B10S2.DE07",
@@ -701,7 +701,17 @@
         {
             "code": "EmCare.B12S2.DE01",
             "display": "Stiff neck",
-            "definition": "The client has a stiff neck"
+            "definition": "The client has a Stiff neck"
+        },
+        {
+            "code": "EmCare.B12S2.DE02",
+            "display": "Refusal to use a limb",
+            "definition": "The child is unable to use a limb (arm or leg) on examination. It is important to assess for refusal to use a limb which could be a sign of a bone or joint infection when the child has reported or measured fever."
+        },
+        {
+            "code": "EmCare.B12S2.DE03",
+            "display": "Warm Tender or Swollen Joint or Bone",
+            "definition": "The child has a warm tender or swollen joint or bone which could be a sign of a infection when the child has reported or measured fever."
         },
         {
             "code": "EmCare.B12S2.DE05",
@@ -764,6 +774,11 @@
             "definition": "The client has a specific type of skin problem(s)"
         },
         {
+            "code": "EmCare.B14S2.DE17",
+            "display": "Rapidly spreading, extensive, or not responding to oral antibiotics",
+            "definition": "The child has cellulitis which is rapidly spreading, extensive, or not responding to oral antibiotics"
+        },
+        {
             "code": "EmCare.B14S2.DE19a",
             "display": "Scalp Infection (tinea capitis)",
             "definition": "The client has Scalp Infection (tinea capitis)"
@@ -784,9 +799,9 @@
             "definition": "The client has Herpes Zoster with Eye Involvement"
         },
         {
-            "code": "EmCare.B14S2.DE30",
-            "display": "Skin Infection extends to Muscle",
-            "definition": "The client has skin infection that extends to muscle"
+            "code": "EmCare.B14S2.DE26",
+            "display": "Signs of Severe Impetigo / Folliculitis",
+            "definition": "Signs of severe impetigo / folliculitis include:\n- Skin Lesions 4 cm or larger\n- Red Skin Streaks\n- Tender Nodes (Nodules) under the skin\n- Skin infection extends to muscle\n- No signs of severe Impetigo / Folliculitis"
         },
         {
             "code": "EmCare.B14S2.DE30b",
@@ -844,9 +859,9 @@
             "definition": "The client has palmar pallor"
         },
         {
-            "code": "EmCare.B15S2.DE09",
-            "display": "Mucous membrane pallor",
-            "definition": "The client has Mucous membrane pallor"
+            "code": "EmCare.B16S2.DE01",
+            "display": "Oedema of both feet",
+            "definition": "\"Oedema of both feet means severe acute malnutrition.\nLOOK and FEEL to determine if the child has oedema of both feet. Using your thumbs, press the topside of both feet simultaneously for 3 seconds on the top side of each foot. The child has oedema if a dent remains in the child\u2019s foot when you lift your thumb.\nOedema is when an unusually large amount of fluid gathers in the child\u2019s tissues. The tissues become filled with the fluid and look swollen or puffed up. If a child has oedema of both feet they should be referred to inpatient care.\""
         },
         {
             "code": "EmCare.B16S2.DE02",
@@ -867,6 +882,91 @@
             "code": "EmCare.B17S1.DE02",
             "display": "Duration of Mumps",
             "definition": "The duration of mumps observed"
+        },
+        {
+            "code": "EmCare.B17.DE01",
+            "display": "Date of Last Vitamin A Supplementation",
+            "definition": "The date that the child's profile records Vitamin A Supplementation being given"
+        },
+        {
+            "code": "EmCare.B17.DE05",
+            "display": "Can record of Vitamin A Supplementation be obtained at a future visit?",
+            "definition": "The healthcare worker asks if the child's caregiver can provide a record of Vitamin A supplementation at a future visit"
+        },
+        {
+            "code": "EmCare.B17.DE11",
+            "display": "Treatment for malnutrition containing Vitamin A received in the past month?",
+            "definition": "The child has received treatment for malnutrition containing Vitamin A in the past month"
+        },
+        {
+            "code": "EmCare.B17.DE12",
+            "display": "Date of last deworming treatment",
+            "definition": "The date that the child's profile records Deworming being given"
+        },
+        {
+            "code": "EmCare.B17.DE16",
+            "display": "Can record of Deworming treatment be obtained at a future visit?",
+            "definition": "The healthcare worker asks if the client's caregiver can provide a record of Deworming treatment at a future visit"
+        },
+        {
+            "code": "EmCare.B17.DE62",
+            "display": "Mother viral hepatitis B test result",
+            "definition": "The child's mother's viral hepatitis B test result"
+        },
+        {
+            "code": "EmCare.B17.DE67",
+            "display": "Infant vaccinated for viral hepatitis B",
+            "definition": "The client is vaccinated for viral hepatitis B"
+        },
+        {
+            "code": "EmCare.B17.DE22",
+            "display": "HIV Prevalence",
+            "definition": "The prevalence of HIV in the area of the client"
+        },
+        {
+            "code": "EmCare.B17.DE44A",
+            "display": "Child followed up at PMTCT for HIV investigation or management",
+            "definition": "The child is followed up at PMTCT for HIV investigation or management"
+        },
+        {
+            "code": "EmCare.B17.DE44D",
+            "display": "PMTCT HIV Status",
+            "definition": "The child's PMTCT HIV status"
+        },
+        {
+            "code": "EmCare.B17.DE44G",
+            "display": "Household member with Tuberculosis in the past 5 years",
+            "definition": "The child has a person in the household within the past 5 years with tuberculosis"
+        },
+        {
+            "code": "EmCare.B17.DE25",
+            "display": "Mother's HIV Status",
+            "definition": "The client's mother's HIV Status"
+        },
+        {
+            "code": "EmCare.B17.DE30",
+            "display": "Child's Last HIV Test Results",
+            "definition": "The client's last HIV test results"
+        },
+        {
+            "code": "EmCare.B17.DE37",
+            "display": "Child breastfed at the time or 6 weeks before HIV test",
+            "definition": "The healthcare worker asks the caregiver if the client was breastfed at the time or 6 weeks before the HIV test"
+        },
+        {
+            "code": "EmCare.B17.DE41",
+            "display": "Child 18 months or older when last tested for HIV",
+            "definition": "The healthcare worker asks the caregiver if the client was 18 months or older when last tested for HIV"
+        },
+        {
+            "code": "EmCare.B17.DE45",
+            "display": "Check the child\u2019s vaccination record: has the child received all vaccines they are eligible for",
+            "definition": "The healthcare worker check's the child\u2019s vaccination record to ensure the child has received all eligible vaccines"
+        },
+        {
+            "code": "EmCare.B17.DE50",
+            "display": "Immunizations for Age",
+            "definition": "The application shows the heatlhcare worker a table of the immunizations the client should have had for their age"
         },
         {
             "code": "EmCare.B22.DE08",
@@ -998,26 +1098,385 @@
             "definition": "The healthcare worker has observed that the client has difficulty breastfeeding"
         },
         {
+            "code": "EmCare.B24.G.DE23",
+            "display": "Appetite Test (using RUTF) Results"
+        },
+        {
             "code": "EmCare.B22.DE47",
             "display": "Axillary Temperature (second measurement, degrees Celcius)",
             "definition": "The client's axillary temperature (second measurement) in degrees Celcius (temperature taken under the armpit)"
         },
         {
+            "code": "EmCare.B24.G.DE40",
+            "display": "Prefer to take Rectal Temperature (second measurement)",
+            "definition": "The health care worker prefers to take the child's rectal temperature"
+        },
+        {
+            "code": "EmCare.B24.G.DE41",
+            "display": "Rectal Temperature (second measurement)",
+            "definition": "The child's rectal temperature (temperature taken in the rectum), measured in degrees Celcius. Only consider taking rectal temperature if trained.\nA second temperature measurement is required to confirm fever or low body temperature in a young infant, if it is the only severe sign (of possible Severe Bacterial Infection), 30 minutes (after the first measurement and after removing cloting to let the baby who has fever cool, or wrapping the baby who has low body temperature)\n\nTemperature ranges for young infants under 2 months:\n- Under 36.0 : hypothermia (low body temperature)\n- 36.0 to 38.5 : normal \n- 38.5 and above : fever"
+        },
+        {
             "code": "EmCare.B22.DE46",
             "display": "Second Temperature Measurement Not Feasible",
-            "definition": "The client's second temperature measurement is feasible"
+            "definition": "The client's second temperature measurement is not feasible"
         },
         {
             "code": "EmCare.B22.DE50",
-            "display": "Measured Temperature (second measurement)"
+            "display": "Measured Temperature (second measurement)",
+            "definition": "Autocalculated temperature range based on axillary temperature in degrees Celcius (add 0.5 for rectal temperature)\n \nTemperature ranges for young infants under 2 months:\n- Under 35.5: low body temperature (hypothermia)\n- 35.5 to 37.9: normal\n- 38.0 and above: fever\n\nIf the infant has fever, remove a layer of clothing and let the baby cool. If the body temperature is low, wrap the baby in additional clothing to warm her."
         },
         {
-            "code": "EmCare.B23.DE83",
-            "display": "Possible Serious Bacterial Infection OR Very Severe Disease"
+            "code": "EmCare.B22.DE52A",
+            "display": "Obvious cause of fever",
+            "definition": "Obvious cause of fever"
+        },
+        {
+            "code": "EmCare.B23.DE01",
+            "display": "Very Severe Disease"
+        },
+        {
+            "code": "EmCare.B23.DE02",
+            "display": "History of  Obstructed or Absent Breathing",
+            "definition": "The client has History of Obstructed or Absent Breathing"
+        },
+        {
+            "code": "EmCare.B23.DE03",
+            "display": "Severe Pneumonia or Very Severe Disease",
+            "definition": "The client has Severe Pneumonia or Very Severe Disease"
         },
         {
             "code": "EmCare.B23.DE06",
-            "display": "Pneumonia"
+            "display": "Pneumonia",
+            "definition": "The client has Pneumonia"
+        },
+        {
+            "code": "DL-G-CL1-19",
+            "display": "with cough or difficulty breathing for more than 14 days",
+            "definition": "The client has Pneumonia with cough or difficulty breathing for More than 14 days"
+        },
+        {
+            "code": "EmCare.B23.DE10",
+            "display": "Cough or Cold",
+            "definition": "The client has Cough or Cold"
+        },
+        {
+            "code": "DL-G-CL1-22",
+            "display": "with cough or difficulty breathing for more than 14 days",
+            "definition": "The client has Cough or Cold  with cough or difficulty breathing for more than 14 days"
+        },
+        {
+            "code": "EmCare.B23.DE11",
+            "display": "Recurrent Wheezing",
+            "definition": "The client has Recurrent Wheezing"
+        },
+        {
+            "code": "EmCare.B23.DE12",
+            "display": "Wheezing (first episode)",
+            "definition": "The client has Wheezing (first episode)"
+        },
+        {
+            "code": "EmCare.B23.DE13",
+            "display": "Severe Dehydration",
+            "definition": "The client has Severe Dehydration"
+        },
+        {
+            "code": "EmCare.B23.DE14",
+            "display": "Some Dehydration",
+            "definition": "The client has Some Dehydration"
+        },
+        {
+            "code": "EmCare.B23.DE15",
+            "display": "No Dehydration",
+            "definition": "The client has no Dehydration"
+        },
+        {
+            "code": "EmCare.B23.DE15A",
+            "display": "Dehydration in the malnourished",
+            "definition": "The malnourished client has dehydration"
+        },
+        {
+            "code": "EmCare.B23.DE16",
+            "display": "Severe Persistent Diarrhoea",
+            "definition": "The client has Severe Persistent Diarrhoea"
+        },
+        {
+            "code": "EmCare.B23.DE17",
+            "display": "Persistent Diarrhoea",
+            "definition": "The client has Persistent Diarrhoea"
+        },
+        {
+            "code": "EmCare.B23.DE18",
+            "display": "Dysentery",
+            "definition": "The client has Dysentery"
+        },
+        {
+            "code": "EmCare.B23.DE19",
+            "display": "Very Severe Febrile Disease",
+            "definition": "The client has a Very Severe Febrile Disease"
+        },
+        {
+            "code": "EmCare.B23.DE23A",
+            "display": "Severe Malaria",
+            "definition": "The client has Severe Malaria"
+        },
+        {
+            "code": "EmCare.B23.DE20",
+            "display": "Malaria",
+            "definition": "The client has Malaria"
+        },
+        {
+            "code": "EmCare.B23.DE23",
+            "display": "Possible Bone/Joint Infection",
+            "definition": "The client has Possible Bone/Joint Infection"
+        },
+        {
+            "code": "EmCare.B23.DE24",
+            "display": "Possible Urine Infection",
+            "definition": "The client has Possible Urine Infection"
+        },
+        {
+            "code": "EmCare.B23.DE25",
+            "display": "Fever No Malaria",
+            "definition": "The client has Fever: No Malaria"
+        },
+        {
+            "code": "DL-G-CL1-61",
+            "display": "Fever present every day for more than 7 days",
+            "definition": "The client has Fever: No Malaria with Fever present every day for more than 7 days"
+        },
+        {
+            "code": "EmCare.B23.DE26",
+            "display": "Fever",
+            "definition": "The client has Fever"
+        },
+        {
+            "code": "DL-G-CL1-63",
+            "display": "Fever with Fever present every day for more than 7 days",
+            "definition": "The client has Fever with Fever present every day for more than 7 days"
+        },
+        {
+            "code": "EmCare.B23.DE27",
+            "display": "Severe Complicated Measles"
+        },
+        {
+            "code": "EmCare.B23.DE28",
+            "display": "Measles with Eye or Mouth Complication"
+        },
+        {
+            "code": "EmCare.B23.DE29",
+            "display": "Measles"
+        },
+        {
+            "code": "EmCare.B23.DE30",
+            "display": "Mastoiditis"
+        },
+        {
+            "code": "EmCare.B23.DE31",
+            "display": "Acute Ear Infection",
+            "definition": "The client has Acute Ear Infection"
+        },
+        {
+            "code": "EmCare.B23.DE32",
+            "display": "Chronic Ear Infection",
+            "definition": "The client has Chronic Ear Infection"
+        },
+        {
+            "code": "EmCare.B23.DE33",
+            "display": "No Ear Infection",
+            "definition": "The client has no Ear Infection"
+        },
+        {
+            "code": "EmCare.B23.DE34",
+            "display": "Eye Infection"
+        },
+        {
+            "code": "EmCare.B23.DE35",
+            "display": "Clouding of the Cornea"
+        },
+        {
+            "code": "EmCare.B23.DE36_l",
+            "display": "New and not previously treated"
+        },
+        {
+            "code": "EmCare.B23.DE37",
+            "display": "Abscess"
+        },
+        {
+            "code": "DL-G-CL1-88",
+            "display": "Deep or Extends to muscle, or with measured fever"
+        },
+        {
+            "code": "EmCare.B23.DE39",
+            "display": "Cellulitis"
+        },
+        {
+            "code": "DL-G-CL1-90",
+            "display": "Cellulitis with Rapidly spreading, extensive, or not responding to oral antibiotics"
+        },
+        {
+            "code": "EmCare.B23.DE41",
+            "display": "Papular Itching Rash (Prurigo)"
+        },
+        {
+            "code": "EmCare.B23.DE42",
+            "display": "Ringworm (Tinea)"
+        },
+        {
+            "code": "DL-G-CL1-93",
+            "display": "Extensive Ringworm (Tinea)"
+        },
+        {
+            "code": "EmCare.B23.DE44",
+            "display": "Scabies"
+        },
+        {
+            "code": "EmCare.B23.DE45",
+            "display": "Chickenpox"
+        },
+        {
+            "code": "DL-G-CL1-96",
+            "display": "with Pneumonia"
+        },
+        {
+            "code": "EmCare.B23.DE47",
+            "display": "Herpes Zoster"
+        },
+        {
+            "code": "DL-G-CL1-98",
+            "display": "with eye involvement"
+        },
+        {
+            "code": "EmCare.B23.DE49",
+            "display": "Impetigo or Folliculitis"
+        },
+        {
+            "code": "EmCare.B23.DE52",
+            "display": "Molluscum Contagiosum"
+        },
+        {
+            "code": "EmCare.B23.DE53",
+            "display": "Warts"
+        },
+        {
+            "code": "EmCare.B23.DE54",
+            "display": "Seborrhoea"
+        },
+        {
+            "code": "EmCare.B23.DE56",
+            "display": "Fixed Drug Reaction"
+        },
+        {
+            "code": "EmCare.B23.DE57",
+            "display": "Eczema"
+        },
+        {
+            "code": "EmCare.B23.DE58",
+            "display": "Steven Johnson Syndrome (SJS)"
+        },
+        {
+            "code": "EmCare.B23.DE59",
+            "display": "Mouth Sores or Ulcer"
+        },
+        {
+            "code": "DL-G-CL1-110",
+            "display": "Deep or Extensive"
+        },
+        {
+            "code": "EmCare.B23.DE61",
+            "display": "Oral Thrush"
+        },
+        {
+            "code": "EmCare.B23.DE62",
+            "display": "Severe Anaemia"
+        },
+        {
+            "code": "EmCare.B23.DE63",
+            "display": "Anaemia"
+        },
+        {
+            "code": "EmCare.B23.DE64",
+            "display": "No Anaemia"
+        },
+        {
+            "code": "EmCare.B23.DE65",
+            "display": "Severe Acute Malnutrition (or Very Low Weight for Age if less than 12 months old) with Medical Complications"
+        },
+        {
+            "code": "EmCare.B23.DE66",
+            "display": "Severe Acute Malnutrition (or Very Low Weight for Age if less than 12 months old)"
+        },
+        {
+            "code": "EmCare.B23.DE67",
+            "display": "Severe Acute Malnutrition (or Very Low Weight for Age if less than 12 months old) without Medical Complications"
+        },
+        {
+            "code": "EmCare.B23.DE68",
+            "display": "Moderate Acute Malnutrition"
+        },
+        {
+            "code": "EmCare.B23.DE69",
+            "display": "No Acute Malnutrition"
+        },
+        {
+            "code": "EmCare.B23.DE74",
+            "display": "Vitamin A Needed"
+        },
+        {
+            "code": "EmCare.B23.DE75",
+            "display": "Deworming Needed"
+        },
+        {
+            "code": "EmCare.B23.DE76",
+            "display": "Confirmed HIV Infection"
+        },
+        {
+            "code": "EmCare.B23.DE78",
+            "display": "HIV Infection Unlikely"
+        },
+        {
+            "code": "EmCare.B23.DE79",
+            "display": "HIV Infection Status Unknown"
+        },
+        {
+            "code": "EmCare.B23.DE72",
+            "display": "Immunization(s) incomplete for Age"
+        },
+        {
+            "code": "EmCare.B23.DE73",
+            "display": "Immunization Status Unknown"
+        },
+        {
+            "code": "EmCare.B23.DE100",
+            "display": "No severe classification reached"
+        },
+        {
+            "code": "DL-G-CL1-161",
+            "display": "PTMCT Follow up \u2013 HIV Exposed"
+        },
+        {
+            "code": "EmCare.B23.DE101",
+            "display": "PTMCT Follow up \u2013 HIV Confirmed"
+        },
+        {
+            "code": "EmCare.B23.DE104",
+            "display": "Mumps (parotitis)"
+        },
+        {
+            "code": "DL-G-CL1-164",
+            "display": "Persistant Mumps"
+        },
+        {
+            "code": "EmCare.B23.DE103",
+            "display": "Possible symptomatic HIV infection"
+        },
+        {
+            "code": "EmCare.B23.DE106",
+            "display": "Possible Tuberculosis"
+        },
+        {
+            "code": "EmCare.B23.DE83",
+            "display": "Possible Serious Bacterial Infection or Very Severe Disease"
         },
         {
             "code": "EmCare.B23.DE85",
@@ -1064,278 +1523,14 @@
             "display": "No Feeding Problem"
         },
         {
-            "code": "EmCare.B23.DE01",
-            "display": "Very Severe Disease"
+            "code": "EmCare.B24.DE07",
+            "display": "Malaria test",
+            "definition": "Malaria test"
         },
         {
-            "code": "EmCare.B23.DE03",
-            "display": "Severe Pneumonia or Very Severe Disease"
-        },
-        {
-            "code": "EmCare.B23.DE04_l",
-            "display": "with low oxygen saturation (SPO2 < 90%)"
-        },
-        {
-            "code": "EmCare.B23.DE05_l",
-            "display": "with wheezing"
-        },
-        {
-            "code": "EmCare.B23.DE06",
-            "display": "Pneumonia",
-            "definition": "The client has Pneumonia"
-        },
-        {
-            "code": "EmCare.B23.DE05_l",
-            "display": "with wheezing",
-            "definition": "The client has Pneumonia with wheezing"
-        },
-        {
-            "code": "EmCare.B23.DE08_l",
-            "display": "with cough or difficulty breathing for 14 days or more or recurrent wheeze",
-            "definition": "The client has Pneumonia with cough or difficulty breathing for 14 days or more or recurrent wheeze"
-        },
-        {
-            "code": "EmCare.B23.DE10",
-            "display": "Cough or Cold",
-            "definition": "The client has Cough or Cold"
-        },
-        {
-            "code": "EmCare.B23.DE05_l",
-            "display": "with wheezing",
-            "definition": "The client has Cough or Cold with wheezing"
-        },
-        {
-            "code": "EmCare.B23.DE08_l",
-            "display": "with cough or difficulty breathing for 14 days or more or recurrent wheeze",
-            "definition": "The client has with cough for more than 14 days or difficulty breathing for more than 14 days or recurrent wheeze"
-        },
-        {
-            "code": "EmCare.B23.DE13",
-            "display": "Severe Dehydration"
-        },
-        {
-            "code": "EmCare.B23.DE14",
-            "display": "Some Dehydration"
-        },
-        {
-            "code": "EmCare.B23.DE15",
-            "display": "No Dehydration"
-        },
-        {
-            "code": "EmCare.B23.DE16",
-            "display": "Severe Persistent Diarrhoea",
-            "definition": "The client has Severe Persistent Diarrhoea"
-        },
-        {
-            "code": "EmCare.B23.DE17",
-            "display": "Persistent Diarrhoea",
-            "definition": "The client has Persistent Diarrhoea"
-        },
-        {
-            "code": "EmCare.B23.DE18",
-            "display": "Dysentery",
-            "definition": "The client has Dysentery"
-        },
-        {
-            "code": "EmCare.B23.DE18.a",
-            "display": "Possible Shigella",
-            "definition": "The client has Possible Shigella"
-        },
-        {
-            "code": "EmCare.B23.DE30",
-            "display": "Mastoiditis"
-        },
-        {
-            "code": "EmCare.B23.DE31",
-            "display": "Acute Ear Infection"
-        },
-        {
-            "code": "EmCare.B23.DE32",
-            "display": "Chronic Ear Infection"
-        },
-        {
-            "code": "EmCare.B23.DE32a_l",
-            "display": "with ear pain or fever"
-        },
-        {
-            "code": "EmCare.B23.DE33",
-            "display": "No Ear Infection"
-        },
-        {
-            "code": "EmCare.B23.DE19",
-            "display": "Very Severe Febrile Disease"
-        },
-        {
-            "code": "EmCare.B23.DE104",
-            "display": "Fever: possible bacterial infection"
-        },
-        {
-            "code": "EmCare.B23.DE26a_l",
-            "display": "Fever present every day for 7 Days or more"
-        },
-        {
-            "code": "EmCare.B23.DE105",
-            "display": "Fever: bacterial infection unlikely"
-        },
-        {
-            "code": "EmCare.B23.DE27",
-            "display": "Severe Complicated Measles"
-        },
-        {
-            "code": "EmCare.B23.DE28",
-            "display": "Measles with Eye or Mouth Complication"
-        },
-        {
-            "code": "EmCare.B23.DE29",
-            "display": "Possible Measles"
-        },
-        {
-            "code": "EmCare.B23.DE62",
-            "display": "Severe Anaemia"
-        },
-        {
-            "code": "EmCare.B23.DE63",
-            "display": "Anaemia"
-        },
-        {
-            "code": "EmCare.B23.DE64",
-            "display": "No Anaemia"
-        },
-        {
-            "code": "EmCare.B23.DE34",
-            "display": "Eye Infection"
-        },
-        {
-            "code": "EmCare.B23.DE35",
-            "display": "Clouding of the Cornea"
-        },
-        {
-            "code": "EmCare.B23.DE36_l",
-            "display": "New or not previously treated"
-        },
-        {
-            "code": "EmCare.B23.DE41",
-            "display": "Papular Urticaria or Papular Pruritic Eruptions"
-        },
-        {
-            "code": "EmCare.B23.DE42",
-            "display": "Ringworm (Tinea)"
-        },
-        {
-            "code": "DL-I-CL1-15",
-            "display": "Scalp Infection (tinea capitis)"
-        },
-        {
-            "code": "EmCare.B23.DE44",
-            "display": "Scabies"
-        },
-        {
-            "code": "EmCare.B23.DE45",
-            "display": "Chickenpox"
-        },
-        {
-            "code": "DL-I-CL1-16",
-            "display": "with Severe Rash"
-        },
-        {
-            "code": "DL-G-CL1-92",
-            "display": "with Pneumonia"
-        },
-        {
-            "code": "EmCare.B23.DE47",
-            "display": "Herpes Zoster"
-        },
-        {
-            "code": "DL-G-CL1-94",
-            "display": "with eye involvement"
-        },
-        {
-            "code": "DL-I-CL1-17",
-            "display": "with Disseminated Herpes Zoste"
-        },
-        {
-            "code": "EmCare.B23.DE49",
-            "display": "Impetigo"
-        },
-        {
-            "code": "DL-G-CL1-96",
-            "display": "extends to muscle or with measured fever"
-        },
-        {
-            "code": "DL-I-CL1-18",
-            "display": "with extensive lesions"
-        },
-        {
-            "code": "EmCare.B23.DE52",
-            "display": "Molluscum Contagiosum"
-        },
-        {
-            "code": "DL-I-CL1-19",
-            "display": "with extensive lesions or lesions close to the eye"
-        },
-        {
-            "code": "EmCare.B23.DE53",
-            "display": "Warts"
-        },
-        {
-            "code": "DL-I-CL1-20",
-            "display": "Extensive warts"
-        },
-        {
-            "code": "EmCare.B23.DE54",
-            "display": "Seborrhoeic Dermatitis"
-        },
-        {
-            "code": "DL-G-CL1-101",
-            "display": "Severe Seborrhoeic Dermatitis"
-        },
-        {
-            "code": "EmCare.B23.DE56",
-            "display": "Fixed Drug Reaction"
-        },
-        {
-            "code": "EmCare.B23.DE57",
-            "display": "Eczema"
-        },
-        {
-            "code": "DL-I-CL1-21",
-            "display": "Severe acute moist or weeping eczema"
-        },
-        {
-            "code": "DL-I-CL1-22",
-            "display": "Secondary bacterial infection of eczema"
-        },
-        {
-            "code": "DL-I-CL1-23",
-            "display": "Secondary herpes infection (eczema herpeticum)"
-        },
-        {
-            "code": "EmCare.B23.DE58",
-            "display": "Steven Johnson Syndrome (SJS)"
-        },
-        {
-            "code": "EmCare.B23.DE59",
-            "display": "Mouth Sores or Ulcer"
-        },
-        {
-            "code": "DL-G-CL1-107",
-            "display": "Deep or Extensive"
-        },
-        {
-            "code": "EmCare.B23.DE61",
-            "display": "Oral Thrush"
-        },
-        {
-            "code": "EmCare.B23.DE106",
-            "display": "Very Low Weight for Age"
-        },
-        {
-            "code": "EmCare.B23.DE107",
-            "display": "Low Weight for Age"
-        },
-        {
-            "code": "EmCare.B23.DE108",
-            "display": "Low MUAC or visual report of wasting"
+            "code": "EmCare.B.H.DE24",
+            "display": "Microscopists expected to evaluate parasite density",
+            "definition": "The country / region / facility has Microscopists that are expected to evaluate parasite density"
         },
         {
             "code": "EmCare.A.DE17",
@@ -1464,8 +1659,8 @@
         },
         {
             "code": "EmCare.B10S1.DE07",
-            "display": "Less than 14 days",
-            "definition": "The client has had ear discharge for less than 14 days"
+            "display": "14 days or less",
+            "definition": "The client has had ear discharge for 14 days or less"
         },
         {
             "code": "EmCare.B11S1.DE03A",
@@ -1474,8 +1669,8 @@
         },
         {
             "code": "EmCare.B10S1.DE08",
-            "display": "14 days or more",
-            "definition": "Symptom for 14 days or more"
+            "display": "More than 14 days",
+            "definition": "Symptom for More than 14 days"
         },
         {
             "code": "EmCare.B12S1.DE04A",
@@ -1491,31 +1686,6 @@
             "code": "EmCare.B12S1.DE09",
             "display": "No Pain",
             "definition": "The child is not reported to have any pain and does not appear to be in pain"
-        },
-        {
-            "code": "EmCare.B12S1.DE10",
-            "display": "Joint or Bone Pain",
-            "definition": "The child is reported to have or appears to have joint or bone pain"
-        },
-        {
-            "code": "EmCare.B12S1.DE11",
-            "display": "Pain or Difficulty Passing Urine or Crying when Passing Urine",
-            "definition": "The child is reported to have or appears to have pain or difficulty passing urine (in younger children this may appear as crying when passing urine)"
-        },
-        {
-            "code": "EmCare.B12S1.DE12",
-            "display": "Skin problem",
-            "definition": "The child is reported to have or appears to have painful skin or a skin problem"
-        },
-        {
-            "code": "EmCare.B12S1.DE13",
-            "display": "Ear Pain",
-            "definition": "The child is reported to have or appears to have ear pain"
-        },
-        {
-            "code": "EmCare.B12S1.DE14",
-            "display": "Other",
-            "definition": "The child is reported to have or appears to have pain which does not fit into the other categories"
         },
         {
             "code": "EmCare.B12S1.DE16",
@@ -1535,7 +1705,7 @@
         {
             "code": "EmCare.B12S1.DE04",
             "display": "Less than 7 days",
-            "definition": "The child has wheezing for less than 7 days"
+            "definition": "The child has wheezing for Less than 7 days"
         },
         {
             "code": "EmCare.B10S2.DE05C",
@@ -1598,6 +1768,10 @@
             "code": "EmCare.B20S2.DE05",
             "display": "Skin Pinch goes back Normally (immediately)",
             "definition": "The client's skin goes back normally after Skin Pinch of Abdomen (immediately)"
+        },
+        {
+            "code": "none",
+            "display": "None of the above"
         },
         {
             "code": "EmCare.B14S2.DE41",
@@ -1670,6 +1844,21 @@
             "definition": "The client' maternal malaria test results in the week prior to delivery, intrapartum or in the week after delivery is unknown"
         },
         {
+            "code": "EmCare.B24.G.DE45",
+            "display": "Malaria Positive",
+            "definition": "The clients Malaria Test result is positive"
+        },
+        {
+            "code": "EmCare.B24.G.DE46",
+            "display": "Malaria Negative",
+            "definition": "The clients Malaria Test result is negative"
+        },
+        {
+            "code": "EmCare.B24.G.DE47",
+            "display": "Malaria Status Unknown / Unavailable / Invalid / Not Feasible",
+            "definition": "The clients Malaria Test result is unknown, invalid or not feasable"
+        },
+        {
             "code": "EmCare.B18S2.DE11",
             "display": "Moves on his or her own or moves spontaneously or without stimulation",
             "definition": "The client moves on his or her own or moves spontaneously or without stimulation"
@@ -1682,7 +1871,7 @@
         {
             "code": "EmCare.B18S2.DE09",
             "display": "No movement at all",
-            "definition": "The client has no movement at all even after stimulation"
+            "definition": "The client has No movement at all even after stimulation"
         },
         {
             "code": "EmCare.B19S2.DE05",
@@ -1815,24 +2004,54 @@
             "definition": "Other reasons than above"
         },
         {
-            "code": "EmCare.B21S1.DE02",
+            "code": "EmCare.B17.DE31",
+            "display": "Child HIV Positive - Virological",
+            "definition": "The child is HIV Positive (Virological Test)"
+        },
+        {
+            "code": "EmCare.B17.DE32",
+            "display": "Child HIV Positive - Serological",
+            "definition": "The child is HIV Positive (Serological Test)"
+        },
+        {
+            "code": "EmCare.B17.DE33",
+            "display": "Child HIV Positive - Unknown Type of Test",
+            "definition": "The child is HIV Positive (Unknown Type of Test)"
+        },
+        {
+            "code": "EmCare.B17.DE34",
+            "display": "Child HIV Negative",
+            "definition": "The child is HIV Negative"
+        },
+        {
+            "code": "EmCare.B17.DE35",
+            "display": "Child HIV Status - Unknown or Not Tested",
+            "definition": "The child's HIV Status is unknown or the client has not been tested"
+        },
+        {
+            "code": "EmCare.B17.DE36",
+            "display": "Child HIV Status - Decline to answer",
+            "definition": "The child has delined to answer regarding HIV Status"
+        },
+        {
+            "code": "EmCare.B17.DE26",
             "display": "Mother HIV Positive",
-            "definition": "The client's mother is HIV positive"
+            "definition": "The child's mother is HIV positive"
         },
         {
-            "code": "EmCare.B21S1.DE03",
+            "code": "EmCare.B17.DE27",
             "display": "Mother HIV Negative",
-            "definition": "The client's mother is HIV negative"
+            "definition": "The child's mother is HIV negative"
         },
         {
-            "code": "EmCare.B21S1.DE04",
+            "code": "EmCare.B17.DE28",
             "display": "Mother HIV Status - Unknown or Not Tested",
-            "definition": "The client's mother's HIV Status is unknown or not tested"
+            "definition": "The child's mother's HIV Status is unknown or not tested"
         },
         {
-            "code": "EmCare.B21S1.DE05",
+            "code": "EmCare.B17.DE29",
             "display": "Mother HIV Status - Decline to answer",
-            "definition": "The client's mother has declined to answer regarging HIV Status"
+            "definition": "The child's mother has declined to answer regarging HIV Status"
         },
         {
             "code": "EmCare.B21S2.DE19",
@@ -1855,16 +2074,6 @@
             "definition": "The care giver is cleaning the feeding utensils hygienically"
         },
         {
-            "code": "EmCare.B17.DE06",
-            "display": "Yes, Date documented, but not here",
-            "definition": "The caregiver is able to provide the Vitamin A supplement date but not Today"
-        },
-        {
-            "code": "EmCare.B17.DE07",
-            "display": "No, but last dose given less than 1 month ago",
-            "definition": "The caregiver is able to tell the healthcare worker that the last dose was given less than 1 month ago"
-        },
-        {
             "code": "EmCare.B17.DE08",
             "display": "No, but last dose given between 1 and 6 months ago",
             "definition": "The caregiver is able to tell the healthcare worker that the last dose was given between 1 and 5 months ago"
@@ -1878,46 +2087,6 @@
             "code": "EmCare.B17.DE10",
             "display": "No, Do not know when last dose was given",
             "definition": "The caregiver is not able to tell the healthcare worker when the last dose was given"
-        },
-        {
-            "code": "EmCare.B17.DE23",
-            "display": "High HIV Risk",
-            "definition": "The client is in an area of HIV prevalence of high HIV risk."
-        },
-        {
-            "code": "EmCare.B17.DE24",
-            "display": "Low HIV Risk",
-            "definition": "The client is in an area of HIV prevalence of low HIV risk."
-        },
-        {
-            "code": "EmCare.B17.DE31",
-            "display": "Child HIV Positive - Virological",
-            "definition": "The client is HIV Positive (Virological Test)"
-        },
-        {
-            "code": "EmCare.B17.DE32",
-            "display": "Child HIV Positive - Serological",
-            "definition": "The client is HIV Positive (Serological Test)"
-        },
-        {
-            "code": "EmCare.B17.DE33",
-            "display": "Child HIV Positive - Unknown Type of Test",
-            "definition": "The client is HIV Positive (Unknown Type of Test)"
-        },
-        {
-            "code": "EmCare.B17.DE34",
-            "display": "Child HIV Negative",
-            "definition": "The client is HIV Negative"
-        },
-        {
-            "code": "EmCare.B17.DE35",
-            "display": "Child HIV Status - Unknown or Not Tested",
-            "definition": "The client's HIV Status is unknown or the client has not been tested"
-        },
-        {
-            "code": "EmCare.B17.DE36",
-            "display": "Child HIV Status - Decline to answer",
-            "definition": "The client has delined to answer regarding HIV Status"
         },
         {
             "code": "EmCare.B17.DE46",
@@ -2090,19 +2259,152 @@
             "definition": "The client is visually assessed for whether underweight and appears to be severely underweight (as an aide for dosing calculations) (estimated weight based on height or age would be equivalent to WHZ= -2 / WAZ= -2)"
         },
         {
-            "code": "EmCare.B15S2.DE10",
-            "display": "Severe mucous membrane pallor",
-            "definition": "The client has severe mucous membrane pallor"
+            "code": "EmCare.B17.DE02",
+            "display": "Less than 1 month ago",
+            "definition": "The caregiver is able to tell the healthcare worker that the last dose was given less than 1 month ago"
         },
         {
-            "code": "EmCare.B15S2.DE11",
-            "display": "Some mucous membrane pallor",
-            "definition": "The client has some mucous membrane pallor"
+            "code": "EmCare.B17.DE02a",
+            "display": "1 to 5 months ago",
+            "definition": "The caregiver is able to tell the healthcare worker that the last dose was given between 1 and 5 months ago"
         },
         {
-            "code": "EmCare.B15S2.DE12",
-            "display": "No mucous membrane pallor",
-            "definition": "The client has no mucous membrane pallor"
+            "code": "EmCare.B17.DE02b",
+            "display": "More than 6 months ago",
+            "definition": "The caregiver is able to tell the healthcare worker that the last dose was given more than 6 months ago"
+        },
+        {
+            "code": "EmCare.B17.DE02c",
+            "display": "Vitamin A Supplementation not previously given",
+            "definition": "The child has not previously been given Vitamin A Supplementation"
+        },
+        {
+            "code": "EmCare.B17.DE03",
+            "display": "Date Unknown",
+            "definition": "The date that the child's profile records Vitamin A Supplementation being given is unknown"
+        },
+        {
+            "code": "EmCare.B17.DE06",
+            "display": "Yes, Date documented, but not here",
+            "definition": "The caregiver is able to provide the Vitamin A supplement date but not today"
+        },
+        {
+            "code": "EmCare.B17.DE07",
+            "display": "No, do not know when last dose was given",
+            "definition": "The caregiver is able to tell the healthcare worker that the last dose was given less than 1 month ago"
+        },
+        {
+            "code": "EmCare.B17.DE13",
+            "display": "Deworming treatment not previously given",
+            "definition": "The child has not previously been given deworming treatment"
+        },
+        {
+            "code": "EmCare.B17.DE14",
+            "display": "Date unknown",
+            "definition": "The date that the child's profile records Deworming being given is unknown"
+        },
+        {
+            "code": "EmCare.B17.DE17",
+            "display": "Yes, Date documented, but not here",
+            "definition": "The caregiver is able to provide the deworming treatment date, but not today"
+        },
+        {
+            "code": "EmCare.B17.DE18",
+            "display": "No, Do not know when last dose was given",
+            "definition": "The caregiver is not able to tell the healthcare worker when the last dose was given"
+        },
+        {
+            "code": "EmCare.B17.DE63",
+            "display": "Not tested",
+            "definition": "The child's mother's is not tested for viral hepatitis B"
+        },
+        {
+            "code": "EmCare.B17.DE64",
+            "display": "Results unknown",
+            "definition": "The child's mother's viral hepatitis B test result is unknown"
+        },
+        {
+            "code": "EmCare.B17.DE65",
+            "display": "Presence of viral hepatitis B",
+            "definition": "The child's mother has presence of viral hepatitis B"
+        },
+        {
+            "code": "EmCare.B17.DE66",
+            "display": "Abscence of viral hepatitis B",
+            "definition": "The child's mother has abscence of viral hepatitis B"
+        },
+        {
+            "code": "EmCare.B17.DE23",
+            "display": "High HIV Risk",
+            "definition": "The client is in an area of HIV prevalence of high HIV risk."
+        },
+        {
+            "code": "EmCare.B17.DE24",
+            "display": "Low HIV Risk",
+            "definition": "The client is in an area of HIV prevalence of low HIV risk."
+        },
+        {
+            "code": "EmCare.B17.DE42",
+            "display": "Yes",
+            "definition": "The child is followed up at PMTCT for HIV investigation or management"
+        },
+        {
+            "code": "EmCare.B17.DE43",
+            "display": "No",
+            "definition": "The child is not followed up at PMTCT for HIV investigation or management"
+        },
+        {
+            "code": "EmCare.B17.DE44C",
+            "display": "Declines to answer",
+            "definition": "The caregiver declines declines to answer whether the child is followed up at a PMTCT center or not"
+        },
+        {
+            "code": "EmCare.B17.DE44E",
+            "display": "HIV Exposed",
+            "definition": "The child is HIV exposed"
+        },
+        {
+            "code": "EmCare.B17.DE44F",
+            "display": "HIV Confirmed",
+            "definition": "The child is HIV confirmed"
+        },
+        {
+            "code": "EmCare.B17.DE44B",
+            "display": "Don't know",
+            "definition": "The child's PMTCT HIV status is unknown"
+        },
+        {
+            "code": "h",
+            "display": "High Density"
+        },
+        {
+            "code": "l",
+            "display": "Low Density"
+        },
+        {
+            "code": "EmCare.B12S1.DE10",
+            "display": "Joint or Bone Pain",
+            "definition": "The child is reported to have or appears to have joint or bone pain"
+        },
+        {
+            "code": "EmCare.B12S1.DE11",
+            "display": "Pain or Difficulty Passing Urine or Crying when Passing Urine",
+            "definition": "The child is reported to have or appears to have pain or difficulty passing urine (in younger children this may appear as crying when passing urine)"
+        },
+        {
+            "code": "EmCare.B12S1.DE12",
+            "display": "Skin Pain",
+            "definition": "The child is reported to have or appears to have painful skin or a skin problem"
+        },
+        {
+            "code": "EmCare.B12S1.DE13",
+            "display": "Ear Pain",
+            "definition": "The child is reported to have or appears to have ear pain"
+        },
+        {
+            "code": "EmCare.B12S1.DE14",
+            "display": "Other",
+            "definition": "The child is reported to have or appears to have pain which does not fit into the other categories"
         },
         {
             "code": "EmCare.B14S2.DE07",
@@ -2120,64 +2422,104 @@
             "definition": "The client does not have a generalised or localised skin problem"
         },
         {
+            "code": "EmCare.B14S2.DE14",
+            "display": "Abscess - Hot Tender Swelling",
+            "definition": "The child has an abscess - Hot tender swelling"
+        },
+        {
+            "code": "EmCare.B14S2.DE15",
+            "display": "Deep or extends to muscle",
+            "definition": "The child has an abscess that is deep or extends to muscle"
+        },
+        {
+            "code": "EmCare.B14S2.DE16",
+            "display": "Cellulitis - Red Tender Skin",
+            "definition": "The child has cellulitis - warm / hot tender skin - appears red in paler skin tones and dark red, dark brown, grey or purple in darker skin tones"
+        },
+        {
             "code": "EmCare.B14S2.DE18",
-            "display": "Papular Urticaria or Papular Pruritic Eruptions",
+            "display": "Papular Itching Rash (Prurigo) - Itching rash with small papules and scratch marks. Dark spots with pale centre",
             "definition": "The client has Papular Urticaria or Papular Pruritic Eruptions \n\u2022 Itchy papules at different stages of evolution.\n\u2022 Found on the arms and legs.\n\u2022 Healed lesions are often dark/ hyperpigmented.\n\u2022 The itch is difficult to manage.\n\u2022 Essential to exclude scabies."
         },
         {
             "code": "EmCare.B14S2.DE19",
-            "display": "Ringworm (Tinea)",
+            "display": "Ringworm (Tinea) - An itchy circular lesion with a raised edge and fine scaly area in the centre with loss of hair.  May also be found on body or web on feet",
             "definition": "The client has Ringworm (Tinea) - \n\u2022 An itchy circular lesion with a raised edge and fine scaly area.\n\u2022 Scalp lesions may result in loss of hair"
         },
         {
             "code": "EmCare.B14S2.DE21",
-            "display": "Scabies",
+            "display": "Scabies - Rash and excoriations on torso; burrows in web space and wrists, face spared",
             "definition": "The client has Scabies -\n\u2022 Intense itching, more severe at night.\n\u2022 Small burrows between fingers, tows, elbow areas and buttocks.\n\u2022 Secondary infection may occur.\n\u2022 Small babies may have vesicles and pustules on the palms and soles and face.\n\u2022 The infestation spreads easily, usually affecting more than one person in the household"
         },
         {
             "code": "EmCare.B14S2.DE22",
-            "display": "Chickenpox",
+            "display": "Chickenpox - Vesicles over body.  Vesicles appear progressively over days and form scabs after they rupture",
             "definition": "The client has Chickenpox - Mild fever preceding the rash.\n\u2022 Rash begins on the trunk and face,\nlater spreads to the arms and legs.\n\u2022 Vesicles appear progressively over days and forms scabs\nafter they rupture.\n\u2022 Contagious from the fever starts until all lesions have\ncrusted.\n\u2022 Usually lasts for about 1 week."
         },
         {
             "code": "EmCare.B14S2.DE23",
-            "display": "Herpes Zoster",
+            "display": "Herpes Zoster -  Vesicles in one area on one side of body with intense pain or scars plus shooting pain.  \nUncommon in children except where they are immuno-compromised (e.g. if infected with HIV)",
             "definition": "The client has Herpes Zoster -  Vesicles in one area on one side of body with intense pain or scars plus shooting pain.\n\u2022 They are uncommon in children except when they are immune-compromised"
         },
         {
             "code": "EmCare.B14S2.DE25",
-            "display": "Impetigo",
+            "display": "Impetigo or Folliculitis - Red, Tender, Warm Crusts or Small lesions",
             "definition": "The client has Impetigo- Pustules and papules with honey -coloured crusts.\n\u2022 Commonly starts on the face or buttocks, then spreads to the neck, hands, arms and legs."
         },
         {
             "code": "EmCare.B14S2.DE31",
-            "display": "Molluscum Contagiosum",
+            "display": "Molluscum Contagiosum - Skin coloured pearly white papules with central umbilication. Most commonly seen on face and trunk in children.",
             "definition": "The client has Molluscum Contagiosum -Caused by a poxvirus.\n\u2022 Dome-shaped papules with a central depression\n(umblication).\n\u2022 Most commonly seen on the face and trunk in children"
         },
         {
             "code": "EmCare.B14S2.DE32",
-            "display": "Warts",
+            "display": "Warts - Papules or nodules with a rough (Verrucous) surface",
             "definition": "The client has Warts - Appears as papules or nodules with a rough surface.\n\u2022 Seen most often on the hands and fingers, but can be\nfound anywhere on\nthe body."
         },
         {
             "code": "EmCare.B14S2.DE33",
-            "display": "Seborrhoeic Dermatitis",
+            "display": "Seborrhoea - Greasy scales and redness on central face and body folds",
             "definition": "The client has Seborrhoeic Dermatitis - Greasy scales and redness on central face, body folds.\n\u2022 The scalp, face, ears and skin folds (e.g. axillae, groins, under the breasts) are commonly affected."
         },
         {
             "code": "EmCare.B14S2.DE35",
-            "display": "Fixed Drug Reaction",
+            "display": "Fixed Drug Reactions - Generalised red, wide spread with small bumps or blisters; or one or more dark skin areas",
             "definition": "The client has Fixed Drug Reaction - One or more dark round or oval skin lesions with central vesicles .\n\u2022 The lesions recur on the same spot, and increase in number with each successive attack"
         },
         {
             "code": "EmCare.B14S2.DE36",
-            "display": "Eczema",
+            "display": "Eczema - Wet oozing sores or excoriated, thick patches",
             "definition": "The client has Eczema - Erythematous (red), sometimes scaly plaques found on the face, flexures, trunk and extensors.\n\u2022 Yellow pustules which crust indicate\nsecondary bacterial infection."
         },
         {
             "code": "EmCare.B14S2.DE37",
             "display": "Steven Johnson Syndrome (SJS)",
             "definition": "The client has Steven Johnson Syndrome (SJS) - Severe and acute reaction due to many drugs, the commonest being cotrimoxazole or nevirapine.\n\u2022 Lesions involve the skin as well as the mucous membranes (e.g. eyes, mouth and genitalia).\n\u2022 May start as widespread red irregular rash with or without blisters. The blisters rupture leaving denuded areas of skin.\n\u2022 May cause difficulty in breathing."
+        },
+        {
+            "code": "EmCare.B14S2.DE27",
+            "display": "Skin Lesions \u2265 4 cm",
+            "definition": "The impetigo skin lesions cover an area of 4 cm or larger"
+        },
+        {
+            "code": "EmCare.B14S2.DE28",
+            "display": "Red Skin Streaks",
+            "definition": "The impetigo is associated with red skin streaks"
+        },
+        {
+            "code": "EmCare.B14S2.DE29",
+            "display": "Tender Nodes (Nodules) under the skin",
+            "definition": "The impetigo is associated with tender Nodes (Nodules) under the skin"
+        },
+        {
+            "code": "EmCare.B14S2.DE30",
+            "display": "Skin Infection extends to muscle",
+            "definition": "The skin Infection extends to muscle"
+        },
+        {
+            "code": "EmCare.B14S2.DE30a",
+            "display": "No signs of severe Impetigo / Folliculitis",
+            "definition": "The child does not have any signs of severe Impetigo / Folliculitis"
         },
         {
             "code": "EmCare.B14S2.DE44",

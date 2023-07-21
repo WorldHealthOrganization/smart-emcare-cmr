@@ -1,0 +1,27 @@
+{
+    "resourceType": "ValueSet",
+    "id": "density",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/density",
+    "name": "valueset-density",
+    "status": "draft",
+    "experimental": false,
+    "description": "Codes representing possible values for the Provide an estimated age or estimated date of birth element",
+    "immutable": true,
+    "compose": {
+        "include": [
+            {
+                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                "concept": [
+                    {
+                        "code": "h",
+                        "display": "High Density"
+                    },
+                    {
+                        "code": "l",
+                        "display": "Low Density"
+                    }
+                ]
+            }
+        ]
+    }
+}

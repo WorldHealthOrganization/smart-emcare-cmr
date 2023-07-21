@@ -1,0 +1,65 @@
+{
+    "resourceType": "ValueSet",
+    "id": "last-vita-date",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/last-vita-date",
+    "name": "valueset-last-vita-date",
+    "title": "EmCare.B17.DE01",
+    "status": "draft",
+    "experimental": false,
+    "description": "Date of Last Vitamin A Supplementation",
+    "immutable": true,
+    "compose": {
+        "include": [
+            {
+                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                "concept": [
+                    {
+                        "code": "EmCare.B17.DE02",
+                        "display": "Less than 1 month ago",
+                        "designation": [
+                            {
+                                "value": "The caregiver is able to tell the healthcare worker that the last dose was given less than 1 month ago"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17.DE02a",
+                        "display": "1 to 5 months ago",
+                        "designation": [
+                            {
+                                "value": "The caregiver is able to tell the healthcare worker that the last dose was given between 1 and 5 months ago"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17.DE02b",
+                        "display": "More than 6 months ago",
+                        "designation": [
+                            {
+                                "value": "The caregiver is able to tell the healthcare worker that the last dose was given more than 6 months ago"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17.DE02c",
+                        "display": "Vitamin A Supplementation not previously given",
+                        "designation": [
+                            {
+                                "value": "The child has not previously been given Vitamin A Supplementation"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17.DE03",
+                        "display": "Date Unknown",
+                        "designation": [
+                            {
+                                "value": "The date that the child's profile records Vitamin A Supplementation being given is unknown"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

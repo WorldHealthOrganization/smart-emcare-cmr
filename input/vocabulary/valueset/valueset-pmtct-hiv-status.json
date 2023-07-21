@@ -1,0 +1,47 @@
+{
+    "resourceType": "ValueSet",
+    "id": "pmtct-hiv-status",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/pmtct-hiv-status",
+    "name": "valueset-pmtct-hiv-status",
+    "title": "EmCare.B17.DE44D",
+    "status": "draft",
+    "experimental": false,
+    "description": "PMTCT HIV Status",
+    "immutable": true,
+    "compose": {
+        "include": [
+            {
+                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                "concept": [
+                    {
+                        "code": "EmCare.B17.DE44E",
+                        "display": "HIV Exposed",
+                        "designation": [
+                            {
+                                "value": "The child is HIV exposed"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17.DE44F",
+                        "display": "HIV Confirmed",
+                        "designation": [
+                            {
+                                "value": "The child is HIV confirmed"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "EmCare.B17.DE44B",
+                        "display": "Don't know",
+                        "designation": [
+                            {
+                                "value": "The child's PMTCT HIV status is unknown"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,146 @@
+map 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureMap/emcare.b17.healthprevention' = 'emcare.b17.healthprevention'
+uses 'http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse' alias 'questionnaireResponse' as source
+uses 'http://hl7.org/fhir/StructureDefinition/Bundle' alias 'Bundle' as target
+uses 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/observation' alias 'Observation' as target
+uses 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation' alias 'EmCare Observation' as produced
+group bundletrans(source src : questionnaireResponse,target bundle : Bundle){
+    src -> bundle.id = uuid() 'id';
+    src -> bundle.type = 'batch' 'type';
+    src.item first as item  where linkId = 'EmCare.B17.DE01' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de01(src, tgt) '38abda54';
+            } '5bb3b79f';
+        } '370811d9';
+    } '55445f22';
+    src.item first as item  where linkId = 'EmCare.B17.DE05' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de05(src, tgt) '220c65f0';
+            } '5a4606f6';
+        } 'cd12baee';
+    } 'ab297c10';
+    src.item first as item  where linkId = 'EmCare.B17.DE11' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de11(src, tgt) 'fb8cad0f';
+            } '7edc2221';
+        } 'a3887c52';
+    } 'f12a1935';
+    src.item first as item  where linkId = 'EmCare.B17.DE12' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de12(src, tgt) 'cfb4978a';
+            } '6baa40da';
+        } '0100bb78';
+    } 'cb6e8c01';
+    src.item first as item  where linkId = 'EmCare.B17.DE16' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de16(src, tgt) '27cedbd4';
+            } '020706e5';
+        } '8a74f989';
+    } '7f1067aa';
+    src.item first as item  where linkId = 'EmCare.B17.DE62' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de62(src, tgt) '9e6fe417';
+            } 'fceb26b5';
+        } 'c2317b2e';
+    } '7eb5326c';
+    src.item first as item  where linkId = 'EmCare.B17.DE67' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de67(src, tgt) 'a2efd289';
+            } '6f25bea0';
+        } '030f6538';
+    } 'dcdacfce';
+    src.item first as item  where linkId = 'EmCare.B17.DE22' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de22(src, tgt) '83ec2396';
+            } '083527d8';
+        } 'bb2636d1';
+    } 'b4fe0836';
+    src.item first as item  where linkId = 'EmCare.B17.DE44A' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de44a(src, tgt) '0155fae0';
+            } '89eb0073';
+        } '8b0fb23a';
+    } 'e0a3b61d';
+    src.item first as item  where linkId = 'EmCare.B17.DE44D' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de44d(src, tgt) 'fe467709';
+            } 'cbb99405';
+        } 'cb493560';
+    } '34701641';
+    src.item first as item  where linkId = 'EmCare.B17.DE44G' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de44g(src, tgt) '85cf3dc6';
+            } '673939ec';
+        } '342dede2';
+    } 'e3d8cb7b';
+    src.item first as item  where linkId = 'EmCare.B17.DE25' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de25(src, tgt) 'c6e4fc6d';
+            } 'd7e65591';
+        } 'fec68882';
+    } 'ffbb4d39';
+    src.item first as item  where linkId = 'EmCare.B17.DE30' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de30(src, tgt) '9615670a';
+            } '176137f4';
+        } '9b89aba3';
+    } '6ce71c61';
+    src.item first as item  where linkId = 'EmCare.B17.DE37' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de37(src, tgt) '64e5c20d';
+            } 'e269e244';
+        } 'b1e1d7af';
+    } '9ecaf293';
+    src.item first as item  where linkId = 'EmCare.B17.DE41' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de41(src, tgt) '3f331cf1';
+            } 'ce7dae43';
+        } '019e4ee3';
+    } '0aee95a8';
+    src.item first as item  where linkId = 'EmCare.B17.DE45' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de45(src, tgt) '4b6ca210';
+            } 'bc5d9484';
+        } 'eaed65ff';
+    } 'e7f245f9';
+    src.item first as item  where linkId = 'EmCare.B17.DE50' and answer.exists() then {
+        src -> bundle.entry as entry  then {
+            src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+            src -> entry.resource = create('Observation') as tgt then {
+                src -> tgt then emcareobservationemcareb17de50(src, tgt) '9189b3e5';
+            } 'd6cc8f25';
+        } 'b90dd814';
+    } 'd4421c8c';
+}
+

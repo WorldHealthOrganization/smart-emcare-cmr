@@ -2,13 +2,14 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareb22assessmentstests version '0.0.1.build.68'
+library emcareb22assessmentstests version '0.0.1.build.174'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.68' called Base
-include emcareobservation version '0.0.1.build.68' called obs
-include emcarevalueset version '0.0.1.build.68' called val
-include emcarecombineddataelements version '0.0.1.build.68' called c
+include emcarebase version '0.0.1.build.174' called Base
+include emcarevalueset version '0.0.1.build.174' called val
+include emcarezscore version '0.0.1.build.174' called Z
+include emcarecombineddataelements version '0.0.1.build.174' called c
+include emcareobservation version '0.0.1.build.174' called obs
 
 
 
@@ -22,6 +23,20 @@ OBSdefine.EmCare.B21S1.DE06 : Breastfed
 */
 define "OBSdefine.EmCare.B21S1.DE06":
     Base.GetObsValue('EmCare.B21S1.DE06')
+
+/* 
+OBSdefine.EmCare.B15S2.DE01 : Palmar Pallor
+
+*/
+define "OBSdefine.EmCare.B15S2.DE01":
+    Base.GetObsValue('EmCare.B15S2.DE01')
+
+/* 
+OBSdefine.EmCare.B22.DE52A : Obvious cause of fever
+
+*/
+define "OBSdefine.EmCare.B22.DE52A":
+    Base.GetObsValue('EmCare.B22.DE52A')
 
 /* 
 OBSdefine.EmCare.B22.DE07 : Fast Breathing
@@ -59,20 +74,6 @@ define "OBSdefine.EmCare.B10S2.DE07":
     Base.GetObsValue('EmCare.B10S2.DE07')
 
 /* 
-OBSdefine.EmCare.B15S2.DE01 : Palmar Pallor
-
-*/
-define "OBSdefine.EmCare.B15S2.DE01":
-    Base.GetObsValue('EmCare.B15S2.DE01')
-
-/* 
-OBSdefine.EmCare.B15S2.DE09 : Mucous membrane pallor
-
-*/
-define "OBSdefine.EmCare.B15S2.DE09":
-    Base.GetObsValue('EmCare.B15S2.DE09')
-
-/* 
 OBSdefine.EmCare.B6.DE01 : Axillary Temperature (degrees Celcius)
 
 */
@@ -92,6 +93,20 @@ OBSdefine.EmCare.B22.DE08 : Oral Fluid Test Results
 */
 define "OBSdefine.EmCare.B22.DE08":
     Base.GetObsValue('EmCare.B22.DE08')
+
+/* 
+OBSdefine.EmCare.B6.DE17 : MUAC (Mid Upper Arm Circumference)
+
+*/
+define "OBSdefine.EmCare.B6.DE17":
+    Base.GetObsValue('EmCare.B6.DE17')
+
+/* 
+OBSdefine.EmCare.B16S2.DE01 : Oedema of both feet
+
+*/
+define "OBSdefine.EmCare.B16S2.DE01":
+    Base.GetObsValue('EmCare.B16S2.DE01')
 
 /* 
 OBSdefine.EmCare.B22.DE01 : Respiratory Rate (breaths per minute)
@@ -143,6 +158,27 @@ define "force-collection":
     true
 
 /* 
+zscore_wfh : 
+Z."WHZ"
+*/
+define "zscore_wfh":
+    Z."WHZ"
+
+/* 
+zscore_wfl : 
+Z."WLZ"
+*/
+define "zscore_wfl":
+    Z."WLZ"
+
+/* 
+zscore_wfa : 
+Z."WAZ"
+*/
+define "zscore_wfa":
+    Z."WAZ"
+
+/* 
 AgeInMonths : 
 AgeInMonths()
 */
@@ -158,12 +194,12 @@ define "AgeInDays":
 
 /* 
 a-BreastFeedingTest : 
-    (    AgeInMonths()>=2 and AgeInMonths()<6 and  c."Severe Classification up to assessments and tests excluding Severe Dehydration" !=true)
-     or (    AgeInMonths()<2 and   "Breastfed" = true and c."yi severe classification other than severe dehydration" !=true)
+    (    AgeInMonths()>=2 and AgeInMonths()<6 and  "Severe Classification up to assessments and tests excluding Severe Dehydration" !=true)
+     or (    AgeInMonths()<2 and   "Breastfed" = true and c."YI severe classification other than Severe Dehydration" !=true)
 */
 define "a-BreastFeedingTest":
-        (    AgeInMonths()>=2 and AgeInMonths()<6 and  Coalesce(c."Severe Classification up to assessments and tests excluding Severe Dehydration",false)!=true)
-         or (    AgeInMonths()<2 and   "OBSdefine.EmCare.B21S1.DE06" = true and Coalesce(c."yi severe classification other than severe dehydration",false)!=true)
+        (    AgeInMonths()>=2 and AgeInMonths()<6 and  Coalesce("Severe Classification up to assessments and tests excluding Severe Dehydration",false)!=true)
+         or (    AgeInMonths()<2 and   "OBSdefine.EmCare.B21S1.DE06" = true and Coalesce(c."YI severe classification other than Severe Dehydration",false)!=true)
 
 /* 
 applicability-BreastFeedingTest : a-BreastFeedingTest
@@ -173,18 +209,39 @@ define "applicability-BreastFeedingTest":
     "a-BreastFeedingTest"
 
 /* 
-EmCare.B7.DE10 : 
-Coalesce(c."Vomiting Everything",false)
+Palmar Pallor : 
+o"Palmar Pallor"
 */
-define "EmCare.B7.DE10":
-    Coalesce(c."Vomiting Everything",false)
+define "Palmar Pallor":
+    "OBSdefine.EmCare.B15S2.DE01"
 
 /* 
-Vomiting Everything : EmCare.B7.DE10
-Alias
+Obvious cause of fever : 
+o"Obvious cause of fever"
 */
-define "Vomiting Everything":
-    "EmCare.B7.DE10"
+define "Obvious cause of fever":
+    "OBSdefine.EmCare.B22.DE52A"
+
+/* 
+Fever : 
+c."Fever"
+*/
+define "Fever":
+    c."Fever"
+
+/* 
+Severe Classification up to assessments and tests excluding Severe Dehydration : 
+c."Severe Classification up to assessments and tests excluding Severe Dehydration"
+*/
+define "Severe Classification up to assessments and tests excluding Severe Dehydration":
+    c."Severe Classification up to assessments and tests excluding Severe Dehydration"
+
+/* 
+vomiting everything : 
+Coalesce(c."vomiting everything",false)
+*/
+define "vomiting everything":
+    Coalesce(c."vomiting everything",false)
 
 /* 
 a-RespiratoryRate : 
@@ -215,20 +272,6 @@ define "applicability-BronchodilatorTest":
     "a-BronchodilatorTest"
 
 /* 
-a-Hemoglobin : 
-"Palmar Pallor" = "Some Palmar Pallor" or "Palmar Pallor" = "Severe Palmar Pallor" or "Mucous membrane pallor" = "Some mucous membrane pallor" or "Mucous membrane pallor" = "Severe mucous membrane pallor"
-*/
-define "a-Hemoglobin":
-    "OBSdefine.EmCare.B15S2.DE01" = val."Some Palmar Pallor" or "OBSdefine.EmCare.B15S2.DE01" = val."Severe Palmar Pallor" or "OBSdefine.EmCare.B15S2.DE09" = val."Some mucous membrane pallor" or "OBSdefine.EmCare.B15S2.DE09" = val."Severe mucous membrane pallor"
-
-/* 
-applicability-Hemoglobin : a-Hemoglobin
-Alias
-*/
-define "applicability-Hemoglobin":
-    "a-Hemoglobin"
-
-/* 
 a-SecondTemperature : 
 c."PSBI other than temperature" != true and AgeInMonths()<2 and "Axillary Temperature (degrees Celcius)" > 38.5 'Cel'
 */
@@ -244,10 +287,10 @@ define "applicability-SecondTemperature":
 
 /* 
 a-FluidTest : 
-("Not able to drink or breastfeed" = true or "Vomiting Everything" = true or "Diarrhoea" = true) and o"Oral Fluid Test Results" is null
+("Not able to drink or breastfeed" = true or "vomiting everything" = true or "Diarrhoea" = true) and o"Oral Fluid Test Results" is null
 */
 define "a-FluidTest":
-    ("Not able to drink or breastfeed" = true or "Vomiting Everything" = true or "OBSdefine.EmCare.B20S1.DE01" = true) and "OBSdefine.EmCare.B22.DE08" is null
+    ("Not able to drink or breastfeed" = true or "vomiting everything" = true or "OBSdefine.EmCare.B20S1.DE01" = true) and "OBSdefine.EmCare.B22.DE08" is null
 
 /* 
 applicability-FluidTest : a-FluidTest
@@ -255,6 +298,46 @@ Alias
 */
 define "applicability-FluidTest":
     "a-FluidTest"
+
+/* 
+a-AppetiteTest : 
+(zscore_wfh < -3 or zscore_wfl < -3 or "MUAC (Mid Upper Arm Circumference)" < 115 'mm' or ("AgeInMonths" < 12 and zscore_wfa < -3))
+and
+c."Medical Complications of Severe Acute Malnutrition" = false
+and
+"Oedema of both feet" = false
+*/
+define "a-AppetiteTest":
+    (zscore_wfh < -3 or zscore_wfl < -3 or "OBSdefine.EmCare.B6.DE17" < 115 'mm' or ("AgeInMonths" < 12 and zscore_wfa < -3))
+    and
+    c."Medical Complications of Severe Acute Malnutrition" = false
+    and
+    "OBSdefine.EmCare.B16S2.DE01" = false
+
+/* 
+applicability-AppetiteTest : a-AppetiteTest
+Alias
+*/
+define "applicability-AppetiteTest":
+    "a-AppetiteTest"
+
+/* 
+a-MalariaTest : 
+("Fever" = true or "Palmar Pallor" = "Some Palmar Pallor")
+and
+"Severe Classification up to assessments and tests excluding Severe Dehydration" = false and "AgeInMonths">= 2 and "AgeInMonths"< 60
+*/
+define "a-MalariaTest":
+    ("Fever" = true or "Palmar Pallor" ~ val."Some Palmar Pallor")
+    and
+    "Severe Classification up to assessments and tests excluding Severe Dehydration" = false and "AgeInMonths">= 2 and "AgeInMonths"< 60
+
+/* 
+applicability-MalariaTest : a-MalariaTest
+Alias
+*/
+define "applicability-MalariaTest":
+    "a-MalariaTest"
 
 /* 
 Respiratory Rate profile : 
@@ -348,8 +431,15 @@ define "Not able to drink or breastfeed":
     "EmCare.B7.DE09"
 
 /* 
+Malaria Test Unknown : 
+c."Malaria Test Unknown"
+*/
+define "Malaria Test Unknown":
+    c."Malaria Test Unknown"
+
+/* 
 BackReference : 
 back reference to resource
 */
 define "BackReference":
-    Reference {reference: string { value: 'Questionnaire/EmCare.B22.AssessmentsTests'}}
+    Reference {reference: string { value: 'Questionnaire/emcare.b22.assessmentstests'}}

@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb7ltidangersigns"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb7ltidangersigns|0.0.1.build.174"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b7.lti-dangersigns",
@@ -183,7 +183,7 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B7.DE02').answer.first().value = false and AgeInMonth.cql >=2"
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B7.DE02').answer.first().value = false and %resource.repeat(item).where(linkId='AgeInMonth.cql').answer.first().value >=2"
                             }
                         }
                     ],
@@ -241,7 +241,7 @@
                                 }
                             ],
                             "linkId": "EmCare.B7.DE08b-help",
-                            "text": "A <b>lethargic child is not awake and alert when she should be.</b> The child is drowsy and does not show interest in what is happening around her.</p>\n\n\t<p>Often the lethargic child does not look at his caregiver or watch your face when you talk, or will not respond if you clap or snap your fingers. The child may stare blankly and appear not to notice what is going on around him.</p>\n\n\t<p>An <b>unconscious child cannot be wakened.</b> He does not respond when he is touched, shaken, or spoken to. Ask the caregiver if the child seems unusually sleepy or if she cannot wake the child. Look to see if the child wakens when the caregiver talks or shakes the child or when you clap your hands.",
+                            "text": "<p>A <b>lethargic child is not awake and alert when she should be.</b> The child is drowsy and does not show interest in what is happening around her.</p>\n\n\t<p>Often the lethargic child does not look at his caregiver or watch your face when you talk, or will not respond if you clap or snap your fingers. The child may stare blankly and appear not to notice what is going on around him.</p>\n\n\t<p>An <b>unconscious child cannot be wakened.</b> He does not respond when he is touched, shaken, or spoken to. Ask the caregiver if the child seems unusually sleepy or if she cannot wake the child. Look to see if the child wakens when the caregiver talks or shakes the child or when you clap your hands.</p>",
                             "type": "display"
                         }
                     ]
@@ -321,7 +321,7 @@
                                 }
                             ],
                             "linkId": "EmCare.B7.DE08a-help",
-                            "text": "A <b>lethargic child is not awake and alert when she should be.</b> The child is drowsy and does not show interest in what is happening around her.</p>\n\n\t<p>Often the lethargic child does not look at his caregiver or watch your face when you talk, or will not respond if you clap or snap your fingers. The child may stare blankly and appear not to notice what is going on around him.  An unconscious child cannot be wakened. He does not respond when he is touched, shaken, or spoken to. Ask the caregiver if the child seems unusually sleepy or if she cannot wake the child. Look to see if the child wakens when the caregiver talks or shakes the child or when you clap your hands.",
+                            "text": "<p>A <b>lethargic child is not awake and alert when she should be.</b> The child is drowsy and does not show interest in what is happening around her.</p>\n\n\t<p>Often the lethargic child does not look at his caregiver or watch your face when you talk, or will not respond if you clap or snap your fingers. The child may stare blankly and appear not to notice what is going on around him.  An unconscious child cannot be wakened. He does not respond when he is touched, shaken, or spoken to. Ask the caregiver if the child seems unusually sleepy or if she cannot wake the child. Look to see if the child wakens when the caregiver talks or shakes the child or when you clap your hands.</p>",
                             "type": "display"
                         }
                     ]
@@ -354,7 +354,7 @@
                                 }
                             ],
                             "linkId": "EmCare.B7.DE09-help",
-                            "text": "A child has the sign not able to drink or breastfeed <b>if the child is not able to suck or swallow when offered a drink or breast milk.</b></p>\n\n\t<p><b>When you ask the caregiver if the child is able to drink, make sure that she understands the question.</b> If she says that her child is not able to drink or breastfeed, ask her to describe what happens when she offers the child something to drink. For example, is the child able to take fluid into his mouth and swallow it?<br />\nIf you are not sure about the caregiver\u2019s answer, <b>ask her to offer the child a drink of clean water or breast milk. Look to see if the child is swallowing the water or breast milk.</b></p>\n\n\t<p>A child who is breastfed may have difficulty sucking when his nose is blocked. <b>If the child\u2019s nose is blocked, clear it.</b> If the child can breastfeed after the nose is cleared, the child does not have the danger sign, \u201cnot able to drink or breastfeed.\u201d",
+                            "text": "<p>A child has the sign not able to drink or breastfeed <b>if the child is not able to suck or swallow when offered a drink or breast milk.</b></p>\n\n\t<p><b>When you ask the caregiver if the child is able to drink, make sure that she understands the question.</b> If she says that her child is not able to drink or breastfeed, ask her to describe what happens when she offers the child something to drink. For example, is the child able to take fluid into his mouth and swallow it?<br />\nIf you are not sure about the caregiver\u2019s answer, <b>ask her to offer the child a drink of clean water or breast milk. Look to see if the child is swallowing the water or breast milk.</b></p>\n\n\t<p>A child who is breastfed may have difficulty sucking when his nose is blocked. <b>If the child\u2019s nose is blocked, clear it.</b> If the child can breastfeed after the nose is cleared, the child does not have the danger sign, \u201cnot able to drink or breastfeed.\u201d</p>",
                             "type": "display"
                         }
                     ]
@@ -408,15 +408,296 @@
                             "type": "display"
                         }
                     ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire",
+                            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b22.fluidtest"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='stable-child').repeat(item).where(linkId='EmCare.B7.DE09').answer.first().value = true or %resource.repeat(item).where(linkId='stable-child').repeat(item).where(linkId='EmCare.B7.DE10').answer.first().value.code = 'EmCare.B7.DE11'"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B22.FluidTest",
+                    "type": "group",
+                    "required": false,
+                    "repeats": false,
+                    "item": [
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                    "valueExpression": {
+                                        "language": "text/fhirpath",
+                                        "expression": "%resource.repeat(item).where(linkId='stable-child').repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE14').answer.first().empty() and ( %resource.repeat(item).where(linkId='oftrp').answer.empty()  or %resource.repeat(item).where(linkId='oftrp').answer.first().value=true )"
+                                    }
+                                }
+                            ],
+                            "linkId": "EmCare.B22.DE08",
+                            "text": "Oral Fluid Test Results",
+                            "type": "choice",
+                            "required": true,
+                            "repeats": false,
+                            "answerOption": [
+                                {
+                                    "valueCoding": {
+                                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                        "code": "EmCare.B22.DE09",
+                                        "display": "Completely Unable to Drink"
+                                    }
+                                },
+                                {
+                                    "valueCoding": {
+                                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                        "code": "EmCare.B22.DE10",
+                                        "display": "Vomits Immediately / Everything"
+                                    }
+                                },
+                                {
+                                    "valueCoding": {
+                                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                        "code": "EmCare.B22.DE11",
+                                        "display": "Drinks Poorly"
+                                    }
+                                },
+                                {
+                                    "valueCoding": {
+                                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                        "code": "EmCare.B22.DE12",
+                                        "display": "Drinks Eagerly / Thirstily"
+                                    }
+                                },
+                                {
+                                    "valueCoding": {
+                                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                        "code": "EmCare.B22.DE13",
+                                        "display": "Drinks Normally"
+                                    }
+                                }
+                            ],
+                            "item": [
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                                            "valueCodeableConcept": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                                        "code": "help"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "linkId": "EmCare.B22.DE08-help",
+                                    "text": "<p>If a child is unconscious do not try to carry out an oral fluid test (Exact wording <span class=\"caps\">TBC</span>) &#8211; Pop Up</p>\n\n\t<p>If a breastfeeding assessment and an Oral Fluid test is recommended for a child that is only breastfed then a pop up is required to ensure that the health care worker observes the signs for both and provides results for both tests. </p>\n\n\t<p>Oral Fluid Test<br />\nIf it is not possible to perform an oral fluid test, the health care worker should assume that the child is vomiting everything<br />\nFor a child under 6 months the health care worker can offer for the mother to breastfeed instead of receiving fluids</p>\n\n\t<p>Caution: Do not force fluids into an unconscious child , it can be dangerous. The fluid can cause them to choke or the fluid can go into their lungs. </p>\n\n\t<p>Pop up box to be made available with instructions on how to carry out an oral fluid test.<br />\nAdditional information <span class=\"caps\">TBC</span></p>",
+                                    "type": "display"
+                                }
+                            ]
+                        },
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                                    "valueCodeableConcept": {
+                                        "coding": [
+                                            {
+                                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                                "code": "check-box",
+                                                "display": "Check-box"
+                                            }
+                                        ],
+                                        "text": "Check-box"
+                                    }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                    "valueExpression": {
+                                        "language": "text/fhirpath",
+                                        "expression": "%resource.repeat(item).where(linkId='stable-child').repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE08').answer.first().empty()"
+                                    }
+                                }
+                            ],
+                            "linkId": "EmCare.B22.DE14",
+                            "type": "choice",
+                            "required": true,
+                            "repeats": true,
+                            "answerOption": [
+                                {
+                                    "valueCoding": {
+                                        "code": "EmCare.B22.DE14",
+                                        "display": "Unable to Perform Oral Fluid Test"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                                    "valueCode": "horizontal"
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                    "valueBoolean": true
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                    "valueExpression": {
+                                        "language": "text/fhirpath",
+                                        "expression": "%resource.repeat(item).where(linkId='stable-child').repeat(item).where(linkId='EmCare.B7.DE09').answer.first().value = true or %resource.repeat(item).where(linkId='vomiting everything').answer.first().value =  true"
+                                    }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                                    "valueExpression": {
+                                        "language": "fhirpath",
+                                        "expression": "%resource.repeat(item).where(linkId='stable-child').repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE14').answer.first().exists() and (%resource.repeat(item).where(linkId='DS').answer.first().value = true  or %resource.repeat(item).where(linkId='stable-child').repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE08').answer.where(value.code='EmCare.B22.DE09').exists() or %resource.repeat(item).where(linkId='stable-child').repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE08').answer.where(value.code='EmCare.B22.DE10').exists() )"
+                                    }
+                                }
+                            ],
+                            "linkId": "EmCare.B22.DE14a",
+                            "text": "Completely Unable to Drink or Vomits Immediately / Everything",
+                            "type": "boolean",
+                            "required": false,
+                            "repeats": false
+                        },
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                                    "valueCode": "horizontal"
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                    "valueExpression": {
+                                        "language": "text/fhirpath",
+                                        "expression": "%resource.repeat(item).where(linkId='stable-child').repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE14').answer.first().value = true and %resource.repeat(item).where(linkId='stable-child').repeat(item).where(linkId='EmCare.B7.DE09').answer.first().value= false and %resource.repeat(item).where(linkId='vomiting everything').answer.first().value = false"
+                                    }
+                                }
+                            ],
+                            "linkId": "EmCare.B22.DE15",
+                            "text": "Has the Child had anything to drink today?",
+                            "type": "boolean",
+                            "required": false,
+                            "repeats": false
+                        },
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                    "valueExpression": {
+                                        "language": "text/fhirpath",
+                                        "expression": "%resource.repeat(item).where(linkId='stable-child').repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE15').answer.first().value = true"
+                                    }
+                                }
+                            ],
+                            "linkId": "EmCare.B22.DE16",
+                            "text": "How did the child last drink",
+                            "type": "choice",
+                            "required": false,
+                            "repeats": false,
+                            "answerOption": [
+                                {
+                                    "valueCoding": {
+                                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                        "code": "EmCare.B22.DE09",
+                                        "display": "Completely Unable to Drink"
+                                    }
+                                },
+                                {
+                                    "valueCoding": {
+                                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                        "code": "EmCare.B22.DE10",
+                                        "display": "Vomits Immediately / Everything"
+                                    }
+                                },
+                                {
+                                    "valueCoding": {
+                                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                        "code": "EmCare.B22.DE11",
+                                        "display": "Drinks Poorly"
+                                    }
+                                },
+                                {
+                                    "valueCoding": {
+                                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                        "code": "EmCare.B22.DE12",
+                                        "display": "Drinks Eagerly / Thirstily"
+                                    }
+                                },
+                                {
+                                    "valueCoding": {
+                                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                        "code": "EmCare.B22.DE13",
+                                        "display": "Drinks Normally"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
         {
             "extension": [
                 {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "DS"
+                    }
+                }
+            ],
+            "linkId": "DS",
+            "text": "Danger Signs",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "vomiting everything"
+                    }
+                }
+            ],
+            "linkId": "vomiting everything",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "text/fhirpath",
+                        "language": "fhirpath",
                         "expression": "now()"
                     }
                 },

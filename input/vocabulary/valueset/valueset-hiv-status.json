@@ -3,7 +3,7 @@
     "id": "hiv-status",
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ValueSet/hiv-status",
     "name": "valueset-hiv-status",
-    "title": "EmCare.B21S1.DE01",
+    "title": "EmCare.B17.DE25",
     "status": "draft",
     "experimental": false,
     "description": "The client's mother's HIV Status",
@@ -14,38 +14,38 @@
                 "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                 "concept": [
                     {
-                        "code": "EmCare.B21S1.DE02",
+                        "code": "EmCare.B17.DE26",
                         "display": "Mother HIV Positive",
                         "designation": [
                             {
-                                "value": "The client's mother is HIV positive"
+                                "value": "The child's mother is HIV positive"
                             }
                         ]
                     },
                     {
-                        "code": "EmCare.B21S1.DE03",
+                        "code": "EmCare.B17.DE27",
                         "display": "Mother HIV Negative",
                         "designation": [
                             {
-                                "value": "The client's mother is HIV negative"
+                                "value": "The child's mother is HIV negative"
                             }
                         ]
                     },
                     {
-                        "code": "EmCare.B21S1.DE04",
+                        "code": "EmCare.B17.DE28",
                         "display": "Mother HIV Status - Unknown or Not Tested",
                         "designation": [
                             {
-                                "value": "The client's mother's HIV Status is unknown or not tested"
+                                "value": "The child's mother's HIV Status is unknown or not tested"
                             }
                         ]
                     },
                     {
-                        "code": "EmCare.B21S1.DE05",
+                        "code": "EmCare.B17.DE29",
                         "display": "Mother HIV Status - Decline to answer",
                         "designation": [
                             {
-                                "value": "The client's mother has declined to answer regarging HIV Status"
+                                "value": "The child's mother has declined to answer regarging HIV Status"
                             }
                         ]
                     }

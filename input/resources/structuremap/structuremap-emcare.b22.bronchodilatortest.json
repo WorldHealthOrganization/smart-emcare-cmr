@@ -3,7 +3,7 @@
     "id": "emcare.b22.bronchodilatortest",
     "text": {
         "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><pre>map &quot;https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureMap/emcare.b22.bronchodilatortest&quot; = &quot;emcare.b22.bronchodilatortest&quot;\r\n\r\n\r\nuses &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse&quot; alias 'questionnaireResponse' as source\r\nuses &quot;http://hl7.org/fhir/StructureDefinition/Bundle&quot; alias 'Bundle' as target\r\nuses &quot;https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/observation&quot; alias 'Observation' as target\r\nuses &quot;https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation&quot; alias 'EmCare Observation' as produced\r\n\r\ngroup bundletrans(source src : questionnaireResponse, target bundle : Bundle) {\r\n  src -&gt; bundle.id = uuid() &quot;id&quot;;\r\n  src -&gt; bundle.type = 'batch' &quot;type&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE18') then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de17emcareb22de18t(src, tgt) &quot;4b4e3882&quot;;\r\n        } &quot;a29f448d&quot;;\r\n      } &quot;8c5fbec1&quot;;\r\n    } &quot;b0f57b45&quot;;\r\n  } &quot;21951d21&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').exists() and src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE18').empty() then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de17emcareb22de18f(src, tgt) &quot;4fd23ec4&quot;;\r\n        } &quot;e477bbcc&quot;;\r\n      } &quot;c329f1a7&quot;;\r\n    } &quot;78424877&quot;;\r\n  } &quot;c5976cd7&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE19') then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de17emcareb22de19t(src, tgt) &quot;832556c2&quot;;\r\n        } &quot;25d864fa&quot;;\r\n      } &quot;d659dd64&quot;;\r\n    } &quot;5b545a39&quot;;\r\n  } &quot;5e2e09fd&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').exists() and src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE19').empty() then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de17emcareb22de19f(src, tgt) &quot;917126ea&quot;;\r\n        } &quot;4d341549&quot;;\r\n      } &quot;7cf5a310&quot;;\r\n    } &quot;c89d7013&quot;;\r\n  } &quot;9e5f2bdb&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE20') then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de17emcareb22de20t(src, tgt) &quot;178da581&quot;;\r\n        } &quot;1e80b046&quot;;\r\n      } &quot;d67193a2&quot;;\r\n    } &quot;59186280&quot;;\r\n  } &quot;f429fd81&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').exists() and src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE20').empty() then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de17emcareb22de20f(src, tgt) &quot;4fa88d49&quot;;\r\n        } &quot;30a84474&quot;;\r\n      } &quot;25416983&quot;;\r\n    } &quot;7552e3d3&quot;;\r\n  } &quot;8363b35b&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE21') then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de17emcareb22de21t(src, tgt) &quot;628bfa1d&quot;;\r\n        } &quot;0bf9d78c&quot;;\r\n      } &quot;b0fa129e&quot;;\r\n    } &quot;913a00ce&quot;;\r\n  } &quot;1561f370&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').exists() and src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE21').empty() then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de17emcareb22de21f(src, tgt) &quot;f42ef3e7&quot;;\r\n        } &quot;65279195&quot;;\r\n      } &quot;954bbaec&quot;;\r\n    } &quot;f61383c6&quot;;\r\n  } &quot;530338c0&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE22') then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de17emcareb22de22t(src, tgt) &quot;a1caf2e7&quot;;\r\n        } &quot;cea3f121&quot;;\r\n      } &quot;f3d4e5ff&quot;;\r\n    } &quot;119d61d2&quot;;\r\n  } &quot;ba871435&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').exists() and src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE22').empty() then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de17emcareb22de22f(src, tgt) &quot;df402cb9&quot;;\r\n        } &quot;a7736492&quot;;\r\n      } &quot;0fd648ea&quot;;\r\n    } &quot;cad5ab21&quot;;\r\n  } &quot;e57a3dc1&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B22.DE22') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb22de22(src, tgt) &quot;b9010fac&quot;;\r\n      } &quot;109bcf94&quot;;\r\n    } &quot;88ceffcd&quot;;\r\n  } &quot;88960ea0&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B22.DE21') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb22de21(src, tgt) &quot;7c45409d&quot;;\r\n      } &quot;ec6cbc70&quot;;\r\n    } &quot;2bc763d0&quot;;\r\n  } &quot;86c6f66b&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de17emcareb22de18t(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de17emcareb22de18t&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE17&amp;EmCare.B22.DE18' &quot;code-emcareobservationemcareb22de17emcareb22de18t&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'final',  tgt.value = true &quot;e9d639e1&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de17emcareb22de18f(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de17emcareb22de18f&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE17&amp;EmCare.B22.DE18' &quot;code-emcareobservationemcareb22de17emcareb22de18f&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'cancelled',  tgt.value = false &quot;f21d6e36&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de17emcareb22de19t(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de17emcareb22de19t&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE17&amp;EmCare.B22.DE19' &quot;code-emcareobservationemcareb22de17emcareb22de19t&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'final',  tgt.value = true &quot;e9d639e1&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de17emcareb22de19f(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de17emcareb22de19f&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE17&amp;EmCare.B22.DE19' &quot;code-emcareobservationemcareb22de17emcareb22de19f&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'cancelled',  tgt.value = false &quot;f21d6e36&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de17emcareb22de20t(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de17emcareb22de20t&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE17&amp;EmCare.B22.DE20' &quot;code-emcareobservationemcareb22de17emcareb22de20t&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'final',  tgt.value = true &quot;e9d639e1&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de17emcareb22de20f(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de17emcareb22de20f&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE17&amp;EmCare.B22.DE20' &quot;code-emcareobservationemcareb22de17emcareb22de20f&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'cancelled',  tgt.value = false &quot;f21d6e36&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de17emcareb22de21t(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de17emcareb22de21t&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE17&amp;EmCare.B22.DE21' &quot;code-emcareobservationemcareb22de17emcareb22de21t&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'final',  tgt.value = true &quot;e9d639e1&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de17emcareb22de21f(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de17emcareb22de21f&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE17&amp;EmCare.B22.DE21' &quot;code-emcareobservationemcareb22de17emcareb22de21f&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'cancelled',  tgt.value = false &quot;f21d6e36&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de17emcareb22de22t(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de17emcareb22de22t&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE17&amp;EmCare.B22.DE22' &quot;code-emcareobservationemcareb22de17emcareb22de22t&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'final',  tgt.value = true &quot;e9d639e1&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de17emcareb22de22f(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de17emcareb22de22f&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE17&amp;EmCare.B22.DE22' &quot;code-emcareobservationemcareb22de17emcareb22de22f&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'cancelled',  tgt.value = false &quot;f21d6e36&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de22(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareb22de22&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE22' &quot;code-emcareb22de22&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B22.DE22') and answer.exists() then {\r\n    item.answer first as a then {\r\n      a.value as val then {\r\n        val where val.code = 'true' -&gt;  tgt.status = 'final',  tgt.value = true &quot;8a65aaa5&quot;;\r\n      } &quot;26c2c8c7&quot;;\r\n    } &quot;721205d5&quot;;\r\n  } &quot;dd2a446b&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de21(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareb22de21&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE21' &quot;code-emcareb22de21&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B22.DE21') and answer.exists() then {\r\n    item.answer first as a then {\r\n      a where a.value = true -&gt;  tgt.status = 'final',  tgt.value = true &quot;final-emcareb22de21&quot;;\r\n      a where a.value = false -&gt;  tgt.status = 'cancelled',  tgt.value = false &quot;notfound-emcareb22de21&quot;;\r\n    } &quot;bdab9370&quot;;\r\n  } &quot;be0b9dbe&quot;;\r\n}\r\n\r\n</pre></div>"
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><pre>map &quot;https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureMap/emcare.b22.bronchodilatortest&quot; = &quot;emcare.b22.bronchodilatortest&quot;\r\n\r\n\r\nuses &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse&quot; alias 'questionnaireResponse' as source\r\nuses &quot;http://hl7.org/fhir/StructureDefinition/Bundle&quot; alias 'Bundle' as target\r\nuses &quot;https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/observation&quot; alias 'Observation' as target\r\nuses &quot;https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation&quot; alias 'EmCare Observation' as produced\r\n\r\ngroup bundletrans(source src : questionnaireResponse, target bundle : Bundle) {\r\n  src -&gt; bundle.id = uuid() &quot;id&quot;;\r\n  src -&gt; bundle.type = 'batch' &quot;type&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE18') then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de18t(src, tgt) &quot;6c75ea4c&quot;;\r\n        } &quot;1ee44b43&quot;;\r\n      } &quot;bb43604f&quot;;\r\n    } &quot;98676031&quot;;\r\n  } &quot;9d2bab26&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').exists() and src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE18').empty() then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de18f(src, tgt) &quot;8ff92200&quot;;\r\n        } &quot;3e288a20&quot;;\r\n      } &quot;577c979e&quot;;\r\n    } &quot;f6075b81&quot;;\r\n  } &quot;b9b3e54c&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE19') then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de19t(src, tgt) &quot;71f021dc&quot;;\r\n        } &quot;841d4c55&quot;;\r\n      } &quot;0817df69&quot;;\r\n    } &quot;bdc9aeff&quot;;\r\n  } &quot;1c18bd31&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').exists() and src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE19').empty() then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de19f(src, tgt) &quot;341914f9&quot;;\r\n        } &quot;72da77f8&quot;;\r\n      } &quot;d597c8a2&quot;;\r\n    } &quot;b430709f&quot;;\r\n  } &quot;94c86cd1&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE20') then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de20t(src, tgt) &quot;894b858c&quot;;\r\n        } &quot;f386fa0e&quot;;\r\n      } &quot;c747c2a0&quot;;\r\n    } &quot;50eb121c&quot;;\r\n  } &quot;0c92e96c&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').exists() and src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE20').empty() then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de20f(src, tgt) &quot;972dbbda&quot;;\r\n        } &quot;4f130254&quot;;\r\n      } &quot;a4992ab6&quot;;\r\n    } &quot;6b360cd7&quot;;\r\n  } &quot;873b4cd6&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE21') then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de21t(src, tgt) &quot;f93f7a76&quot;;\r\n        } &quot;799acd97&quot;;\r\n      } &quot;3f5c0963&quot;;\r\n    } &quot;b5d50c23&quot;;\r\n  } &quot;ee14f4df&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').exists() and src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE21').empty() then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de21f(src, tgt) &quot;daf21aae&quot;;\r\n        } &quot;6de03c96&quot;;\r\n      } &quot;0ee82f52&quot;;\r\n    } &quot;a18e756b&quot;;\r\n  } &quot;9377e5d6&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE22') then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de22t(src, tgt) &quot;38c07d9c&quot;;\r\n        } &quot;580d87f3&quot;;\r\n      } &quot;e1081297&quot;;\r\n    } &quot;c7001abe&quot;;\r\n  } &quot;6e498a5a&quot;;\r\n  src where src.item.where(linkId = 'EmCare.B22.DE17').exists() and src.item.where(linkId = 'EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE22').empty() then {\r\n    src.item first as item where (linkId = 'EmCare.B22.DE17') and answer.exists() then {\r\n      src -&gt; bundle.entry as entry then {\r\n        src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n        src -&gt; entry.resource = create('Observation') as tgt then {\r\n          src then emcareobservationemcareb22de22f(src, tgt) &quot;1ea4831c&quot;;\r\n        } &quot;96863307&quot;;\r\n      } &quot;e32987ee&quot;;\r\n    } &quot;d155cc61&quot;;\r\n  } &quot;1244ad2c&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B22.DE22') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb22de22(src, tgt) &quot;b9010fac&quot;;\r\n      } &quot;109bcf94&quot;;\r\n    } &quot;88ceffcd&quot;;\r\n  } &quot;88960ea0&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B22.DE21') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb22de21(src, tgt) &quot;7c45409d&quot;;\r\n      } &quot;ec6cbc70&quot;;\r\n    } &quot;2bc763d0&quot;;\r\n  } &quot;86c6f66b&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de18t(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de18t&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE18' &quot;code-emcareobservationemcareb22de18t&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'final',  tgt.value = true &quot;e9d639e1&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de18f(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de18f&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE18' &quot;code-emcareobservationemcareb22de18f&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'cancelled',  tgt.value = false &quot;f21d6e36&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de19t(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de19t&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE19' &quot;code-emcareobservationemcareb22de19t&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'final',  tgt.value = true &quot;e9d639e1&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de19f(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de19f&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE19' &quot;code-emcareobservationemcareb22de19f&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'cancelled',  tgt.value = false &quot;f21d6e36&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de20t(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de20t&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE20' &quot;code-emcareobservationemcareb22de20t&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'final',  tgt.value = true &quot;e9d639e1&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de20f(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de20f&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE20' &quot;code-emcareobservationemcareb22de20f&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'cancelled',  tgt.value = false &quot;f21d6e36&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de21t(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de21t&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE21' &quot;code-emcareobservationemcareb22de21t&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'final',  tgt.value = true &quot;e9d639e1&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de21f(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de21f&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE21' &quot;code-emcareobservationemcareb22de21f&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'cancelled',  tgt.value = false &quot;f21d6e36&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de22t(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de22t&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE22' &quot;code-emcareobservationemcareb22de22t&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'final',  tgt.value = true &quot;e9d639e1&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de22f(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareobservationemcareb22de22f&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE22' &quot;code-emcareobservationemcareb22de22f&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src -&gt;  tgt.status = 'cancelled',  tgt.value = false &quot;f21d6e36&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de22(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareb22de22&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE22' &quot;code-emcareb22de22&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B22.DE22') and answer.exists() then {\r\n    item.answer first as a then {\r\n      a.value as val then {\r\n        val where val.code = 'EmCare.B22.DE22' -&gt;  tgt.status = 'final',  tgt.value = true &quot;54b81a1d&quot;;\r\n      } &quot;8adb717d&quot;;\r\n    } &quot;8a1e7f40&quot;;\r\n  } &quot;057952cd&quot;;\r\n}\r\n\r\ngroup emcareobservationemcareb22de21(source src, target tgt) {\r\n  src -&gt;  tgt.identifier = create('Identifier') as CodeID,  CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',  CodeID.use = 'official',  CodeID.value = 'uuid',  CodeID.id = uuid() &quot;id-emcareb22de21&quot;;\r\n  src.encounter as encounter -&gt; tgt.encounter = encounter &quot;35bc6b82&quot;;\r\n  src.subject as subject -&gt;  tgt.subject = subject,  tgt.meta = create('Meta') as newMeta,  newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',  tgt.code = create('CodeableConcept') as concept,  concept.coding = create('Coding') as coding,  coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',  coding.code = 'EmCare.B22.DE21' &quot;code-emcareb22de21&quot;;\r\n  src.item as itemtimestamp where linkId = 'timestamp' then {\r\n    itemtimestamp.answer first as atimestamp then {\r\n      atimestamp.value as val -&gt; tgt.issued = val &quot;5af77f2c&quot;;\r\n    } &quot;7f22f29f&quot;;\r\n  } &quot;aae7a11d&quot;;\r\n  src.subject as subject -&gt; tgt.subject = subject &quot;patient&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B22.DE21') and answer.exists() then {\r\n    item.answer first as a then {\r\n      a where a.value = true -&gt;  tgt.status = 'final',  tgt.value = true &quot;final-emcareb22de21&quot;;\r\n      a where a.value = false -&gt;  tgt.status = 'cancelled',  tgt.value = false &quot;notfound-emcareb22de21&quot;;\r\n    } &quot;bdab9370&quot;;\r\n  } &quot;be0b9dbe&quot;;\r\n}\r\n\r\n</pre></div>"
     },
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureMap/emcare.b22.bronchodilatortest",
     "name": "emcare.b22.bronchodilatortest",
@@ -85,7 +85,7 @@
                     ]
                 },
                 {
-                    "name": "21951d21",
+                    "name": "9d2bab26",
                     "source": [
                         {
                             "context": "src",
@@ -94,7 +94,7 @@
                     ],
                     "rule": [
                         {
-                            "name": "b0f57b45",
+                            "name": "98676031",
                             "source": [
                                 {
                                     "context": "src",
@@ -106,7 +106,7 @@
                             ],
                             "rule": [
                                 {
-                                    "name": "8c5fbec1",
+                                    "name": "bb43604f",
                                     "source": [
                                         {
                                             "context": "src"
@@ -168,7 +168,7 @@
                                             ]
                                         },
                                         {
-                                            "name": "a29f448d",
+                                            "name": "1ee44b43",
                                             "source": [
                                                 {
                                                     "context": "src"
@@ -190,7 +190,7 @@
                                             ],
                                             "rule": [
                                                 {
-                                                    "name": "4b4e3882",
+                                                    "name": "6c75ea4c",
                                                     "source": [
                                                         {
                                                             "context": "src"
@@ -198,7 +198,7 @@
                                                     ],
                                                     "dependent": [
                                                         {
-                                                            "name": "emcareobservationemcareb22de17emcareb22de18t",
+                                                            "name": "emcareobservationemcareb22de18t",
                                                             "variable": [
                                                                 "src",
                                                                 "tgt"
@@ -215,7 +215,7 @@
                     ]
                 },
                 {
-                    "name": "c5976cd7",
+                    "name": "b9b3e54c",
                     "source": [
                         {
                             "context": "src",
@@ -224,7 +224,7 @@
                     ],
                     "rule": [
                         {
-                            "name": "78424877",
+                            "name": "f6075b81",
                             "source": [
                                 {
                                     "context": "src",
@@ -236,7 +236,7 @@
                             ],
                             "rule": [
                                 {
-                                    "name": "c329f1a7",
+                                    "name": "577c979e",
                                     "source": [
                                         {
                                             "context": "src"
@@ -298,7 +298,7 @@
                                             ]
                                         },
                                         {
-                                            "name": "e477bbcc",
+                                            "name": "3e288a20",
                                             "source": [
                                                 {
                                                     "context": "src"
@@ -320,7 +320,7 @@
                                             ],
                                             "rule": [
                                                 {
-                                                    "name": "4fd23ec4",
+                                                    "name": "8ff92200",
                                                     "source": [
                                                         {
                                                             "context": "src"
@@ -328,7 +328,7 @@
                                                     ],
                                                     "dependent": [
                                                         {
-                                                            "name": "emcareobservationemcareb22de17emcareb22de18f",
+                                                            "name": "emcareobservationemcareb22de18f",
                                                             "variable": [
                                                                 "src",
                                                                 "tgt"
@@ -345,7 +345,7 @@
                     ]
                 },
                 {
-                    "name": "5e2e09fd",
+                    "name": "1c18bd31",
                     "source": [
                         {
                             "context": "src",
@@ -354,7 +354,7 @@
                     ],
                     "rule": [
                         {
-                            "name": "5b545a39",
+                            "name": "bdc9aeff",
                             "source": [
                                 {
                                     "context": "src",
@@ -366,7 +366,7 @@
                             ],
                             "rule": [
                                 {
-                                    "name": "d659dd64",
+                                    "name": "0817df69",
                                     "source": [
                                         {
                                             "context": "src"
@@ -428,7 +428,7 @@
                                             ]
                                         },
                                         {
-                                            "name": "25d864fa",
+                                            "name": "841d4c55",
                                             "source": [
                                                 {
                                                     "context": "src"
@@ -450,7 +450,7 @@
                                             ],
                                             "rule": [
                                                 {
-                                                    "name": "832556c2",
+                                                    "name": "71f021dc",
                                                     "source": [
                                                         {
                                                             "context": "src"
@@ -458,7 +458,7 @@
                                                     ],
                                                     "dependent": [
                                                         {
-                                                            "name": "emcareobservationemcareb22de17emcareb22de19t",
+                                                            "name": "emcareobservationemcareb22de19t",
                                                             "variable": [
                                                                 "src",
                                                                 "tgt"
@@ -475,7 +475,7 @@
                     ]
                 },
                 {
-                    "name": "9e5f2bdb",
+                    "name": "94c86cd1",
                     "source": [
                         {
                             "context": "src",
@@ -484,7 +484,7 @@
                     ],
                     "rule": [
                         {
-                            "name": "c89d7013",
+                            "name": "b430709f",
                             "source": [
                                 {
                                     "context": "src",
@@ -496,7 +496,7 @@
                             ],
                             "rule": [
                                 {
-                                    "name": "7cf5a310",
+                                    "name": "d597c8a2",
                                     "source": [
                                         {
                                             "context": "src"
@@ -558,7 +558,7 @@
                                             ]
                                         },
                                         {
-                                            "name": "4d341549",
+                                            "name": "72da77f8",
                                             "source": [
                                                 {
                                                     "context": "src"
@@ -580,7 +580,7 @@
                                             ],
                                             "rule": [
                                                 {
-                                                    "name": "917126ea",
+                                                    "name": "341914f9",
                                                     "source": [
                                                         {
                                                             "context": "src"
@@ -588,7 +588,7 @@
                                                     ],
                                                     "dependent": [
                                                         {
-                                                            "name": "emcareobservationemcareb22de17emcareb22de19f",
+                                                            "name": "emcareobservationemcareb22de19f",
                                                             "variable": [
                                                                 "src",
                                                                 "tgt"
@@ -605,7 +605,7 @@
                     ]
                 },
                 {
-                    "name": "f429fd81",
+                    "name": "0c92e96c",
                     "source": [
                         {
                             "context": "src",
@@ -614,7 +614,7 @@
                     ],
                     "rule": [
                         {
-                            "name": "59186280",
+                            "name": "50eb121c",
                             "source": [
                                 {
                                     "context": "src",
@@ -626,7 +626,7 @@
                             ],
                             "rule": [
                                 {
-                                    "name": "d67193a2",
+                                    "name": "c747c2a0",
                                     "source": [
                                         {
                                             "context": "src"
@@ -688,7 +688,7 @@
                                             ]
                                         },
                                         {
-                                            "name": "1e80b046",
+                                            "name": "f386fa0e",
                                             "source": [
                                                 {
                                                     "context": "src"
@@ -710,7 +710,7 @@
                                             ],
                                             "rule": [
                                                 {
-                                                    "name": "178da581",
+                                                    "name": "894b858c",
                                                     "source": [
                                                         {
                                                             "context": "src"
@@ -718,7 +718,7 @@
                                                     ],
                                                     "dependent": [
                                                         {
-                                                            "name": "emcareobservationemcareb22de17emcareb22de20t",
+                                                            "name": "emcareobservationemcareb22de20t",
                                                             "variable": [
                                                                 "src",
                                                                 "tgt"
@@ -735,7 +735,7 @@
                     ]
                 },
                 {
-                    "name": "8363b35b",
+                    "name": "873b4cd6",
                     "source": [
                         {
                             "context": "src",
@@ -744,7 +744,7 @@
                     ],
                     "rule": [
                         {
-                            "name": "7552e3d3",
+                            "name": "6b360cd7",
                             "source": [
                                 {
                                     "context": "src",
@@ -756,7 +756,7 @@
                             ],
                             "rule": [
                                 {
-                                    "name": "25416983",
+                                    "name": "a4992ab6",
                                     "source": [
                                         {
                                             "context": "src"
@@ -818,7 +818,7 @@
                                             ]
                                         },
                                         {
-                                            "name": "30a84474",
+                                            "name": "4f130254",
                                             "source": [
                                                 {
                                                     "context": "src"
@@ -840,7 +840,7 @@
                                             ],
                                             "rule": [
                                                 {
-                                                    "name": "4fa88d49",
+                                                    "name": "972dbbda",
                                                     "source": [
                                                         {
                                                             "context": "src"
@@ -848,7 +848,7 @@
                                                     ],
                                                     "dependent": [
                                                         {
-                                                            "name": "emcareobservationemcareb22de17emcareb22de20f",
+                                                            "name": "emcareobservationemcareb22de20f",
                                                             "variable": [
                                                                 "src",
                                                                 "tgt"
@@ -865,7 +865,7 @@
                     ]
                 },
                 {
-                    "name": "1561f370",
+                    "name": "ee14f4df",
                     "source": [
                         {
                             "context": "src",
@@ -874,7 +874,7 @@
                     ],
                     "rule": [
                         {
-                            "name": "913a00ce",
+                            "name": "b5d50c23",
                             "source": [
                                 {
                                     "context": "src",
@@ -886,7 +886,7 @@
                             ],
                             "rule": [
                                 {
-                                    "name": "b0fa129e",
+                                    "name": "3f5c0963",
                                     "source": [
                                         {
                                             "context": "src"
@@ -948,7 +948,7 @@
                                             ]
                                         },
                                         {
-                                            "name": "0bf9d78c",
+                                            "name": "799acd97",
                                             "source": [
                                                 {
                                                     "context": "src"
@@ -970,7 +970,7 @@
                                             ],
                                             "rule": [
                                                 {
-                                                    "name": "628bfa1d",
+                                                    "name": "f93f7a76",
                                                     "source": [
                                                         {
                                                             "context": "src"
@@ -978,7 +978,7 @@
                                                     ],
                                                     "dependent": [
                                                         {
-                                                            "name": "emcareobservationemcareb22de17emcareb22de21t",
+                                                            "name": "emcareobservationemcareb22de21t",
                                                             "variable": [
                                                                 "src",
                                                                 "tgt"
@@ -995,7 +995,7 @@
                     ]
                 },
                 {
-                    "name": "530338c0",
+                    "name": "9377e5d6",
                     "source": [
                         {
                             "context": "src",
@@ -1004,7 +1004,7 @@
                     ],
                     "rule": [
                         {
-                            "name": "f61383c6",
+                            "name": "a18e756b",
                             "source": [
                                 {
                                     "context": "src",
@@ -1016,7 +1016,7 @@
                             ],
                             "rule": [
                                 {
-                                    "name": "954bbaec",
+                                    "name": "0ee82f52",
                                     "source": [
                                         {
                                             "context": "src"
@@ -1078,7 +1078,7 @@
                                             ]
                                         },
                                         {
-                                            "name": "65279195",
+                                            "name": "6de03c96",
                                             "source": [
                                                 {
                                                     "context": "src"
@@ -1100,7 +1100,7 @@
                                             ],
                                             "rule": [
                                                 {
-                                                    "name": "f42ef3e7",
+                                                    "name": "daf21aae",
                                                     "source": [
                                                         {
                                                             "context": "src"
@@ -1108,7 +1108,7 @@
                                                     ],
                                                     "dependent": [
                                                         {
-                                                            "name": "emcareobservationemcareb22de17emcareb22de21f",
+                                                            "name": "emcareobservationemcareb22de21f",
                                                             "variable": [
                                                                 "src",
                                                                 "tgt"
@@ -1125,7 +1125,7 @@
                     ]
                 },
                 {
-                    "name": "ba871435",
+                    "name": "6e498a5a",
                     "source": [
                         {
                             "context": "src",
@@ -1134,7 +1134,7 @@
                     ],
                     "rule": [
                         {
-                            "name": "119d61d2",
+                            "name": "c7001abe",
                             "source": [
                                 {
                                     "context": "src",
@@ -1146,7 +1146,7 @@
                             ],
                             "rule": [
                                 {
-                                    "name": "f3d4e5ff",
+                                    "name": "e1081297",
                                     "source": [
                                         {
                                             "context": "src"
@@ -1208,7 +1208,7 @@
                                             ]
                                         },
                                         {
-                                            "name": "cea3f121",
+                                            "name": "580d87f3",
                                             "source": [
                                                 {
                                                     "context": "src"
@@ -1230,7 +1230,7 @@
                                             ],
                                             "rule": [
                                                 {
-                                                    "name": "a1caf2e7",
+                                                    "name": "38c07d9c",
                                                     "source": [
                                                         {
                                                             "context": "src"
@@ -1238,7 +1238,7 @@
                                                     ],
                                                     "dependent": [
                                                         {
-                                                            "name": "emcareobservationemcareb22de17emcareb22de22t",
+                                                            "name": "emcareobservationemcareb22de22t",
                                                             "variable": [
                                                                 "src",
                                                                 "tgt"
@@ -1255,7 +1255,7 @@
                     ]
                 },
                 {
-                    "name": "e57a3dc1",
+                    "name": "1244ad2c",
                     "source": [
                         {
                             "context": "src",
@@ -1264,7 +1264,7 @@
                     ],
                     "rule": [
                         {
-                            "name": "cad5ab21",
+                            "name": "d155cc61",
                             "source": [
                                 {
                                     "context": "src",
@@ -1276,7 +1276,7 @@
                             ],
                             "rule": [
                                 {
-                                    "name": "0fd648ea",
+                                    "name": "e32987ee",
                                     "source": [
                                         {
                                             "context": "src"
@@ -1338,7 +1338,7 @@
                                             ]
                                         },
                                         {
-                                            "name": "a7736492",
+                                            "name": "96863307",
                                             "source": [
                                                 {
                                                     "context": "src"
@@ -1360,7 +1360,7 @@
                                             ],
                                             "rule": [
                                                 {
-                                                    "name": "df402cb9",
+                                                    "name": "1ea4831c",
                                                     "source": [
                                                         {
                                                             "context": "src"
@@ -1368,7 +1368,7 @@
                                                     ],
                                                     "dependent": [
                                                         {
-                                                            "name": "emcareobservationemcareb22de17emcareb22de22f",
+                                                            "name": "emcareobservationemcareb22de22f",
                                                             "variable": [
                                                                 "src",
                                                                 "tgt"
@@ -1647,7 +1647,7 @@
             ]
         },
         {
-            "name": "emcareobservationemcareb22de17emcareb22de18t",
+            "name": "emcareobservationemcareb22de18t",
             "typeMode": "none",
             "input": [
                 {
@@ -1661,7 +1661,7 @@
             ],
             "rule": [
                 {
-                    "name": "id-emcareobservationemcareb22de17emcareb22de18t",
+                    "name": "id-emcareobservationemcareb22de18t",
                     "source": [
                         {
                             "context": "src"
@@ -1745,7 +1745,7 @@
                     ]
                 },
                 {
-                    "name": "code-emcareobservationemcareb22de17emcareb22de18t",
+                    "name": "code-emcareobservationemcareb22de18t",
                     "source": [
                         {
                             "context": "src",
@@ -1830,7 +1830,7 @@
                             "transform": "copy",
                             "parameter": [
                                 {
-                                    "valueString": "EmCare.B22.DE17&EmCare.B22.DE18"
+                                    "valueString": "EmCare.B22.DE18"
                                 }
                             ]
                         }
@@ -1943,7 +1943,7 @@
             ]
         },
         {
-            "name": "emcareobservationemcareb22de17emcareb22de18f",
+            "name": "emcareobservationemcareb22de18f",
             "typeMode": "none",
             "input": [
                 {
@@ -1957,7 +1957,7 @@
             ],
             "rule": [
                 {
-                    "name": "id-emcareobservationemcareb22de17emcareb22de18f",
+                    "name": "id-emcareobservationemcareb22de18f",
                     "source": [
                         {
                             "context": "src"
@@ -2041,7 +2041,7 @@
                     ]
                 },
                 {
-                    "name": "code-emcareobservationemcareb22de17emcareb22de18f",
+                    "name": "code-emcareobservationemcareb22de18f",
                     "source": [
                         {
                             "context": "src",
@@ -2126,7 +2126,7 @@
                             "transform": "copy",
                             "parameter": [
                                 {
-                                    "valueString": "EmCare.B22.DE17&EmCare.B22.DE18"
+                                    "valueString": "EmCare.B22.DE18"
                                 }
                             ]
                         }
@@ -2239,7 +2239,7 @@
             ]
         },
         {
-            "name": "emcareobservationemcareb22de17emcareb22de19t",
+            "name": "emcareobservationemcareb22de19t",
             "typeMode": "none",
             "input": [
                 {
@@ -2253,7 +2253,7 @@
             ],
             "rule": [
                 {
-                    "name": "id-emcareobservationemcareb22de17emcareb22de19t",
+                    "name": "id-emcareobservationemcareb22de19t",
                     "source": [
                         {
                             "context": "src"
@@ -2337,7 +2337,7 @@
                     ]
                 },
                 {
-                    "name": "code-emcareobservationemcareb22de17emcareb22de19t",
+                    "name": "code-emcareobservationemcareb22de19t",
                     "source": [
                         {
                             "context": "src",
@@ -2422,7 +2422,7 @@
                             "transform": "copy",
                             "parameter": [
                                 {
-                                    "valueString": "EmCare.B22.DE17&EmCare.B22.DE19"
+                                    "valueString": "EmCare.B22.DE19"
                                 }
                             ]
                         }
@@ -2535,7 +2535,7 @@
             ]
         },
         {
-            "name": "emcareobservationemcareb22de17emcareb22de19f",
+            "name": "emcareobservationemcareb22de19f",
             "typeMode": "none",
             "input": [
                 {
@@ -2549,7 +2549,7 @@
             ],
             "rule": [
                 {
-                    "name": "id-emcareobservationemcareb22de17emcareb22de19f",
+                    "name": "id-emcareobservationemcareb22de19f",
                     "source": [
                         {
                             "context": "src"
@@ -2633,7 +2633,7 @@
                     ]
                 },
                 {
-                    "name": "code-emcareobservationemcareb22de17emcareb22de19f",
+                    "name": "code-emcareobservationemcareb22de19f",
                     "source": [
                         {
                             "context": "src",
@@ -2718,7 +2718,7 @@
                             "transform": "copy",
                             "parameter": [
                                 {
-                                    "valueString": "EmCare.B22.DE17&EmCare.B22.DE19"
+                                    "valueString": "EmCare.B22.DE19"
                                 }
                             ]
                         }
@@ -2831,7 +2831,7 @@
             ]
         },
         {
-            "name": "emcareobservationemcareb22de17emcareb22de20t",
+            "name": "emcareobservationemcareb22de20t",
             "typeMode": "none",
             "input": [
                 {
@@ -2845,7 +2845,7 @@
             ],
             "rule": [
                 {
-                    "name": "id-emcareobservationemcareb22de17emcareb22de20t",
+                    "name": "id-emcareobservationemcareb22de20t",
                     "source": [
                         {
                             "context": "src"
@@ -2929,7 +2929,7 @@
                     ]
                 },
                 {
-                    "name": "code-emcareobservationemcareb22de17emcareb22de20t",
+                    "name": "code-emcareobservationemcareb22de20t",
                     "source": [
                         {
                             "context": "src",
@@ -3014,7 +3014,7 @@
                             "transform": "copy",
                             "parameter": [
                                 {
-                                    "valueString": "EmCare.B22.DE17&EmCare.B22.DE20"
+                                    "valueString": "EmCare.B22.DE20"
                                 }
                             ]
                         }
@@ -3127,7 +3127,7 @@
             ]
         },
         {
-            "name": "emcareobservationemcareb22de17emcareb22de20f",
+            "name": "emcareobservationemcareb22de20f",
             "typeMode": "none",
             "input": [
                 {
@@ -3141,7 +3141,7 @@
             ],
             "rule": [
                 {
-                    "name": "id-emcareobservationemcareb22de17emcareb22de20f",
+                    "name": "id-emcareobservationemcareb22de20f",
                     "source": [
                         {
                             "context": "src"
@@ -3225,7 +3225,7 @@
                     ]
                 },
                 {
-                    "name": "code-emcareobservationemcareb22de17emcareb22de20f",
+                    "name": "code-emcareobservationemcareb22de20f",
                     "source": [
                         {
                             "context": "src",
@@ -3310,7 +3310,7 @@
                             "transform": "copy",
                             "parameter": [
                                 {
-                                    "valueString": "EmCare.B22.DE17&EmCare.B22.DE20"
+                                    "valueString": "EmCare.B22.DE20"
                                 }
                             ]
                         }
@@ -3423,7 +3423,7 @@
             ]
         },
         {
-            "name": "emcareobservationemcareb22de17emcareb22de21t",
+            "name": "emcareobservationemcareb22de21t",
             "typeMode": "none",
             "input": [
                 {
@@ -3437,7 +3437,7 @@
             ],
             "rule": [
                 {
-                    "name": "id-emcareobservationemcareb22de17emcareb22de21t",
+                    "name": "id-emcareobservationemcareb22de21t",
                     "source": [
                         {
                             "context": "src"
@@ -3521,7 +3521,7 @@
                     ]
                 },
                 {
-                    "name": "code-emcareobservationemcareb22de17emcareb22de21t",
+                    "name": "code-emcareobservationemcareb22de21t",
                     "source": [
                         {
                             "context": "src",
@@ -3606,7 +3606,7 @@
                             "transform": "copy",
                             "parameter": [
                                 {
-                                    "valueString": "EmCare.B22.DE17&EmCare.B22.DE21"
+                                    "valueString": "EmCare.B22.DE21"
                                 }
                             ]
                         }
@@ -3719,7 +3719,7 @@
             ]
         },
         {
-            "name": "emcareobservationemcareb22de17emcareb22de21f",
+            "name": "emcareobservationemcareb22de21f",
             "typeMode": "none",
             "input": [
                 {
@@ -3733,7 +3733,7 @@
             ],
             "rule": [
                 {
-                    "name": "id-emcareobservationemcareb22de17emcareb22de21f",
+                    "name": "id-emcareobservationemcareb22de21f",
                     "source": [
                         {
                             "context": "src"
@@ -3817,7 +3817,7 @@
                     ]
                 },
                 {
-                    "name": "code-emcareobservationemcareb22de17emcareb22de21f",
+                    "name": "code-emcareobservationemcareb22de21f",
                     "source": [
                         {
                             "context": "src",
@@ -3902,7 +3902,7 @@
                             "transform": "copy",
                             "parameter": [
                                 {
-                                    "valueString": "EmCare.B22.DE17&EmCare.B22.DE21"
+                                    "valueString": "EmCare.B22.DE21"
                                 }
                             ]
                         }
@@ -4015,7 +4015,7 @@
             ]
         },
         {
-            "name": "emcareobservationemcareb22de17emcareb22de22t",
+            "name": "emcareobservationemcareb22de22t",
             "typeMode": "none",
             "input": [
                 {
@@ -4029,7 +4029,7 @@
             ],
             "rule": [
                 {
-                    "name": "id-emcareobservationemcareb22de17emcareb22de22t",
+                    "name": "id-emcareobservationemcareb22de22t",
                     "source": [
                         {
                             "context": "src"
@@ -4113,7 +4113,7 @@
                     ]
                 },
                 {
-                    "name": "code-emcareobservationemcareb22de17emcareb22de22t",
+                    "name": "code-emcareobservationemcareb22de22t",
                     "source": [
                         {
                             "context": "src",
@@ -4198,7 +4198,7 @@
                             "transform": "copy",
                             "parameter": [
                                 {
-                                    "valueString": "EmCare.B22.DE17&EmCare.B22.DE22"
+                                    "valueString": "EmCare.B22.DE22"
                                 }
                             ]
                         }
@@ -4311,7 +4311,7 @@
             ]
         },
         {
-            "name": "emcareobservationemcareb22de17emcareb22de22f",
+            "name": "emcareobservationemcareb22de22f",
             "typeMode": "none",
             "input": [
                 {
@@ -4325,7 +4325,7 @@
             ],
             "rule": [
                 {
-                    "name": "id-emcareobservationemcareb22de17emcareb22de22f",
+                    "name": "id-emcareobservationemcareb22de22f",
                     "source": [
                         {
                             "context": "src"
@@ -4409,7 +4409,7 @@
                     ]
                 },
                 {
-                    "name": "code-emcareobservationemcareb22de17emcareb22de22f",
+                    "name": "code-emcareobservationemcareb22de22f",
                     "source": [
                         {
                             "context": "src",
@@ -4494,7 +4494,7 @@
                             "transform": "copy",
                             "parameter": [
                                 {
-                                    "valueString": "EmCare.B22.DE17&EmCare.B22.DE22"
+                                    "valueString": "EmCare.B22.DE22"
                                 }
                             ]
                         }
@@ -4869,7 +4869,7 @@
                     ]
                 },
                 {
-                    "name": "dd2a446b",
+                    "name": "057952cd",
                     "source": [
                         {
                             "context": "src",
@@ -4881,7 +4881,7 @@
                     ],
                     "rule": [
                         {
-                            "name": "721205d5",
+                            "name": "8a1e7f40",
                             "source": [
                                 {
                                     "context": "item",
@@ -4892,7 +4892,7 @@
                             ],
                             "rule": [
                                 {
-                                    "name": "26c2c8c7",
+                                    "name": "8adb717d",
                                     "source": [
                                         {
                                             "context": "a",
@@ -4902,11 +4902,11 @@
                                     ],
                                     "rule": [
                                         {
-                                            "name": "8a65aaa5",
+                                            "name": "54b81a1d",
                                             "source": [
                                                 {
                                                     "context": "val",
-                                                    "condition": "val.code = 'true'"
+                                                    "condition": "val.code = 'EmCare.B22.DE22'"
                                                 }
                                             ],
                                             "target": [

@@ -6,7 +6,7 @@
     "title": "EmCare.B17.DE30",
     "status": "draft",
     "experimental": false,
-    "description": "Child's Last HIV Test Results",
+    "description": "The child's last HIV test results",
     "immutable": true,
     "compose": {
         "include": [
@@ -18,7 +18,7 @@
                         "display": "Child HIV Positive - Virological",
                         "designation": [
                             {
-                                "value": "The client is HIV Positive (Virological Test)"
+                                "value": "The child is HIV Positive (Virological Test)"
                             }
                         ]
                     },
@@ -27,7 +27,7 @@
                         "display": "Child HIV Positive - Serological",
                         "designation": [
                             {
-                                "value": "The client is HIV Positive (Serological Test)"
+                                "value": "The child is HIV Positive (Serological Test)"
                             }
                         ]
                     },
@@ -36,7 +36,7 @@
                         "display": "Child HIV Positive - Unknown Type of Test",
                         "designation": [
                             {
-                                "value": "The client is HIV Positive (Unknown Type of Test)"
+                                "value": "The child is HIV Positive (Unknown Type of Test)"
                             }
                         ]
                     },
@@ -45,7 +45,7 @@
                         "display": "Child HIV Negative",
                         "designation": [
                             {
-                                "value": "The client is HIV Negative"
+                                "value": "The child is HIV Negative"
                             }
                         ]
                     },
@@ -54,7 +54,7 @@
                         "display": "Child HIV Status - Unknown or Not Tested",
                         "designation": [
                             {
-                                "value": "The client's HIV Status is unknown or the client has not been tested"
+                                "value": "The child's HIV Status is unknown or the client has not been tested"
                             }
                         ]
                     },
@@ -63,7 +63,7 @@
                         "display": "Child HIV Status - Decline to answer",
                         "designation": [
                             {
-                                "value": "The client has delined to answer regarding HIV Status"
+                                "value": "The child has delined to answer regarding HIV Status"
                             }
                         ]
                     }

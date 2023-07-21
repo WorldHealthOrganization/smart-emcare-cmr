@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb23classificationm"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb23classificationm|0.0.1.build.174"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b23.classification.m",
@@ -117,7 +117,7 @@
                 }
             ],
             "linkId": "DL-G-CL2-04-08",
-            "text": "Possible Serious Bacterial Infection OR Very Severe Disease",
+            "text": "Possible Serious Bacterial Infection or Very Severe Disease",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -137,51 +137,7 @@
                 }
             ],
             "linkId": "EmCare.B23.DE83",
-            "text": "Possible Serious Bacterial Infection OR Very Severe Disease",
-            "type": "boolean",
-            "required": false,
-            "repeats": false
-        },
-        {
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                },
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                    "valueBoolean": true
-                },
-                {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                    "valueExpression": {
-                        "language": "text/cql-identifier",
-                        "expression": "DL-G-CL2-10"
-                    }
-                }
-            ],
-            "linkId": "DL-G-CL2-10",
-            "text": "Pneumonia",
-            "type": "boolean",
-            "required": false,
-            "repeats": false
-        },
-        {
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                },
-                {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                    "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='DL-G-CL2-10').answer.first().value = true"
-                    }
-                }
-            ],
-            "linkId": "EmCare.B23.DE06",
-            "text": "Pneumonia",
+            "text": "Possible Serious Bacterial Infection or Very Severe Disease",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -796,14 +752,7 @@
                     "valueCoding": {
                         "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
                         "code": "EmCare.B23.DE83",
-                        "display": "Possible Serious Bacterial Infection OR Very Severe Disease"
-                    }
-                },
-                {
-                    "valueCoding": {
-                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
-                        "code": "EmCare.B23.DE06",
-                        "display": "Pneumonia"
+                        "display": "Possible Serious Bacterial Infection or Very Severe Disease"
                     }
                 },
                 {
@@ -882,13 +831,6 @@
                         "code": "EmCare.B23.DE98",
                         "display": "No Feeding Problem"
                     }
-                },
-                {
-                    "valueCoding": {
-                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
-                        "code": "collector",
-                        "display": "Add other classifications"
-                    }
                 }
             ]
         },
@@ -897,7 +839,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "text/fhirpath",
+                        "language": "fhirpath",
                         "expression": "now()"
                     }
                 },

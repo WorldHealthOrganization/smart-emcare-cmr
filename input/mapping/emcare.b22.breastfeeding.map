@@ -378,20 +378,20 @@ group emcareobservationemcareb22de36(source src,target tgt){
     src.subject as subject -> tgt.subject = subject  'patient';
     src.item first as item  where linkId = 'EmCare.B22.DE36' and answer.exists() then {
         item.answer first as a then {
-            a where value = 'Not well Attached to Breast', a.value as val then {
-                val -> tgt.value = create('CodeableConcept') as cc, cc.coding = create('Coding') as c, c.code=EmCare.B22.DE37, c.system= 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes', tgt.status = 'final' '71afb672';
-            } 'a53091ee';
-            a where value = 'Good Attachment', a.value as val then {
-                val -> tgt.value = create('CodeableConcept') as cc, cc.coding = create('Coding') as c, c.code=EmCare.B22.DE38, c.system= 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes', tgt.status = 'final' '3053aa3e';
-            } '239a32e6';
-            a where value = 'Not Sucking Effectively', a.value as val then {
-                val -> tgt.value = create('CodeableConcept') as cc, cc.coding = create('Coding') as c, c.code=EmCare.B22.DE39, c.system= 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes', tgt.status = 'final' '0e60e5cc';
-            } 'ae925fc5';
-            a where value = 'Sucking Effectively', a.value as val then {
-                val -> tgt.value = create('CodeableConcept') as cc, cc.coding = create('Coding') as c, c.code=EmCare.B22.DE40, c.system= 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes', tgt.status = 'final' '5eeaf122';
-            } '714e8fb5';
-        } 'bd419d51';
-    } '1b30376c';
+            a where value = 'Not well Attached to Breast' then {
+                a -> tgt.value = create('CodeableConcept') as cc, cc.coding = create('Coding') as c, c.code='EmCare.B22.DE37', c.system= 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes', tgt.status = 'final' 'dfb0a5c3';
+            } 'f0a0a4e3';
+            a where value = 'Good Attachment' then {
+                a -> tgt.value = create('CodeableConcept') as cc, cc.coding = create('Coding') as c, c.code='EmCare.B22.DE38', c.system= 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes', tgt.status = 'final' '99789115';
+            } 'bc1ca575';
+            a where value = 'Not Sucking Effectively' then {
+                a -> tgt.value = create('CodeableConcept') as cc, cc.coding = create('Coding') as c, c.code='EmCare.B22.DE39', c.system= 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes', tgt.status = 'final' '4caea371';
+            } 'c8ef88d4';
+            a where value = 'Sucking Effectively' then {
+                a -> tgt.value = create('CodeableConcept') as cc, cc.coding = create('Coding') as c, c.code='EmCare.B22.DE40', c.system= 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes', tgt.status = 'final' 'a7f96003';
+            } '9268170a';
+        } '75e3206c';
+    } '76d04cd0';
 }
 
 group emcareobservationemcareb22de42(source src,target tgt){

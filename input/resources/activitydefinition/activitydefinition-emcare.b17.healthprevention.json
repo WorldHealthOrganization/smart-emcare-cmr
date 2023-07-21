@@ -1,0 +1,19 @@
+{
+    "resourceType": "ActivityDefinition",
+    "id": "emcare.b17.healthprevention",
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/ActivityDefinition/emcare.b17.healthprevention",
+    "status": "active",
+    "library": [
+        "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb17healthprevention|0.0.1.build.174"
+    ],
+    "kind": "Task",
+    "dynamicValue": [
+        {
+            "path": "focus",
+            "expression": {
+                "language": "text/cql-identifier",
+                "expression": "BackReference"
+            }
+        }
+    ]
+}

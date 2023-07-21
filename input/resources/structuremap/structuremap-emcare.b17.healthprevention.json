@@ -1,0 +1,2300 @@
+{
+    "resourceType": "StructureMap",
+    "id": "emcare.b17.healthprevention",
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><pre>map &quot;https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureMap/emcare.b17.healthprevention&quot; = &quot;emcare.b17.healthprevention&quot;\r\n\r\n\r\nuses &quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse&quot; alias 'questionnaireResponse' as source\r\nuses &quot;http://hl7.org/fhir/StructureDefinition/Bundle&quot; alias 'Bundle' as target\r\nuses &quot;https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/observation&quot; alias 'Observation' as target\r\nuses &quot;https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation&quot; alias 'EmCare Observation' as produced\r\n\r\ngroup bundletrans(source src : questionnaireResponse, target bundle : Bundle) {\r\n  src -&gt; bundle.id = uuid() &quot;id&quot;;\r\n  src -&gt; bundle.type = 'batch' &quot;type&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE01') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de01(src, tgt) &quot;38abda54&quot;;\r\n      } &quot;5bb3b79f&quot;;\r\n    } &quot;370811d9&quot;;\r\n  } &quot;55445f22&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE05') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de05(src, tgt) &quot;220c65f0&quot;;\r\n      } &quot;5a4606f6&quot;;\r\n    } &quot;cd12baee&quot;;\r\n  } &quot;ab297c10&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE11') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de11(src, tgt) &quot;fb8cad0f&quot;;\r\n      } &quot;7edc2221&quot;;\r\n    } &quot;a3887c52&quot;;\r\n  } &quot;f12a1935&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE12') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de12(src, tgt) &quot;cfb4978a&quot;;\r\n      } &quot;6baa40da&quot;;\r\n    } &quot;0100bb78&quot;;\r\n  } &quot;cb6e8c01&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE16') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de16(src, tgt) &quot;27cedbd4&quot;;\r\n      } &quot;020706e5&quot;;\r\n    } &quot;8a74f989&quot;;\r\n  } &quot;7f1067aa&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE62') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de62(src, tgt) &quot;9e6fe417&quot;;\r\n      } &quot;fceb26b5&quot;;\r\n    } &quot;c2317b2e&quot;;\r\n  } &quot;7eb5326c&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE67') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de67(src, tgt) &quot;a2efd289&quot;;\r\n      } &quot;6f25bea0&quot;;\r\n    } &quot;030f6538&quot;;\r\n  } &quot;dcdacfce&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE22') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de22(src, tgt) &quot;83ec2396&quot;;\r\n      } &quot;083527d8&quot;;\r\n    } &quot;bb2636d1&quot;;\r\n  } &quot;b4fe0836&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE44A') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de44a(src, tgt) &quot;0155fae0&quot;;\r\n      } &quot;89eb0073&quot;;\r\n    } &quot;8b0fb23a&quot;;\r\n  } &quot;e0a3b61d&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE44D') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de44d(src, tgt) &quot;fe467709&quot;;\r\n      } &quot;cbb99405&quot;;\r\n    } &quot;cb493560&quot;;\r\n  } &quot;34701641&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE44G') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de44g(src, tgt) &quot;85cf3dc6&quot;;\r\n      } &quot;673939ec&quot;;\r\n    } &quot;342dede2&quot;;\r\n  } &quot;e3d8cb7b&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE25') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de25(src, tgt) &quot;c6e4fc6d&quot;;\r\n      } &quot;d7e65591&quot;;\r\n    } &quot;fec68882&quot;;\r\n  } &quot;ffbb4d39&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE30') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de30(src, tgt) &quot;9615670a&quot;;\r\n      } &quot;176137f4&quot;;\r\n    } &quot;9b89aba3&quot;;\r\n  } &quot;6ce71c61&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE37') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de37(src, tgt) &quot;64e5c20d&quot;;\r\n      } &quot;e269e244&quot;;\r\n    } &quot;b1e1d7af&quot;;\r\n  } &quot;9ecaf293&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE41') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de41(src, tgt) &quot;3f331cf1&quot;;\r\n      } &quot;ce7dae43&quot;;\r\n    } &quot;019e4ee3&quot;;\r\n  } &quot;0aee95a8&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE45') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de45(src, tgt) &quot;4b6ca210&quot;;\r\n      } &quot;bc5d9484&quot;;\r\n    } &quot;eaed65ff&quot;;\r\n  } &quot;e7f245f9&quot;;\r\n  src.item first as item where (linkId = 'EmCare.B17.DE50') and answer.exists() then {\r\n    src -&gt; bundle.entry as entry then {\r\n      src -&gt;  entry.request as request,  request.method = 'POST',  uuid() as uuid,  request.url = append('/Observation/', uuid) &quot;b50ac4c5&quot;;\r\n      src -&gt; entry.resource = create('Observation') as tgt then {\r\n        src -&gt; tgt then emcareobservationemcareb17de50(src, tgt) &quot;9189b3e5&quot;;\r\n      } &quot;d6cc8f25&quot;;\r\n    } &quot;b90dd814&quot;;\r\n  } &quot;d4421c8c&quot;;\r\n}\r\n\r\n</pre></div>"
+    },
+    "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureMap/emcare.b17.healthprevention",
+    "name": "emcare.b17.healthprevention",
+    "status": "active",
+    "structure": [
+        {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse",
+            "mode": "source",
+            "alias": "'questionnaireResponse'"
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/Bundle",
+            "mode": "target",
+            "alias": "'Bundle'"
+        },
+        {
+            "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/observation",
+            "mode": "target",
+            "alias": "'Observation'"
+        },
+        {
+            "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation",
+            "mode": "produced",
+            "alias": "'EmCare Observation'"
+        }
+    ],
+    "group": [
+        {
+            "name": "bundletrans",
+            "typeMode": "none",
+            "input": [
+                {
+                    "name": "src",
+                    "type": "questionnaireResponse",
+                    "mode": "source"
+                },
+                {
+                    "name": "bundle",
+                    "type": "Bundle",
+                    "mode": "target"
+                }
+            ],
+            "rule": [
+                {
+                    "name": "id",
+                    "source": [
+                        {
+                            "context": "src"
+                        }
+                    ],
+                    "target": [
+                        {
+                            "context": "bundle",
+                            "contextType": "variable",
+                            "element": "id",
+                            "transform": "uuid"
+                        }
+                    ]
+                },
+                {
+                    "name": "type",
+                    "source": [
+                        {
+                            "context": "src"
+                        }
+                    ],
+                    "target": [
+                        {
+                            "context": "bundle",
+                            "contextType": "variable",
+                            "element": "type",
+                            "transform": "copy",
+                            "parameter": [
+                                {
+                                    "valueString": "batch"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "55445f22",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE01') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "370811d9",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "5bb3b79f",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "38abda54",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de01",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "ab297c10",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE05') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "cd12baee",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "5a4606f6",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "220c65f0",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de05",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "f12a1935",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE11') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "a3887c52",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "7edc2221",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "fb8cad0f",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de11",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "cb6e8c01",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE12') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "0100bb78",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "6baa40da",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "cfb4978a",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de12",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "7f1067aa",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE16') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "8a74f989",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "020706e5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "27cedbd4",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de16",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "7eb5326c",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE62') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "c2317b2e",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "fceb26b5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "9e6fe417",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de62",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "dcdacfce",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE67') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "030f6538",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "6f25bea0",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "a2efd289",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de67",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "b4fe0836",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE22') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "bb2636d1",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "083527d8",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "83ec2396",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de22",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "e0a3b61d",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE44A') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "8b0fb23a",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "89eb0073",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "0155fae0",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de44a",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "34701641",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE44D') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "cb493560",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "cbb99405",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "fe467709",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de44d",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "e3d8cb7b",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE44G') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "342dede2",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "673939ec",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "85cf3dc6",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de44g",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "ffbb4d39",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE25') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "fec68882",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "d7e65591",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "c6e4fc6d",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de25",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "6ce71c61",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE30') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "9b89aba3",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "176137f4",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "9615670a",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de30",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "9ecaf293",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE37') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "b1e1d7af",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "e269e244",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "64e5c20d",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de37",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "0aee95a8",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE41') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "019e4ee3",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "ce7dae43",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "3f331cf1",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de41",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "e7f245f9",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE45') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "eaed65ff",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "bc5d9484",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "4b6ca210",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de45",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "d4421c8c",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "item",
+                            "listMode": "first",
+                            "variable": "item",
+                            "condition": "(linkId = 'EmCare.B17.DE50') and answer.exists()"
+                        }
+                    ],
+                    "rule": [
+                        {
+                            "name": "b90dd814",
+                            "source": [
+                                {
+                                    "context": "src"
+                                }
+                            ],
+                            "target": [
+                                {
+                                    "context": "bundle",
+                                    "contextType": "variable",
+                                    "element": "entry",
+                                    "variable": "entry"
+                                }
+                            ],
+                            "rule": [
+                                {
+                                    "name": "b50ac4c5",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "request",
+                                            "variable": "request"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "method",
+                                            "transform": "copy",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "POST"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "contextType": "variable",
+                                            "variable": "uuid",
+                                            "transform": "uuid"
+                                        },
+                                        {
+                                            "context": "request",
+                                            "contextType": "variable",
+                                            "element": "url",
+                                            "transform": "append",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "/Observation/"
+                                                },
+                                                {
+                                                    "valueId": "uuid"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "d6cc8f25",
+                                    "source": [
+                                        {
+                                            "context": "src"
+                                        }
+                                    ],
+                                    "target": [
+                                        {
+                                            "context": "entry",
+                                            "contextType": "variable",
+                                            "element": "resource",
+                                            "variable": "tgt",
+                                            "transform": "create",
+                                            "parameter": [
+                                                {
+                                                    "valueString": "Observation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rule": [
+                                        {
+                                            "name": "9189b3e5",
+                                            "source": [
+                                                {
+                                                    "context": "src"
+                                                }
+                                            ],
+                                            "target": [
+                                                {
+                                                    "contextType": "variable",
+                                                    "transform": "copy",
+                                                    "parameter": [
+                                                        {
+                                                            "valueId": "tgt"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "dependent": [
+                                                {
+                                                    "name": "emcareobservationemcareb17de50",
+                                                    "variable": [
+                                                        "src",
+                                                        "tgt"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

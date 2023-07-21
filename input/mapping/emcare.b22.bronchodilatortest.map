@@ -11,101 +11,101 @@ group bundletrans(source src : questionnaireResponse,target bundle : Bundle){
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src then emcareobservationemcareb22de17emcareb22de18t(src,tgt) '4b4e3882';
-                } 'a29f448d';
-            } '8c5fbec1';
-        } 'b0f57b45';
-    } '21951d21';
+                    src then emcareobservationemcareb22de18t(src,tgt) '6c75ea4c';
+                } '1ee44b43';
+            } 'bb43604f';
+        } '98676031';
+    } '9d2bab26';
     src where src.item.where(linkId='EmCare.B22.DE17').exists() and src.item.where(linkId='EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE18').empty()   then {
         src.item first as item  where linkId = 'EmCare.B22.DE17' and answer.exists() then {
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src then emcareobservationemcareb22de17emcareb22de18f(src,tgt) '4fd23ec4';
-                } 'e477bbcc';
-            } 'c329f1a7';
-        } '78424877';
-    } 'c5976cd7';
+                    src then emcareobservationemcareb22de18f(src,tgt) '8ff92200';
+                } '3e288a20';
+            } '577c979e';
+        } 'f6075b81';
+    } 'b9b3e54c';
     src where src.item.where(linkId='EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE19')  then {
         src.item first as item  where linkId = 'EmCare.B22.DE17' and answer.exists() then {
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src then emcareobservationemcareb22de17emcareb22de19t(src,tgt) '832556c2';
-                } '25d864fa';
-            } 'd659dd64';
-        } '5b545a39';
-    } '5e2e09fd';
+                    src then emcareobservationemcareb22de19t(src,tgt) '71f021dc';
+                } '841d4c55';
+            } '0817df69';
+        } 'bdc9aeff';
+    } '1c18bd31';
     src where src.item.where(linkId='EmCare.B22.DE17').exists() and src.item.where(linkId='EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE19').empty()   then {
         src.item first as item  where linkId = 'EmCare.B22.DE17' and answer.exists() then {
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src then emcareobservationemcareb22de17emcareb22de19f(src,tgt) '917126ea';
-                } '4d341549';
-            } '7cf5a310';
-        } 'c89d7013';
-    } '9e5f2bdb';
+                    src then emcareobservationemcareb22de19f(src,tgt) '341914f9';
+                } '72da77f8';
+            } 'd597c8a2';
+        } 'b430709f';
+    } '94c86cd1';
     src where src.item.where(linkId='EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE20')  then {
         src.item first as item  where linkId = 'EmCare.B22.DE17' and answer.exists() then {
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src then emcareobservationemcareb22de17emcareb22de20t(src,tgt) '178da581';
-                } '1e80b046';
-            } 'd67193a2';
-        } '59186280';
-    } 'f429fd81';
+                    src then emcareobservationemcareb22de20t(src,tgt) '894b858c';
+                } 'f386fa0e';
+            } 'c747c2a0';
+        } '50eb121c';
+    } '0c92e96c';
     src where src.item.where(linkId='EmCare.B22.DE17').exists() and src.item.where(linkId='EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE20').empty()   then {
         src.item first as item  where linkId = 'EmCare.B22.DE17' and answer.exists() then {
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src then emcareobservationemcareb22de17emcareb22de20f(src,tgt) '4fa88d49';
-                } '30a84474';
-            } '25416983';
-        } '7552e3d3';
-    } '8363b35b';
+                    src then emcareobservationemcareb22de20f(src,tgt) '972dbbda';
+                } '4f130254';
+            } 'a4992ab6';
+        } '6b360cd7';
+    } '873b4cd6';
     src where src.item.where(linkId='EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE21')  then {
         src.item first as item  where linkId = 'EmCare.B22.DE17' and answer.exists() then {
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src then emcareobservationemcareb22de17emcareb22de21t(src,tgt) '628bfa1d';
-                } '0bf9d78c';
-            } 'b0fa129e';
-        } '913a00ce';
-    } '1561f370';
+                    src then emcareobservationemcareb22de21t(src,tgt) 'f93f7a76';
+                } '799acd97';
+            } '3f5c0963';
+        } 'b5d50c23';
+    } 'ee14f4df';
     src where src.item.where(linkId='EmCare.B22.DE17').exists() and src.item.where(linkId='EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE21').empty()   then {
         src.item first as item  where linkId = 'EmCare.B22.DE17' and answer.exists() then {
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src then emcareobservationemcareb22de17emcareb22de21f(src,tgt) 'f42ef3e7';
-                } '65279195';
-            } '954bbaec';
-        } 'f61383c6';
-    } '530338c0';
+                    src then emcareobservationemcareb22de21f(src,tgt) 'daf21aae';
+                } '6de03c96';
+            } '0ee82f52';
+        } 'a18e756b';
+    } '9377e5d6';
     src where src.item.where(linkId='EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE22')  then {
         src.item first as item  where linkId = 'EmCare.B22.DE17' and answer.exists() then {
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src then emcareobservationemcareb22de17emcareb22de22t(src,tgt) 'a1caf2e7';
-                } 'cea3f121';
-            } 'f3d4e5ff';
-        } '119d61d2';
-    } 'ba871435';
+                    src then emcareobservationemcareb22de22t(src,tgt) '38c07d9c';
+                } '580d87f3';
+            } 'e1081297';
+        } 'c7001abe';
+    } '6e498a5a';
     src where src.item.where(linkId='EmCare.B22.DE17').exists() and src.item.where(linkId='EmCare.B22.DE17').answer.where(value.code = 'EmCare.B22.DE22').empty()   then {
         src.item first as item  where linkId = 'EmCare.B22.DE17' and answer.exists() then {
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src then emcareobservationemcareb22de17emcareb22de22f(src,tgt) 'df402cb9';
-                } 'a7736492';
-            } '0fd648ea';
-        } 'cad5ab21';
-    } 'e57a3dc1';
+                    src then emcareobservationemcareb22de22f(src,tgt) '1ea4831c';
+                } '96863307';
+            } 'e32987ee';
+        } 'd155cc61';
+    } '1244ad2c';
     src.item first as item  where linkId = 'EmCare.B22.DE22' and answer.exists() then {
         src -> bundle.entry as entry  then {
             src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
@@ -124,20 +124,20 @@ group bundletrans(source src : questionnaireResponse,target bundle : Bundle){
     } '86c6f66b';
 }
 
-group emcareobservationemcareb22de17emcareb22de18t(source src,target tgt){
+group emcareobservationemcareb22de18t(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareobservationemcareb22de17emcareb22de18t';
+         'id-emcareobservationemcareb22de18t';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE17&EmCare.B22.DE18'
-         'code-emcareobservationemcareb22de17emcareb22de18t';
+                coding.code = 'EmCare.B22.DE18'
+         'code-emcareobservationemcareb22de18t';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -147,20 +147,20 @@ group emcareobservationemcareb22de17emcareb22de18t(source src,target tgt){
     src -> tgt.status = 'final', tgt.value = true 'e9d639e1';
 }
 
-group emcareobservationemcareb22de17emcareb22de18f(source src,target tgt){
+group emcareobservationemcareb22de18f(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareobservationemcareb22de17emcareb22de18f';
+         'id-emcareobservationemcareb22de18f';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE17&EmCare.B22.DE18'
-         'code-emcareobservationemcareb22de17emcareb22de18f';
+                coding.code = 'EmCare.B22.DE18'
+         'code-emcareobservationemcareb22de18f';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -170,20 +170,20 @@ group emcareobservationemcareb22de17emcareb22de18f(source src,target tgt){
     src -> tgt.status = 'cancelled',tgt.value = false 'f21d6e36';
 }
 
-group emcareobservationemcareb22de17emcareb22de19t(source src,target tgt){
+group emcareobservationemcareb22de19t(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareobservationemcareb22de17emcareb22de19t';
+         'id-emcareobservationemcareb22de19t';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE17&EmCare.B22.DE19'
-         'code-emcareobservationemcareb22de17emcareb22de19t';
+                coding.code = 'EmCare.B22.DE19'
+         'code-emcareobservationemcareb22de19t';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -193,20 +193,20 @@ group emcareobservationemcareb22de17emcareb22de19t(source src,target tgt){
     src -> tgt.status = 'final', tgt.value = true 'e9d639e1';
 }
 
-group emcareobservationemcareb22de17emcareb22de19f(source src,target tgt){
+group emcareobservationemcareb22de19f(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareobservationemcareb22de17emcareb22de19f';
+         'id-emcareobservationemcareb22de19f';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE17&EmCare.B22.DE19'
-         'code-emcareobservationemcareb22de17emcareb22de19f';
+                coding.code = 'EmCare.B22.DE19'
+         'code-emcareobservationemcareb22de19f';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -216,20 +216,20 @@ group emcareobservationemcareb22de17emcareb22de19f(source src,target tgt){
     src -> tgt.status = 'cancelled',tgt.value = false 'f21d6e36';
 }
 
-group emcareobservationemcareb22de17emcareb22de20t(source src,target tgt){
+group emcareobservationemcareb22de20t(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareobservationemcareb22de17emcareb22de20t';
+         'id-emcareobservationemcareb22de20t';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE17&EmCare.B22.DE20'
-         'code-emcareobservationemcareb22de17emcareb22de20t';
+                coding.code = 'EmCare.B22.DE20'
+         'code-emcareobservationemcareb22de20t';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -239,20 +239,20 @@ group emcareobservationemcareb22de17emcareb22de20t(source src,target tgt){
     src -> tgt.status = 'final', tgt.value = true 'e9d639e1';
 }
 
-group emcareobservationemcareb22de17emcareb22de20f(source src,target tgt){
+group emcareobservationemcareb22de20f(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareobservationemcareb22de17emcareb22de20f';
+         'id-emcareobservationemcareb22de20f';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE17&EmCare.B22.DE20'
-         'code-emcareobservationemcareb22de17emcareb22de20f';
+                coding.code = 'EmCare.B22.DE20'
+         'code-emcareobservationemcareb22de20f';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -262,20 +262,20 @@ group emcareobservationemcareb22de17emcareb22de20f(source src,target tgt){
     src -> tgt.status = 'cancelled',tgt.value = false 'f21d6e36';
 }
 
-group emcareobservationemcareb22de17emcareb22de21t(source src,target tgt){
+group emcareobservationemcareb22de21t(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareobservationemcareb22de17emcareb22de21t';
+         'id-emcareobservationemcareb22de21t';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE17&EmCare.B22.DE21'
-         'code-emcareobservationemcareb22de17emcareb22de21t';
+                coding.code = 'EmCare.B22.DE21'
+         'code-emcareobservationemcareb22de21t';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -285,20 +285,20 @@ group emcareobservationemcareb22de17emcareb22de21t(source src,target tgt){
     src -> tgt.status = 'final', tgt.value = true 'e9d639e1';
 }
 
-group emcareobservationemcareb22de17emcareb22de21f(source src,target tgt){
+group emcareobservationemcareb22de21f(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareobservationemcareb22de17emcareb22de21f';
+         'id-emcareobservationemcareb22de21f';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE17&EmCare.B22.DE21'
-         'code-emcareobservationemcareb22de17emcareb22de21f';
+                coding.code = 'EmCare.B22.DE21'
+         'code-emcareobservationemcareb22de21f';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -308,20 +308,20 @@ group emcareobservationemcareb22de17emcareb22de21f(source src,target tgt){
     src -> tgt.status = 'cancelled',tgt.value = false 'f21d6e36';
 }
 
-group emcareobservationemcareb22de17emcareb22de22t(source src,target tgt){
+group emcareobservationemcareb22de22t(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareobservationemcareb22de17emcareb22de22t';
+         'id-emcareobservationemcareb22de22t';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE17&EmCare.B22.DE22'
-         'code-emcareobservationemcareb22de17emcareb22de22t';
+                coding.code = 'EmCare.B22.DE22'
+         'code-emcareobservationemcareb22de22t';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -331,20 +331,20 @@ group emcareobservationemcareb22de17emcareb22de22t(source src,target tgt){
     src -> tgt.status = 'final', tgt.value = true 'e9d639e1';
 }
 
-group emcareobservationemcareb22de17emcareb22de22f(source src,target tgt){
+group emcareobservationemcareb22de22f(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareobservationemcareb22de17emcareb22de22f';
+         'id-emcareobservationemcareb22de22f';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE17&EmCare.B22.DE22'
-         'code-emcareobservationemcareb22de17emcareb22de22f';
+                coding.code = 'EmCare.B22.DE22'
+         'code-emcareobservationemcareb22de22f';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -377,10 +377,10 @@ group emcareobservationemcareb22de22(source src,target tgt){
     src.item first as item  where linkId = 'EmCare.B22.DE22' and answer.exists() then {
         item.answer first as a then {
             a.value as val then {
-                val where val.code = 'true' -> tgt.status = 'final',tgt.value = true  '8a65aaa5';
-            } '26c2c8c7';
-        } '721205d5';
-    } 'dd2a446b';
+                val where val.code = 'EmCare.B22.DE22' -> tgt.status = 'final',tgt.value = true  '54b81a1d';
+            } '8adb717d';
+        } '8a1e7f40';
+    } '057952cd';
 }
 
 group emcareobservationemcareb22de21(source src,target tgt){

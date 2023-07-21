@@ -2,14 +2,14 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareb1821signs2mm version '0.0.1.build.68'
+library emcareb1821signs2mm version '0.0.1.build.174'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.68' called Base
-include emcareobservation version '0.0.1.build.68' called obs
-include emcarevalueset version '0.0.1.build.68' called val
-include emcarezscore version '0.0.1.build.68' called Z
-include emcarecombineddataelements version '0.0.1.build.68' called c
+include emcarebase version '0.0.1.build.174' called Base
+include emcarevalueset version '0.0.1.build.174' called val
+include emcarezscore version '0.0.1.build.174' called Z
+include emcarecombineddataelements version '0.0.1.build.174' called c
+include emcareobservation version '0.0.1.build.174' called obs
 
 
 
@@ -116,10 +116,10 @@ define "AgeInDays":
     AgeInDays()
 
 /* 
-Age in Month : AgeInDays
+Age in Days : AgeInDays
 Alias
 */
-define "Age in Month":
+define "Age in Days":
     "AgeInDays"
 
 /* 
@@ -180,24 +180,24 @@ define "Difficulty with Feeding":
 
 /* 
 YI_sever_but_dhey : 
-c."yi severe classification other than severe dehydration"
+c."YI severe classification other than Severe Dehydration"
 */
 define "YI_sever_but_dhey":
-    c."yi severe classification other than severe dehydration"
+    c."YI severe classification other than Severe Dehydration"
 
 /* 
-YI severe classification other than severe dehydration : YI_sever_but_dhey
+YI severe classification other than Severe Dehydration : YI_sever_but_dhey
 Alias
 */
-define "YI severe classification other than severe dehydration":
+define "YI severe classification other than Severe Dehydration":
     "YI_sever_but_dhey"
 
 /* 
 YI_sever : 
-c."yi severe classification"
+c."YI severe classification"
 */
 define "YI_sever":
-    c."yi severe classification"
+    c."YI severe classification"
 
 /* 
 YI severe classification : YI_sever
@@ -281,4 +281,4 @@ BackReference :
 back reference to resource
 */
 define "BackReference":
-    Reference {reference: string { value: 'Questionnaire/EmCare.B18-21.Signs.2m.m'}}
+    Reference {reference: string { value: 'Questionnaire/emcare.b18-21.signs.2m.m'}}
