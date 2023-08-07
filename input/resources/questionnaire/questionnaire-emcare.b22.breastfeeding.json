@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb22breastfeeding|0.0.1.build.174"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb22breastfeeding|0.0.1.build.186"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b22.breastfeeding",
@@ -286,7 +286,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "fhirpath",
+                        "language": "text/fhirpath",
                         "expression": "iif(%resource.repeat(item).where(linkId='EmCare.B22.DE37').answer.first().value=true,'Not well Attached to Breast',iif(  %resource.repeat(item).where(linkId='EmCare.B22.DE38').answer.first().value=true , 'Good Attachment',iif(  %resource.repeat(item).where(linkId='EmCare.B22.DE39').answer.first().value=true,'Not Sucking Effectively',iif( %resource.repeat(item).where(linkId='EmCare.B22.DE40').answer.first().value=true, 'Sucking Effectively',{}))))"
                     }
                 }
@@ -311,7 +311,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "fhirpath",
+                        "language": "text/fhirpath",
                         "expression": "%resource.repeat(item).where(linkId='EmCare.B22.DE31').answer.first().value = false or %resource.repeat(item).where(linkId='EmCare.B22.DE32').answer.first().value = false or %resource.repeat(item).where(linkId='EmCare.B22.DE33').answer.first().value = false or %resource.repeat(item).where(linkId='EmCare.B22.DE34').answer.first().value = false"
                     }
                 }
@@ -335,7 +335,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "fhirpath",
+                        "language": "text/fhirpath",
                         "expression": "%resource.repeat(item).where(linkId='EmCare.B22.DE31').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B22.DE32').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B22.DE33').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B22.DE34').answer.first().value = true"
                     }
                 }
@@ -359,7 +359,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "fhirpath",
+                        "language": "text/fhirpath",
                         "expression": "%resource.repeat(item).where(linkId='EmCare.B22.DE35').answer.first().value = false"
                     }
                 }
@@ -383,7 +383,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "fhirpath",
+                        "language": "text/fhirpath",
                         "expression": "%resource.repeat(item).where(linkId='EmCare.B22.DE35').answer.first().value = true"
                     }
                 }
@@ -441,7 +441,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "fhirpath",
+                        "language": "text/fhirpath",
                         "expression": "now()"
                     }
                 },

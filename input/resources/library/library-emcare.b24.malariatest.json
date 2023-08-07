@@ -8,7 +8,7 @@
             "value": "emcare.b24.malariatest"
         }
     ],
-    "version": "0.0.1.build.174",
+    "version": "0.0.1.build.186",
     "name": "emcareb24malariatest",
     "title": "EmCare.B24.MalariaTest",
     "status": "active",
@@ -66,7 +66,7 @@
         {
             "id": "ig-loader-emcareb24malariatest.cql",
             "contentType": "text/cql",
-            "data": "LyoKQGF1dGhvcjogUGF0cmljayBEZWxjcm9peApAZGVzY3JpcHRpb246IFRoaXMgbGlicmFyeSBpcyBwYXJ0IG9mIHRoZSBwcm9qZWN0IEVtQ2FyZQoqLwpsaWJyYXJ5IGVtY2FyZWIyNG1hbGFyaWF0ZXN0IHZlcnNpb24gJzAuMC4xLmJ1aWxkLjE3NCcKdXNpbmcgRkhJUiB2ZXJzaW9uICc0LjAuMScKaW5jbHVkZSBGSElSSGVscGVycyB2ZXJzaW9uICc0LjAuMScgY2FsbGVkIEZISVJIZWxwZXJzIAppbmNsdWRlIGVtY2FyZWJhc2UgdmVyc2lvbiAnMC4wLjEuYnVpbGQuMTc0JyBjYWxsZWQgQmFzZQppbmNsdWRlIGVtY2FyZXZhbHVlc2V0IHZlcnNpb24gJzAuMC4xLmJ1aWxkLjE3NCcgY2FsbGVkIHZhbAppbmNsdWRlIGVtY2FyZWNvbWJpbmVkZGF0YWVsZW1lbnRzIHZlcnNpb24gJzAuMC4xLmJ1aWxkLjE3NCcgY2FsbGVkIEMKCgoKCmNvbnRleHQgUGF0aWVudAoKCi8qIApCYWNrUmVmZXJlbmNlIDogCmJhY2sgcmVmZXJlbmNlIHRvIHJlc291cmNlCiovCmRlZmluZSAiQmFja1JlZmVyZW5jZSI6CiAgICBSZWZlcmVuY2Uge3JlZmVyZW5jZTogc3RyaW5nIHsgdmFsdWU6ICdRdWVzdGlvbm5haXJlL2VtY2FyZS5iMjQubWFsYXJpYXRlc3QnfX0K"
+            "data": "LyoKQGF1dGhvcjogUGF0cmljayBEZWxjcm9peApAZGVzY3JpcHRpb246IFRoaXMgbGlicmFyeSBpcyBwYXJ0IG9mIHRoZSBwcm9qZWN0IEVtQ2FyZQoqLwpsaWJyYXJ5IGVtY2FyZWIyNG1hbGFyaWF0ZXN0IHZlcnNpb24gJzAuMC4xLmJ1aWxkLjE4NicKdXNpbmcgRkhJUiB2ZXJzaW9uICc0LjAuMScKaW5jbHVkZSBGSElSSGVscGVycyB2ZXJzaW9uICc0LjAuMScgY2FsbGVkIEZISVJIZWxwZXJzIAppbmNsdWRlIGVtY2FyZWJhc2UgdmVyc2lvbiAnMC4wLjEuYnVpbGQuMTg2JyBjYWxsZWQgQmFzZQppbmNsdWRlIGVtY2FyZXZhbHVlc2V0IHZlcnNpb24gJzAuMC4xLmJ1aWxkLjE4NicgY2FsbGVkIHZhbAppbmNsdWRlIGVtY2FyZWNvbWJpbmVkZGF0YWVsZW1lbnRzIHZlcnNpb24gJzAuMC4xLmJ1aWxkLjE4NicgY2FsbGVkIEMKCgoKCmNvbnRleHQgUGF0aWVudAoKCi8qIApCYWNrUmVmZXJlbmNlIDogCmJhY2sgcmVmZXJlbmNlIHRvIHJlc291cmNlCiovCmRlZmluZSAiQmFja1JlZmVyZW5jZSI6CiAgICBSZWZlcmVuY2Uge3JlZmVyZW5jZTogc3RyaW5nIHsgdmFsdWU6ICdRdWVzdGlvbm5haXJlL2VtY2FyZS5iMjQubWFsYXJpYXRlc3QnfX0K"
         }
     ]
 }

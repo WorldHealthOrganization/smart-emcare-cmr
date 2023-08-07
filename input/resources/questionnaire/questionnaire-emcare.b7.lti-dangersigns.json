@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb7ltidangersigns|0.0.1.build.174"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb7ltidangersigns|0.0.1.build.186"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b7.lti-dangersigns",
@@ -557,7 +557,7 @@
                                 {
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                                     "valueExpression": {
-                                        "language": "fhirpath",
+                                        "language": "text/fhirpath",
                                         "expression": "%resource.repeat(item).where(linkId='stable-child').repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE14').answer.first().exists() and (%resource.repeat(item).where(linkId='DS').answer.first().value = true  or %resource.repeat(item).where(linkId='stable-child').repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE08').answer.where(value.code='EmCare.B22.DE09').exists() or %resource.repeat(item).where(linkId='stable-child').repeat(item).where(linkId='EmCare.B22.FluidTest').repeat(item).where(linkId='EmCare.B22.DE08').answer.where(value.code='EmCare.B22.DE10').exists() )"
                                     }
                                 }
@@ -697,7 +697,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "fhirpath",
+                        "language": "text/fhirpath",
                         "expression": "now()"
                     }
                 },

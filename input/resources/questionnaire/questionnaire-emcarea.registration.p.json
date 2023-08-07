@@ -27,7 +27,7 @@
             "url": "http://hl7.org/fhir/StructureDefinition/variable",
             "valueExpression": {
                 "name": "AgeInDays",
-                "language": "fhirpath",
+                "language": "text/fhirpath",
                 "expression": "iif(%resource.repeat(item).where(linkId='dob').answer.first().exists(),(today() -%resource.repeat(item).where(linkId='dob').answer.first().value),{})"
             }
         },
@@ -35,7 +35,7 @@
             "url": "http://hl7.org/fhir/StructureDefinition/variable",
             "valueExpression": {
                 "name": "AgeInMonths",
-                "language": "fhirpath",
+                "language": "text/fhirpath",
                 "expression": "iif(%resource.repeat(item).where(linkId='dob').answer.first().exists(),(today()-%resource.repeat(item).where(linkId='dob').answer.first().value)-(today()-%resource.repeat(item).where(linkId='dob').answer.first().value),{})"
             }
         },
@@ -43,7 +43,7 @@
             "url": "http://hl7.org/fhir/StructureDefinition/variable",
             "valueExpression": {
                 "name": "AgeInYears",
-                "language": "fhirpath",
+                "language": "text/fhirpath",
                 "expression": "iif(%resource.repeat(item).where(linkId='dob').answer.first().exists(),(today()-%resource.repeat(item).where(linkId='dob').answer.first().value),{})"
             }
         },
@@ -51,7 +51,7 @@
             "url": "http://hl7.org/fhir/StructureDefinition/variable",
             "valueExpression": {
                 "name": "dol",
-                "language": "fhirpath",
+                "language": "text/fhirpath",
                 "expression": "iif( %resource.repeat(item).where(linkId='EmCare.A.DE14.d').answer.first().exists()  and  %resource.repeat(item).where(linkId='EmCare.A.DE14.d').answer.first().value.exists() ,%resource.repeat(item).where(linkId='EmCare.A.DE14.d').answer.first().value , 0 days)"
             }
         },
@@ -59,7 +59,7 @@
             "url": "http://hl7.org/fhir/StructureDefinition/variable",
             "valueExpression": {
                 "name": "wol",
-                "language": "fhirpath",
+                "language": "text/fhirpath",
                 "expression": "iif( %resource.repeat(item).where(linkId='EmCare.A.DE14.w').answer.first().exists(),%resource.repeat(item).where(linkId='EmCare.A.DE14.w').answer.first().value , 0 weeks)"
             }
         },
@@ -67,7 +67,7 @@
             "url": "http://hl7.org/fhir/StructureDefinition/variable",
             "valueExpression": {
                 "name": "mol",
-                "language": "fhirpath",
+                "language": "text/fhirpath",
                 "expression": "iif( %resource.repeat(item).where(linkId='EmCare.A.DE13.mo').answer.first().exists(),%resource.repeat(item).where(linkId='EmCare.A.DE13.mo').answer.first().value , 0 months)"
             }
         },
@@ -75,7 +75,7 @@
             "url": "http://hl7.org/fhir/StructureDefinition/variable",
             "valueExpression": {
                 "name": "yol",
-                "language": "fhirpath",
+                "language": "text/fhirpath",
                 "expression": "iif( %resource.repeat(item).where(linkId='EmCare.A.DE13.a').answer.first().exists(),%resource.repeat(item).where(linkId='EmCare.A.DE13.a').answer.first().value, 0 years)"
             }
         },
@@ -83,7 +83,7 @@
             "url": "http://hl7.org/fhir/StructureDefinition/variable",
             "valueExpression": {
                 "name": "cdob",
-                "language": "fhirpath",
+                "language": "text/fhirpath",
                 "expression": "today() -%dol -%wol  -%mol - %yol"
             }
         },
@@ -93,7 +93,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarearegistrationp|0.0.1.build.174"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcarearegistrationp|0.0.1.build.186"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcarea.registration.p",
@@ -577,7 +577,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "fhirpath",
+                        "language": "text/fhirpath",
                         "expression": "%cdob"
                     }
                 }
@@ -598,7 +598,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "fhirpath",
+                        "language": "text/fhirpath",
                         "expression": "iif( %resource.repeat(item).where(linkId='dob').answer.first().exists(),%resource.repeat(item).where(linkId='dob').answer.first().value,iif( %resource.repeat(item).where(linkId='EmCare.A.DE15.1').answer.first().exists(),%resource.repeat(item).where(linkId='EmCare.A.DE15.1').answer.first().value,  %cdob ))"
                     }
                 }
@@ -736,7 +736,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "fhirpath",
+                        "language": "text/fhirpath",
                         "expression": "iif(%resource.repeat(item).where(linkId='newrelatedperson').answer.first().exists(), %resource.repeat(item).where(linkId='relatedpersonuuid').answer.first().value,{})"
                     }
                 }
@@ -817,7 +817,7 @@
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                             "valueExpression": {
-                                "language": "fhirpath",
+                                "language": "text/fhirpath",
                                 "expression": "%resource.repeat(item).where(linkId='newrelatedperson').answer.first().exists()"
                             }
                         }
@@ -836,7 +836,7 @@
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                             "valueExpression": {
-                                "language": "fhirpath",
+                                "language": "text/fhirpath",
                                 "expression": "%resource.repeat(item).where(linkId='newrelatedperson').answer.first().exists()"
                             }
                         }
@@ -1009,7 +1009,7 @@
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
-                        "language": "fhirpath",
+                        "language": "text/fhirpath",
                         "expression": "now()"
                     }
                 },

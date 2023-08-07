@@ -2,7 +2,7 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcarecondition version '0.0.1.build.174'
+library emcarecondition version '0.0.1.build.186'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
 
@@ -138,8 +138,8 @@ code "Immunization Status Unknown": 'EmCare.B23.DE73' from "EmCare" display 'Imm
 code "immunization status unknown": 'EmCare.B23.DE73' from "EmCare" display 'immunization status unknown'
 code "No severe classification reached": 'EmCare.B23.DE100' from "EmCare" display 'No severe classification reached'
 code "no severe classification reached": 'EmCare.B23.DE100' from "EmCare" display 'no severe classification reached'
-code "PTMCT Follow up – HIV Exposed": 'DL-G-CL1-161' from "EmCare" display 'PTMCT Follow up – HIV Exposed'
-code "ptmct follow up – hiv exposed": 'DL-G-CL1-161' from "EmCare" display 'ptmct follow up – hiv exposed'
+code "PTMCT Follow up – HIV Exposed": 'EmCare.B23.DE102' from "EmCare" display 'PTMCT Follow up – HIV Exposed'
+code "ptmct follow up – hiv exposed": 'EmCare.B23.DE102' from "EmCare" display 'ptmct follow up – hiv exposed'
 code "PTMCT Follow up – HIV Confirmed": 'EmCare.B23.DE101' from "EmCare" display 'PTMCT Follow up – HIV Confirmed'
 code "ptmct follow up – hiv confirmed": 'EmCare.B23.DE101' from "EmCare" display 'ptmct follow up – hiv confirmed'
 code "Mumps (parotitis)": 'EmCare.B23.DE104' from "EmCare" display 'Mumps (parotitis)'

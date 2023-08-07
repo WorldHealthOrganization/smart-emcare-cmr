@@ -2,14 +2,14 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareb23classification version '0.0.1.build.174'
+library emcareb23classification version '0.0.1.build.186'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.174' called Base
-include emcarevalueset version '0.0.1.build.174' called val
-include emcarezscore version '0.0.1.build.174' called Z
-include emcarecombineddataelements version '0.0.1.build.174' called C
-include emcareobservation version '0.0.1.build.174' called obs
+include emcarebase version '0.0.1.build.186' called Base
+include emcarevalueset version '0.0.1.build.186' called val
+include emcarezscore version '0.0.1.build.186' called Z
+include emcarecombineddataelements version '0.0.1.build.186' called C
+include emcareobservation version '0.0.1.build.186' called obs
 
 
 
@@ -2292,6 +2292,22 @@ Alias
 */
 define "No severe classification reached":
     "DL-G-CL1-160"
+
+/* 
+DL-G-CL1-161 : 
+("Child followed up at PMTCT for HIV investigation or management" = true) or 
+("PMTCT HIV Status" = "HIV Exposed")
+*/
+define "DL-G-CL1-161":
+    ("OBSdefine.EmCare.B17.DE44A" = true) or
+    ("OBSdefine.EmCare.B17.DE44D" = "HIV Exposed")
+
+/* 
+PTMCT Follow up – HIV Exposed : DL-G-CL1-161
+Alias
+*/
+define "PTMCT Follow up – HIV Exposed":
+    "DL-G-CL1-161"
 
 /* 
 DL-G-CL1-162 : 
