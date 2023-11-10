@@ -2,13 +2,13 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcarecombineddataelements version '0.0.1.build.186'
+library emcarecombineddataelements version '0.0.142'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.186' called Base
-include emcarevalueset version '0.0.1.build.186' called val
-include emcarezscore version '0.0.1.build.186' called Z
-include emcareobservation version '0.0.1.build.186' called obs
+include emcarebase version '0.0.142' called Base
+include emcarevalueset version '0.0.142' called val
+include emcarezscore version '0.0.142' called Z
+include emcareobservation version '0.0.142' called obs
 
 
 
@@ -129,20 +129,6 @@ define "OBSdefine.EmCare.B20S1.DE01":
     Base.GetObsValue('EmCare.B20S1.DE01')
 
 /* 
-OBSdefine.EmCare.B20S2.DE02 : Skin Pinch of Abdomen
-
-*/
-define "OBSdefine.EmCare.B20S2.DE02":
-    Base.GetObsValue('EmCare.B20S2.DE02')
-
-/* 
-OBSdefine.EmCare.B11S2.DE06 : Restless and Irritable
-
-*/
-define "OBSdefine.EmCare.B11S2.DE06":
-    Base.GetObsValue('EmCare.B11S2.DE06')
-
-/* 
 OBSdefine.EmCare.B7.DE08b : Unconscious or Lethargic
 
 */
@@ -157,11 +143,25 @@ define "OBSdefine.EmCare.B20S2.DE01":
     Base.GetObsValue('EmCare.B20S2.DE01')
 
 /* 
+OBSdefine.EmCare.B20S2.DE02 : Skin Pinch of Abdomen
+
+*/
+define "OBSdefine.EmCare.B20S2.DE02":
+    Base.GetObsValue('EmCare.B20S2.DE02')
+
+/* 
 OBSdefine.EmCare.B18S2.DE08 : Infant's Movements
 
 */
 define "OBSdefine.EmCare.B18S2.DE08":
     Base.GetObsValue('EmCare.B18S2.DE08')
+
+/* 
+OBSdefine.EmCare.B11S2.DE06 : Restless and Irritable
+
+*/
+define "OBSdefine.EmCare.B11S2.DE06":
+    Base.GetObsValue('EmCare.B11S2.DE06')
 
 /* 
 OBSdefine.EmCare.B18S1.DE02 : Difficulty with Feeding
@@ -227,7 +227,7 @@ define "OBSdefine.EmCare.B19S2.DE02":
     Base.GetObsValue('EmCare.B19S2.DE02')
 
 /* 
-OBSdefine.EmCare.B19S2.DE01 : Yellow Skin
+OBSdefine.EmCare.B19S2.DE01 : Yellow Skin or yellow eyes
 
 */
 define "OBSdefine.EmCare.B19S2.DE01":
@@ -618,7 +618,6 @@ EmCare.B.G.DE05 :
      or (    "Stridor in a calm child" = true)
      or (    "Oxygen Saturation" <=  90 '%')
      or (    "Stiff neck" = true)
-     or (    "Fever" = true)
      or (    "Tender swelling behind the ear" = true)
      or (    ("Palmar Pallor" = "Severe Palmar Pallor" or "Hemoglobin (Hb) g/dL"  < 7 'g/dL'))
 */
@@ -627,7 +626,6 @@ define "EmCare.B.G.DE05":
          or (    "OBSdefine.EmCare.B10S2.DE04" = true)
          or (    "OBSdefine.EmCare.B10S2.DE07" <=  90 '%')
          or (    "OBSdefine.EmCare.B12S2.DE01" = true)
-         or (    "Fever" = true)
          or (    "OBSdefine.EmCare.B13S2.DE01" = true)
          or (    ("OBSdefine.EmCare.B15S2.DE01" ~ val."Severe Palmar Pallor" or "OBSdefine.EmCare.B22.DE81"  < 7 'g/dL'))
 
@@ -641,23 +639,51 @@ define "Severe Classification up to assessments and tests excluding Severe Dehyd
 /* 
 DL-G-CL1-23-30 : 
     ("Diarrhoea" = true)
-     and ((    ("Age >= 2 months to <60 months")
-         and ((    "Unconscious" = true and "Skin Pinch of Abdomen" = "Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)")
-         or (    ("Restless and Irritable" = true or "Skin Pinch of Abdomen" = "Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)" ) and ("Oral Fluid Test Results" = "Completely Unable to Drink" or "Oral Fluid Test Results" = "Vomits Immediately / Everything" or  "Completely Unable to Drink or Vomits Immediately / Everything"=true))
-         or (    (ToInteger("Unconscious or Lethargic" = true) + ToInteger("Sunken Eyes" = true) +ToInteger("Skin Pinch of Abdomen" = "Skin Pinch goes back very slowly (More than 2 seconds)" )+ToInteger( "Oral Fluid Test Results" = "Completely Unable to Drink" )+ToInteger(  "Oral Fluid Test Results" = "Vomits Immediately / Everything")  + ToInteger(  "Completely Unable to Drink or Vomits Immediately / Everything"=true )+ToInteger( "Oral Fluid Test Results" = "Drinks Poorly") )>1)))
-     or (    (AgeInMonths()<2)
-         and ((    (ToInteger("Sunken Eyes"=true) +  ToInteger("Skin Pinch of Abdomen" = "Skin Pinch goes back very slowly (More than 2 seconds)") + ToInteger("Infant's Movements" = "Movement only when stimulated but then stops") +ToInteger("Infant's Movements" = "No movement at all"))>1)
-         or (    "Skin Pinch of Abdomen" = "Skin Pinch goes back very slowly (More than 2 seconds)" and ("Infant's Movements" = "Movement only when stimulated but then stops"  or "Infant's Movements" = "No movement at all" )))))
+     and ((    ("child")
+         and ((    (ToInteger("Unconscious or Lethargic" = true) + ToInteger("Sunken Eyes" = true) +ToInteger("Skin Pinch of Abdomen" = "Skin Pinch goes back very slowly (More than 2 seconds)" )+ToInteger( "Oral Fluid Test Results" = "Completely Unable to Drink" )+ToInteger(  "Oral Fluid Test Results" = "Vomits Immediately / Everything")  + ToInteger(  "Completely Unable to Drink or Vomits Immediately / Everything"=true )+ToInteger( "Oral Fluid Test Results" = "Drinks Poorly") )>1)))
+     or (    ("nb")
+         and ((    (ToInteger("Sunken Eyes"=true) +
+            ToInteger("Skin Pinch of Abdomen" = "Skin Pinch goes back very slowly (More than 2 seconds)") +
+            ToInteger("Infant's Movements" = "Movement only when stimulated but then stops") +
+            ToInteger("Infant's Movements" = "No movement at all"))>1)))
+     or (    (AgeInDays()>= 8 and AgeInMonths()<2)
+         and ((    (ToInteger("Sunken Eyes"=true) +
+            ToInteger("Skin Pinch of Abdomen" = "Skin Pinch goes back very slowly (More than 2 seconds)") +
+            ToInteger("Infant's Movements" = "Movement only when stimulated but then stops") +
+            ToInteger("Infant's Movements" = "No movement at all"))>1)
+         or (    "Unconscious or Lethargic" = true and
+            (ToInteger("Sunken Eyes"=true) +
+            ToInteger("Skin Pinch of Abdomen" = "Skin Pinch goes back very slowly (More than 2 seconds)") +
+            ToInteger("Skin Pinch of Abdomen" = "Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)"))>1)
+         or (    ("Infant's Movements" = "Movement only when stimulated but then stops" or
+            "Infant's Movements" = "No movement at all") and
+            "Skin Pinch of Abdomen" = "Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)")
+         or (    "Restless and Irritable" = true and
+            "Skin Pinch of Abdomen" = "Skin Pinch goes back very slowly (More than 2 seconds)"))))
 */
 define "DL-G-CL1-23-30":
         ("OBSdefine.EmCare.B20S1.DE01" = true)
-         and ((    ("Age >= 2 months to <60 months")
-             and ((    "OBSdefine.EmCare.B7.DE08" = true and "OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)")
-             or (    ("OBSdefine.EmCare.B11S2.DE06" = true or "OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)" ) and ("OBSdefine.EmCare.B22.DE08" ~ val."Completely Unable to Drink" or "OBSdefine.EmCare.B22.DE08" ~ val."Vomits Immediately / Everything" or  "OBSdefine.EmCare.B22.DE14a"=true))
-             or (    (ToInteger(Coalesce("OBSdefine.EmCare.B7.DE08b" = true,false)) + ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE01" = true,false)) +ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back very slowly (More than 2 seconds)" ,false))+ToInteger(Coalesce( "OBSdefine.EmCare.B22.DE08" ~ val."Completely Unable to Drink" ,false))+ToInteger(Coalesce(  "OBSdefine.EmCare.B22.DE08" ~ val."Vomits Immediately / Everything",false))  + ToInteger(Coalesce(  "OBSdefine.EmCare.B22.DE14a"=true ,false))+ToInteger(Coalesce( "OBSdefine.EmCare.B22.DE08" ~ val."Drinks Poorly",false)) )>1)))
-         or (    (AgeInMonths()<2)
-             and ((    (ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE01"=true,false)) +  ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back very slowly (More than 2 seconds)",false)) + ToInteger(Coalesce("OBSdefine.EmCare.B18S2.DE08" ~ val."Movement only when stimulated but then stops",false)) +ToInteger(Coalesce("OBSdefine.EmCare.B18S2.DE08" ~ val."No movement at all",false)))>1)
-             or (    "OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back very slowly (More than 2 seconds)" and ("OBSdefine.EmCare.B18S2.DE08" ~ val."Movement only when stimulated but then stops"  or "OBSdefine.EmCare.B18S2.DE08" ~ val."No movement at all" )))))
+         and ((    ("child")
+             and ((    (ToInteger(Coalesce("OBSdefine.EmCare.B7.DE08b" = true,false)) + ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE01" = true,false)) +ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back very slowly (More than 2 seconds)" ,false))+ToInteger(Coalesce( "OBSdefine.EmCare.B22.DE08" ~ val."Completely Unable to Drink" ,false))+ToInteger(Coalesce(  "OBSdefine.EmCare.B22.DE08" ~ val."Vomits Immediately / Everything",false))  + ToInteger(Coalesce(  "OBSdefine.EmCare.B22.DE14a"=true ,false))+ToInteger(Coalesce( "OBSdefine.EmCare.B22.DE08" ~ val."Drinks Poorly",false)) )>1)))
+         or (    ("nb")
+             and ((    (ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE01"=true,false)) +
+                ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back very slowly (More than 2 seconds)",false)) +
+                ToInteger(Coalesce("OBSdefine.EmCare.B18S2.DE08" ~ val."Movement only when stimulated but then stops",false)) +
+                ToInteger(Coalesce("OBSdefine.EmCare.B18S2.DE08" ~ val."No movement at all",false)))>1)))
+         or (    (AgeInDays()>= 8 and AgeInMonths()<2)
+             and ((    (ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE01"=true,false)) +
+                ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back very slowly (More than 2 seconds)",false)) +
+                ToInteger(Coalesce("OBSdefine.EmCare.B18S2.DE08" ~ val."Movement only when stimulated but then stops",false)) +
+                ToInteger(Coalesce("OBSdefine.EmCare.B18S2.DE08" ~ val."No movement at all",false)))>1)
+             or (    "OBSdefine.EmCare.B7.DE08b" = true and
+                (ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE01"=true,false)) +
+                ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back very slowly (More than 2 seconds)",false)) +
+                ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)",false)))>1)
+             or (    ("OBSdefine.EmCare.B18S2.DE08" ~ val."Movement only when stimulated but then stops" or
+                "OBSdefine.EmCare.B18S2.DE08" ~ val."No movement at all") and
+                "OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)")
+             or (    "OBSdefine.EmCare.B11S2.DE06" = true and
+                "OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back very slowly (More than 2 seconds)"))))
 
 /* 
 Severe Dehydration : DL-G-CL1-23-30
@@ -672,14 +698,22 @@ DL-G-CL1-24-32 :
      and ((    (ToInteger("Restless and Irritable" = true) + ToInteger("Sunken Eyes" = true) + ToInteger("Skin Pinch of Abdomen" = "Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)" ) + ToInteger("Oral Fluid Test Results" = "Drinks Eagerly / Thirstily" ))>1)
      or (    ("Age >= 2 months to <60 months")
          and ((    "Restless and Irritable" = true and ("Oral Fluid Test Results" = "Drinks Poorly" or  "Skin Pinch of Abdomen" = "Skin Pinch goes back very slowly (More than 2 seconds)" ))
-         or (    ("Lethargic" = true or "Oral Fluid Test Results" = "Drinks Poorly") and ("Skin Pinch of Abdomen" = "Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)" )))))
+         or (    ("Lethargic" = true or "Oral Fluid Test Results" = "Drinks Poorly") and ("Skin Pinch of Abdomen" = "Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)" ))))
+     or (    (AgeInDays()>= 8 and AgeInMonths()<2)
+         and ((    "Sunken Eyes" = true and "Restless and Irritable" = true)
+         or (    "Sunken Eyes" = true and "Skin Pinch of Abdomen" = "Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)")
+         or (    "Skin Pinch of Abdomen" = "Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)" and "Restless and Irritable" = true))))
 */
 define "DL-G-CL1-24-32":
         ("OBSdefine.EmCare.B20S1.DE01" = true and  Coalesce("Severe Dehydration",false)!=true)
          and ((    (ToInteger(Coalesce("OBSdefine.EmCare.B11S2.DE06" = true,false)) + ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE01" = true,false)) + ToInteger(Coalesce("OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)" ,false)) + ToInteger(Coalesce("OBSdefine.EmCare.B22.DE08" ~ val."Drinks Eagerly / Thirstily" ,false)))>1)
          or (    ("Age >= 2 months to <60 months")
              and ((    "OBSdefine.EmCare.B11S2.DE06" = true and ("OBSdefine.EmCare.B22.DE08" ~ val."Drinks Poorly" or  "OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back very slowly (More than 2 seconds)" ))
-             or (    ("OBSdefine.EmCare.B7.DE08a" = true or "OBSdefine.EmCare.B22.DE08" ~ val."Drinks Poorly") and ("OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)" )))))
+             or (    ("OBSdefine.EmCare.B7.DE08a" = true or "OBSdefine.EmCare.B22.DE08" ~ val."Drinks Poorly") and ("OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)" ))))
+         or (    (AgeInDays()>= 8 and AgeInMonths()<2)
+             and ((    "OBSdefine.EmCare.B20S2.DE01" = true and "OBSdefine.EmCare.B11S2.DE06" = true)
+             or (    "OBSdefine.EmCare.B20S2.DE01" = true and "OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)")
+             or (    "OBSdefine.EmCare.B20S2.DE02" ~ val."Skin Pinch goes back slowly (2 seconds or fewer, but not immediately)" and "OBSdefine.EmCare.B11S2.DE06" = true))))
 
 /* 
 Some Dehydration : DL-G-CL1-24-32
@@ -715,7 +749,7 @@ YI severe classification other than Severe Dehydration :
     (AgeInMonths()<2)
      and ((    "PSBI" = true
         or
-        "Yellow Palms or Yellow Soles" = true or ("Yellow Skin" = true and "Age <24 hours") or ("Yellow Skin" = true and "Age  >= 24 hours" and AgeInDays() < 21  and "When did the Jaundice first appear?" = "Within less than 24 hours of birth")
+        "Yellow Palms or Yellow Soles" = true or ("Yellow Skin or yellow eyes" = true and "Age <24 hours") or ("Yellow Skin or yellow eyes" = true and "Age  >= 24 hours" and AgeInDays() < 21  and "When did the Jaundice first appear?" = "Within less than 24 hours of birth")
         or
         "Diarrhoea" = true and (("Restless and Irritable" = true and "Skin Pinch of Abdomen" = "Skin Pinch goes back very slowly (More than 2 seconds)") or ("Sunken Eyes" = true and "Skin Pinch of Abdomen" = "Skin Pinch goes back very slowly (More than 2 seconds)"))
         or
@@ -736,7 +770,7 @@ YI severe classification :
     (AgeInMonths()<2)
      and ((    "PSBI" = true
         or
-        "Yellow Palms or Yellow Soles" = true or ("Yellow Skin" = true and "Age <24 hours") or ("Yellow Skin" = true and "Age  >= 24 hours" and AgeInDays() < 21  and "When did the Jaundice first appear?" = "Within less than 24 hours of birth")
+        "Yellow Palms or Yellow Soles" = true or ("Yellow Skin or yellow eyes" = true and "Age <24 hours") or ("Yellow Skin or yellow eyes" = true and "Age  >= 24 hours" and AgeInDays() < 21  and "When did the Jaundice first appear?" = "Within less than 24 hours of birth")
         or
         "Diarrhoea" = true and (("Restless and Irritable" = true and "Skin Pinch of Abdomen" = "Skin Pinch goes back very slowly (More than 2 seconds)") or ("Sunken Eyes" = true and "Skin Pinch of Abdomen" = "Skin Pinch goes back very slowly (More than 2 seconds)"))
         or

@@ -6,6 +6,176 @@ uses 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareob
 group bundletrans(source src : questionnaireResponse,target bundle : Bundle){
     src -> bundle.id = uuid() 'id';
     src -> bundle.type = 'batch' 'type';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE01' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de01(src, tgt) '38abda54';
+                } '5bb3b79f';
+            } '370811d9';
+        } '3ab1c4d9';
+    } '6c5782d5';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE05' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de05(src, tgt) '220c65f0';
+                } '5a4606f6';
+            } 'cd12baee';
+        } 'b15e6da9';
+    } '747579b9';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE11' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de11(src, tgt) 'fb8cad0f';
+                } '7edc2221';
+            } 'a3887c52';
+        } 'd6089e0a';
+    } '1c3fe3fe';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE12' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de12(src, tgt) 'cfb4978a';
+                } '6baa40da';
+            } '0100bb78';
+        } '3813921b';
+    } '4dc84a61';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE16' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de16(src, tgt) '27cedbd4';
+                } '020706e5';
+            } '8a74f989';
+        } '234b08b4';
+    } '59e6dd47';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE62' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de62(src, tgt) '9e6fe417';
+                } 'fceb26b5';
+            } 'c2317b2e';
+        } '2489f48c';
+    } 'bc696f81';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE67' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de67(src, tgt) 'a2efd289';
+                } '6f25bea0';
+            } '030f6538';
+        } 'a178f0d7';
+    } '3f50d2c8';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE22' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de22(src, tgt) '83ec2396';
+                } '083527d8';
+            } 'bb2636d1';
+        } 'f046886c';
+    } 'aae77ae9';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE44A' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de44a(src, tgt) '0155fae0';
+                } '89eb0073';
+            } '8b0fb23a';
+        } '9e54f317';
+    } '2bee96ba';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE44D' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de44d(src, tgt) 'fe467709';
+                } 'cbb99405';
+            } 'cb493560';
+        } '2a637bac';
+    } 'a349c5fc';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE44G' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de44g(src, tgt) '85cf3dc6';
+                } '673939ec';
+            } '342dede2';
+        } '5c10a86e';
+    } '67b92e0b';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE25' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de25(src, tgt) 'c6e4fc6d';
+                } 'd7e65591';
+            } 'fec68882';
+        } '1fe34d1d';
+    } '683f44a7';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE30' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de30(src, tgt) '9615670a';
+                } '176137f4';
+            } '9b89aba3';
+        } '8cf3dfd4';
+    } 'e6796ddf';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE37' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de37(src, tgt) '64e5c20d';
+                } 'e269e244';
+            } 'b1e1d7af';
+        } 'effb858d';
+    } 'b3f8ef37';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE41' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de41(src, tgt) '3f331cf1';
+                } 'ce7dae43';
+            } '019e4ee3';
+        } 'be967a47';
+    } 'bd85bfd1';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE45' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de45(src, tgt) '4b6ca210';
+                } 'bc5d9484';
+            } 'eaed65ff';
+        } '8999b1f9';
+    } 'cacec830';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE50' and answer.exists() then {
+            src -> bundle.entry as entry  then {
+                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
+                src -> entry.resource = create('Observation') as tgt then {
+                    src -> tgt then emcareobservationemcareb17de50(src, tgt) '9189b3e5';
+                } 'd6cc8f25';
+            } 'b90dd814';
+        } '495ace37';
+    } 'e7a3f902';
     src.item first as itm1  where linkId =  'EmCare.B22.RespiratoryRate' then {
         itm1.item first as item  where linkId =  'EmCare.B22.DE01' and answer.exists() then {
             src -> bundle.entry as entry  then {
@@ -251,125 +421,55 @@ group bundletrans(source src : questionnaireResponse,target bundle : Bundle){
         } '08d4fa9d';
     } 'dbbe5168';
     src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE41' and answer.exists() then {
+        itm1.item first as item  where linkId =  'EmCare.B24.G.DE28' and answer.exists() then {
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src -> tgt then emcareobservationemcareb22de41(src, tgt) '35802f20';
-                } '765c240d';
-            } '9de4a229';
-        } '95a734dc';
-    } 'e0648fb3';
+                    src -> tgt then emcareobservationemcareb24gde28(src, tgt) '098b1c6e';
+                } '170a06a4';
+            } 'ad01bdfb';
+        } '8beb2b0c';
+    } '262e83ea';
     src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE28' and answer.exists() then {
+        itm1.item first as item  where linkId =  'EmCare.B24.G.DE34' and answer.exists() then {
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src -> tgt then emcareobservationemcareb22de28(src, tgt) 'dd9106b0';
-                } '72695e81';
-            } '5cc117e5';
-        } '72d43aa2';
-    } '2eb0afb7';
+                    src -> tgt then emcareobservationemcareb24gde34(src, tgt) 'e3fb37a8';
+                } '78b1d1f7';
+            } 'ae510f78';
+        } 'cfb42f0f';
+    } '68c0a963';
     src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE29' and answer.exists() then {
+        itm1.item first as item  where linkId =  'EmCare.B24.G.DE35' and answer.exists() then {
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src -> tgt then emcareobservationemcareb22de29(src, tgt) '0bd03bad';
-                } '64565ab8';
-            } 'a568a312';
-        } 'c9435680';
-    } '532862db';
+                    src -> tgt then emcareobservationemcareb24gde35(src, tgt) '857bf766';
+                } 'a454798b';
+            } 'edf0cf6e';
+        } '85329073';
+    } '43b49e51';
     src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE30' and answer.exists() then {
+        itm1.item first as item  where linkId =  'EmCare.B24.G.DE37' and answer.exists() then {
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src -> tgt then emcareobservationemcareb22de30(src, tgt) 'a8dbbfa4';
-                } '470a9773';
-            } '6aff1bf2';
-        } '58ef8f91';
-    } 'd3925452';
+                    src -> tgt then emcareobservationemcareb24gde37(src, tgt) '7583c0c9';
+                } '211d7976';
+            } 'c40311ab';
+        } '59da68d2';
+    } '20d10731';
     src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE31' and answer.exists() then {
+        itm1.item first as item  where linkId =  'EmCare.B24.G.DE38' and answer.exists() then {
             src -> bundle.entry as entry  then {
                 src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
                 src -> entry.resource = create('Observation') as tgt then {
-                    src -> tgt then emcareobservationemcareb22de31(src, tgt) '3a858f1f';
-                } 'bab0e868';
-            } '47ecf4e4';
-        } 'adf0b112';
-    } '800f010d';
-    src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE32' and answer.exists() then {
-            src -> bundle.entry as entry  then {
-                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
-                src -> entry.resource = create('Observation') as tgt then {
-                    src -> tgt then emcareobservationemcareb22de32(src, tgt) '5537f1d1';
-                } '38fb811c';
-            } '77934152';
-        } '07d1a84a';
-    } '41f81bdf';
-    src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE33' and answer.exists() then {
-            src -> bundle.entry as entry  then {
-                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
-                src -> entry.resource = create('Observation') as tgt then {
-                    src -> tgt then emcareobservationemcareb22de33(src, tgt) 'b9ca07b3';
-                } 'e7981b54';
-            } 'b81929fc';
-        } '65ea8f25';
-    } '92c89def';
-    src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE34' and answer.exists() then {
-            src -> bundle.entry as entry  then {
-                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
-                src -> entry.resource = create('Observation') as tgt then {
-                    src -> tgt then emcareobservationemcareb22de34(src, tgt) '81a7b6a0';
-                } 'a60a44da';
-            } '9f5867b0';
-        } '7a811ac1';
-    } 'c95a75ed';
-    src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE35' and answer.exists() then {
-            src -> bundle.entry as entry  then {
-                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
-                src -> entry.resource = create('Observation') as tgt then {
-                    src -> tgt then emcareobservationemcareb22de35(src, tgt) '99cdb2a9';
-                } '7976f991';
-            } '6b8eb7c7';
-        } 'b3f8de08';
-    } '4d431e35';
-    src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE36' and answer.exists() then {
-            src -> bundle.entry as entry  then {
-                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
-                src -> entry.resource = create('Observation') as tgt then {
-                    src -> tgt then emcareobservationemcareb22de36(src, tgt) '5d275331';
-                } 'cec8e27b';
-            } 'e67b8382';
-        } 'a45c350b';
-    } '3cf7714c';
-    src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE42' and answer.exists() then {
-            src -> bundle.entry as entry  then {
-                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
-                src -> entry.resource = create('Observation') as tgt then {
-                    src -> tgt then emcareobservationemcareb22de42(src, tgt) '273b1a16';
-                } '213a0dca';
-            } '56a5bbd9';
-        } 'd7b806aa';
-    } '840b2bb8';
-    src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE44' and answer.exists() then {
-            src -> bundle.entry as entry  then {
-                src -> entry.request as request, request.method = 'POST' , uuid() as uuid, request.url = append('/Observation/', uuid) 'b50ac4c5';
-                src -> entry.resource = create('Observation') as tgt then {
-                    src -> tgt then emcareobservationemcareb22de44(src, tgt) '843d7b1e';
-                } '70061b03';
-            } '0e593cb2';
-        } 'f7138270';
-    } '3f3d258e';
+                    src -> tgt then emcareobservationemcareb24gde38(src, tgt) '854df315';
+                } '38d49fa3';
+            } 'aa632e75';
+        } '91a669e9';
+    } '1084f17d';
     src.item first as itm1  where linkId =  'EmCare.B22.SecondTemperature' then {
         itm1.item first as item  where linkId =  'EmCare.B22.DE47' and answer.exists() then {
             src -> bundle.entry as entry  then {
@@ -460,6 +560,546 @@ group bundletrans(source src : questionnaireResponse,target bundle : Bundle){
             } '44eb8af1';
         } '5dda5eaa';
     } '87fcc6c8';
+}
+
+group emcareobservationemcareb17de01(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de01';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE01'
+         'code-emcareb17de01';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE01' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } 'c297c207';
+    } '04e4027b';
+}
+
+group emcareobservationemcareb17de05(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de05';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE05'
+         'code-emcareb17de05';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE05' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } '73bae678';
+    } 'e547e027';
+}
+
+group emcareobservationemcareb17de11(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de11';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE11'
+         'code-emcareb17de11';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE11' and answer.exists() then {
+            item.answer first as a then {
+                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb17de11';
+                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb17de11';
+            } 'bdab9370';
+        } 'd8607c58';
+    } '3f30e9f3';
+}
+
+group emcareobservationemcareb17de12(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de12';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE12'
+         'code-emcareb17de12';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE12' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } '6e5612d4';
+    } '06ead4aa';
+}
+
+group emcareobservationemcareb17de16(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de16';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE16'
+         'code-emcareb17de16';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE16' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } 'bcd0977f';
+    } 'c75e78a6';
+}
+
+group emcareobservationemcareb17de62(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de62';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE62'
+         'code-emcareb17de62';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE62' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } 'd5918627';
+    } '2cf39bb2';
+}
+
+group emcareobservationemcareb17de67(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de67';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE67'
+         'code-emcareb17de67';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE67' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } 'd6bab067';
+    } '97b5fc32';
+}
+
+group emcareobservationemcareb17de22(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de22';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE22'
+         'code-emcareb17de22';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE22' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } '6d4ddc7c';
+    } 'a84b2ae7';
+}
+
+group emcareobservationemcareb17de44a(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de44a';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE44A'
+         'code-emcareb17de44a';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE44A' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } 'b023b687';
+    } 'cf80579d';
+}
+
+group emcareobservationemcareb17de44d(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de44d';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE44D'
+         'code-emcareb17de44d';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE44D' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } 'c0d5a4f4';
+    } 'a63dc70d';
+}
+
+group emcareobservationemcareb17de44g(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de44g';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE44G'
+         'code-emcareb17de44g';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE44G' and answer.exists() then {
+            item.answer first as a then {
+                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb17de44g';
+                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb17de44g';
+            } 'bdab9370';
+        } '77433954';
+    } 'd04de511';
+}
+
+group emcareobservationemcareb17de25(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de25';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE25'
+         'code-emcareb17de25';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE25' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } 'a4e65499';
+    } '845011c8';
+}
+
+group emcareobservationemcareb17de30(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de30';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE30'
+         'code-emcareb17de30';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE30' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } '5d77918e';
+    } 'ff0d34b3';
+}
+
+group emcareobservationemcareb17de37(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de37';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE37'
+         'code-emcareb17de37';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE37' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } 'd05ad145';
+    } '744be29b';
+}
+
+group emcareobservationemcareb17de41(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de41';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE41'
+         'code-emcareb17de41';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE41' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } '64e34d70';
+    } '06c95139';
+}
+
+group emcareobservationemcareb17de45(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de45';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE45'
+         'code-emcareb17de45';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE45' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } 'cde8c924';
+    } '6c295ad5';
+}
+
+group emcareobservationemcareb17de50(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb17de50';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B17.DE50'
+         'code-emcareb17de50';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B17.HealthPrevention' then {
+        itm1.item first as item  where linkId =  'EmCare.B17.DE50' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } '9b88df1a';
+    } 'a906b241';
 }
 
 group emcareobservationemcareb22de01(source src,target tgt){
@@ -1062,20 +1702,20 @@ group emcareobservationemcareb22de21(source src,target tgt){
     } 'a412e00a';
 }
 
-group emcareobservationemcareb22de41(source src,target tgt){
+group emcareobservationemcareb24gde28(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareb22de41';
+         'id-emcareb24gde28';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE41'
-         'code-emcareb22de41';
+                coding.code = 'EmCare.B24.G.DE28'
+         'code-emcareb24gde28';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -1083,29 +1723,29 @@ group emcareobservationemcareb22de41(source src,target tgt){
     } 'aae7a11d';
     src.subject as subject -> tgt.subject = subject  'patient';
     src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE41' and answer.exists() then {
+        itm1.item first as item  where linkId =  'EmCare.B24.G.DE28' and answer.exists() then {
             item.answer first as a then {
-                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb22de41';
-                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb22de41';
+                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb24gde28';
+                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb24gde28';
             } 'bdab9370';
-        } 'd7c5df9b';
-    } 'dec48a08';
+        } '81e29fb8';
+    } 'b1fda981';
 }
 
-group emcareobservationemcareb22de28(source src,target tgt){
+group emcareobservationemcareb24gde34(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareb22de28';
+         'id-emcareb24gde34';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE28'
-         'code-emcareb22de28';
+                coding.code = 'EmCare.B24.G.DE34'
+         'code-emcareb24gde34';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -1113,29 +1753,29 @@ group emcareobservationemcareb22de28(source src,target tgt){
     } 'aae7a11d';
     src.subject as subject -> tgt.subject = subject  'patient';
     src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE28' and answer.exists() then {
+        itm1.item first as item  where linkId =  'EmCare.B24.G.DE34' and answer.exists() then {
             item.answer first as a then {
-                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb22de28';
-                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb22de28';
+                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb24gde34';
+                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb24gde34';
             } 'bdab9370';
-        } '58c52233';
-    } 'aad3db2c';
+        } 'f3df2d25';
+    } 'a3d7eae0';
 }
 
-group emcareobservationemcareb22de29(source src,target tgt){
+group emcareobservationemcareb24gde35(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareb22de29';
+         'id-emcareb24gde35';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE29'
-         'code-emcareb22de29';
+                coding.code = 'EmCare.B24.G.DE35'
+         'code-emcareb24gde35';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -1143,29 +1783,29 @@ group emcareobservationemcareb22de29(source src,target tgt){
     } 'aae7a11d';
     src.subject as subject -> tgt.subject = subject  'patient';
     src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE29' and answer.exists() then {
+        itm1.item first as item  where linkId =  'EmCare.B24.G.DE35' and answer.exists() then {
             item.answer first as a then {
-                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb22de29';
-                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb22de29';
+                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb24gde35';
+                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb24gde35';
             } 'bdab9370';
-        } '95a367de';
-    } '960d28f0';
+        } '67b7c6e0';
+    } 'a0f97621';
 }
 
-group emcareobservationemcareb22de30(source src,target tgt){
+group emcareobservationemcareb24gde37(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareb22de30';
+         'id-emcareb24gde37';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE30'
-         'code-emcareb22de30';
+                coding.code = 'EmCare.B24.G.DE37'
+         'code-emcareb24gde37';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -1173,29 +1813,29 @@ group emcareobservationemcareb22de30(source src,target tgt){
     } 'aae7a11d';
     src.subject as subject -> tgt.subject = subject  'patient';
     src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE30' and answer.exists() then {
+        itm1.item first as item  where linkId =  'EmCare.B24.G.DE37' and answer.exists() then {
             item.answer first as a then {
-                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb22de30';
-                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb22de30';
+                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb24gde37';
+                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb24gde37';
             } 'bdab9370';
-        } 'c3834bca';
-    } '3b102368';
+        } '3e18a4bd';
+    } '0d678fe3';
 }
 
-group emcareobservationemcareb22de31(source src,target tgt){
+group emcareobservationemcareb24gde38(source src,target tgt){
         src -> tgt.identifier = create('Identifier') as CodeID,
             CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
             CodeID.use =  'official',
             CodeID.value = 'uuid',
             CodeID.id = uuid()
-         'id-emcareb22de31';
+         'id-emcareb24gde38';
     src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
         src.subject as subject -> tgt.subject = subject,
             tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
             tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
                 coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE31'
-         'code-emcareb22de31';
+                coding.code = 'EmCare.B24.G.DE38'
+         'code-emcareb24gde38';
     src.item as itemtimestamp where linkId  =  'timestamp' then {
         itemtimestamp.answer first as atimestamp then {
             atimestamp.value as val -> tgt.issued = val  '5af77f2c';
@@ -1203,233 +1843,13 @@ group emcareobservationemcareb22de31(source src,target tgt){
     } 'aae7a11d';
     src.subject as subject -> tgt.subject = subject  'patient';
     src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE31' and answer.exists() then {
+        itm1.item first as item  where linkId =  'EmCare.B24.G.DE38' and answer.exists() then {
             item.answer first as a then {
-                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb22de31';
-                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb22de31';
+                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb24gde38';
+                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb24gde38';
             } 'bdab9370';
-        } 'bb8ba529';
-    } '9e9be797';
-}
-
-group emcareobservationemcareb22de32(source src,target tgt){
-        src -> tgt.identifier = create('Identifier') as CodeID,
-            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
-            CodeID.use =  'official',
-            CodeID.value = 'uuid',
-            CodeID.id = uuid()
-         'id-emcareb22de32';
-    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
-        src.subject as subject -> tgt.subject = subject,
-            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
-            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
-                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE32'
-         'code-emcareb22de32';
-    src.item as itemtimestamp where linkId  =  'timestamp' then {
-        itemtimestamp.answer first as atimestamp then {
-            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
-        } '7f22f29f';
-    } 'aae7a11d';
-    src.subject as subject -> tgt.subject = subject  'patient';
-    src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE32' and answer.exists() then {
-            item.answer first as a then {
-                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb22de32';
-                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb22de32';
-            } 'bdab9370';
-        } '4adca3b8';
-    } '59b588e0';
-}
-
-group emcareobservationemcareb22de33(source src,target tgt){
-        src -> tgt.identifier = create('Identifier') as CodeID,
-            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
-            CodeID.use =  'official',
-            CodeID.value = 'uuid',
-            CodeID.id = uuid()
-         'id-emcareb22de33';
-    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
-        src.subject as subject -> tgt.subject = subject,
-            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
-            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
-                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE33'
-         'code-emcareb22de33';
-    src.item as itemtimestamp where linkId  =  'timestamp' then {
-        itemtimestamp.answer first as atimestamp then {
-            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
-        } '7f22f29f';
-    } 'aae7a11d';
-    src.subject as subject -> tgt.subject = subject  'patient';
-    src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE33' and answer.exists() then {
-            item.answer first as a then {
-                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb22de33';
-                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb22de33';
-            } 'bdab9370';
-        } 'ba6b3c81';
-    } '56745630';
-}
-
-group emcareobservationemcareb22de34(source src,target tgt){
-        src -> tgt.identifier = create('Identifier') as CodeID,
-            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
-            CodeID.use =  'official',
-            CodeID.value = 'uuid',
-            CodeID.id = uuid()
-         'id-emcareb22de34';
-    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
-        src.subject as subject -> tgt.subject = subject,
-            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
-            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
-                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE34'
-         'code-emcareb22de34';
-    src.item as itemtimestamp where linkId  =  'timestamp' then {
-        itemtimestamp.answer first as atimestamp then {
-            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
-        } '7f22f29f';
-    } 'aae7a11d';
-    src.subject as subject -> tgt.subject = subject  'patient';
-    src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE34' and answer.exists() then {
-            item.answer first as a then {
-                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb22de34';
-                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb22de34';
-            } 'bdab9370';
-        } 'a958300a';
-    } 'f384d1b9';
-}
-
-group emcareobservationemcareb22de35(source src,target tgt){
-        src -> tgt.identifier = create('Identifier') as CodeID,
-            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
-            CodeID.use =  'official',
-            CodeID.value = 'uuid',
-            CodeID.id = uuid()
-         'id-emcareb22de35';
-    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
-        src.subject as subject -> tgt.subject = subject,
-            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
-            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
-                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE35'
-         'code-emcareb22de35';
-    src.item as itemtimestamp where linkId  =  'timestamp' then {
-        itemtimestamp.answer first as atimestamp then {
-            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
-        } '7f22f29f';
-    } 'aae7a11d';
-    src.subject as subject -> tgt.subject = subject  'patient';
-    src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE35' and answer.exists() then {
-            item.answer first as a then {
-                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb22de35';
-                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb22de35';
-            } 'bdab9370';
-        } '9412283c';
-    } '5ed5ea0e';
-}
-
-group emcareobservationemcareb22de36(source src,target tgt){
-        src -> tgt.identifier = create('Identifier') as CodeID,
-            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
-            CodeID.use =  'official',
-            CodeID.value = 'uuid',
-            CodeID.id = uuid()
-         'id-emcareobservationemcareb22de36';
-    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
-        src.subject as subject -> tgt.subject = subject,
-            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
-            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
-                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE36'
-         'code-emcareobservationemcareb22de36';
-    src.item as itemtimestamp where linkId  =  'timestamp' then {
-        itemtimestamp.answer first as atimestamp then {
-            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
-        } '7f22f29f';
-    } 'aae7a11d';
-    src.subject as subject -> tgt.subject = subject  'patient';
-    src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE36' and answer.exists() then {
-            item.answer first as a then {
-                a where value = 'Not well Attached to Breast' then {
-                    a -> tgt.value = create('CodeableConcept') as cc, cc.coding = create('Coding') as c, c.code='EmCare.B22.DE37', c.system= 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes', tgt.status = 'final' 'dfb0a5c3';
-                } 'f0a0a4e3';
-                a where value = 'Good Attachment' then {
-                    a -> tgt.value = create('CodeableConcept') as cc, cc.coding = create('Coding') as c, c.code='EmCare.B22.DE38', c.system= 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes', tgt.status = 'final' '99789115';
-                } 'bc1ca575';
-                a where value = 'Not Sucking Effectively' then {
-                    a -> tgt.value = create('CodeableConcept') as cc, cc.coding = create('Coding') as c, c.code='EmCare.B22.DE39', c.system= 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes', tgt.status = 'final' '4caea371';
-                } 'c8ef88d4';
-                a where value = 'Sucking Effectively' then {
-                    a -> tgt.value = create('CodeableConcept') as cc, cc.coding = create('Coding') as c, c.code='EmCare.B22.DE40', c.system= 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes', tgt.status = 'final' 'a7f96003';
-                } '9268170a';
-            } '75e3206c';
-        } '1907a547';
-    } 'cf9a6196';
-}
-
-group emcareobservationemcareb22de42(source src,target tgt){
-        src -> tgt.identifier = create('Identifier') as CodeID,
-            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
-            CodeID.use =  'official',
-            CodeID.value = 'uuid',
-            CodeID.id = uuid()
-         'id-emcareb22de42';
-    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
-        src.subject as subject -> tgt.subject = subject,
-            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
-            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
-                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE42'
-         'code-emcareb22de42';
-    src.item as itemtimestamp where linkId  =  'timestamp' then {
-        itemtimestamp.answer first as atimestamp then {
-            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
-        } '7f22f29f';
-    } 'aae7a11d';
-    src.subject as subject -> tgt.subject = subject  'patient';
-    src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE42' and answer.exists() then {
-            item.answer first as a then {
-                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb22de42';
-                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb22de42';
-            } 'bdab9370';
-        } '3dcc04b3';
-    } '0d852c2e';
-}
-
-group emcareobservationemcareb22de44(source src,target tgt){
-        src -> tgt.identifier = create('Identifier') as CodeID,
-            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
-            CodeID.use =  'official',
-            CodeID.value = 'uuid',
-            CodeID.id = uuid()
-         'id-emcareb22de44';
-    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
-        src.subject as subject -> tgt.subject = subject,
-            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
-            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
-                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
-                coding.code = 'EmCare.B22.DE44'
-         'code-emcareb22de44';
-    src.item as itemtimestamp where linkId  =  'timestamp' then {
-        itemtimestamp.answer first as atimestamp then {
-            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
-        } '7f22f29f';
-    } 'aae7a11d';
-    src.subject as subject -> tgt.subject = subject  'patient';
-    src.item first as itm1  where linkId =  'EmCare.B22.BreastFeeding' then {
-        itm1.item first as item  where linkId =  'EmCare.B22.DE44' and answer.exists() then {
-            item.answer first as a then {
-                a  where a.value = true -> tgt.status = 'final', tgt.value = true 'final-emcareb22de44';
-                a  where a.value = false -> tgt.status = 'cancelled', tgt.value = false 'notfound-emcareb22de44';
-            } 'bdab9370';
-        } 'd4bad53b';
-    } 'fbdc7921';
+        } '80d7b6ab';
+    } 'd74f6929';
 }
 
 group emcareobservationemcareb22de47(source src,target tgt){
@@ -1609,5 +2029,69 @@ group emcareobservationemcareb22de52a(source src,target tgt){
             } 'bdab9370';
         } '97eeb118';
     } '5fca437b';
+}
+
+group emcareobservationemcareb24de07(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcareb24de07';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B24.DE07'
+         'code-emcareb24de07';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B24.MalariaTest' then {
+        itm1.item first as item  where linkId =  'EmCare.B24.DE07' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } '70447a5d';
+    } 'b47b0497';
+}
+
+group emcareobservationemcarebhde24(source src,target tgt){
+        src -> tgt.identifier = create('Identifier') as CodeID,
+            CodeID.system = 'http://hl7.org/fhir/namingsystem-identifier-type',
+            CodeID.use =  'official',
+            CodeID.value = 'uuid',
+            CodeID.id = uuid()
+         'id-emcarebhde24';
+    src.encounter as encounter -> tgt.encounter = encounter '35bc6b82';
+        src.subject as subject -> tgt.subject = subject,
+            tgt.meta = create('Meta') as newMeta, newMeta.profile = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/StructureDefinition/emcareobservation',
+            tgt.code = create('CodeableConcept') as concept, concept.coding = create('Coding') as coding,
+                coding.system = 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes',
+                coding.code = 'EmCare.B.H.DE24'
+         'code-emcarebhde24';
+    src.item as itemtimestamp where linkId  =  'timestamp' then {
+        itemtimestamp.answer first as atimestamp then {
+            atimestamp.value as val -> tgt.issued = val  '5af77f2c';
+        } '7f22f29f';
+    } 'aae7a11d';
+    src.subject as subject -> tgt.subject = subject  'patient';
+    src.item first as itm1  where linkId =  'EmCare.B24.MalariaTest' then {
+        itm1.item first as item  where linkId =  'EmCare.B.H.DE24' and answer.exists() then {
+            item.answer first as a then {
+                a.value as val then {
+                    val where val.code = 'none' -> tgt.status = 'cancelled' '8ab1d7a5';
+                    val where val.code != 'none' -> tgt.value = create('CodeableConcept') as cc, cc.coding = val, tgt.status = 'final' 'a1050460';
+                } '4ca9082e';
+            } '7c587a4b';
+        } '0754356a';
+    } 'aa7c90a6';
 }
 

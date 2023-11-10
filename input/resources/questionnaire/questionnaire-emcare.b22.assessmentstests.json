@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb22assessmentstests|0.0.1.build.186"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb22assessmentstests|0.0.142"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b22.assessmentstests",
@@ -331,6 +331,30 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                     "valueExpression": {
                         "language": "text/cql-identifier",
+                        "expression": "a-HealthPrevention"
+                    }
+                }
+            ],
+            "linkId": "a-HealthPrevention",
+            "text": "applicability-HealthPrevention",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
                         "expression": "a-RespiratoryRate"
                     }
                 }
@@ -420,6 +444,10 @@
                     "valueCode": "horizontal"
                 },
                 {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                     "valueExpression": {
                         "language": "text/cql-identifier",
@@ -456,6 +484,757 @@
             "type": "boolean",
             "required": false,
             "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire",
+                    "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b17.healthprevention"
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='a-HealthPrevention').answer.first().value = true"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B17.HealthPrevention",
+            "type": "group",
+            "required": false,
+            "repeats": false,
+            "item": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 6"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE01",
+                    "text": "Date of Last Vitamin A Supplementation",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE02",
+                                "display": "Less than 1 month ago"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE02a",
+                                "display": "1 to 5 months ago"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE02b",
+                                "display": "More than 6 months ago"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE02c",
+                                "display": "Vitamin A Supplementation not previously given"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE03",
+                                "display": "Date Unknown"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B17.HealthPrevention').repeat(item).where(linkId='EmCare.B17.DE01').answer.first().value.code = 'EmCare.B17.DE03' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value>=6"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE05",
+                    "text": "Can record of Vitamin A Supplementation be obtained at a future visit?",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE06",
+                                "display": "Yes, Date documented, but not here"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE07",
+                                "display": "No, do not know when last dose was given"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                            "valueCode": "horizontal"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "(%resource.repeat(item).where(linkId='EmCare.B17.HealthPrevention').repeat(item).where(linkId='EmCare.B17.DE01').answer.first().value.code = 'EmCare.B17.DE02a' or %resource.repeat(item).where(linkId='EmCare.B17.HealthPrevention').repeat(item).where(linkId='EmCare.B17.DE01').answer.first().value.code = 'EmCare.B17.DE02b' )"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE11",
+                    "text": "Treatment for malnutrition containing Vitamin A received in the past month?",
+                    "type": "boolean",
+                    "required": true,
+                    "repeats": false
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 12"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE12",
+                    "text": "Date of last deworming treatment",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE13",
+                                "display": "Less than 6 months ago"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE14",
+                                "display": "More than 6 months ago"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE13",
+                                "display": "Deworming treatment not previously given"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE14",
+                                "display": "Date unknown"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B17.HealthPrevention').repeat(item).where(linkId='EmCare.B17.DE12').answer.first().value.code = 'EmCare.B17.DE14'and%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value>=12"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE16",
+                    "text": "Can record of Deworming treatment be obtained at a future visit?",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE17",
+                                "display": "Yes, Date documented, but not here"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE18",
+                                "display": "No, Do not know when last dose was given"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value<3"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE62",
+                    "text": "Mother viral hepatitis B test result",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE63",
+                                "display": "Not tested"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE64",
+                                "display": "Results unknown"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE65",
+                                "display": "Presence of viral hepatitis B"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE66",
+                                "display": "Abscence of viral hepatitis B"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 3 and %resource.repeat(item).where(linkId='EmCare.B17.HealthPrevention').repeat(item).where(linkId='EmCare.B17.DE62').answer.first().exists() and %resource.repeat(item).where(linkId='EmCare.B17.HealthPrevention').repeat(item).where(linkId='EmCare.B17.DE62').answer.first().value.code != 'EmCare.B17.DE66'"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE67",
+                    "text": "Infant vaccinated for viral hepatitis B",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "yes",
+                                "display": "Yes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "no",
+                                "display": "No"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.A.DE33",
+                                "display": "Do not know"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 60"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE22",
+                    "text": "<span class=\"caps\">HIV</span> Prevalence",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE23",
+                                "display": "High HIV Risk"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE24",
+                                "display": "Low HIV Risk"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 60"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE44A",
+                    "text": "Child followed up at <span class=\"caps\">PMTCT</span> for <span class=\"caps\">HIV</span> investigation or management",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE42",
+                                "display": "Yes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE43",
+                                "display": "No"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE44B",
+                                "display": "Don't know"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE44C",
+                                "display": "Declines to answer"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value>= 2 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value<60 and %resource.repeat(item).where(linkId='EmCare.B17.HealthPrevention').repeat(item).where(linkId='EmCare.B17.DE44A').answer.first().value= true"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE44D",
+                    "text": "<span class=\"caps\">PMTCT</span> <span class=\"caps\">HIV</span> Status",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE44E",
+                                "display": "HIV Exposed"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE44F",
+                                "display": "HIV Confirmed"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE44B",
+                                "display": "Don't know"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                            "valueCode": "horizontal"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value>= 2 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value< 60"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE44G",
+                    "text": "Household member with Tuberculosis in the past 5 years",
+                    "type": "boolean",
+                    "required": true,
+                    "repeats": false
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 2"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE25",
+                    "text": "Mother&#8217;s <span class=\"caps\">HIV</span> Status",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE26",
+                                "display": "Mother HIV Positive"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE27",
+                                "display": "Mother HIV Negative"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE28",
+                                "display": "Mother HIV Status - Unknown or Not Tested"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE29",
+                                "display": "Mother HIV Status - Decline to answer"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B17.HealthPrevention').repeat(item).where(linkId='EmCare.B17.DE22').answer.first().value.code != 'EmCare.B17.DE24' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 60 and %resource.repeat(item).where(linkId='EmCare.B17.HealthPrevention').repeat(item).where(linkId='EmCare.B17.DE44A').answer.first().value !=Yes"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE30",
+                    "text": "Child&#8217;s Last <span class=\"caps\">HIV</span> Test Results",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE31",
+                                "display": "Child HIV Positive - Virological"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE32",
+                                "display": "Child HIV Positive - Serological"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE33",
+                                "display": "Child HIV Positive - Unknown Type of Test"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE34",
+                                "display": "Child HIV Negative"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE35",
+                                "display": "Child HIV Status - Unknown or Not Tested"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE36",
+                                "display": "Child HIV Status - Decline to answer"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value<60 and %resource.repeat(item).where(linkId='EmCare.B17.HealthPrevention').repeat(item).where(linkId='EmCare.B17.DE30').answer.first().value.code != 'EmCare.B17.DE35' and %resource.repeat(item).where(linkId='EmCare.B17.HealthPrevention').repeat(item).where(linkId='EmCare.B17.DE30').answer.first().value.code != 'EmCare.B17.DE36'"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE37",
+                    "text": "Child breastfed at the time or 6 weeks before <span class=\"caps\">HIV</span> test",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "yes",
+                                "display": "Yes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "no",
+                                "display": "No"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.A.DE33",
+                                "display": "Do not know"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "(%resource.repeat(item).where(linkId='EmCare.B17.HealthPrevention').repeat(item).where(linkId='EmCare.B17.DE30').answer.first().value.code = 'EmCare.B17.DE32') and (%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value>= 8)"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE41",
+                    "text": "Child 18 months or older when last tested for <span class=\"caps\">HIV</span>",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "yes",
+                                "display": "Yes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "no",
+                                "display": "No"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.A.DE33",
+                                "display": "Do not know"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 2 and (( %resource.repeat(item).where(linkId='Severe Classification up to assessments and tests excluding Severe Dehydration').answer.empty()  or %resource.repeat(item).where(linkId='Severe Classification up to assessments and tests excluding Severe Dehydration').answer.first().value=false ) and ( %resource.repeat(item).where(linkId='PSBI other than temperature').answer.empty()  or %resource.repeat(item).where(linkId='PSBI other than temperature').answer.first().value=false ))"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE45",
+                    "text": "Check the child\u2019s vaccination record: has the child received all vaccines they are eligible for",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE46",
+                                "display": "Yes"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE47",
+                                "display": "No, incomplete vaccination"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE48",
+                                "display": "No, the child has never received any vaccinations to date"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE49",
+                                "display": "Unknown"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 2 and (( %resource.repeat(item).where(linkId='Severe Classification up to assessments and tests excluding Severe Dehydration').answer.empty()  or %resource.repeat(item).where(linkId='Severe Classification up to assessments and tests excluding Severe Dehydration').answer.first().value=false ) and ( %resource.repeat(item).where(linkId='PSBI other than temperature').answer.empty()  or %resource.repeat(item).where(linkId='PSBI other than temperature').answer.first().value=false ))"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B17.DE50",
+                    "text": "Immunizations for Age",
+                    "type": "choice",
+                    "required": true,
+                    "repeats": false,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE51",
+                                "display": "BCG"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE52",
+                                "display": "OPV"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE53",
+                                "display": "Hep B"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE54",
+                                "display": "DPT"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE55",
+                                "display": "DPT 18 month booster"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE56",
+                                "display": "HIB"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE57",
+                                "display": "RTV"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE58",
+                                "display": "PCV"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE59",
+                                "display": "PCV Booster 1 for Confirmed HIV Infection"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE60",
+                                "display": "PCV Booster 2 for Confirmed HIV Infection"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                                "code": "EmCare.B17.DE61",
+                                "display": "Measles"
+                            }
+                        }
+                    ]
+                }
+            ]
         },
         {
             "extension": [
@@ -665,6 +1444,10 @@
                             "valueCode": "horizontal"
                         },
                         {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                        },
+                        {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
@@ -684,7 +1467,6 @@
                     "type": "boolean",
                     "required": false,
                     "repeats": false,
-                    "readOnly": true,
                     "item": [
                         {
                             "extension": [
@@ -712,7 +1494,7 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=true"
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=true and ((%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2  and %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().exists()) or (%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 2  and %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE04').answer.first().exists()))"
                             }
                         }
                     ],
@@ -748,7 +1530,7 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=false"
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=false and ((%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2  and %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().exists()) or (%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 2  and %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE04').answer.first().exists()))"
                             }
                         }
                     ],
@@ -1177,7 +1959,7 @@
             "repeats": false,
             "item": [
                 {
-                    "linkId": "EmCare.B22.DE27",
+                    "linkId": "EmCare.B24.G.DE27",
                     "text": "Breastfeeding Assessment",
                     "type": "display",
                     "required": false,
@@ -1197,7 +1979,7 @@
                                     }
                                 }
                             ],
-                            "linkId": "EmCare.B22.DE27-help",
+                            "linkId": "EmCare.B24.G.DE27-help",
                             "text": "If a breastfeeding assessment and an Oral Fluid test is recommended for a child that is only breastfed then a pop up is required to ensure that the health care worker observes the signs for both and provides results for both tests.",
                             "type": "display"
                         }
@@ -1208,23 +1990,17 @@
                         {
                             "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
                             "valueCode": "horizontal"
-                        }
-                    ],
-                    "linkId": "EmCare.B22.DE41",
-                    "text": "Breastfeeding Assessment Not Possible",
-                    "type": "boolean",
-                    "required": false,
-                    "repeats": false
-                },
-                {
-                    "extension": [
+                        },
                         {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                            "valueCode": "horizontal"
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "( %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE38').answer.empty()  or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE38').answer.first().value=false )"
+                            }
                         }
                     ],
-                    "linkId": "EmCare.B22.DE28",
-                    "text": "Breastfed in the previous hour",
+                    "linkId": "EmCare.B24.G.DE28",
+                    "text": "Poor positioning",
                     "type": "boolean",
                     "required": true,
                     "repeats": false
@@ -1239,226 +2015,14 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE28').answer.first().value=true"
+                                "expression": "( %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE38').answer.empty()  or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE38').answer.first().value=false )"
                             }
                         }
                     ],
-                    "linkId": "EmCare.B22.DE29",
-                    "text": "Mother able to wait until young infant is willing to breastfeed again",
-                    "type": "boolean",
-                    "required": false,
-                    "repeats": false
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                            "valueCode": "horizontal"
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE41').answer.first().empty()"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.B22.DE30",
-                    "text": "Mother reports difficulty breastfeeding",
-                    "type": "boolean",
-                    "required": true,
-                    "repeats": false,
-                    "item": [
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                    "valueCodeableConcept": {
-                                        "coding": [
-                                            {
-                                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                "code": "help"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ],
-                            "linkId": "EmCare.B22.DE30-help",
-                            "text": "Provide information on what difficulty breastfeeding may include, such as: the infant feeds too often, doesn&#8217;t feed often enough, she does not have enough milk, her nipples are sore, or she has flat or inverted nipples. After feeds, the infant may be restless, cry or try to suckle again, or continue to breastfeed for a long time.",
-                            "type": "display"
-                        }
-                    ]
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                            "valueCode": "horizontal"
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE41').answer.first().empty()"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.B22.DE31",
-                    "text": "Chin Touching Breast",
-                    "type": "boolean",
-                    "required": true,
-                    "repeats": false
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                            "valueCode": "horizontal"
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE41').answer.first().empty()"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.B22.DE32",
-                    "text": "Mouth Wide Open",
-                    "type": "boolean",
-                    "required": true,
-                    "repeats": false
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                            "valueCode": "horizontal"
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE41').answer.first().empty()"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.B22.DE33",
-                    "text": "Lower Lip Turned Outwards",
-                    "type": "boolean",
-                    "required": true,
-                    "repeats": false
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                            "valueCode": "horizontal"
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE41').answer.first().empty()"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.B22.DE34",
-                    "text": "More Areola Visible above than below the Mouth",
-                    "type": "boolean",
-                    "required": true,
-                    "repeats": false
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                            "valueCode": "horizontal"
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE41').answer.first().empty()"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.B22.DE35",
-                    "text": "Slow Deep Sucks, Sometimes Pausing",
-                    "type": "boolean",
-                    "required": true,
-                    "repeats": false
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE40').answer.first().exists()"
-                            }
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "iif(%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE37').answer.first().value=true,'Not well Attached to Breast',iif(  %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE38').answer.first().value=true , 'Good Attachment',iif(  %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE39').answer.first().value=true,'Not Sucking Effectively',iif( %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE40').answer.first().value=true, 'Sucking Effectively',{}))))"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.B22.DE36",
-                    "text": "Breastfeeding Assessment Results",
-                    "type": "string",
-                    "required": true,
-                    "repeats": false,
-                    "readOnly": true
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                            "valueCode": "horizontal"
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                            "valueBoolean": true
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE31').answer.first().value = false or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE32').answer.first().value = false or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE33').answer.first().value = false or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE34').answer.first().value = false"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.B22.DE37",
-                    "text": "Not well Attached to Breast",
-                    "type": "boolean",
-                    "required": false,
-                    "repeats": false
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                            "valueCode": "horizontal"
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                            "valueBoolean": true
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE31').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE32').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE33').answer.first().value = true and %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE34').answer.first().value = true"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.B22.DE38",
+                    "linkId": "EmCare.B24.G.DE34",
                     "text": "Good Attachment",
                     "type": "boolean",
-                    "required": false,
+                    "required": true,
                     "repeats": false
                 },
                 {
@@ -1468,45 +2032,17 @@
                             "valueCode": "horizontal"
                         },
                         {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                            "valueBoolean": true
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE35').answer.first().value = false"
+                                "expression": "( %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE38').answer.empty()  or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE38').answer.first().value=false )"
                             }
                         }
                     ],
-                    "linkId": "EmCare.B22.DE39",
-                    "text": "Not Sucking Effectively",
-                    "type": "boolean",
-                    "required": false,
-                    "repeats": false
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                            "valueCode": "horizontal"
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                            "valueBoolean": true
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE35').answer.first().value = true"
-                            }
-                        }
-                    ],
-                    "linkId": "EmCare.B22.DE40",
+                    "linkId": "EmCare.B24.G.DE35",
                     "text": "Sucking Effectively",
                     "type": "boolean",
-                    "required": false,
+                    "required": true,
                     "repeats": false
                 },
                 {
@@ -1516,40 +2052,42 @@
                             "valueCode": "horizontal"
                         },
                         {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                        },
+                        {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE30').answer.first().value = true"
+                                "expression": "( %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE34').answer.empty()  or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE34').answer.first().value=false ) or ( %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE35').answer.empty()  or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE35').answer.first().value=false ) or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE28').answer.first().value = true"
+                            }
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "iif(( %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE34').answer.empty()  or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE34').answer.first().value=false ) or ( %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE35').answer.empty()  or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE35').answer.first().value=false ) or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B24.G.DE28').answer.first().value = true, true, false)"
                             }
                         }
                     ],
-                    "linkId": "EmCare.B22.DE42",
-                    "text": "Difficulty Breastfeeding Reported",
+                    "linkId": "EmCare.B24.G.DE37",
+                    "text": "Difficulty Breastfeeding Observed",
                     "type": "boolean",
-                    "required": false,
-                    "repeats": false,
-                    "readOnly": true
+                    "required": true,
+                    "repeats": false
                 },
                 {
                     "extension": [
                         {
                             "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
                             "valueCode": "horizontal"
-                        },
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE39').answer.first().value = true or %resource.repeat(item).where(linkId='EmCare.B22.BreastFeeding').repeat(item).where(linkId='EmCare.B22.DE37').answer.first().value =true"
-                            }
                         }
                     ],
-                    "linkId": "EmCare.B22.DE44",
-                    "text": "Difficulty Breastfeeding Observed",
+                    "linkId": "EmCare.B24.G.DE38",
+                    "text": "Breastfeeding Assessment Not Possible",
                     "type": "boolean",
-                    "required": false,
-                    "repeats": false,
-                    "readOnly": true
+                    "required": true,
+                    "repeats": false
                 }
             ]
         },
@@ -1643,6 +2181,13 @@
                                 "system": "http://unitsofmeasure.org",
                                 "code": "Cel"
                             }
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B24.G.DE40').answer.first().exists()"
+                            }
                         }
                     ],
                     "linkId": "EmCare.B24.G.DE41",
@@ -1693,14 +2238,14 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().empty()"
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().exists() or %resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B24.G.DE41').answer.first().exists()"
                             }
                         },
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 38.5 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2, '2',iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 38 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value< 2 or %resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 37.5 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2, 'High',iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value < 35.5 'Cel' , 'Low',iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value.exists(), 'Normal',{}))))"
+                                "expression": "iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 38.5 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2, '2', iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 38 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value< 2 or (%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 37.5 'Cel' and %resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value <38.5 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2),'High', iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value < 35.5 'Cel', 'Low', iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value.exists(), 'Normal', iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B24.G.DE41').answer.first().value >= 39 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value>=2, '2', iif((%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B24.G.DE41').answer.first().value >= 38.5 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 2) or (%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B24.G.DE41').answer.first().value >= 38 and %resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B24.G.DE41').answer.first().value < 39   'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2), 'High', iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B24.G.DE41').answer.first().value <= 36 'Cel', 'Low', iif(%resource.repeat(item).where(linkId='EmCare.B22.SecondTemperature').repeat(item).where(linkId='EmCare.B24.G.DE41').answer.first().value.exists(), 'Normal', {} ))))))))"
                             }
                         }
                     ],
@@ -1864,13 +2409,36 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "(( %resource.repeat(item).where(linkId='a-RespiratoryRate').answer.empty()  or %resource.repeat(item).where(linkId='a-RespiratoryRate').answer.first().value=false ) ) and( ( %resource.repeat(item).where(linkId='a-FluidTest').answer.empty()  or %resource.repeat(item).where(linkId='a-FluidTest').answer.first().value=false ) ) and ( ( %resource.repeat(item).where(linkId='a-BronchodilatorTest').answer.empty()  or %resource.repeat(item).where(linkId='a-BronchodilatorTest').answer.first().value=false ) ) and (( %resource.repeat(item).where(linkId='a-BreastFeedingTest').answer.empty()  or %resource.repeat(item).where(linkId='a-BreastFeedingTest').answer.first().value=false ) ) and (( %resource.repeat(item).where(linkId='a-SecondTemperature').answer.empty()  or %resource.repeat(item).where(linkId='a-SecondTemperature').answer.first().value=false ) )"
+                        "expression": "(( %resource.repeat(item).where(linkId='a-RespiratoryRate').answer.empty()  or %resource.repeat(item).where(linkId='a-RespiratoryRate').answer.first().value=false ) ) and ( ( %resource.repeat(item).where(linkId='a-FluidTest').answer.empty()  or %resource.repeat(item).where(linkId='a-FluidTest').answer.first().value=false ) ) and ( ( %resource.repeat(item).where(linkId='a-BronchodilatorTest').answer.empty()  or %resource.repeat(item).where(linkId='a-BronchodilatorTest').answer.first().value=false ) ) and (( %resource.repeat(item).where(linkId='a-BreastFeedingTest').answer.empty()  or %resource.repeat(item).where(linkId='a-BreastFeedingTest').answer.first().value=false ) ) and (( %resource.repeat(item).where(linkId='a-SecondTemperature').answer.empty()  or %resource.repeat(item).where(linkId='a-SecondTemperature').answer.first().value=false ) ) and (( %resource.repeat(item).where(linkId='a-MalariaTest').answer.empty()  or %resource.repeat(item).where(linkId='a-MalariaTest').answer.first().value=false )) and (( %resource.repeat(item).where(linkId='a-HealthPrevention').answer.empty()  or %resource.repeat(item).where(linkId='a-HealthPrevention').answer.first().value=false ))"
                     }
                 }
             ],
             "linkId": "notesttodo",
             "text": "No assessments / tests to do",
             "type": "display",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "PSBI other than temperature"
+                    }
+                }
+            ],
+            "linkId": "PSBI other than temperature",
+            "type": "boolean",
             "required": false,
             "repeats": false
         },

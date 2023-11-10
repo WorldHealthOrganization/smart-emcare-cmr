@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb22respiratoryrate|0.0.1.build.186"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb22respiratoryrate|0.0.142"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b22.respiratoryrate",
@@ -400,6 +400,10 @@
                     "valueCode": "horizontal"
                 },
                 {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
@@ -419,7 +423,6 @@
             "type": "boolean",
             "required": false,
             "repeats": false,
-            "readOnly": true,
             "item": [
                 {
                     "extension": [
@@ -447,7 +450,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=true"
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=true and ((%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2  and %resource.repeat(item).where(linkId='EmCare.B22.DE01').answer.first().exists()) or (%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 2  and %resource.repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE04').answer.first().exists()))"
                     }
                 }
             ],
@@ -483,7 +486,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=false"
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=false and ((%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2  and %resource.repeat(item).where(linkId='EmCare.B22.DE01').answer.first().exists()) or (%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 2  and %resource.repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE04').answer.first().exists()))"
                     }
                 }
             ],

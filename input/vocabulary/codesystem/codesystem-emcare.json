@@ -206,7 +206,7 @@
         },
         {
             "code": "EmCare.B6.DE06",
-            "display": "Weight",
+            "display": "Weight (kilograms)",
             "definition": "The client's weight in Kilograms"
         },
         {
@@ -218,11 +218,6 @@
             "code": "EmCare.B6.DE08",
             "display": "Estimated Weight",
             "definition": "The client's weight has been estimated - to be used for treatment dosing only"
-        },
-        {
-            "code": "EmCare.B6.DE10",
-            "display": "Prefer to measure length",
-            "definition": "The health care worker would prefer to measure the client using length"
         },
         {
             "code": "EmCare.B6.DE09",
@@ -247,12 +242,17 @@
         {
             "code": "EmCare.B6.DE14",
             "display": "Weight for Height (WFH) Z Scores",
-            "definition": "This score is automatically calculated, to compare the weight-for-height (WFH) of the child with standard scores. A low z-score indicates that the child has low weight for their height."
+            "definition": "This score is automatically calculated, to compare the weight-for-height (WFH) of the child with standard scores. A low z-score indicates that the child has low weight for their height. \nWFH-Z score below -3 : severe acute malnutrition\nWFH-Z score between -2 and -3 : moderate acute malnutrition\nWFH-Z score -2 : not malnourished, but continue to check routinely as nutrition status can change rapidly"
+        },
+        {
+            "code": "EmCare.B6.DE15",
+            "display": "Weight for Length (WFL) Z Scores",
+            "definition": "This score is automatically calculated, to compare the weight-for-length (WFL) of the child with standard scores. A low z-score indicates that the child has low weight for their length. \nWFL-Z score below -3 : severe acute malnutrition\nWFL-Z score between -2 and -3 : moderate acute malnutrition\nWFL-Z score -2 : not malnourished, but continue to check routinely as nutrition status can change rapidly"
         },
         {
             "code": "EmCare.B6.DE16",
             "display": "Weight for Age (WFA) Z Scores",
-            "definition": "The client's weight for age z score"
+            "definition": "This score is automatically calculated, to compare the weight-for-age(WFA) of the child with standard scores. A low z-score indicates that the child has low weight for their age. \nWFA-Z score below -3 : very low weight for age\nWFA-Z score between -2 and -3 : low weight for age\nWFA-Z score -2 : normal weight for age"
         },
         {
             "code": "EmCare.B6.DE23",
@@ -262,7 +262,7 @@
         {
             "code": "EmCare.B6.DE17",
             "display": "MUAC (Mid Upper Arm Circumference)",
-            "definition": "The client's Mid Upper Arm Circumference in Millimeters (child \u22656 months old)"
+            "definition": "Mid-upper arm circumference (MUAC) is an important indicator of acute malnutrition in a child for children 6\u201359 months.\nTo measure:\n- Find the mid-point of the child\u2019s upper arm between the shoulder and elbow.\n- Use MUAC tape to mark the midpoint on the child\u2019s arm.\n- Hold the large end of the strap against the arm at the midpoint of the arm.\n- Put the other end of the strap around the child\u2019s arm. Thread the end up through the second small slit in the strap. The end will come from behind.\n- Pull both ends until the strap fits closely. It should not be so tight that it makes\nfolds in the skin. It should also not be too loose.\n- Gently press the window. At the marks note the measurement and colour"
         },
         {
             "code": "EmCare.B6.DE17a",
@@ -277,7 +277,7 @@
         {
             "code": "EmCare.B6.DE18",
             "display": "Visually assess for whether underweight (for drug dose calculation)",
-            "definition": "The health care worker visually assesses for whether underweight (for drug dosing calculations)"
+            "definition": "The health care worker visually assesses for whether underweight (to help estimate weight for medication dosing)"
         },
         {
             "code": "EmCare.B6.DE24",
@@ -293,6 +293,11 @@
             "code": "EmCare.B18S1.DE02",
             "display": "Difficulty with Feeding",
             "definition": "The client is reported to have Difficulty with Feeding"
+        },
+        {
+            "code": "EmCare.B12S1.DE02",
+            "display": "Fever Reported",
+            "definition": "The client is reported to have or has had fever"
         },
         {
             "code": "EmCare.B20S1.DE01",
@@ -332,17 +337,17 @@
         {
             "code": "EmCare.B22S1.DE05",
             "display": "Maternal malaria test results in the week prior to delivery, intrapartum or in the week after delivery",
-            "definition": "The client' maternal malaria test results in the week prior to delivery, intrapartum or in the week after delivery"
+            "definition": "If the client's mother received a malaria test in the week prior to delivery, intrapartum, or in te week after delivery, select the results of the malaria test. If the client's mother did not receive a malaria test during this period, select \"Not tested\""
         },
         {
             "code": "EmCare.B22S1.DE10",
             "display": "History of maternal genital infection in the week prior to delivery, intrapartum or in the week after delivery",
-            "definition": "The client' mother had history of maternal genital infection in the week prior to delivery, intrapartum or in the week after delivery"
+            "definition": "The child's mother had history of maternal genital infection in the week prior to delivery, intrapartum or in the week after delivery"
         },
         {
-            "code": "EmCare.B12S1.DE02",
-            "display": "Fever Reported",
-            "definition": "The client is reported to have or has had fever"
+            "code": "EmCare.B7.DE08",
+            "display": "Unconscious or Lethargic",
+            "definition": "The child is unconcious or lethargic"
         },
         {
             "code": "EmCare.B18S2.DE07",
@@ -360,6 +365,11 @@
             "definition": "The client's umbilicus is red or is draining pus"
         },
         {
+            "code": "EmCare.B18S2.DE17",
+            "display": "Umbilical redness gaining skin or oozing pus",
+            "definition": "The child shows umbilical redness gaining skin or oozing pus"
+        },
+        {
             "code": "EmCare.B18S2.DE13",
             "display": "Skin Pustules",
             "definition": "The client has skin pustules"
@@ -371,18 +381,8 @@
         },
         {
             "code": "EmCare.B18S2.DE15",
-            "display": "Flapping nostrils",
-            "definition": "The child has flapping nostrils"
-        },
-        {
-            "code": "EmCare.B18S2.DE16",
-            "display": "Irritability",
-            "definition": "The child shows irritability"
-        },
-        {
-            "code": "EmCare.B18S2.DE17",
-            "display": "Umbilical redness gaining skin or oozing pus",
-            "definition": "The child shows umbilical redness gaining skin or oozing pus"
+            "display": "Flaring nostrils",
+            "definition": "LOOK for nasal flaring.\nNasal flaring is widening of the nostrils when the young infant breathes in."
         },
         {
             "code": "EmCare.B18S2.DE18",
@@ -391,8 +391,8 @@
         },
         {
             "code": "EmCare.B19S2.DE01",
-            "display": "Yellow Skin",
-            "definition": "The client has yellow skin"
+            "display": "Yellow Skin or yellow eyes",
+            "definition": "Jaundice is a yellow discoloration of skin and mucus membranes. It is important to look for jaundice in natural light. To look for jaundice, press the \ninfant\u2019s skin over the forehead with your fingers to blanch, remove your fingers and look for yellow discolouration. If there is yellow discoloration, the infant has jaundice"
         },
         {
             "code": "EmCare.B19S2.DE02",
@@ -403,11 +403,6 @@
             "code": "EmCare.B19S2.DE04",
             "display": "When did the Jaundice first appear?",
             "definition": "The age at which the Jaundice first appeared"
-        },
-        {
-            "code": "EmCare.B19S2.DE08",
-            "display": "Yellow eyes",
-            "definition": "The child has yellow eyes"
         },
         {
             "code": "EmCare.B20S2.DE01",
@@ -437,7 +432,11 @@
         {
             "code": "EmCare.B21S2.DE06",
             "display": "Sufficient feeds",
-            "definition": "Based on the number of feeds during a 24 hour period the result is auto-calculated to determine sufficient feeds"
+            "definition": "The young infant is breastfed 8 or more times in 24 hours (autocalculated)"
+        },
+        {
+            "code": "EmCare.B21S2.DE07",
+            "display": "Insufficient feeds"
         },
         {
             "code": "EmCare.B21S2.DE08",
@@ -460,6 +459,11 @@
             "definition": "Based on the number of feeds during the day and night (24 hours) the result is auto-calculated to determine sufficient replacement feeds"
         },
         {
+            "code": "EmCare.B21S2.DE14",
+            "display": "Insufficient replacement feeds (in 24 hours)",
+            "definition": "The young infant is not given a sufficient number of replacement feeds (fewer than 8 times in 24 hours for a young infant under 1 month of age; fewer than 7 times for a young infant between 1 and 2 months of age) (autocalculated)"
+        },
+        {
             "code": "EmCare.B21S2.DE15",
             "display": "How much milk is given at each feed?",
             "definition": "The amount of milk given to the client at each feed"
@@ -480,14 +484,24 @@
             "definition": "Does the care giver give the client any breastmilk at all?"
         },
         {
-            "code": "EmCare.B21S2.DE31",
+            "code": "EmCare.B21S2.DE30",
             "display": "Ulcers or White Patches in Mouth",
             "definition": "The client has ulcers or white patches in the mouth"
         },
         {
-            "code": "EmCare.B21S2.DE32",
+            "code": "EmCare.B21S2.DE31",
             "display": "Unable to check if Ulcers or White Patches in Mouth",
             "definition": "The healthcare worker is unable to check if the client has ulcers or white patches in the mouth"
+        },
+        {
+            "code": "EmCare.B22S1.DE32",
+            "display": "Birth weight (gm)",
+            "definition": "The weight of child at birth in grams"
+        },
+        {
+            "code": "EmCare.B22S1.DE33",
+            "display": "Birth weight (gm) is unknown",
+            "definition": "The birth weight of th child is not known"
         },
         {
             "code": "EmCare.B10S1.DE05",
@@ -515,7 +529,7 @@
             "definition": "The child has had pneumonia once or more than one time since last two months\nThe child has had pneumonia once or more than one time since last two months"
         },
         {
-            "code": "EmCare.B11S1.DE01",
+            "code": "EmCare.B20S1.DE01",
             "display": "Diarrhoea",
             "definition": "The client is reported to have or has had diarrhoea"
         },
@@ -825,7 +839,7 @@
         },
         {
             "code": "EmCare.B14S2.DE34",
-            "display": "Severe Seborrhoeic Dermatitis",
+            "display": "Severe Seborrhoea",
             "definition": "The client has severe Seborrhoeic Dermatitis"
         },
         {
@@ -1033,69 +1047,34 @@
             "definition": "The client has no fast breathing and no chest indrawing"
         },
         {
-            "code": "EmCare.B22.DE27",
+            "code": "EmCare.B24.G.DE27",
             "display": "Breastfeeding Assessment",
-            "definition": "Breastfeeding Assessment to ensure the client does not have difficulty breastfeeding"
+            "definition": "If the infant has not fed in the previous hour, he may be willing to breastfeed. Ask the mother to put her infant to the breast. Observe a whole breastfeed if possible, or observe for at least 4 minutes.\nSit quietly and watch the infant breastfeed."
         },
         {
-            "code": "EmCare.B22.DE41",
+            "code": "EmCare.B24.G.DE28",
+            "display": "Poor positioning",
+            "definition": "The breastfeeding position is poor"
+        },
+        {
+            "code": "EmCare.B24.G.DE34",
+            "display": "Good Attachment",
+            "definition": "The infant is considered to have good attachment if all four of the following signs are present:\n- more areola seen above infant\u2019s top lip than below bottom lip\n- mouth wide open\n- lower lip turned outwards\n- chin touching breast\n- poor positioning"
+        },
+        {
+            "code": "EmCare.B24.G.DE35",
+            "display": "Sucking Effectively",
+            "definition": "The infant is sucking effectively if there are taking slow, deep sucks, sometimes pausing."
+        },
+        {
+            "code": "EmCare.B24.G.DE37",
+            "display": "Difficulty Breastfeeding Observed",
+            "definition": "The infant is sucking effectively if there are taking slow, deep sucks, sometimes pausing."
+        },
+        {
+            "code": "EmCare.B24.G.DE38",
             "display": "Breastfeeding Assessment Not Possible",
             "definition": "The breastfeeding assessment was not possible"
-        },
-        {
-            "code": "EmCare.B22.DE28",
-            "display": "Breastfed in the previous hour",
-            "definition": "The client has breastfed in the previous hour"
-        },
-        {
-            "code": "EmCare.B22.DE29",
-            "display": "Mother able to wait until young infant is willing to breastfeed again",
-            "definition": "The client's mother is able to wait until young infant is willing to breastfeed again"
-        },
-        {
-            "code": "EmCare.B22.DE30",
-            "display": "Mother reports difficulty breastfeeding",
-            "definition": "The client's mother reports that there is difficulty breastfeeding (not observed)"
-        },
-        {
-            "code": "EmCare.B22.DE31",
-            "display": "Chin Touching Breast",
-            "definition": "The client's chin is touching the breast"
-        },
-        {
-            "code": "EmCare.B22.DE32",
-            "display": "Mouth Wide Open",
-            "definition": "The client's mouth is wide open"
-        },
-        {
-            "code": "EmCare.B22.DE33",
-            "display": "Lower Lip Turned Outwards",
-            "definition": "The client's lower lip is turned outwards"
-        },
-        {
-            "code": "EmCare.B22.DE34",
-            "display": "More Areola Visible above than below the Mouth",
-            "definition": "The mother has more areola visible above than below the client's mouth"
-        },
-        {
-            "code": "EmCare.B22.DE35",
-            "display": "Slow Deep Sucks, Sometimes Pausing",
-            "definition": "The client is taking slow deep sucks, sometimes pausing"
-        },
-        {
-            "code": "EmCare.B22.DE36",
-            "display": "Breastfeeding Assessment Results",
-            "definition": "The client's breastfeeding results"
-        },
-        {
-            "code": "EmCare.B22.DE42",
-            "display": "Difficulty Breastfeeding Reported",
-            "definition": "The breastfeeding assessment was not observed however the caregiver has reported difficulty breastfeeding"
-        },
-        {
-            "code": "EmCare.B22.DE44",
-            "display": "Difficulty Breastfeeding Observed",
-            "definition": "The healthcare worker has observed that the client has difficulty breastfeeding"
         },
         {
             "code": "EmCare.B24.G.DE23",
@@ -1137,8 +1116,8 @@
         },
         {
             "code": "EmCare.B23.DE02",
-            "display": "History of  Obstructed or Absent Breathing",
-            "definition": "The client has History of Obstructed or Absent Breathing"
+            "display": "Episode of obstructed or absent breathing",
+            "definition": "The child has a history of obstructed or absent breathing that is now stabilised"
         },
         {
             "code": "EmCare.B23.DE03",
@@ -1151,7 +1130,7 @@
             "definition": "The client has Pneumonia"
         },
         {
-            "code": "DL-G-CL1-19",
+            "code": "EmCare.B23.DE08_l1",
             "display": "with cough or difficulty breathing for more than 14 days",
             "definition": "The client has Pneumonia with cough or difficulty breathing for More than 14 days"
         },
@@ -1161,7 +1140,7 @@
             "definition": "The client has Cough or Cold"
         },
         {
-            "code": "DL-G-CL1-22",
+            "code": "EmCare.B23.DE08_l2",
             "display": "with cough or difficulty breathing for more than 14 days",
             "definition": "The client has Cough or Cold  with cough or difficulty breathing for more than 14 days"
         },
@@ -1232,12 +1211,12 @@
         },
         {
             "code": "EmCare.B23.DE24",
-            "display": "Possible Urine Infection",
+            "display": "Possible cystitits",
             "definition": "The client has Possible Urine Infection"
         },
         {
             "code": "EmCare.B23.DE25",
-            "display": "Fever No Malaria",
+            "display": "Non-malarial febrile disease",
             "definition": "The client has Fever: No Malaria"
         },
         {
@@ -1312,7 +1291,7 @@
         },
         {
             "code": "DL-G-CL1-90",
-            "display": "Cellulitis with Rapidly spreading, extensive, or not responding to oral antibiotics"
+            "display": "Rapidly spreading, extensive, or not responding to oral antibiotics"
         },
         {
             "code": "EmCare.B23.DE41",
@@ -1431,6 +1410,10 @@
             "display": "Confirmed HIV Infection"
         },
         {
+            "code": "EmCare.B23.DE77",
+            "display": "HIV Exposed"
+        },
+        {
             "code": "EmCare.B23.DE78",
             "display": "HIV Infection Unlikely"
         },
@@ -1447,7 +1430,7 @@
             "display": "Immunization Status Unknown"
         },
         {
-            "code": "EmCare.B23.DE100",
+            "code": "EmCare.B23.DE120",
             "display": "No severe classification reached"
         },
         {
@@ -1483,12 +1466,12 @@
             "display": "Local Infection"
         },
         {
-            "code": "EmCare.B23.DE86",
-            "display": "Infection Unlikely"
+            "code": "DL-G-CL2-20",
+            "display": "Conjunctivitis"
         },
         {
-            "code": "EmCare.B23.DE106",
-            "display": "Very Low Weight for Age"
+            "code": "EmCare.B23.DE86",
+            "display": "Infection Unlikely"
         },
         {
             "code": "EmCare.B23.DE87",
@@ -1499,20 +1482,28 @@
             "display": "Jaundice"
         },
         {
+            "code": "DL-G-CL2-34",
+            "display": "Prolonged Jaundice"
+        },
+        {
             "code": "EmCare.B23.DE89",
             "display": "No Jaundice"
         },
         {
-            "code": "EmCare.B23.DE13",
+            "code": "EmCare.B23.DE90",
             "display": "Severe Dehydration"
         },
         {
-            "code": "EmCare.B23.DE14",
+            "code": "EmCare.B23.DE91",
             "display": "Some Dehydration"
         },
         {
-            "code": "EmCare.B23.DE15",
+            "code": "EmCare.B23.DE92",
             "display": "No Dehydration"
+        },
+        {
+            "code": "EmCare.B23.DE93",
+            "display": "Very low weight for age or very low birth weight"
         },
         {
             "code": "EmCare.B23.DE94",
@@ -1521,6 +1512,42 @@
         {
             "code": "EmCare.B23.DE98",
             "display": "No Feeding Problem"
+        },
+        {
+            "code": "EmCare.B23.DE107",
+            "display": "Low birth weight"
+        },
+        {
+            "code": "EmCare.B23.DE108",
+            "display": "Risk of newborn infection"
+        },
+        {
+            "code": "EmCare.B23.DE110",
+            "display": "Blood in stool"
+        },
+        {
+            "code": "EmCare.B23.DE111",
+            "display": "Newborn at risk of exposure to hepatitis B"
+        },
+        {
+            "code": "EmCare.B23.DE112",
+            "display": "Newborn not exposed to or at risk of hepatitis B"
+        },
+        {
+            "code": "EmCare.B23.DE77",
+            "display": "HIV Exposed"
+        },
+        {
+            "code": "EmCare.B23.DE78",
+            "display": "HIV Infection Unlikely"
+        },
+        {
+            "code": "EmCare.B23.DE79",
+            "display": "HIV Infection Status Unknown"
+        },
+        {
+            "code": "EmCare.B23.DE71",
+            "display": "Prevention, Screenning and Other Problems"
         },
         {
             "code": "EmCare.B24.DE07",
@@ -1681,11 +1708,6 @@
             "code": "EmCare.B12S1.DE05",
             "display": "More than 30 days",
             "definition": "Symptom for more than 30 days"
-        },
-        {
-            "code": "EmCare.B12S1.DE09",
-            "display": "No Pain",
-            "definition": "The child is not reported to have any pain and does not appear to be in pain"
         },
         {
             "code": "EmCare.B12S1.DE16",
@@ -1902,11 +1924,6 @@
             "code": "EmCare.B21S2.DE04",
             "display": "Normal Weight for Age",
             "definition": "The client is a normal weight for age (derived from a normal WFA Z Score is \u2265 -2"
-        },
-        {
-            "code": "EmCare.B21S2.DE28",
-            "display": "Breastmilk also given",
-            "definition": "Breastmilk is also given to the client by the care giver"
         },
         {
             "code": "EmCare.B21S2.DE16",
@@ -2259,31 +2276,6 @@
             "definition": "The client is visually assessed for whether underweight and appears to be severely underweight (as an aide for dosing calculations) (estimated weight based on height or age would be equivalent to WHZ= -2 / WAZ= -2)"
         },
         {
-            "code": "EmCare.B17.DE02",
-            "display": "Less than 1 month ago",
-            "definition": "The caregiver is able to tell the healthcare worker that the last dose was given less than 1 month ago"
-        },
-        {
-            "code": "EmCare.B17.DE02a",
-            "display": "1 to 5 months ago",
-            "definition": "The caregiver is able to tell the healthcare worker that the last dose was given between 1 and 5 months ago"
-        },
-        {
-            "code": "EmCare.B17.DE02b",
-            "display": "More than 6 months ago",
-            "definition": "The caregiver is able to tell the healthcare worker that the last dose was given more than 6 months ago"
-        },
-        {
-            "code": "EmCare.B17.DE02c",
-            "display": "Vitamin A Supplementation not previously given",
-            "definition": "The child has not previously been given Vitamin A Supplementation"
-        },
-        {
-            "code": "EmCare.B17.DE03",
-            "display": "Date Unknown",
-            "definition": "The date that the child's profile records Vitamin A Supplementation being given is unknown"
-        },
-        {
             "code": "EmCare.B17.DE06",
             "display": "Yes, Date documented, but not here",
             "definition": "The caregiver is able to provide the Vitamin A supplement date but not today"
@@ -2292,16 +2284,6 @@
             "code": "EmCare.B17.DE07",
             "display": "No, do not know when last dose was given",
             "definition": "The caregiver is able to tell the healthcare worker that the last dose was given less than 1 month ago"
-        },
-        {
-            "code": "EmCare.B17.DE13",
-            "display": "Deworming treatment not previously given",
-            "definition": "The child has not previously been given deworming treatment"
-        },
-        {
-            "code": "EmCare.B17.DE14",
-            "display": "Date unknown",
-            "definition": "The date that the child's profile records Deworming being given is unknown"
         },
         {
             "code": "EmCare.B17.DE17",
@@ -2380,6 +2362,11 @@
         {
             "code": "l",
             "display": "Low Density"
+        },
+        {
+            "code": "EmCare.B12S1.DE09",
+            "display": "No Pain",
+            "definition": "The child is not reported to have any pain and does not appear to be in pain"
         },
         {
             "code": "EmCare.B12S1.DE10",
@@ -2498,7 +2485,7 @@
         },
         {
             "code": "EmCare.B14S2.DE27",
-            "display": "Skin Lesions \u2265 4 cm",
+            "display": "Skin Lesions >= 4 cm",
             "definition": "The impetigo skin lesions cover an area of 4 cm or larger"
         },
         {
@@ -2542,6 +2529,11 @@
             "definition": "The healthcare worker would not like to add a Skin or Mouth or Eye Problem"
         },
         {
+            "code": "EmCare.B21S2.DE28",
+            "display": "Breastmilk also given",
+            "definition": "Breastmilk is also given to the client by the care giver"
+        },
+        {
             "code": "EmCare.B21S2.DE29",
             "display": "No Breastmilk at all",
             "definition": "The caregiver does not give the client any breastmilk at all"
@@ -2575,6 +2567,41 @@
         {
             "code": "EmCare.B22.DE22",
             "display": "Inhaled Bronchodilator Trial Not Feasible or Available"
+        },
+        {
+            "code": "EmCare.B17.DE02",
+            "display": "Less than 1 month ago",
+            "definition": "The caregiver is able to tell the healthcare worker that the last dose was given less than 1 month ago"
+        },
+        {
+            "code": "EmCare.B17.DE02a",
+            "display": "1 to 5 months ago",
+            "definition": "The caregiver is able to tell the healthcare worker that the last dose was given between 1 and 5 months ago"
+        },
+        {
+            "code": "EmCare.B17.DE02b",
+            "display": "More than 6 months ago",
+            "definition": "The caregiver is able to tell the healthcare worker that the last dose was given more than 6 months ago"
+        },
+        {
+            "code": "EmCare.B17.DE02c",
+            "display": "Vitamin A Supplementation not previously given",
+            "definition": "The child has not previously been given Vitamin A Supplementation"
+        },
+        {
+            "code": "EmCare.B17.DE03",
+            "display": "Date Unknown",
+            "definition": "The date that the child's profile records Vitamin A Supplementation being given is unknown"
+        },
+        {
+            "code": "EmCare.B17.DE13",
+            "display": "Deworming treatment not previously given",
+            "definition": "The child has not previously been given deworming treatment"
+        },
+        {
+            "code": "EmCare.B17.DE14",
+            "display": "Date unknown",
+            "definition": "The date that the child's profile records Deworming being given is unknown"
         }
     ]
 }

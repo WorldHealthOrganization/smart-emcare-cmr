@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb17healthprevention|0.0.1.build.186"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb17healthprevention|0.0.142"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b17.healthprevention",
@@ -71,12 +71,11 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                     "valueExpression": {
                         "language": "text/cql-identifier",
-                        "expression": "nan"
+                        "expression": "AgeInDays"
                     }
                 }
             ],
-            "linkId": "nan",
-            "text": "AgeInDays",
+            "linkId": "AgeInDays",
             "type": "integer",
             "required": false,
             "repeats": false
@@ -222,7 +221,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 6 and (%resource.repeat(item).where(linkId='EmCare.B17.DE01').answer.first().value.code = 'EmCare.B17.DE02a' or %resource.repeat(item).where(linkId='EmCare.B17.DE01').answer.first().value.code = 'EmCare.B17.DE02b' ) or %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 6"
+                        "expression": "(%resource.repeat(item).where(linkId='EmCare.B17.DE01').answer.first().value.code = 'EmCare.B17.DE02a' or %resource.repeat(item).where(linkId='EmCare.B17.DE01').answer.first().value.code = 'EmCare.B17.DE02b' )"
                     }
                 }
             ],
@@ -316,7 +315,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='nan').answer.first().value<3"
+                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value<3"
                     }
                 }
             ],
@@ -362,7 +361,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='nan').answer.first().value < 3 and %resource.repeat(item).where(linkId='EmCare.B17.DE62').answer.first().exists() and %resource.repeat(item).where(linkId='EmCare.B17.DE62').answer.first().value.code != 'EmCare.B17.DE66'"
+                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 3 and %resource.repeat(item).where(linkId='EmCare.B17.DE62').answer.first().exists() and %resource.repeat(item).where(linkId='EmCare.B17.DE62').answer.first().value.code != 'EmCare.B17.DE66'"
                     }
                 }
             ],

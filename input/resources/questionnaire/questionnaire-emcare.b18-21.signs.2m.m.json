@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb1821signs2mm|0.0.1.build.186"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb1821signs2mm|0.0.142"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b18-21.signs.2m.m",
@@ -353,6 +353,19 @@
         {
             "extension": [
                 {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                }
+            ],
+            "linkId": "EmCare.B7.DE08",
+            "text": "Unconscious or Lethargic",
+            "type": "boolean",
+            "required": true,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire",
                     "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b22.respiratoryrate"
                 }
@@ -551,6 +564,10 @@
                             "valueCode": "horizontal"
                         },
                         {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                        },
+                        {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
@@ -570,7 +587,6 @@
                     "type": "boolean",
                     "required": false,
                     "repeats": false,
-                    "readOnly": true,
                     "item": [
                         {
                             "extension": [
@@ -598,7 +614,7 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=true"
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=true and ((%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2  and %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().exists()) or (%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 2  and %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE04').answer.first().exists()))"
                             }
                         }
                     ],
@@ -634,7 +650,7 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=false"
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE07').answer.first().value=false and ((%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2  and %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='EmCare.B22.DE01').answer.first().exists()) or (%resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 2  and %resource.repeat(item).where(linkId='EmCare.B22.RespiratoryRate').repeat(item).where(linkId='second').repeat(item).where(linkId='EmCare.B22.DE04').answer.first().exists()))"
                             }
                         }
                     ],
@@ -787,6 +803,26 @@
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
                     "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B18S2.DE12').answer.first().value=true"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B18S2.DE17",
+            "text": "Umbilical redness gaining skin or oozing pus",
+            "type": "boolean",
+            "required": true,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
                 }
             ],
             "linkId": "EmCare.B18S2.DE13",
@@ -836,33 +872,7 @@
                 }
             ],
             "linkId": "EmCare.B18S2.DE15",
-            "text": "Flapping nostrils",
-            "type": "boolean",
-            "required": true,
-            "repeats": false
-        },
-        {
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                }
-            ],
-            "linkId": "EmCare.B18S2.DE16",
-            "text": "Irritability",
-            "type": "boolean",
-            "required": true,
-            "repeats": false
-        },
-        {
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                }
-            ],
-            "linkId": "EmCare.B18S2.DE17",
-            "text": "Umbilical redness gaining skin or oozing pus",
+            "text": "Flaring nostrils",
             "type": "boolean",
             "required": true,
             "repeats": false
@@ -888,7 +898,7 @@
                 }
             ],
             "linkId": "EmCare.B19S2.DE01",
-            "text": "Yellow Skin",
+            "text": "Yellow Skin or yellow eyes",
             "type": "boolean",
             "required": true,
             "repeats": false,
@@ -1004,19 +1014,6 @@
                     "type": "display"
                 }
             ]
-        },
-        {
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                }
-            ],
-            "linkId": "EmCare.B19S2.DE08",
-            "text": "Yellow eyes",
-            "type": "boolean",
-            "required": true,
-            "repeats": false
         },
         {
             "extension": [
@@ -1224,13 +1221,66 @@
         {
             "extension": [
                 {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B21S2.DE06').answer.first().value = true"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B21S2.DE06.1",
+            "text": "Sufficient feeds",
+            "type": "display",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
                     "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
                     "valueBoolean": true
                 }
             ],
             "linkId": "EmCare.B21S2.DE06",
             "text": "Sufficient feeds",
-            "type": "integer",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B21S2.DE06').answer.first().value = false"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B21S2.DE07.1",
+            "text": "Insufficient feeds",
+            "type": "display",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                }
+            ],
+            "linkId": "EmCare.B21S2.DE07",
+            "text": "Insufficient feeds",
+            "type": "boolean",
             "required": false,
             "repeats": false
         },
@@ -1378,6 +1428,22 @@
         {
             "extension": [
                 {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B21S2.DE13').answer.first().value = true"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B21S2.DE13.1",
+            "text": "Sufficient replacement feeds (in 24 hours)",
+            "type": "display",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
                     "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
                     "valueCode": "horizontal"
                 },
@@ -1389,7 +1455,40 @@
             "linkId": "EmCare.B21S2.DE13",
             "text": "Sufficient replacement feeds (in 24 hours)",
             "type": "boolean",
-            "required": true,
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                }
+            ],
+            "linkId": "EmCare.B21S2.DE14",
+            "text": "Insufficient replacement feeds (in 24 hours)",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B21S2.DE13').answer.first().value = false"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B21S2.DE14.1",
+            "text": "Insufficient replacement feeds (in 24 hours)",
+            "type": "display",
+            "required": false,
             "repeats": false
         },
         {
@@ -1590,11 +1689,11 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "( %resource.repeat(item).where(linkId='YI_sever_but_dhey').answer.empty()  or %resource.repeat(item).where(linkId='YI_sever_but_dhey').answer.first().value=false ) and %resource.repeat(item).where(linkId='EmCare.B21S2.DE32').answer.first().empty()"
+                        "expression": "( %resource.repeat(item).where(linkId='YI_sever_but_dhey').answer.empty()  or %resource.repeat(item).where(linkId='YI_sever_but_dhey').answer.first().value=false ) and %resource.repeat(item).where(linkId='EmCare.B21S2.DE31').answer.first().empty() and %resource.repeat(item).where(linkId='AgeInDays').answer.first().value >= 8"
                     }
                 }
             ],
-            "linkId": "EmCare.B21S2.DE31",
+            "linkId": "EmCare.B21S2.DE30",
             "text": "Ulcers or White Patches in Mouth",
             "type": "boolean",
             "required": true,
@@ -1614,7 +1713,7 @@
                             }
                         }
                     ],
-                    "linkId": "EmCare.B21S2.DE31-help",
+                    "linkId": "EmCare.B21S2.DE30-help",
                     "text": "Look inside the mouth at the tongue and inside of the cheek. Thrush looks like milk curds on the inside of the cheek, or a thick white coating of the tongue. Try to wipe the white off. The white patches of thrush will remain.",
                     "type": "display"
                 }
@@ -1630,11 +1729,11 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "( %resource.repeat(item).where(linkId='YI_sever').answer.empty()  or %resource.repeat(item).where(linkId='YI_sever').answer.first().value=false ) and %resource.repeat(item).where(linkId='EmCare.B21S2.DE31').answer.first().empty()"
+                        "expression": "( %resource.repeat(item).where(linkId='YI_sever').answer.empty()  or %resource.repeat(item).where(linkId='YI_sever').answer.first().value=false ) and %resource.repeat(item).where(linkId='EmCare.B21S2.DE30').answer.first().empty()"
                     }
                 }
             ],
-            "linkId": "EmCare.B21S2.DE32",
+            "linkId": "EmCare.B21S2.DE31",
             "text": "Unable to check if Ulcers or White Patches in Mouth",
             "type": "boolean",
             "required": false,
@@ -1648,12 +1747,39 @@
                         "system": "http://unitsofmeasure.org",
                         "code": "g"
                     }
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B22S1.DE33').answer.first().empty() and %resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 8"
+                    }
                 }
             ],
-            "linkId": "EmCare.B22S1.DE01",
+            "linkId": "EmCare.B22S1.DE32",
             "text": "Birth weight (gm)",
             "type": "quantity",
             "required": true,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B22S1.DE32').answer.first().empty() and %resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 8"
+                    }
+                }
+            ],
+            "linkId": "EmCare.B22S1.DE33",
+            "text": "Birth weight (gm) is unknown",
+            "type": "boolean",
+            "required": false,
             "repeats": false
         },
         {

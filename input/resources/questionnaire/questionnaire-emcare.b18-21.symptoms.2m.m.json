@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb1821symptoms2mm|0.0.1.build.186"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb1821symptoms2mm|0.0.142"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b18-21.symptoms.2m.m",
@@ -63,17 +63,28 @@
         {
             "extension": [
                 {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                    "valueCodeableConcept": {
-                        "coding": [
-                            {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "check-box",
-                                "display": "Check-box"
-                            }
-                        ],
-                        "text": "Check-box"
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "AgeInMonths"
                     }
+                }
+            ],
+            "linkId": "AgeInMonths",
+            "text": "Age in Month",
+            "type": "integer",
+            "required": false,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
                 },
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
@@ -88,17 +99,10 @@
                 }
             ],
             "linkId": "EmCare.B6.DE04",
-            "type": "choice",
+            "text": "Thermometer not available",
+            "type": "boolean",
             "required": false,
-            "repeats": true,
-            "answerOption": [
-                {
-                    "valueCoding": {
-                        "code": "EmCare.B6.DE04",
-                        "display": "Thermometer not available"
-                    }
-                }
-            ]
+            "repeats": false
         },
         {
             "extension": [
@@ -133,7 +137,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='Convulsing Now').answer.first().value = false"
+                        "expression": "( %resource.repeat(item).where(linkId='Convulsing Now').answer.empty()  or %resource.repeat(item).where(linkId='Convulsing Now').answer.first().value=false )"
                     }
                 }
             ],
@@ -226,6 +230,26 @@
                     "valueCode": "horizontal"
                 }
             ],
+            "linkId": "EmCare.B12S1.DE02",
+            "text": "Fever Reported",
+            "type": "boolean",
+            "required": true,
+            "repeats": false
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value>=8 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 2"
+                    }
+                }
+            ],
             "linkId": "EmCare.B20S1.DE01",
             "text": "Diarrhoea",
             "type": "boolean",
@@ -270,13 +294,6 @@
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
                     "valueCode": "horizontal"
-                },
-                {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                    "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 7"
-                    }
                 }
             ],
             "linkId": "EmCare.B21S1.DE06",
@@ -315,7 +332,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 7"
+                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 8"
                     }
                 }
             ],
@@ -335,7 +352,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 7"
+                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 8"
                     }
                 }
             ],
@@ -355,7 +372,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 7"
+                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 8"
                     }
                 }
             ],
@@ -375,7 +392,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 7"
+                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 8"
                     }
                 }
             ],
@@ -391,7 +408,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 7"
+                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 8 and %resource.repeat(item).where(linkId='EmCare.B22S1.DE01').answer.first().value = true"
                     }
                 }
             ],
@@ -441,32 +458,12 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 7"
+                        "expression": "%resource.repeat(item).where(linkId='AgeInDays').answer.first().value < 8"
                     }
                 }
             ],
             "linkId": "EmCare.B22S1.DE10",
             "text": "History of maternal genital infection in the week prior to delivery, intrapartum or in the week after delivery",
-            "type": "boolean",
-            "required": true,
-            "repeats": false
-        },
-        {
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                },
-                {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                    "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='EmCare.B6.DE04').answer.first().value = true"
-                    }
-                }
-            ],
-            "linkId": "EmCare.B12S1.DE02",
-            "text": "Fever Reported",
             "type": "boolean",
             "required": true,
             "repeats": false

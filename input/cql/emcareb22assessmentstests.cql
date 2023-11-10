@@ -2,14 +2,14 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareb22assessmentstests version '0.0.1.build.186'
+library emcareb22assessmentstests version '0.0.142'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.186' called Base
-include emcarevalueset version '0.0.1.build.186' called val
-include emcarezscore version '0.0.1.build.186' called Z
-include emcarecombineddataelements version '0.0.1.build.186' called c
-include emcareobservation version '0.0.1.build.186' called obs
+include emcarebase version '0.0.142' called Base
+include emcarevalueset version '0.0.142' called val
+include emcarezscore version '0.0.142' called Z
+include emcarecombineddataelements version '0.0.142' called c
+include emcareobservation version '0.0.142' called obs
 
 
 
@@ -39,18 +39,18 @@ define "OBSdefine.EmCare.B22.DE52A":
     Base.GetObsValue('EmCare.B22.DE52A')
 
 /* 
-OBSdefine.EmCare.B22.DE07 : Fast Breathing
-
-*/
-define "OBSdefine.EmCare.B22.DE07":
-    Base.GetObsValue('EmCare.B22.DE07')
-
-/* 
 OBSdefine.EmCare.B10S2.DE05 : Wheezing
 
 */
 define "OBSdefine.EmCare.B10S2.DE05":
     Base.GetObsValue('EmCare.B10S2.DE05')
+
+/* 
+OBSdefine.EmCare.B22.DE07 : Fast Breathing
+
+*/
+define "OBSdefine.EmCare.B22.DE07":
+    Base.GetObsValue('EmCare.B22.DE07')
 
 /* 
 OBSdefine.EmCare.B10S2.DE03 : Chest Indrawing
@@ -195,11 +195,11 @@ define "AgeInDays":
 /* 
 a-BreastFeedingTest : 
     (    AgeInMonths()>=2 and AgeInMonths()<6 and  "Severe Classification up to assessments and tests excluding Severe Dehydration" !=true)
-     or (    AgeInMonths()<2 and   "Breastfed" = true and c."YI severe classification other than Severe Dehydration" !=true)
+     or (    AgeInMonths()<2 and AgeInDays()>=8 and "Breastfed" = true and c."YI severe classification other than Severe Dehydration" !=true)
 */
 define "a-BreastFeedingTest":
         (    AgeInMonths()>=2 and AgeInMonths()<6 and  Coalesce("Severe Classification up to assessments and tests excluding Severe Dehydration",false)!=true)
-         or (    AgeInMonths()<2 and   "OBSdefine.EmCare.B21S1.DE06" = true and Coalesce(c."YI severe classification other than Severe Dehydration",false)!=true)
+         or (    AgeInMonths()<2 and AgeInDays()>=8 and "OBSdefine.EmCare.B21S1.DE06" = true and Coalesce(c."YI severe classification other than Severe Dehydration",false)!=true)
 
 /* 
 applicability-BreastFeedingTest : a-BreastFeedingTest
@@ -244,11 +244,25 @@ define "vomiting everything":
     Coalesce(c."vomiting everything",false)
 
 /* 
+a-HealthPrevention : 
+"AgeInMonths"<60
+*/
+define "a-HealthPrevention":
+    "AgeInMonths"<60
+
+/* 
+applicability-HealthPrevention : a-HealthPrevention
+Alias
+*/
+define "applicability-HealthPrevention":
+    "a-HealthPrevention"
+
+/* 
 a-RespiratoryRate : 
-("Cough" = true or "Difficulty Breathing" = true or "AgeInMonths"<2) and o"Fast Breathing" is null
+(("Cough" = true or "Difficulty Breathing" = true) and ("AgeInMonths">= 2 and "AgeInMonths"<60 )) or "AgeInMonths"< 2
 */
 define "a-RespiratoryRate":
-    ("Cough" = true or "Difficulty Breathing" = true or "AgeInMonths"<2) and "OBSdefine.EmCare.B22.DE07" is null
+    (("Cough" = true or "Difficulty Breathing" = true) and ("AgeInMonths">= 2 and "AgeInMonths"<60 )) or "AgeInMonths"< 2
 
 /* 
 applicability-RespiratoryRate : a-RespiratoryRate
@@ -273,10 +287,10 @@ define "applicability-BronchodilatorTest":
 
 /* 
 a-SecondTemperature : 
-c."PSBI other than temperature" != true and AgeInMonths()<2 and "Axillary Temperature (degrees Celcius)" > 38.5 'Cel'
+c."PSBI other than temperature" != true and "AgeInMonths"<2 and "Axillary Temperature (degrees Celcius)" > 38.5 'Cel'
 */
 define "a-SecondTemperature":
-    Coalesce(c."PSBI other than temperature",false)!=true and AgeInMonths()<2 and "OBSdefine.EmCare.B6.DE01" > 38.5 'Cel'
+    Coalesce(c."PSBI other than temperature",false)!=true and "AgeInMonths"<2 and "OBSdefine.EmCare.B6.DE01" > 38.5 'Cel'
 
 /* 
 applicability-SecondTemperature : a-SecondTemperature
@@ -325,12 +339,12 @@ define "applicability-AppetiteTest":
 a-MalariaTest : 
 ("Fever" = true or "Palmar Pallor" = "Some Palmar Pallor")
 and
-"Severe Classification up to assessments and tests excluding Severe Dehydration" = false and "AgeInMonths">= 2 and "AgeInMonths"< 60
+"Severe Classification up to assessments and tests excluding Severe Dehydration" != true and "AgeInMonths">= 2 and "AgeInMonths"< 60
 */
 define "a-MalariaTest":
     ("Fever" = true or "Palmar Pallor" ~ val."Some Palmar Pallor")
     and
-    "Severe Classification up to assessments and tests excluding Severe Dehydration" = false and "AgeInMonths">= 2 and "AgeInMonths"< 60
+    Coalesce("Severe Classification up to assessments and tests excluding Severe Dehydration",false)!=true and "AgeInMonths">= 2 and "AgeInMonths"< 60
 
 /* 
 applicability-MalariaTest : a-MalariaTest
@@ -338,6 +352,13 @@ Alias
 */
 define "applicability-MalariaTest":
     "a-MalariaTest"
+
+/* 
+PSBI other than temperature : 
+c."PSBI other than temperature"
+*/
+define "PSBI other than temperature":
+    c."PSBI other than temperature"
 
 /* 
 Respiratory Rate profile : 

@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb1014symptoms2mp|0.0.1.build.186"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb1014symptoms2mp|0.0.142"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b10-14.symptoms.2m.p",
@@ -327,7 +327,7 @@
                     "valueCode": "horizontal"
                 }
             ],
-            "linkId": "EmCare.B11S1.DE01",
+            "linkId": "EmCare.B20S1.DE01",
             "text": "Diarrhoea",
             "type": "boolean",
             "required": true,
@@ -347,7 +347,7 @@
                             }
                         }
                     ],
-                    "linkId": "EmCare.B11S1.DE01-help",
+                    "linkId": "EmCare.B20S1.DE01-help",
                     "text": "Diarrhoea occurs when stools contain more water than normal, and are loose or watery.  Diarrhoea is defined as three or more loose or watery stools in a 24-hour period.",
                     "type": "display"
                 }
@@ -359,7 +359,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='EmCare.B11S1.DE01').answer.first().value= true"
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B20S1.DE01').answer.first().value= true"
                     }
                 }
             ],
@@ -395,7 +395,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='EmCare.B11S1.DE01').answer.first().value= true"
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B20S1.DE01').answer.first().value= true"
                     }
                 }
             ],
@@ -435,7 +435,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='Severe Acute Malnutrition').answer.first().value= true and (%resource.repeat(item).where(linkId='EmCare.B11S1.DE01').answer.first().value = true or %resource.repeat(item).where(linkId='vomiting').answer.first().value = true)"
+                        "expression": "%resource.repeat(item).where(linkId='Severe Acute Malnutrition').answer.first().value= true and (%resource.repeat(item).where(linkId='EmCare.B20S1.DE01').answer.first().value = true or %resource.repeat(item).where(linkId='vomiting').answer.first().value = true)"
                     }
                 }
             ],
@@ -455,7 +455,7 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='Severe Acute Malnutrition').answer.first().value= true and (%resource.repeat(item).where(linkId='EmCare.B11S1.DE01').answer.first().value = true or %resource.repeat(item).where(linkId='vomiting').answer.first().value = true)"
+                        "expression": "%resource.repeat(item).where(linkId='Severe Acute Malnutrition').answer.first().value= true and (%resource.repeat(item).where(linkId='EmCare.B20S1.DE01').answer.first().value = true or %resource.repeat(item).where(linkId='vomiting').answer.first().value = true)"
                     }
                 }
             ],

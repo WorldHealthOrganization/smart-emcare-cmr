@@ -20,11 +20,11 @@ required for the execution
 | Observation | EmCare.B15S2.DE01 | boolean/quantity | Palmar Pallor |
 | Observation | EmCare.B22.DE81 | boolean/quantity | Hemoglobin (Hb) g/dL |
 | Observation | EmCare.B20S1.DE01 | boolean/quantity | Diarrhoea |
-| Observation | EmCare.B20S2.DE02 | boolean/quantity | Skin Pinch of Abdomen |
-| Observation | EmCare.B11S2.DE06 | boolean/quantity | Restless and Irritable |
 | Observation | EmCare.B7.DE08b | boolean/quantity | Unconscious or Lethargic |
 | Observation | EmCare.B20S2.DE01 | boolean/quantity | Sunken Eyes |
+| Observation | EmCare.B20S2.DE02 | boolean/quantity | Skin Pinch of Abdomen |
 | Observation | EmCare.B18S2.DE08 | boolean/quantity | Infant's Movements |
+| Observation | EmCare.B11S2.DE06 | boolean/quantity | Restless and Irritable |
 | Observation | EmCare.B18S1.DE02 | boolean/quantity | Difficulty with Feeding |
 | Observation | EmCare.B18S2.DE07 | boolean/quantity | Severe Chest Indrawing |
 | Observation | EmCare.B22.DE07 | boolean/quantity | Fast Breathing |
@@ -34,7 +34,7 @@ required for the execution
 | Observation | EmCare.B22.DE50 | boolean/quantity | Measured Temperature (second measurement) |
 | Observation | EmCare.B22.DE46 | boolean/quantity | Second Temperature Measurement Not Feasible |
 | Observation | EmCare.B19S2.DE02 | boolean/quantity | Yellow Palms or Yellow Soles |
-| Observation | EmCare.B19S2.DE01 | boolean/quantity | Yellow Skin |
+| Observation | EmCare.B19S2.DE01 | boolean/quantity | Yellow Skin or yellow eyes |
 | Observation | EmCare.B19S2.DE04 | boolean/quantity | When did the Jaundice first appear? |
 | Observation | EmCare.B21S2.DE01 | boolean/quantity | Weight Status |
 | Observation | EmCare.B12S1.DE02 | boolean/quantity | Fever Reported |

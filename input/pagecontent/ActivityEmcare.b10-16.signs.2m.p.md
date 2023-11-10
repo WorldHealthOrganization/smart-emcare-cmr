@@ -61,7 +61,7 @@ Uncommon in children except where they are immuno-compromised (e.g. if infected 
 | Observation | EmCare.B14S2.DE22A | boolean | Severe rash |
 | Observation | EmCare.B14S2.DE23a | boolean | Disseminated Herpes Zoster |
 | Observation | EmCare.B14S2.DE24 | boolean | Eye Involvement |
-| Observation | EmCare.B14S2.DE27 | boolean | Signs of Severe Impetigo / Folliculitis:Skin Lesions ≥ 4 cm |
+| Observation | EmCare.B14S2.DE27 | boolean | Signs of Severe Impetigo / Folliculitis:Skin Lesions >= 4 cm |
 | Observation | EmCare.B14S2.DE28 | boolean | Signs of Severe Impetigo / Folliculitis:Red Skin Streaks |
 | Observation | EmCare.B14S2.DE29 | boolean | Signs of Severe Impetigo / Folliculitis:Tender Nodes (Nodules) under the skin |
 | Observation | EmCare.B14S2.DE30 | boolean | Signs of Severe Impetigo / Folliculitis:Skin Infection extends to muscle |
@@ -70,7 +70,7 @@ Uncommon in children except where they are immuno-compromised (e.g. if infected 
 | Observation | EmCare.B14S2.DE31a | boolean | Extensive molluscum lesions |
 | Observation | EmCare.B14S2.DE31b | boolean | Molluscum lesions close to the eye |
 | Observation | EmCare.B14S2.DE32a | boolean | Extensive warts |
-| Observation | EmCare.B14S2.DE34 | boolean | Severe Seborrhoeic Dermatitis |
+| Observation | EmCare.B14S2.DE34 | boolean | Severe Seborrhoea |
 | Observation | EmCare.B14S2.DE36a | boolean | Secondary bacterial infection of eczema |
 | Observation | EmCare.B14S2.DE36b | boolean | Severe acute moist or weeping eczema |
 | Observation | EmCare.B14S2.DE36c | boolean | Secondary herpes infection of eczema (eczema herpeticum) |

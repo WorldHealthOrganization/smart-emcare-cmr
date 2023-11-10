@@ -2,7 +2,7 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareobservationValueset version '0.0.1.build.186'
+library emcareobservationValueset version '0.0.142'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
 
@@ -12,6 +12,7 @@ include FHIRHelpers version '4.0.1' called FHIRHelpers
 codesystem "EmCare" : 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes'
 
 
+code "No Pain": 'EmCare.B12S1.DE09' from "EmCare" display 'No Pain'
 code "Joint or Bone Pain": 'EmCare.B12S1.DE10' from "EmCare" display 'Joint or Bone Pain'
 code "Pain or Difficulty Passing Urine or Crying when Passing Urine": 'EmCare.B12S1.DE11' from "EmCare" display 'Pain or Difficulty Passing Urine or Crying when Passing Urine'
 code "Skin Pain": 'EmCare.B12S1.DE12' from "EmCare" display 'Skin Pain'
@@ -37,7 +38,7 @@ code "Seborrhoea - Greasy scales and redness on central face and body folds": 'E
 code "Fixed Drug Reactions - Generalised red, wide spread with small bumps or blisters; or one or more dark skin areas": 'EmCare.B14S2.DE35' from "EmCare" display 'Fixed Drug Reactions - Generalised red, wide spread with small bumps or blisters; or one or more dark skin areas'
 code "Eczema - Wet oozing sores or excoriated, thick patches": 'EmCare.B14S2.DE36' from "EmCare" display 'Eczema - Wet oozing sores or excoriated, thick patches'
 code "Steven Johnson Syndrome (SJS)": 'EmCare.B14S2.DE37' from "EmCare" display 'Steven Johnson Syndrome (SJS)'
-code "Skin Lesions ≥ 4 cm": 'EmCare.B14S2.DE27' from "EmCare" display 'Skin Lesions ≥ 4 cm'
+code "Skin Lesions >= 4 cm": 'EmCare.B14S2.DE27' from "EmCare" display 'Skin Lesions >= 4 cm'
 code "Red Skin Streaks": 'EmCare.B14S2.DE28' from "EmCare" display 'Red Skin Streaks'
 code "Tender Nodes (Nodules) under the skin": 'EmCare.B14S2.DE29' from "EmCare" display 'Tender Nodes (Nodules) under the skin'
 code "Skin Infection extends to muscle": 'EmCare.B14S2.DE30' from "EmCare" display 'Skin Infection extends to muscle'
@@ -46,6 +47,7 @@ code "Skin Problem": 'EmCare.B14S2.DE44' from "EmCare" display 'Skin Problem'
 code "Oral Sores or Mouth Ulcers": 'EmCare.B14S2.DE45' from "EmCare" display 'Oral Sores or Mouth Ulcers'
 code "Eye Problem": 'EmCare.B14S2.DE46' from "EmCare" display 'Eye Problem'
 code "No - Do not add a Skin or Mouth or Eye Problem": 'EmCare.B14S2.DE47' from "EmCare" display 'No - Do not add a Skin or Mouth or Eye Problem'
+code "Breastmilk also given": 'EmCare.B21S2.DE28' from "EmCare" display 'Breastmilk also given'
 code "No Breastmilk at all": 'EmCare.B21S2.DE29' from "EmCare" display 'No Breastmilk at all'
 code "Inappropriate replacement milk": 'EmCare.B21S2.DE11' from "EmCare" display 'Inappropriate replacement milk'
 code "Appropriate replacement milk": 'EmCare.B21S2.DE10' from "EmCare" display 'Appropriate replacement milk'
@@ -54,3 +56,10 @@ code "Respiratory Rate (post inhaled bronchodilator trial)": 'EmCare.B22.DE19' f
 code "Fast Breathing (post inhaled bronchodilator trial)": 'EmCare.B22.DE20' from "EmCare" display 'Fast Breathing (post inhaled bronchodilator trial)'
 code "No Fast Breathing and No Chest Indrawing (post Inhaled Bronchodilator Trial)": 'EmCare.B22.DE21' from "EmCare" display 'No Fast Breathing and No Chest Indrawing (post Inhaled Bronchodilator Trial)'
 code "Inhaled Bronchodilator Trial Not Feasible or Available": 'EmCare.B22.DE22' from "EmCare" display 'Inhaled Bronchodilator Trial Not Feasible or Available'
+code "Less than 1 month ago": 'EmCare.B17.DE02' from "EmCare" display 'Less than 1 month ago'
+code "1 to 5 months ago": 'EmCare.B17.DE02a' from "EmCare" display '1 to 5 months ago'
+code "More than 6 months ago": 'EmCare.B17.DE02b' from "EmCare" display 'More than 6 months ago'
+code "Vitamin A Supplementation not previously given": 'EmCare.B17.DE02c' from "EmCare" display 'Vitamin A Supplementation not previously given'
+code "Date Unknown": 'EmCare.B17.DE03' from "EmCare" display 'Date Unknown'
+code "Deworming treatment not previously given": 'EmCare.B17.DE13' from "EmCare" display 'Deworming treatment not previously given'
+code "Date unknown": 'EmCare.B17.DE14' from "EmCare" display 'Date unknown'

@@ -2,12 +2,12 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareb17healthprevention version '0.0.1.build.186'
+library emcareb17healthprevention version '0.0.142'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.186' called Base
-include emcarevalueset version '0.0.1.build.186' called val
-include emcarecombineddataelements version '0.0.1.build.186' called c
+include emcarebase version '0.0.142' called Base
+include emcarevalueset version '0.0.142' called val
+include emcarecombineddataelements version '0.0.142' called c
 
 
 
@@ -28,6 +28,13 @@ Alias
 */
 define "Age In Months":
     "AgeInMonths"
+
+/* 
+AgeInDays : 
+AgeInDays()
+*/
+define "AgeInDays":
+    AgeInDays()
 
 /* 
 Severe Classification up to assessments and tests excluding Severe Dehydration : 

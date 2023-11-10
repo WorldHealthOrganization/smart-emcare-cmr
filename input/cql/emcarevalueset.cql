@@ -2,7 +2,7 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcarevalueset version '0.0.1.build.186'
+library emcarevalueset version '0.0.142'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
 
@@ -42,7 +42,6 @@ code "7 to 14 days": 'EmCare.B11S1.DE03A' from "EmCare" display '7 to 14 days'
 code "More than 14 days": 'EmCare.B10S1.DE08' from "EmCare" display 'More than 14 days'
 code "8 to 30 days": 'EmCare.B12S1.DE04A' from "EmCare" display '8 to 30 days'
 code "More than 30 days": 'EmCare.B12S1.DE05' from "EmCare" display 'More than 30 days'
-code "No Pain": 'EmCare.B12S1.DE09' from "EmCare" display 'No Pain'
 code "High Malaria Risk": 'EmCare.B12S1.DE16' from "EmCare" display 'High Malaria Risk'
 code "Low Malaria Risk": 'EmCare.B12S1.DE17' from "EmCare" display 'Low Malaria Risk'
 code "No Malaria Risk": 'EmCare.B12S1.DE18' from "EmCare" display 'No Malaria Risk'
@@ -87,7 +86,6 @@ code "Unknown when Jaundice first appeared": 'EmCare.B19S2.DE07' from "EmCare" d
 code "Very Low Weight for Age": 'EmCare.B21S2.DE02' from "EmCare" display 'Very Low Weight for Age'
 code "Low Weight for Age": 'EmCare.B21S2.DE03' from "EmCare" display 'Low Weight for Age'
 code "Normal Weight for Age": 'EmCare.B21S2.DE04' from "EmCare" display 'Normal Weight for Age'
-code "Breastmilk also given": 'EmCare.B21S2.DE28' from "EmCare" display 'Breastmilk also given'
 code "Sufficient replacement feeds": 'EmCare.B21S2.DE16' from "EmCare" display 'Sufficient replacement feeds'
 code "Insufficient replacement feeds": 'EmCare.B21S2.DE17' from "EmCare" display 'Insufficient replacement feeds'
 code "End consultation": 'EmCare.B7-B8-B9.DE03' from "EmCare" display 'End consultation'
@@ -153,15 +151,8 @@ code "Unable to swallow": 'EmCare.B17S1.DE10' from "EmCare" display 'Unable to s
 code "Does not appear to be Underweight": 'EmCare.B6.DE19' from "EmCare" display 'Does not appear to be Underweight'
 code "Appears to be Underweight": 'EmCare.B6.DE20' from "EmCare" display 'Appears to be Underweight'
 code "Appears to be Severely Underweight": 'EmCare.B6.DE21' from "EmCare" display 'Appears to be Severely Underweight'
-code "Less than 1 month ago": 'EmCare.B17.DE02' from "EmCare" display 'Less than 1 month ago'
-code "1 to 5 months ago": 'EmCare.B17.DE02a' from "EmCare" display '1 to 5 months ago'
-code "More than 6 months ago": 'EmCare.B17.DE02b' from "EmCare" display 'More than 6 months ago'
-code "Vitamin A Supplementation not previously given": 'EmCare.B17.DE02c' from "EmCare" display 'Vitamin A Supplementation not previously given'
-code "Date Unknown": 'EmCare.B17.DE03' from "EmCare" display 'Date Unknown'
 code "Yes, Date documented, but not here": 'EmCare.B17.DE06' from "EmCare" display 'Yes, Date documented, but not here'
 code "No, do not know when last dose was given": 'EmCare.B17.DE07' from "EmCare" display 'No, do not know when last dose was given'
-code "Deworming treatment not previously given": 'EmCare.B17.DE13' from "EmCare" display 'Deworming treatment not previously given'
-code "Date unknown": 'EmCare.B17.DE14' from "EmCare" display 'Date unknown'
 code "Results unknown": 'EmCare.B17.DE64' from "EmCare" display 'Results unknown'
 code "Presence of viral hepatitis B": 'EmCare.B17.DE65' from "EmCare" display 'Presence of viral hepatitis B'
 code "Abscence of viral hepatitis B": 'EmCare.B17.DE66' from "EmCare" display 'Abscence of viral hepatitis B'

@@ -4,9 +4,8 @@ required for the execution
 
 | type | code / path | valueType | Description |
 |---|---|---|---|
-| Observation | EmCare.B7.DE01 | boolean/quantity | Obstructed or Absent Breathing |
-| Observation | EmCare.B7-B8-B9.DE01 | boolean/quantity | Continue to Assess Sick Child |
 | Observation | EmCare.B7.DE02 | boolean/quantity | Convulsing Now |
+| Observation | EmCare.B7-B8-B9.DE01 | boolean/quantity | Continue to Assess Sick Child |
 | Observation | EmCare.B7.DE03 | boolean/quantity | Convulsion(s) in this Illness |
 | Observation | EmCare.B7.DE08 | boolean/quantity | Unconscious |
 | Observation | EmCare.B7.DE08a | boolean/quantity | Lethargic |
@@ -14,7 +13,8 @@ required for the execution
 | Observation | EmCare.B7.DE10 | boolean/quantity | Vomiting |
 | Observation | EmCare.B22.DE08 | boolean/quantity | Oral Fluid Test Results |
 | Observation | EmCare.B22.DE14a | boolean/quantity | Completely Unable to Drink or Vomits Immediately / Everything |
-| Observation | EmCare.B6.DE06 | boolean/quantity | Weight |
+| Observation | EmCare.B6.DE06 | boolean/quantity | Weight (kilograms) |
+| Observation | EmCare.B7.DE01 | boolean/quantity | Obstructed or Absent Breathing |
 | Observation | EmCare.B10S1.DE05 | boolean/quantity | Cough |
 | Observation | EmCare.B10S1.DE01 | boolean/quantity | Difficulty Breathing |
 | Observation | EmCare.B10S2.DE04 | boolean/quantity | Stridor in a calm child |
@@ -34,7 +34,7 @@ required for the execution
 | Observation | EmCare.B12S2.DE01 | boolean/quantity | Stiff neck |
 | Observation | EmCare.B6.DE01 | boolean/quantity | Axillary Temperature (degrees Celcius) |
 | Observation | EmCare.B6.DE03 | boolean/quantity | Rectal Temperature (degrees Celcius) |
-| Observation | EmCare.B19S2.DE08 | boolean/quantity | Yellow eyes |
+| Observation | EmCare.B12S2.DE06 | boolean/quantity | Yellow eyes |
 | Observation | EmCare.B12S2.DE07 | boolean/quantity | Abnormal Bleeding |
 | Observation | EmCare.B12S2.DE08 | boolean/quantity | Coca-Cola urine |
 | Observation | EmCare.B15S2.DE01 | boolean/quantity | Palmar Pallor |
@@ -82,29 +82,32 @@ required for the execution
 | Observation | EmCare.B14S2.DE13&EmCare.B14S2.DE25 | boolean/quantity | Type of Skin Problem |
 | Observation | EmCare.B6.DE01A | boolean/quantity | Measured Temperature |
 | Observation | EmCare.B14S2.DE26&EmCare.B14S2.DE30 | boolean/quantity | Signs of Severe Impetigo / Folliculitis |
-| Observation | EmCare.B14S2.DE30b | boolean/quantity | Extensive impetigo lesions |
+| Observation | EmCare.B14S2.DE26&EmCare.B14S2.DE27 | boolean/quantity | Signs of Severe Impetigo / Folliculitis |
+| Observation | EmCare.B14S2.DE26&EmCare.B14S2.DE28 | boolean/quantity |  |
+| Observation | EmCare.B14S2.DE26&EmCare.B14S2.DE29 | boolean/quantity |  |
 | Observation | EmCare.B14S2.DE13&EmCare.B14S2.DE31 | boolean/quantity | Type of Skin Problem |
-| Observation | EmCare.B14S2.DE31a | boolean/quantity | Extensive molluscum lesions |
-| Observation | EmCare.B14S2.DE31b | boolean/quantity | Molluscum lesions close to the eye |
 | Observation | EmCare.B14S2.DE13&EmCare.B14S2.DE32 | boolean/quantity | Type of Skin Problem |
 | Observation | EmCare.B14S2.DE13&EmCare.B14S2.DE33 | boolean/quantity | Type of Skin Problem |
+| Observation | EmCare.B14S2.DE34 | boolean/quantity | Severe Seborrhoea |
 | Observation | EmCare.B14S2.DE13&EmCare.B14S2.DE35 | boolean/quantity | Type of Skin Problem |
 | Observation | EmCare.B14S2.DE13&EmCare.B14S2.DE36 | boolean/quantity | Type of Skin Problem |
 | Observation | EmCare.B14S2.DE13&EmCare.B14S2.DE37 | boolean/quantity | Type of Skin Problem |
 | Observation | EmCare.B15S1.DE01 | boolean/quantity | Sickle cell disease |
 | Observation | EmCare.B16S2.DE01 | boolean/quantity | Oedema of both feet |
-| Observation | EmCare.B22.DE44 | boolean/quantity | Difficulty Breastfeeding Observed |
+| Observation | EmCare.B24.G.DE37 | boolean/quantity | Difficulty Breastfeeding Observed |
 | Observation | EmCare.B24.G.DE23 | boolean/quantity | Appetite Test (using RUTF) Results |
-| Observation | EmCare.B22.DE41 | boolean/quantity | Breastfeeding Assessment Not Possible |
+| Observation | EmCare.B24.G.DE38 | boolean/quantity | Breastfeeding Assessment Not Possible |
 | Observation | EmCare.B6.DE07 | boolean/quantity | Weight cannot be measured |
 | Observation | EmCare.B6.DE13 | boolean/quantity | Length cannot be measured |
 | Observation | EmCare.B6.DE17a | boolean/quantity | MUAC cannot be measured |
 | Observation | EmCare.B6.DE11 | boolean/quantity | Height cannot be measured |
-| Observation | EmCare.B17.DE01 | boolean/quantity | Date of Last Vitamin A Supplementation |
 | Observation | EmCare.B17.DE05 | boolean/quantity | Can record of Vitamin A Supplementation be obtained at a future visit? |
 | Observation | EmCare.B17.DE11 | boolean/quantity | Treatment for malnutrition containing Vitamin A received in the past month? |
-| Observation | EmCare.B17.DE12 | boolean/quantity | Date of last deworming treatment |
+| Observation | EmCare.B17.DE01&EmCare.B17.DE02b | boolean/quantity | Date of Last Vitamin A Supplementation |
+| Observation | EmCare.B17.DE01&EmCare.B17.DE02c | boolean/quantity |  |
 | Observation | EmCare.B17.DE16 | boolean/quantity | Can record of Deworming treatment be obtained at a future visit? |
+| Observation | EmCare.B17.DE12&EmCare.B17.DE02b | boolean/quantity | Date of last deworming treatment |
+| Observation | EmCare.B17.DE12&EmCare.B17.DE13 | boolean/quantity |  |
 | Observation | EmCare.B17.DE44A | boolean/quantity | Child followed up at PMTCT for HIV investigation or management |
 | Observation | EmCare.B17.DE30 | boolean/quantity | Child's Last HIV Test Results |
 | Observation | EmCare.B17.DE41 | boolean/quantity | Child 18 months or older when last tested for HIV |

@@ -15,7 +15,7 @@
                 "concept": [
                     {
                         "code": "EmCare.B14S2.DE27",
-                        "display": "Skin Lesions \u2265 4 cm",
+                        "display": "Skin Lesions >= 4 cm",
                         "designation": [
                             {
                                 "value": "The impetigo skin lesions cover an area of 4 cm or larger"

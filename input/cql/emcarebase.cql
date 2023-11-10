@@ -3,7 +3,7 @@
 @description: This library is part of the project EmCare Project, its allows standardisation for the observation processing
 */
 
-library emcarebase version '0.0.1.build.186'
+library emcarebase version '0.0.142'
 
 using FHIR version '4.0.1'
 
@@ -13,6 +13,7 @@ parameter "encounterid" String
 //parameter "Encounter" Encounter$
 codesystem "RoleCodeSystem" : 'https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes'
 code "Mother": 'MTH' from "RoleCodeSystem"
+code "ExtendedFamily": 'EXT' from "RoleCodeSystem"
 
 context Patient
 
@@ -89,13 +90,11 @@ define getRelatedPersonAccompanyingTheChild:
   singleton from getRelatedPersonsAccompanyingTheChild
 
 
+define "Proxy Person accompanying child today's Relationship to Client":
+  if EmCareExtension(getEncounter, 'motherpresent').value = true then "Mother" else "ExtendedFamily"
+
 define "Person accompanying child today's Relationship to Client":
-//WORKARROUND   getRelatedPersonAccompanyingTheChild.relationship
-  EmCareExtension(getEncounter, 'motherpresent').value
-
-
-
-
+  Coalesce( First(getRelatedPersonsAccompanyingTheChild.relationship.coding) ,"Proxy Person accompanying child today's Relationship to Client")
 
 define function getValue(O Observation):
   case  

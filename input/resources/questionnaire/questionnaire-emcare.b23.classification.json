@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb23classification|0.0.1.build.186"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb23classification|0.0.142"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b23.classification",
@@ -240,7 +240,7 @@
                 }
             ],
             "linkId": "EmCare.B6.DE08",
-            "text": "Related Person vital status",
+            "text": "Estimated Weight",
             "type": "quantity",
             "required": false,
             "repeats": false,
@@ -309,10 +309,6 @@
         {
             "extension": [
                 {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                },
-                {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
@@ -322,9 +318,25 @@
             ],
             "linkId": "EmCare.B23.DE01",
             "text": "Very Severe Disease",
-            "type": "boolean",
+            "type": "choice",
             "required": false,
-            "repeats": false
+            "repeats": false,
+            "answerOption": [
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "agree",
+                        "display": "Agree"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "system": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/CodeSystem/emcare-custom-codes",
+                        "code": "disagree",
+                        "display": "Disagree"
+                    }
+                }
+            ]
         },
         {
             "extension": [
@@ -345,7 +357,7 @@
                 }
             ],
             "linkId": "DL-G-CL1-01",
-            "text": "History of  Obstructed or Absent Breathing",
+            "text": "Episode of obstructed or absent breathing",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -361,7 +373,7 @@
                 }
             ],
             "linkId": "EmCare.B23.DE02",
-            "text": "History of  Obstructed or Absent Breathing",
+            "text": "Episode of obstructed or absent breathing",
             "type": "choice",
             "required": false,
             "repeats": false,
@@ -517,11 +529,11 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B23.DE08').answer.first().value = true"
+                                "expression": "%resource.repeat(item).where(linkId='DL-G-CL1-19').answer.first().value = true"
                             }
                         }
                     ],
-                    "linkId": "DL-G-CL1-19",
+                    "linkId": "EmCare.B23.DE08_l1",
                     "text": "with cough or difficulty breathing for more than 14 days",
                     "type": "display",
                     "required": false,
@@ -534,6 +546,10 @@
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
                     "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
                 },
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
@@ -563,11 +579,11 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                     "valueExpression": {
                         "language": "text/cql-identifier",
-                        "expression": "EmCare.B23.DE08"
+                        "expression": "DL-G-CL1-19"
                     }
                 }
             ],
-            "linkId": "EmCare.B23.DE08",
+            "linkId": "DL-G-CL1-19",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -634,17 +650,40 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B23.DE08').answer.first().value = true"
+                                "expression": "%resource.repeat(item).where(linkId='DL-G-CL1-22').answer.first().value = true"
                             }
                         }
                     ],
-                    "linkId": "DL-G-CL1-22",
+                    "linkId": "EmCare.B23.DE08_l2",
                     "text": "with cough or difficulty breathing for more than 14 days",
                     "type": "display",
                     "required": false,
                     "repeats": false
                 }
             ]
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "DL-G-CL1-22"
+                    }
+                }
+            ],
+            "linkId": "DL-G-CL1-22",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
         },
         {
             "extension": [
@@ -1513,7 +1552,7 @@
                 }
             ],
             "linkId": "DL-G-CL1-57",
-            "text": "Possible Urine Infection",
+            "text": "Possible cystitits",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -1529,7 +1568,7 @@
                 }
             ],
             "linkId": "EmCare.B23.DE24",
-            "text": "Possible Urine Infection",
+            "text": "Possible cystitits",
             "type": "choice",
             "required": false,
             "repeats": false,
@@ -1569,7 +1608,7 @@
                 }
             ],
             "linkId": "DL-G-CL1-58",
-            "text": "Fever No Malaria",
+            "text": "Non-malarial febrile disease",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -1585,7 +1624,7 @@
                 }
             ],
             "linkId": "EmCare.B23.DE25",
-            "text": "Fever No Malaria",
+            "text": "Non-malarial febrile disease",
             "type": "choice",
             "required": false,
             "repeats": false,
@@ -2385,6 +2424,7 @@
                 }
             ],
             "linkId": "EmCare.B23.DE38",
+            "text": "Deep or Extends to muscle, or with measured fever",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -2456,7 +2496,7 @@
                         }
                     ],
                     "linkId": "DL-G-CL1-90",
-                    "text": "Cellulitis with Rapidly spreading, extensive, or not responding to oral antibiotics",
+                    "text": "Rapidly spreading, extensive, or not responding to oral antibiotics",
                     "type": "display",
                     "required": false,
                     "repeats": false
@@ -2482,6 +2522,7 @@
                 }
             ],
             "linkId": "EmCare.B23.DE40",
+            "text": "Rapidly spreading, extensive, or not responding to oral antibiotics",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -2868,6 +2909,7 @@
                 }
             ],
             "linkId": "EmCare.B23.DE48",
+            "text": "with eye involvement",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -2966,12 +3008,12 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B23.DE50a').answer.first().value = true"
+                                "expression": "%resource.repeat(item).where(linkId='EmCare.B23.DE51').answer.first().value = true"
                             }
                         }
                     ],
-                    "linkId": "DL-I-CL1-18",
-                    "text": "with extensive lesions",
+                    "linkId": "DL-G-CL1-101",
+                    "text": "size larger than 4cm, red streaks, tender nodes or multiple abscesses",
                     "type": "display",
                     "required": false,
                     "repeats": false
@@ -2997,6 +3039,7 @@
                 }
             ],
             "linkId": "EmCare.B23.DE50",
+            "text": "extends to muscle or with measured fever",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -3015,11 +3058,12 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                     "valueExpression": {
                         "language": "text/cql-identifier",
-                        "expression": "EmCare.B23.DE50a"
+                        "expression": "EmCare.B23.DE51"
                     }
                 }
             ],
-            "linkId": "EmCare.B23.DE50a",
+            "linkId": "EmCare.B23.DE51",
+            "text": "size larger than 4cm, red streaks, tender nodes or multiple abscesses",
             "type": "boolean",
             "required": false,
             "repeats": false
@@ -3078,48 +3122,7 @@
                         "display": "Disagree"
                     }
                 }
-            ],
-            "item": [
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                            "valueExpression": {
-                                "language": "text/fhirpath",
-                                "expression": "%resource.repeat(item).where(linkId='EmCare.B23.DE52a').answer.first().value = true"
-                            }
-                        }
-                    ],
-                    "linkId": "DL-I-CL1-19",
-                    "text": "with extensive lesions or lesions close to the eye",
-                    "type": "display",
-                    "required": false,
-                    "repeats": false
-                }
             ]
-        },
-        {
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                    "valueCode": "horizontal"
-                },
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                    "valueBoolean": true
-                },
-                {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                    "valueExpression": {
-                        "language": "text/cql-identifier",
-                        "expression": "EmCare.B23.DE52a"
-                    }
-                }
-            ],
-            "linkId": "EmCare.B23.DE52a",
-            "type": "boolean",
-            "required": false,
-            "repeats": false
         },
         {
             "extension": [
@@ -3697,7 +3700,49 @@
                         "display": "Disagree"
                     }
                 }
+            ],
+            "item": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%resource.repeat(item).where(linkId='DL-G-CL1-115').answer.first().value=true"
+                            }
+                        }
+                    ],
+                    "linkId": "EmCare.B23.DE100",
+                    "text": "Sickle disease",
+                    "type": "display",
+                    "required": false,
+                    "repeats": false
+                }
             ]
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                    "valueCode": "horizontal"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                    "valueExpression": {
+                        "language": "text/cql-identifier",
+                        "expression": "DL-G-CL1-115"
+                    }
+                }
+            ],
+            "linkId": "DL-G-CL1-115",
+            "text": "Sickle disease",
+            "type": "boolean",
+            "required": false,
+            "repeats": false
         },
         {
             "extension": [
@@ -4550,7 +4595,7 @@
                     }
                 }
             ],
-            "linkId": "EmCare.B23.DE100",
+            "linkId": "EmCare.B23.DE120",
             "text": "No severe classification reached",
             "type": "choice",
             "required": false,

@@ -2,14 +2,15 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcareb23classification version '0.0.1.build.186'
+library emcareb23classification version '0.0.142'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.186' called Base
-include emcarevalueset version '0.0.1.build.186' called val
-include emcarezscore version '0.0.1.build.186' called Z
-include emcarecombineddataelements version '0.0.1.build.186' called C
-include emcareobservation version '0.0.1.build.186' called obs
+include emcarebase version '0.0.142' called Base
+include emcarevalueset version '0.0.142' called val
+include emcarezscore version '0.0.142' called Z
+include emcarecombineddataelements version '0.0.142' called C
+include emcarebase version '0.0.142' called B
+include emcareobservation version '0.0.142' called obs
 
 
 
@@ -18,11 +19,11 @@ context Patient
 
 
 /* 
-OBSdefine.EmCare.B7.DE01 : Obstructed or Absent Breathing
+OBSdefine.EmCare.B7.DE02 : Convulsing Now
 
 */
-define "OBSdefine.EmCare.B7.DE01":
-    Base.GetObsValue('EmCare.B7.DE01')
+define "OBSdefine.EmCare.B7.DE02":
+    Base.GetObsValue('EmCare.B7.DE02')
 
 /* 
 OBSdefine.EmCare.B7-B8-B9.DE01 : Continue to Assess Sick Child
@@ -30,13 +31,6 @@ OBSdefine.EmCare.B7-B8-B9.DE01 : Continue to Assess Sick Child
 */
 define "OBSdefine.EmCare.B7-B8-B9.DE01":
     Base.GetObsValue('EmCare.B7-B8-B9.DE01')
-
-/* 
-OBSdefine.EmCare.B7.DE02 : Convulsing Now
-
-*/
-define "OBSdefine.EmCare.B7.DE02":
-    Base.GetObsValue('EmCare.B7.DE02')
 
 /* 
 OBSdefine.EmCare.B7.DE03 : Convulsion(s) in this Illness
@@ -88,11 +82,18 @@ define "OBSdefine.EmCare.B22.DE14a":
     Base.GetObsValue('EmCare.B22.DE14a')
 
 /* 
-OBSdefine.EmCare.B6.DE06 : Weight
+OBSdefine.EmCare.B6.DE06 : Weight (kilograms)
 
 */
 define "OBSdefine.EmCare.B6.DE06":
     Base.GetObsValue('EmCare.B6.DE06')
+
+/* 
+OBSdefine.EmCare.B7.DE01 : Obstructed or Absent Breathing
+
+*/
+define "OBSdefine.EmCare.B7.DE01":
+    Base.GetObsValue('EmCare.B7.DE01')
 
 /* 
 OBSdefine.EmCare.B10S1.DE05 : Cough
@@ -228,11 +229,11 @@ define "OBSdefine.EmCare.B6.DE03":
     Base.GetObsValue('EmCare.B6.DE03')
 
 /* 
-OBSdefine.EmCare.B19S2.DE08 : Yellow eyes
+OBSdefine.EmCare.B12S2.DE06 : Yellow eyes
 
 */
-define "OBSdefine.EmCare.B19S2.DE08":
-    Base.GetObsValue('EmCare.B19S2.DE08')
+define "OBSdefine.EmCare.B12S2.DE06":
+    Base.GetObsValue('EmCare.B12S2.DE06')
 
 /* 
 OBSdefine.EmCare.B12S2.DE07 : Abnormal Bleeding
@@ -564,11 +565,25 @@ define "OBSdefine.EmCare.B14S2.DE26&EmCare.B14S2.DE30":
     Base.GetObsValue('EmCare.B14S2.DE26&EmCare.B14S2.DE30')
 
 /* 
-OBSdefine.EmCare.B14S2.DE30b : Extensive impetigo lesions
+OBSdefine.EmCare.B14S2.DE26&EmCare.B14S2.DE27 : Signs of Severe Impetigo / Folliculitis
 
 */
-define "OBSdefine.EmCare.B14S2.DE30b":
-    Base.GetObsValue('EmCare.B14S2.DE30b')
+define "OBSdefine.EmCare.B14S2.DE26&EmCare.B14S2.DE27":
+    Base.GetObsValue('EmCare.B14S2.DE26&EmCare.B14S2.DE27')
+
+/* 
+OBSdefine.EmCare.B14S2.DE26&EmCare.B14S2.DE28 : 
+
+*/
+define "OBSdefine.EmCare.B14S2.DE26&EmCare.B14S2.DE28":
+    Base.GetObsValue('EmCare.B14S2.DE26&EmCare.B14S2.DE28')
+
+/* 
+OBSdefine.EmCare.B14S2.DE26&EmCare.B14S2.DE29 : 
+
+*/
+define "OBSdefine.EmCare.B14S2.DE26&EmCare.B14S2.DE29":
+    Base.GetObsValue('EmCare.B14S2.DE26&EmCare.B14S2.DE29')
 
 /* 
 OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE31 : Type of Skin Problem
@@ -576,20 +591,6 @@ OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE31 : Type of Skin Problem
 */
 define "OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE31":
     Base.GetObsValue('EmCare.B14S2.DE13&EmCare.B14S2.DE31')
-
-/* 
-OBSdefine.EmCare.B14S2.DE31a : Extensive molluscum lesions
-
-*/
-define "OBSdefine.EmCare.B14S2.DE31a":
-    Base.GetObsValue('EmCare.B14S2.DE31a')
-
-/* 
-OBSdefine.EmCare.B14S2.DE31b : Molluscum lesions close to the eye
-
-*/
-define "OBSdefine.EmCare.B14S2.DE31b":
-    Base.GetObsValue('EmCare.B14S2.DE31b')
 
 /* 
 OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE32 : Type of Skin Problem
@@ -604,6 +605,13 @@ OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE33 : Type of Skin Problem
 */
 define "OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE33":
     Base.GetObsValue('EmCare.B14S2.DE13&EmCare.B14S2.DE33')
+
+/* 
+OBSdefine.EmCare.B14S2.DE34 : Severe Seborrhoea
+
+*/
+define "OBSdefine.EmCare.B14S2.DE34":
+    Base.GetObsValue('EmCare.B14S2.DE34')
 
 /* 
 OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE35 : Type of Skin Problem
@@ -641,11 +649,11 @@ define "OBSdefine.EmCare.B16S2.DE01":
     Base.GetObsValue('EmCare.B16S2.DE01')
 
 /* 
-OBSdefine.EmCare.B22.DE44 : Difficulty Breastfeeding Observed
+OBSdefine.EmCare.B24.G.DE37 : Difficulty Breastfeeding Observed
 
 */
-define "OBSdefine.EmCare.B22.DE44":
-    Base.GetObsValue('EmCare.B22.DE44')
+define "OBSdefine.EmCare.B24.G.DE37":
+    Base.GetObsValue('EmCare.B24.G.DE37')
 
 /* 
 OBSdefine.EmCare.B24.G.DE23 : Appetite Test (using RUTF) Results
@@ -655,11 +663,11 @@ define "OBSdefine.EmCare.B24.G.DE23":
     Base.GetObsValue('EmCare.B24.G.DE23')
 
 /* 
-OBSdefine.EmCare.B22.DE41 : Breastfeeding Assessment Not Possible
+OBSdefine.EmCare.B24.G.DE38 : Breastfeeding Assessment Not Possible
 
 */
-define "OBSdefine.EmCare.B22.DE41":
-    Base.GetObsValue('EmCare.B22.DE41')
+define "OBSdefine.EmCare.B24.G.DE38":
+    Base.GetObsValue('EmCare.B24.G.DE38')
 
 /* 
 OBSdefine.EmCare.B6.DE07 : Weight cannot be measured
@@ -690,13 +698,6 @@ define "OBSdefine.EmCare.B6.DE11":
     Base.GetObsValue('EmCare.B6.DE11')
 
 /* 
-OBSdefine.EmCare.B17.DE01 : Date of Last Vitamin A Supplementation
-
-*/
-define "OBSdefine.EmCare.B17.DE01":
-    Base.GetObsValue('EmCare.B17.DE01')
-
-/* 
 OBSdefine.EmCare.B17.DE05 : Can record of Vitamin A Supplementation be obtained at a future visit?
 
 */
@@ -711,11 +712,18 @@ define "OBSdefine.EmCare.B17.DE11":
     Base.GetObsValue('EmCare.B17.DE11')
 
 /* 
-OBSdefine.EmCare.B17.DE12 : Date of last deworming treatment
+OBSdefine.EmCare.B17.DE01&EmCare.B17.DE02b : Date of Last Vitamin A Supplementation
 
 */
-define "OBSdefine.EmCare.B17.DE12":
-    Base.GetObsValue('EmCare.B17.DE12')
+define "OBSdefine.EmCare.B17.DE01&EmCare.B17.DE02b":
+    Base.GetObsValue('EmCare.B17.DE01&EmCare.B17.DE02b')
+
+/* 
+OBSdefine.EmCare.B17.DE01&EmCare.B17.DE02c : 
+
+*/
+define "OBSdefine.EmCare.B17.DE01&EmCare.B17.DE02c":
+    Base.GetObsValue('EmCare.B17.DE01&EmCare.B17.DE02c')
 
 /* 
 OBSdefine.EmCare.B17.DE16 : Can record of Deworming treatment be obtained at a future visit?
@@ -723,6 +731,20 @@ OBSdefine.EmCare.B17.DE16 : Can record of Deworming treatment be obtained at a f
 */
 define "OBSdefine.EmCare.B17.DE16":
     Base.GetObsValue('EmCare.B17.DE16')
+
+/* 
+OBSdefine.EmCare.B17.DE12&EmCare.B17.DE02b : Date of last deworming treatment
+
+*/
+define "OBSdefine.EmCare.B17.DE12&EmCare.B17.DE02b":
+    Base.GetObsValue('EmCare.B17.DE12&EmCare.B17.DE02b')
+
+/* 
+OBSdefine.EmCare.B17.DE12&EmCare.B17.DE13 : 
+
+*/
+define "OBSdefine.EmCare.B17.DE12&EmCare.B17.DE13":
+    Base.GetObsValue('EmCare.B17.DE12&EmCare.B17.DE13')
 
 /* 
 OBSdefine.EmCare.B17.DE44A : Child followed up at PMTCT for HIV investigation or management
@@ -860,8 +882,7 @@ define "ageinmonths":
 /* 
 DL-XXXX : 
     (C."child")
-     and ((    C."Danger Signs" = false and "Obstructed or Absent Breathing" = true and "Continue to Assess Sick Child" = "Stabilised, continue consultation")
-     or (    "Convulsing Now" = true and  "Continue to Assess Sick Child" = "Stabilised, continue consultation")
+     and ((    "Convulsing Now" = true and  "Continue to Assess Sick Child" = "Stabilised, continue consultation")
      or (    "Convulsion(s) in this Illness" = true)
      or (    "Unconscious" = true)
      or (    "Lethargic" = true)
@@ -871,8 +892,7 @@ DL-XXXX :
 */
 define "DL-XXXX":
         (C."child")
-         and ((    C."Danger Signs" = false and "OBSdefine.EmCare.B7.DE01" = true and "OBSdefine.EmCare.B7-B8-B9.DE01" ~ val."Stabilised, continue consultation")
-         or (    "OBSdefine.EmCare.B7.DE02" = true and  "OBSdefine.EmCare.B7-B8-B9.DE01" ~ val."Stabilised, continue consultation")
+         and ((    "OBSdefine.EmCare.B7.DE02" = true and  "OBSdefine.EmCare.B7-B8-B9.DE01" ~ val."Stabilised, continue consultation")
          or (    "OBSdefine.EmCare.B7.DE03" = true)
          or (    "OBSdefine.EmCare.B7.DE08" = true)
          or (    "OBSdefine.EmCare.B7.DE08a" = true)
@@ -889,7 +909,7 @@ define "Very Severe Disease":
 
 /* 
 EmCare.B6.DE06 : 
-o"Weight"
+o"Weight (kilograms)"
 */
 define "EmCare.B6.DE06":
     "OBSdefine.EmCare.B6.DE06"
@@ -903,7 +923,7 @@ define "Weight":
 
 /* 
 EmCare.B6.DE08-old : 
-o"Weight"
+o"Weight (kilograms)"
 */
 define "EmCare.B6.DE08-old":
     "OBSdefine.EmCare.B6.DE06"
@@ -917,16 +937,16 @@ define "Profile Weight":
 
 /* 
 EmCare.B6.DE08 : 
-o"Weight"
+o"Weight (kilograms)"
 */
 define "EmCare.B6.DE08":
     "OBSdefine.EmCare.B6.DE06"
 
 /* 
-Related Person vital status : EmCare.B6.DE08
+Estimated Weight : EmCare.B6.DE08
 Alias
 */
-define "Related Person vital status":
+define "Estimated Weight":
     "EmCare.B6.DE08"
 
 /* 
@@ -973,24 +993,24 @@ define "Weight for Length Z-Score":
 
 /* 
 DL-G-CL1-01 : 
-C."child" and (C."Danger Signs" = false) and ("Obstructed or Absent Breathing" = true) and ("Continue to Assess Sick Child" = "Stabilised, continue consultation")
+C."child" and (C."Danger Signs" !=true) and ("Obstructed or Absent Breathing" = true) and ("Continue to Assess Sick Child" = "Stabilised, continue consultation") and "Very Severe Disease" != true
 */
 define "DL-G-CL1-01":
-    C."child" and (C."Danger Signs" = false) and ("OBSdefine.EmCare.B7.DE01" = true) and ("OBSdefine.EmCare.B7-B8-B9.DE01" ~ val."Stabilised, continue consultation")
+    C."child" and (Coalesce(C."Danger Signs",false)!=true) and ("OBSdefine.EmCare.B7.DE01" = true) and ("OBSdefine.EmCare.B7-B8-B9.DE01" ~ val."Stabilised, continue consultation") and Coalesce("Very Severe Disease",false)!=true
 
 /* 
-History of  Obstructed or Absent Breathing : DL-G-CL1-01
+Episode of obstructed or absent breathing : DL-G-CL1-01
 Alias
 */
-define "History of  Obstructed or Absent Breathing":
+define "Episode of obstructed or absent breathing":
     "DL-G-CL1-01"
 
 /* 
 DL-G-CL1-08 : 
-C."child" and ("Cough" = true  or  "Difficulty Breathing" = true) and (C."Danger Signs" = true or  "Stridor in a calm child" = true or Coalesce("Oxygen Saturation", 95 '%') > 90  '%' or "Chest Indrawing"=true)
+C."child" and ("Cough" = true  or  "Difficulty Breathing" = true) and (C."Danger Signs" = true or  "Stridor in a calm child" = true or Coalesce("Oxygen Saturation", 95 '%') < 90  '%' or "Chest Indrawing"=true)
 */
 define "DL-G-CL1-08":
-    C."child" and ("OBSdefine.EmCare.B10S1.DE05" = true  or  "OBSdefine.EmCare.B10S1.DE01" = true) and (C."Danger Signs" = true or  "OBSdefine.EmCare.B10S2.DE04" = true or Coalesce("OBSdefine.EmCare.B10S2.DE07", 95 '%') > 90  '%' or "OBSdefine.EmCare.B10S2.DE03"=true)
+    C."child" and ("OBSdefine.EmCare.B10S1.DE05" = true  or  "OBSdefine.EmCare.B10S1.DE01" = true) and (C."Danger Signs" = true or  "OBSdefine.EmCare.B10S2.DE04" = true or Coalesce("OBSdefine.EmCare.B10S2.DE07", 95 '%') < 90  '%' or "OBSdefine.EmCare.B10S2.DE03"=true)
 
 /* 
 Severe Pneumonia or Very Severe Disease : DL-G-CL1-08
@@ -1031,10 +1051,10 @@ define "Pneumonia":
     "DL-G-CL1-12-13"
 
 /* 
-EmCare.B23.DE08 : 
+DL-G-CL1-19 : 
 C."child" and ("Cough for how long?" = "More than 14 days" or "Difficulty breathing for how long?" = "More than 14 days")
 */
-define "EmCare.B23.DE08":
+define "DL-G-CL1-19":
     C."child" and ("OBSdefine.EmCare.B10S1.DE06" ~ val."More than 14 days" or "OBSdefine.EmCare.B10S1.DE02" ~ val."More than 14 days")
 
 /* 
@@ -1056,6 +1076,13 @@ Alias
 */
 define "Cough or Cold":
     "DL-G-CL1-20"
+
+/* 
+DL-G-CL1-22 : 
+C."child" and ("Cough for how long?" = "More than 14 days" or "Difficulty breathing for how long?" = "More than 14 days")
+*/
+define "DL-G-CL1-22":
+    C."child" and ("OBSdefine.EmCare.B10S1.DE06" ~ val."More than 14 days" or "OBSdefine.EmCare.B10S1.DE02" ~ val."More than 14 days")
 
 /* 
 DL-G-CL1-24 : 
@@ -1206,7 +1233,7 @@ DL-G-CL1-41 :
 C."child" and C."Fever" = true and (C."Danger Signs" = true or "Stiff neck" = true or "Axillary Temperature (degrees Celcius)" >=39.5 'Cel' or "Rectal Temperature (degrees Celcius)" >=40 'Cel' or "Yellow eyes" =true or "Abnormal Bleeding"=true or "Coca-Cola urine"= true)
 */
 define "DL-G-CL1-41":
-    C."child" and C."Fever" = true and (C."Danger Signs" = true or "OBSdefine.EmCare.B12S2.DE01" = true or "OBSdefine.EmCare.B6.DE01" >=39.5 'Cel' or "OBSdefine.EmCare.B6.DE03" >=40 'Cel' or "OBSdefine.EmCare.B19S2.DE08" =true or "OBSdefine.EmCare.B12S2.DE07"=true or "OBSdefine.EmCare.B12S2.DE08"= true)
+    C."child" and C."Fever" = true and (C."Danger Signs" = true or "OBSdefine.EmCare.B12S2.DE01" = true or "OBSdefine.EmCare.B6.DE01" >=39.5 'Cel' or "OBSdefine.EmCare.B6.DE03" >=40 'Cel' or "OBSdefine.EmCare.B12S2.DE06" =true or "OBSdefine.EmCare.B12S2.DE07"=true or "OBSdefine.EmCare.B12S2.DE08"= true)
 
 /* 
 Very Severe Febrile Disease : DL-G-CL1-41
@@ -1304,10 +1331,10 @@ define "DL-G-CL1-57":
     C."child" and (C."Fever" = true) and ("OBSdefine.EmCare.B12S1.DE08&EmCare.B12S1.DE11" = true)
 
 /* 
-Possible Urine Infection : DL-G-CL1-57
+Possible cystitits : DL-G-CL1-57
 Alias
 */
-define "Possible Urine Infection":
+define "Possible cystitits":
     "DL-G-CL1-57"
 
 /* 
@@ -1330,18 +1357,18 @@ define "DL-G-CL1-58":
     (Coalesce("Severe Malaria",false)!=true)
 
 /* 
-Fever No Malaria : DL-G-CL1-58
+Non-malarial febrile disease : DL-G-CL1-58
 Alias
 */
-define "Fever No Malaria":
+define "Non-malarial febrile disease":
     "DL-G-CL1-58"
 
 /* 
 EmCare.B23.DE25a : 
-C."child" and ( "Fever No Malaria"=true) and ("Fever for how long?" = "More than 30 days" or "Fever for how long?" = "8 to 30 days") and ("Has Fever been present every day for more than 7 days" = true)
+C."child" and ( "Non-malarial febrile disease"=true) and ("Fever for how long?" = "More than 30 days" or "Fever for how long?" = "8 to 30 days") and ("Has Fever been present every day for more than 7 days" = true)
 */
 define "EmCare.B23.DE25a":
-    C."child" and ( "Fever No Malaria"=true) and ("OBSdefine.EmCare.B12S1.DE03" ~ val."More than 30 days" or "OBSdefine.EmCare.B12S1.DE03" ~ val."8 to 30 days") and ("OBSdefine.EmCare.B12S1.DE06" = true)
+    C."child" and ( "Non-malarial febrile disease"=true) and ("OBSdefine.EmCare.B12S1.DE03" ~ val."More than 30 days" or "OBSdefine.EmCare.B12S1.DE03" ~ val."8 to 30 days") and ("OBSdefine.EmCare.B12S1.DE06" = true)
 
 /* 
 Fever present every day for more than 7 days : EmCare.B23.DE25a
@@ -1630,11 +1657,18 @@ define "EmCare.B23.DE38":
     C."child" and ("Abscess" = true) and ("OBSdefine.EmCare.B14S2.DE15" = true  or "Fever" = true)
 
 /* 
+Deep or Extends to muscle, or with measured fever : EmCare.B23.DE38
+Alias
+*/
+define "Deep or Extends to muscle, or with measured fever":
+    "EmCare.B23.DE38"
+
+/* 
 DL-G-CL1-89 : 
-C."child" and ("Skin Problem" = true  or "Pain" = "Skin Pain") and ("Itchy Skin" = "No") and ("Generalised or Localised Skin Problem" = "Localised Skin Problem") and ("Blisters, Sores or Pustules" = false) and ("Type of Skin Problem" = "Cellulitis - Red Tender Skin") and ("Rapidly spreading, extensive, or not responding to oral antibiotics" = false)
+C."child" and ("Skin Problem" = true  or "Pain" = "Skin Pain") and ("Itchy Skin" = "No") and ("Generalised or Localised Skin Problem" = "Localised Skin Problem") and ("Blisters, Sores or Pustules" = false) and ("Type of Skin Problem" = "Cellulitis - Red Tender Skin") and (o"Rapidly spreading, extensive, or not responding to oral antibiotics" != true)
 */
 define "DL-G-CL1-89":
-    C."child" and ("OBSdefine.EmCare.B14S1.DE02" = true  or "OBSdefine.EmCare.B12S1.DE08&EmCare.B12S1.DE12" = true) and ("OBSdefine.EmCare.B14S1.DE03" = false) and ("OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE08" = true) and ("OBSdefine.EmCare.B14S2.DE12" = false) and ("OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE16" = true) and ("OBSdefine.EmCare.B14S2.DE17" = false)
+    C."child" and ("OBSdefine.EmCare.B14S1.DE02" = true  or "OBSdefine.EmCare.B12S1.DE08&EmCare.B12S1.DE12" = true) and ("OBSdefine.EmCare.B14S1.DE03" = false) and ("OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE08" = true) and ("OBSdefine.EmCare.B14S2.DE12" = false) and ("OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE16" = true) and (Coalesce("OBSdefine.EmCare.B14S2.DE17",false)!=true)
 
 /* 
 Cellulitis : DL-G-CL1-89
@@ -1645,10 +1679,17 @@ define "Cellulitis":
 
 /* 
 EmCare.B23.DE40 : 
-C."child" and ("Skin Problem" = true  or "Pain" = "Skin Pain") and ("Itchy Skin" = false) and ("Generalised or Localised Skin Problem" = "Localised Skin Problem") and ("Blisters, Sores or Pustules" = false) and ("Type of Skin Problem" = "Cellulitis - Red Tender Skin") and ("Rapidly spreading, extensive, or not responding to oral antibiotics" = true)
+C."child" and ("Skin Problem" = true  or "Pain" = "Skin Pain") and ("Itchy Skin" = false) and ("Generalised or Localised Skin Problem" = "Localised Skin Problem") and ("Blisters, Sores or Pustules" = false) and ("Type of Skin Problem" = "Cellulitis - Red Tender Skin") and (o"Rapidly spreading, extensive, or not responding to oral antibiotics" = true)
 */
 define "EmCare.B23.DE40":
     C."child" and ("OBSdefine.EmCare.B14S1.DE02" = true  or "OBSdefine.EmCare.B12S1.DE08&EmCare.B12S1.DE12" = true) and ("OBSdefine.EmCare.B14S1.DE03" = false) and ("OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE08" = true) and ("OBSdefine.EmCare.B14S2.DE12" = false) and ("OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE16" = true) and ("OBSdefine.EmCare.B14S2.DE17" = true)
+
+/* 
+Rapidly spreading, extensive, or not responding to oral antibiotics : EmCare.B23.DE40
+Alias
+*/
+define "Rapidly spreading, extensive, or not responding to oral antibiotics":
+    "EmCare.B23.DE40"
 
 /* 
 DL-G-CL1-91 : 
@@ -1694,10 +1735,10 @@ define "Extensive Ringworm (Tinea)":
 
 /* 
 DL-G-CL1-94 : 
-C."child" and ("Skin Problem" = true  or "Pain" = "Skin Pain") and ("Itchy Skin" = true) and ("Blisters, Sores or Pustules" = "No") and ("Type of Skin Problem" =  "Scabies - Rash and excoriations on torso; burrows in web space and wrists, face spared")
+C."child" and ("Generalised or Localised Skin Problem" ="Generalised Skin Problem" or "Generalised or Localised Skin Problem" =  "Localised Skin Problem") and ("Itchy Skin" = true) and ("Type of Skin Problem" =  "Scabies - Rash and excoriations on torso; burrows in web space and wrists, face spared")
 */
 define "DL-G-CL1-94":
-    C."child" and ("OBSdefine.EmCare.B14S1.DE02" = true  or "OBSdefine.EmCare.B12S1.DE08&EmCare.B12S1.DE12" = true) and ("OBSdefine.EmCare.B14S1.DE03" = true) and ("OBSdefine.EmCare.B14S2.DE12" = false) and ("OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE21" = true)
+    C."child" and ("OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE07" = true or "OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE08" = true) and ("OBSdefine.EmCare.B14S1.DE03" = true) and ("OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE21" = true)
 
 /* 
 Scabies : DL-G-CL1-94
@@ -1750,6 +1791,13 @@ define "EmCare.B23.DE48":
     "OBSdefine.EmCare.B14S2.DE24" = true
 
 /* 
+with eye involvement : EmCare.B23.DE48
+Alias
+*/
+define "with eye involvement":
+    "EmCare.B23.DE48"
+
+/* 
 DL-G-CL1-99 : 
 C."child" and "Skin Problem" = true   and "Blisters, Sores or Pustules" = true and "Type of Skin Problem"= "Impetigo or Folliculitis - Red, Tender, Warm Crusts or Small lesions"
 */
@@ -1771,18 +1819,36 @@ define "EmCare.B23.DE50":
     "OBSdefine.EmCare.B14S2.DE26&EmCare.B14S2.DE30" = true or  "OBSdefine.EmCare.B6.DE01A" = true
 
 /* 
-EmCare.B23.DE50a : 
-"Extensive impetigo lesions" = true
+extends to muscle or with measured fever : EmCare.B23.DE50
+Alias
 */
-define "EmCare.B23.DE50a":
-    "OBSdefine.EmCare.B14S2.DE30b" = true
+define "extends to muscle or with measured fever":
+    "EmCare.B23.DE50"
+
+/* 
+EmCare.B23.DE51 : 
+"Signs of Severe Impetigo / Folliculitis" = v"Skin Lesions >= 4 cm"
+or "Signs of Severe Impetigo / Folliculitis" = v"Red Skin Streaks" 
+or "Signs of Severe Impetigo / Folliculitis" = v"Tender Nodes (Nodules) under the skin"
+*/
+define "EmCare.B23.DE51":
+    "OBSdefine.EmCare.B14S2.DE26&EmCare.B14S2.DE27" = true
+    or "OBSdefine.EmCare.B14S2.DE26&EmCare.B14S2.DE28" = true
+    or "OBSdefine.EmCare.B14S2.DE26&EmCare.B14S2.DE29" = true
+
+/* 
+size larger than 4cm, red streaks, tender nodes or multiple abscesses : EmCare.B23.DE51
+Alias
+*/
+define "size larger than 4cm, red streaks, tender nodes or multiple abscesses":
+    "EmCare.B23.DE51"
 
 /* 
 DL-G-CL1-102 : 
-C."child" and "Skin Problem" = true   and "Type of Skin Problem"= "Molluscum Contagiosum - Skin coloured pearly white papules with central umbilication. Most commonly seen on face and trunk in children."
+C."child" and ("Generalised or Localised Skin Problem" ="Generalised Skin Problem"  or "Generalised or Localised Skin Problem" =  "Localised Skin Problem") and "Type of Skin Problem"= "Molluscum Contagiosum - Skin coloured pearly white papules with central umbilication. Most commonly seen on face and trunk in children."
 */
 define "DL-G-CL1-102":
-    C."child" and "OBSdefine.EmCare.B14S1.DE02" = true   and "OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE31" = true
+    C."child" and ("OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE07" = true  or "OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE08" = true) and "OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE31" = true
 
 /* 
 Molluscum Contagiosum : DL-G-CL1-102
@@ -1790,13 +1856,6 @@ Alias
 */
 define "Molluscum Contagiosum":
     "DL-G-CL1-102"
-
-/* 
-EmCare.B23.DE52a : 
-"Extensive molluscum lesions"  = true or "Molluscum lesions close to the eye"=true
-*/
-define "EmCare.B23.DE52a":
-    "OBSdefine.EmCare.B14S2.DE31a"  = true or "OBSdefine.EmCare.B14S2.DE31b"=true
 
 /* 
 DL-G-CL1-103 : 
@@ -1814,10 +1873,10 @@ define "Warts":
 
 /* 
 DL-G-CL1-104 : 
-C."child" and "Skin Problem" = true   and "Generalised or Localised Skin Problem" = "Localised Skin Problem" and "Blisters, Sores or Pustules" = false and "Type of Skin Problem"= "Seborrhoea - Greasy scales and redness on central face and body folds"
+C."child" and "Skin Problem" = true   and "Generalised or Localised Skin Problem" = "Localised Skin Problem" and "Type of Skin Problem"= "Seborrhoea - Greasy scales and redness on central face and body folds"
 */
 define "DL-G-CL1-104":
-    C."child" and "OBSdefine.EmCare.B14S1.DE02" = true   and "OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE08" = true and "OBSdefine.EmCare.B14S2.DE12" = false and "OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE33" = true
+    C."child" and "OBSdefine.EmCare.B14S1.DE02" = true   and "OBSdefine.EmCare.B14S2.DE06&EmCare.B14S2.DE08" = true and "OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE33" = true
 
 /* 
 Seborrhoea : DL-G-CL1-104
@@ -1828,10 +1887,10 @@ define "Seborrhoea":
 
 /* 
 DL-G-CL1-105 : 
-C."child" and ("Type of Skin Problem"="Seborrhoea - Greasy scales and redness on central face and body folds")
+C."child" and o"Severe Seborrhoea" = true
 */
 define "DL-G-CL1-105":
-    C."child" and ("OBSdefine.EmCare.B14S2.DE13&EmCare.B14S2.DE33" = true)
+    C."child" and "OBSdefine.EmCare.B14S2.DE34" = true
 
 /* 
 Severe Seborrhoea : DL-G-CL1-105
@@ -1884,10 +1943,10 @@ define "Steven Johnson Syndrome (SJS)":
 
 /* 
 DL-G-CL1-109 : 
-C."child" and C."Fever" = true and ("Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Not Deep and Extensive" or "Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Deep and Extensive" )
+C."child" and C."Fever" = true and ("Oral Sores or Mouth Ulcers" = "Mouth Sores or Mouth Ulcers - Not Deep and Extensive" )
 */
 define "DL-G-CL1-109":
-    C."child" and C."Fever" = true and ("OBSdefine.EmCare.B14S2.DE45" ~ val."Mouth Sores or Mouth Ulcers - Not Deep and Extensive" or "OBSdefine.EmCare.B14S2.DE45" ~ val."Mouth Sores or Mouth Ulcers - Deep and Extensive" )
+    C."child" and C."Fever" = true and ("OBSdefine.EmCare.B14S2.DE45" ~ val."Mouth Sores or Mouth Ulcers - Not Deep and Extensive" )
 
 /* 
 Mouth Sores or Ulcer : DL-G-CL1-109
@@ -1933,10 +1992,10 @@ define "Severe Anaemia":
 
 /* 
 DL-G-CL1-114 : 
-("Palmar Pallor" = "Some Palmar Pallor") or "Sickle cell disease" = true
+("Palmar Pallor" = "Some Palmar Pallor")
 */
 define "DL-G-CL1-114":
-    ("OBSdefine.EmCare.B15S2.DE01" ~ val."Some Palmar Pallor") or "OBSdefine.EmCare.B15S1.DE01" = true
+    ("OBSdefine.EmCare.B15S2.DE01" ~ val."Some Palmar Pallor")
 
 /* 
 Anaemia : DL-G-CL1-114
@@ -1944,6 +2003,20 @@ Alias
 */
 define "Anaemia":
     "DL-G-CL1-114"
+
+/* 
+DL-G-CL1-115 : 
+"Sickle cell disease" = true
+*/
+define "DL-G-CL1-115":
+    "OBSdefine.EmCare.B15S1.DE01" = true
+
+/* 
+Sickle disease : DL-G-CL1-115
+Alias
+*/
+define "Sickle disease":
+    "DL-G-CL1-115"
 
 /* 
 DL-G-CL1-116 : 
@@ -1974,7 +2047,7 @@ DL-G-CL1-118-126 :
 define "DL-G-CL1-118-126":
         (    "OBSdefine.EmCare.B16S2.DE01" = true)
          or (    ("ageinmonths" <6 ) and ("zscore_age" <-3 or "zscore_length" <-3) and (C."Medical Complications of Severe Acute Malnutrition" = true))
-         or (    ("ageinmonths" <6) and ("zscore_age" <-3 or "zscore_length" <-3) and (C."Medical Complications of Severe Acute Malnutrition" = false) and ("OBSdefine.EmCare.B22.DE44" = true))
+         or (    ("ageinmonths" <6) and ("zscore_age" <-3 or "zscore_length" <-3) and (C."Medical Complications of Severe Acute Malnutrition" = false) and ("OBSdefine.EmCare.B24.G.DE37" = true))
          or (    ("ageinmonths" >= 6  and "ageinmonths" <12) and ("zscore_age" <-3 or "zscore_length" <-3 or "OBSdefine.EmCare.B6.DE17" < 115 'mm') and (C."Medical Complications of Severe Acute Malnutrition" = true))
          or (    ("ageinmonths" >= 6  and "ageinmonths" <12 ) and ("zscore_age" <-3 or "zscore_length" <-3 or "OBSdefine.EmCare.B6.DE17" < 115 'mm') and (C."Medical Complications of Severe Acute Malnutrition" = false) and ("OBSdefine.EmCare.B24.G.DE23"  ~ val."Unable to finish RUTF"))
          or (    ("ageinmonths" >= 12  and "ageinmonths" <24) and ("zscore_length" <-3 or "OBSdefine.EmCare.B6.DE17" < 115 'mm') and (C."Medical Complications of Severe Acute Malnutrition" = true))
@@ -2001,7 +2074,7 @@ DL-G-CL1-127-130 :
 define "DL-G-CL1-127-130":
         ((C."Medical Complications of Severe Acute Malnutrition" = false) and
         (Coalesce("Severe Acute Malnutrition (or Very Low Weight for Age if less than 12 months old) with Medical Complications",false)!=true))
-         and ((    ("ageinmonths" <6 ) and ("zscore_age" <-3 or "zscore_length" <-3) and ("OBSdefine.EmCare.B22.DE41" = true))
+         and ((    ("ageinmonths" <6 ) and ("zscore_age" <-3 or "zscore_length" <-3) and ("OBSdefine.EmCare.B24.G.DE38" = true))
          or (    ("ageinmonths" >= 6  and "ageinmonths" <12) and ("zscore_age" <-3 or "zscore_length" <-3 or "OBSdefine.EmCare.B6.DE17" < 115 'mm') and ("OBSdefine.EmCare.B24.G.DE23" ~ val."RUTF Not Available"))
          or (    ("ageinmonths" >= 12  and "ageinmonths" <24) and ("zscore_length" <-3 or "OBSdefine.EmCare.B6.DE17" < 115 'mm') and ("OBSdefine.EmCare.B24.G.DE23" ~ val."RUTF Not Available"))
          or (    ("ageinmonths" >24 and "ageinmonths" <60) and ("zscore_height" <-3 or "OBSdefine.EmCare.B6.DE17" < 115 'mm') and ("OBSdefine.EmCare.B24.G.DE23" =  val."Unable to finish RUTF")))
@@ -2023,7 +2096,7 @@ DL-G-CL1-131-134 :
 */
 define "DL-G-CL1-131-134":
         ((C."Medical Complications of Severe Acute Malnutrition" = false) and (Coalesce("Severe Acute Malnutrition (or Very Low Weight for Age if less than 12 months old) with Medical Complications",false)!=true) and (Coalesce("Severe Acute Malnutrition (or Very Low Weight for Age if less than 12 months old)",false)!=true))
-         and ((    ("ageinmonths" <6 ) and ("zscore_age" <-3 or "zscore_length" <-3) and ("OBSdefine.EmCare.B22.DE44" = false ))
+         and ((    ("ageinmonths" <6 ) and ("zscore_age" <-3 or "zscore_length" <-3) and ("OBSdefine.EmCare.B24.G.DE37" = false ))
          or (    ("ageinmonths" >= 6  and "ageinmonths" <12 ) and ("zscore_length" <-3 or "OBSdefine.EmCare.B6.DE17" < 115 'mm') and ("OBSdefine.EmCare.B24.G.DE23" ~ val."Able to finish RUTF"))
          or (    ("ageinmonths" >= 12  and "ageinmonths" <24) and ("zscore_length" <-3 or "OBSdefine.EmCare.B6.DE17" < 115 'mm') and ("OBSdefine.EmCare.B24.G.DE23" ~ val."Able to finish RUTF"))
          or (    ("ageinmonths" >= 24 and "ageinmonths" <60) and ("zscore_height" <-3 or "OBSdefine.EmCare.B6.DE17" < 115 'mm')))
@@ -2095,7 +2168,7 @@ DL-G-CL1-147 :
 */
 define "DL-G-CL1-147":
     ("ageinmonths" <6) and
-    ("OBSdefine.EmCare.B17.DE01" ~ val."More than 6 months ago" or "OBSdefine.EmCare.B17.DE01" ~ val."Vitamin A Supplementation not previously given" or "OBSdefine.EmCare.B17.DE05" ~ val."No, do not know when last dose was given") and
+    ("OBSdefine.EmCare.B17.DE01&EmCare.B17.DE02b" = true or "OBSdefine.EmCare.B17.DE01&EmCare.B17.DE02c" = true or "OBSdefine.EmCare.B17.DE05" ~ val."No, do not know when last dose was given") and
     (Coalesce("OBSdefine.EmCare.B17.DE11",false)!=true) and
     (Coalesce("Persistent Diarrhoea",false)!=true) and
     (Coalesce("Severe Acute Malnutrition (or Very Low Weight for Age if less than 12 months old)",false)!=true) and
@@ -2120,7 +2193,7 @@ DL-G-CL1-148 :
 */
 define "DL-G-CL1-148":
     ("ageinmonths" >= 12) and
-    ("OBSdefine.EmCare.B17.DE12" ~ val."More than 6 months ago" or "OBSdefine.EmCare.B17.DE12" ~ val."Deworming treatment not previously given" or "OBSdefine.EmCare.B17.DE16" ~ val."No, Do not know when last dose was given" )
+    ("OBSdefine.EmCare.B17.DE12&EmCare.B17.DE02b" = true or "OBSdefine.EmCare.B17.DE12&EmCare.B17.DE13" = true or "OBSdefine.EmCare.B17.DE16" ~ val."No, Do not know when last dose was given" )
 
 /* 
 Deworming Needed : DL-G-CL1-148
@@ -2201,7 +2274,7 @@ DL-G-CL1-154-156 :
      or (    ("Mother's HIV Status" = "Mother HIV Negative"  or
         "Mother's HIV Status" = "Mother HIV Status - Unknown or Not Tested" or
         "Mother's HIV Status" = "Mother HIV Status - Decline to answer") and
-        ("Related Person vital status" = "Dead") and
+        B."Biological Mother Vital Status" = "Dead" and
         ("Child's Last HIV Test Results" = "Child HIV Negative"))
      or (    ("Mother's HIV Status" = "Mother HIV Negative" ) and
         ("Child's Last HIV Test Results" = "Child HIV Status - Unknown or Not Tested")))
@@ -2217,7 +2290,7 @@ define "DL-G-CL1-154-156":
          or (    ("OBSdefine.EmCare.B17.DE25" ~ val."Mother HIV Negative"  or
             "OBSdefine.EmCare.B17.DE25" ~ val."Mother HIV Status - Unknown or Not Tested" or
             "OBSdefine.EmCare.B17.DE25" ~ val."Mother HIV Status - Decline to answer") and
-            ("Related Person vital status" ~ val."Dead") and
+            B."Biological Mother Vital Status" ~ val."Dead" and
             ("OBSdefine.EmCare.B17.DE30" ~ val."Child HIV Negative"))
          or (    ("OBSdefine.EmCare.B17.DE25" ~ val."Mother HIV Negative" ) and
             ("OBSdefine.EmCare.B17.DE30" ~ val."Child HIV Status - Unknown or Not Tested")))
@@ -2232,12 +2305,12 @@ define "HIV Infection Unlikely":
 /* 
 DL-G-CL1-157 : 
 ("Child followed up at PMTCT for HIV investigation or management" = "No" or "Child followed up at PMTCT for HIV investigation or management" = "Don't know" or "Child followed up at PMTCT for HIV investigation or management" = "Declines to answer") and 
-("Mother's HIV Status" = "Mother HIV Negative" or "Mother's HIV Status" = "Mother HIV Status - Unknown or Not Tested" or "Mother's HIV Status" = "Mother HIV Status - Decline to answer" or "Related Person vital status" = "Dead") and
+("Mother's HIV Status" = "Mother HIV Negative" or "Mother's HIV Status" = "Mother HIV Status - Unknown or Not Tested" or "Mother's HIV Status" = "Mother HIV Status - Decline to answer" or B."Biological Mother Vital Status" = "Dead") and
 ("Child's Last HIV Test Results" = "Child HIV Status - Unknown or Not Tested" or "Child's Last HIV Test Results" = "Child HIV Status - Decline to answer")
 */
 define "DL-G-CL1-157":
     ("OBSdefine.EmCare.B17.DE44A" = false or "OBSdefine.EmCare.B17.DE44A" ~ val."Don't know" or "OBSdefine.EmCare.B17.DE44A" ~ val."Declines to answer") and
-    ("OBSdefine.EmCare.B17.DE25" ~ val."Mother HIV Negative" or "OBSdefine.EmCare.B17.DE25" ~ val."Mother HIV Status - Unknown or Not Tested" or "OBSdefine.EmCare.B17.DE25" ~ val."Mother HIV Status - Decline to answer" or "Related Person vital status" ~ val."Dead") and
+    ("OBSdefine.EmCare.B17.DE25" ~ val."Mother HIV Negative" or "OBSdefine.EmCare.B17.DE25" ~ val."Mother HIV Status - Unknown or Not Tested" or "OBSdefine.EmCare.B17.DE25" ~ val."Mother HIV Status - Decline to answer" or B."Biological Mother Vital Status" ~ val."Dead") and
     ("OBSdefine.EmCare.B17.DE30" ~ val."Child HIV Status - Unknown or Not Tested" or "OBSdefine.EmCare.B17.DE30" ~ val."Child HIV Status - Decline to answer")
 
 /* 

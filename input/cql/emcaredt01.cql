@@ -2,12 +2,12 @@
 @author: Patrick Delcroix
 @description: This library is part of the project EmCare
 */
-library emcaredt01 version '0.0.1.build.186'
+library emcaredt01 version '0.0.142'
 using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1' called FHIRHelpers 
-include emcarebase version '0.0.1.build.186' called Base
-include emcarevalueset version '0.0.1.build.186' called val
-include emcarecombineddataelements version '0.0.1.build.186' called clas
+include emcarebase version '0.0.142' called Base
+include emcarevalueset version '0.0.142' called val
+include emcarecombineddataelements version '0.0.142' called clas
 
 
 

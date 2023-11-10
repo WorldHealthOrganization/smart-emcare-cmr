@@ -29,7 +29,7 @@
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
-            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb22secondtemperature|0.0.1.build.186"
+            "valueCanonical": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Library/emcareb22secondtemperature|0.0.142"
         }
     ],
     "url": "https://fhir.dk.swisstph-mis.ch/matchbox/fhir/Questionnaire/emcare.b22.secondtemperature",
@@ -155,6 +155,13 @@
                         "system": "http://unitsofmeasure.org",
                         "code": "Cel"
                     }
+                },
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                    "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B24.G.DE40').answer.first().exists()"
+                    }
                 }
             ],
             "linkId": "EmCare.B24.G.DE41",
@@ -205,14 +212,14 @@
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().empty()"
+                        "expression": "%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().exists() or %resource.repeat(item).where(linkId='EmCare.B24.G.DE41').answer.first().exists()"
                     }
                 },
                 {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                     "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "iif(%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 38.5 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2, '2',iif(%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 38 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value< 2 or %resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 37.5 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2, 'High',iif(%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value < 35.5 'Cel' , 'Low',iif(%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value.exists(), 'Normal',{}))))"
+                        "expression": "iif(%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 38.5 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2, '2', iif(%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 38 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value< 2 or (%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value >= 37.5 'Cel' and %resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value <38.5 and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2),'High', iif(%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value < 35.5 'Cel', 'Low', iif(%resource.repeat(item).where(linkId='EmCare.B22.DE47').answer.first().value.exists(), 'Normal', iif(%resource.repeat(item).where(linkId='EmCare.B24.G.DE41').answer.first().value >= 39 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value>=2, '2', iif((%resource.repeat(item).where(linkId='EmCare.B24.G.DE41').answer.first().value >= 38.5 'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value < 2) or (%resource.repeat(item).where(linkId='EmCare.B24.G.DE41').answer.first().value >= 38 and %resource.repeat(item).where(linkId='EmCare.B24.G.DE41').answer.first().value < 39   'Cel' and %resource.repeat(item).where(linkId='AgeInMonths').answer.first().value >= 2), 'High', iif(%resource.repeat(item).where(linkId='EmCare.B24.G.DE41').answer.first().value <= 36 'Cel', 'Low', iif(%resource.repeat(item).where(linkId='EmCare.B24.G.DE41').answer.first().value.exists(), 'Normal', {} ))))))))"
                     }
                 }
             ],

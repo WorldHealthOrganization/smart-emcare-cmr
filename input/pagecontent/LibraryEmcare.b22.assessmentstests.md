@@ -7,8 +7,8 @@ required for the execution
 | Observation | EmCare.B21S1.DE06 | boolean/quantity | Breastfed |
 | Observation | EmCare.B15S2.DE01 | boolean/quantity | Palmar Pallor |
 | Observation | EmCare.B22.DE52A | boolean/quantity | Obvious cause of fever |
-| Observation | EmCare.B22.DE07 | boolean/quantity | Fast Breathing |
 | Observation | EmCare.B10S2.DE05 | boolean/quantity | Wheezing |
+| Observation | EmCare.B22.DE07 | boolean/quantity | Fast Breathing |
 | Observation | EmCare.B10S2.DE03 | boolean/quantity | Chest Indrawing |
 | Observation | EmCare.B10S2.DE04 | boolean/quantity | Stridor in a calm child |
 | Observation | EmCare.B10S2.DE07 | boolean/quantity | Oxygen Saturation |
